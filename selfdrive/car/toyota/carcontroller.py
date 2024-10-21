@@ -71,6 +71,7 @@ class CarController(CarControllerBase):
 
     self.secoc_lka_message_counter = 0
     self.secoc_lta_message_counter = 0
+    self.secoc_acc_message_counter = 0
     self.secoc_prev_reset_counter = 0
 
     # FrogPilot variables
@@ -99,6 +100,7 @@ class CarController(CarControllerBase):
       if CS.secoc_synchronization['RESET_CNT'] != self.secoc_prev_reset_counter:
         self.secoc_lka_message_counter = 0
         self.secoc_lta_message_counter = 0
+        self.secoc_acc_message_counter = 0
         self.secoc_prev_reset_counter = CS.secoc_synchronization['RESET_CNT']
 
         # Verify mac of SecOC synchronization message to ensure we have the right key
@@ -260,6 +262,15 @@ class CarController(CarControllerBase):
       elif self.CP.openpilotLongitudinalControl:
         can_sends.append(toyotacan.create_accel_command(self.packer, pcm_accel_cmd, accel_raw, pcm_cancel_cmd, self.standstill_req, lead, CS.acc_type, fcw_alert,
                                                         self.distance_button, frogpilot_toggles))
+        if self.CP.flags & ToyotaFlags.SECOC.value:
+          acc_cmd_2 = toyotacan.create_accel_command_2(self.packer, pcm_accel_cmd)
+          acc_cmd_2 = secoc.add_mac(self.secoc_key,
+                              int(CS.secoc_synchronization['TRIP_CNT']),
+                              int(CS.secoc_synchronization['RESET_CNT']),
+                              self.secoc_acc_message_counter,
+                              acc_cmd_2)
+          self.secoc_acc_message_counter += 1
+          can_sends.append(acc_cmd_2)
         self.accel = pcm_accel_cmd
       else:
         can_sends.append(toyotacan.create_accel_command(self.packer, 0, 0, pcm_cancel_cmd, False, lead, CS.acc_type, False, self.distance_button, frogpilot_toggles))
