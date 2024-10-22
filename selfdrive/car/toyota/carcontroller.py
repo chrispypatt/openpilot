@@ -264,11 +264,11 @@ class CarController(CarControllerBase):
                                                         self.distance_button, frogpilot_toggles))
         if self.CP.flags & ToyotaFlags.SECOC.value:
           acc_cmd_2 = toyotacan.create_accel_command_2(self.packer, pcm_accel_cmd)
-          acc_cmd_2 = secoc.add_mac(self.secoc_key,
-                              int(CS.secoc_synchronization['TRIP_CNT']),
-                              int(CS.secoc_synchronization['RESET_CNT']),
-                              self.secoc_acc_message_counter,
-                              acc_cmd_2)
+          acc_cmd_2 = secoc.add_mac(self.CP.secOCKey,
+                                    int(CS.secoc_synchronization['TRIP_CNT']),
+                                    int(CS.secoc_synchronization['RESET_CNT']),
+                                    self.secoc_acc_message_counter,
+                                    acc_cmd_2)
           self.secoc_acc_message_counter += 1
           can_sends.append(acc_cmd_2)
         self.accel = pcm_accel_cmd
