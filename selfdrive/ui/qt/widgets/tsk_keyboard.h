@@ -22,7 +22,7 @@ public:
 private:
   Params params;
 
-  QString getArchive();
+  QString getArchive(QString);
   bool isValid(QString);
   void refresh();
 };
