@@ -66,7 +66,7 @@ private:
 
   Params params;
   Params params_memory{"/dev/shm/params"};
-  Params paramsTracking{"/persist/tracking"};
+  Params paramsTracking{"/cache/tracking"};
 
   QStackedLayout *mainLayout;
 

@@ -14,7 +14,7 @@ from openpilot.common.swaglog import cloudlog
 
 from openpilot.system import micd
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import ACTIVE_THEME_PATH, RANDOM_EVENTS_PATH, get_frogpilot_toggles, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ACTIVE_THEME_PATH, CRASHES_DIR, RANDOM_EVENTS_PATH, get_frogpilot_toggles, params_memory
 
 SAMPLE_RATE = 48000
 SAMPLE_BUFFER = 4096 # (approx 100ms)
@@ -83,11 +83,14 @@ class Soundd:
     # FrogPilot variables
     self.frogpilot_toggles = get_frogpilot_toggles()
 
+    self.openpilot_crashed_played = False
+
     self.auto_volume = 0
 
     self.previous_sound_pack = None
 
-    self.random_events_directory = Path(RANDOM_EVENTS_PATH) / "sounds"
+    self.error_log = CRASHES_DIR / "error.txt"
+    self.random_events_directory = RANDOM_EVENTS_PATH / "sounds"
 
     self.random_events_map = {
       AudibleAlert.angry: MAX_VOLUME,
@@ -166,7 +169,13 @@ class Soundd:
       self.current_sound_frame = 0
 
   def get_audible_alert(self, sm):
-    if sm.updated['controlsState']:
+    if not self.openpilot_crashed_played and self.error_log.is_file():
+      if self.frogpilot_toggles.random_events:
+        self.update_alert(AudibleAlert.fart)
+      else:
+        self.update_alert(AudibleAlert.prompt)
+      self.openpilot_crashed_played = True
+    elif sm.updated['controlsState']:
       new_alert = sm['controlsState'].alertSound.raw
       self.update_alert(new_alert)
     elif check_controls_timeout_alert(sm):
@@ -245,7 +254,7 @@ class Soundd:
     }
 
     if self.frogpilot_toggles.sound_pack != "stock":
-      self.sound_directory = Path(ACTIVE_THEME_PATH) / "sounds"
+      self.sound_directory = ACTIVE_THEME_PATH / "sounds"
     else:
       self.sound_directory = Path(BASEDIR) / "selfdrive" / "assets" / "sounds"
 

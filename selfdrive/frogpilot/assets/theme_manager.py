@@ -27,11 +27,7 @@ def update_theme_asset(asset_type, theme, holiday_theme):
     asset_location = THEME_SAVE_PATH / "theme_packs" / theme / asset_type
 
   if not asset_location.exists() or theme == "stock":
-    if asset_type == "colors":
-      params.put_bool("UseStockColors", True)
-      print("Using the stock color scheme instead")
-      return
-    elif (STOCKOP_THEME_PATH / asset_type).is_dir():
+    if (STOCKOP_THEME_PATH / asset_type).is_dir():
       asset_location = STOCKOP_THEME_PATH / asset_type
       print(f"Using the stock {asset_type[:-1]} instead")
     else:
@@ -42,8 +38,6 @@ def update_theme_asset(asset_type, theme, holiday_theme):
           shutil.rmtree(save_location)
       print(f"Using the stock {asset_type[:-1]} instead")
       return
-  elif asset_type == "colors":
-    params.put_bool("UseStockColors", False)
 
   if save_location.exists() or save_location.is_symlink():
     if save_location.is_symlink() or save_location.is_file():
@@ -287,7 +281,7 @@ class ThemeManager:
         content = response.json()
 
         if "github" in repo_url:
-          content = content.get('tree', [])
+          content = content.get("tree", [])
 
         for item in content:
           if item["type"] != "blob":
@@ -296,7 +290,7 @@ class ThemeManager:
           if branch == "Steering-Wheels":
             assets["wheels"].append(item["path"])
           elif branch == "Themes":
-            theme_name = item["path"].split('/')[0]
+            theme_name = item["path"].split("/")[0]
             assets["themes"].setdefault(theme_name, set())
 
             item_path = item["path"].lower()
@@ -320,10 +314,10 @@ class ThemeManager:
     def update_param(key, assets, subfolder):
       if subfolder == "steering_wheels":
         themes_path = THEME_SAVE_PATH / subfolder
-        existing_assets = {item.stem.replace('_', ' ').title() for item in themes_path.glob("*") if item.is_file()}
+        existing_assets = {item.stem.replace("_", " ").title() for item in themes_path.glob("*") if item.is_file()}
       else:
         themes_path = THEME_SAVE_PATH / "theme_packs"
-        existing_assets = {item.parent.name.replace('_', ' ').title() for item in themes_path.glob(f"*/{subfolder}") if item.is_dir()}
+        existing_assets = {item.parent.name.replace("_", " ").title() for item in themes_path.glob(f"*/{subfolder}") if item.is_dir()}
       params.put(key, ",".join(sorted(set(assets) - existing_assets)))
       print(f"{key} updated successfully")
 
@@ -358,7 +352,7 @@ class ThemeManager:
           print(f"  {theme_name} for {theme_component} not found. Downloading...")
           self.download_theme(theme_component, theme_name, theme_param)
           update_frogpilot_toggles()
-        elif theme_name.replace('_', ' ').split('.')[0].title() not in downloadable_list:
+        elif theme_name.replace("_", " ").split(".")[0].title() not in downloadable_list:
           if theme_path.exists():
             print(f"{theme_name} for {theme_component} is outdated. Deleting...")
             delete_file(theme_path)
@@ -369,13 +363,13 @@ class ThemeManager:
           print(f"  {theme_name} for {theme_component} not found. Downloading...")
           self.download_theme(theme_component, theme_name, theme_param)
           update_frogpilot_toggles()
-        elif theme_name.replace('_', ' ').split('.')[0].title() not in downloadable_list:
+        elif theme_name.replace("_", " ").split(".")[0].title() not in downloadable_list:
           if theme_path.exists():
             print(f"{theme_name} for {theme_component} is outdated. Deleting...")
             delete_file(theme_path)
           continue
 
-    for dir_path in THEME_SAVE_PATH.glob('**/*'):
+    for dir_path in THEME_SAVE_PATH.glob("**/*"):
       if dir_path.is_dir() and not any(dir_path.iterdir()):
         print(f"Deleting empty folder: {dir_path}")
         dir_path.rmdir()
@@ -405,7 +399,7 @@ class ThemeManager:
     downloadable_sounds = []
 
     for theme, available_assets in assets["themes"].items():
-      theme_name = theme.replace('_', ' ').split('.')[0].title()
+      theme_name = theme.replace("_", " ").split(".")[0].title()
       print(f"Theme found: {theme_name}")
 
       if "colors" in available_assets:
@@ -419,7 +413,7 @@ class ThemeManager:
       if "sounds" in available_assets:
         downloadable_sounds.append(theme_name)
 
-    downloadable_wheels = [wheel.replace('_', ' ').split('.')[0].title() for wheel in assets["wheels"]]
+    downloadable_wheels = [wheel.replace("_", " ").split(".")[0].title() for wheel in assets["wheels"]]
 
     print(f"Downloadable Colors: {downloadable_colors}")
     print(f"Downloadable Icons: {downloadable_icons}")

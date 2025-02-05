@@ -50,7 +50,7 @@ private:
 
   // FrogPilot variables
   Params params;
-  Params paramsTracking{"/persist/tracking"};
+  Params paramsTracking{"/cache/tracking"};
 
   bool mapboxInstructionsOpen;
   bool mapSelectionOpen;
@@ -79,7 +79,7 @@ private:
   ButtonControl *pair_device;
 
   // FrogPilot variables
-  Params params_storage{"/persist/params"};
+  Params params_cache{"/cache/params"};
 };
 
 class TogglesPanel : public ListWidget {

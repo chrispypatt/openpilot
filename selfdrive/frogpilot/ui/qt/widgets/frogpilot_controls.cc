@@ -15,22 +15,18 @@ QColor loadThemeColors(const QString &colorKey, bool clearCache) {
   if (clearCache) {
     QFile file("../frogpilot/assets/active_theme/colors/colors.json");
 
-    while (!file.exists()) {
-      util::sleep_for(UI_FREQ);
-    }
-
-    if (!file.open(QIODevice::ReadOnly)) {
+    if (file.open(QIODevice::ReadOnly)) {
+      cachedColorData = QJsonDocument::fromJson(file.readAll()).object();
+    } else {
       return QColor();
     }
-
-    cachedColorData = QJsonDocument::fromJson(file.readAll()).object();
   }
 
   if (cachedColorData.isEmpty()) {
     return QColor();
   }
 
-  QJsonObject colorObj = cachedColorData.value(colorKey).toObject();
+  const QJsonObject &colorObj = cachedColorData[colorKey].toObject();
   return QColor(
     colorObj.value("red").toInt(255),
     colorObj.value("green").toInt(255),

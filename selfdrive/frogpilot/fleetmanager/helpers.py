@@ -29,6 +29,7 @@ import subprocess
 
 import openpilot.system.sentry as sentry
 
+from datetime import datetime
 from pathlib import Path
 from typing import List
 from urllib.parse import quote
@@ -42,7 +43,7 @@ from openpilot.system.loggerd.xattr_cache import getxattr
 from panda import Panda
 from tools.lib.route import SegmentName
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import params, update_frogpilot_toggles
+from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, EXCLUDED_KEYS, frogpilot_default_params, params, update_frogpilot_toggles
 
 XOR_KEY = "s8#pL3*Xj!aZ@dWq"
 
@@ -60,9 +61,11 @@ PRESERVE_COUNT = 5
 if PC:
   SCREENRECORD_PATH = os.path.join(str(Path.home()), ".comma", "media", "screen_recordings", "")
   ERROR_LOGS_PATH = os.path.join(str(Path.home()), ".comma", "community", "crashes", "")
+  TMUX_LOGS_PATH = os.path.join(str(Path.home()), ".comma", "tmux_logs")
 else:
   SCREENRECORD_PATH = "/data/media/screen_recordings/"
-  ERROR_LOGS_PATH = sentry.CRASHES_DIR
+  ERROR_LOGS_PATH = CRASHES_DIR
+  TMUX_LOGS_PATH = "/data/tmux_logs/"
 
 
 def list_files(path): # still used for footage
@@ -449,22 +452,16 @@ def decode_parameters(encoded_string):
   return json.loads(decrypted_data)
 
 def get_all_toggle_values():
-  excluded_keys = [
-    "ApiCache_NavDestinations", "CalibrationParams", "CarParamsPersistent",
-    "CarParamsPrevRoute", "GitDiff", "LastGPSPosition", "LiveParameters",
-    "LiveTorqueParameters", "NavDestination", "NavPastDestinations"
-  ]
-
   toggle_values = {}
-  for key in params.all_keys():
-    if key.decode('utf-8') in excluded_keys:
+  for key, _, _ in frogpilot_default_params:
+    if key in EXCLUDED_KEYS:
       continue
-    if params.get_key_type(key) & ParamKeyType.PERSISTENT:
-      if isinstance(params.get(key), bytes):
-        value = params.get(key, encoding='utf-8')
-      else:
-        value = params.get(key) or "0"
-      toggle_values[key.decode('utf-8')] = value
+    raw_value = params.get(key)
+    if isinstance(raw_value, bytes):
+      value = raw_value.decode('utf-8')
+    else:
+      value = raw_value or "0"
+    toggle_values[key] = value
 
   return encode_parameters(toggle_values)
 
@@ -473,19 +470,37 @@ def reset_toggle_values():
   HARDWARE.reboot()
 
 def store_toggle_values(request_data):
-  excluded_keys = [
-    "ApiCache_NavDestinations", "CalibrationParams", "CarParamsPersistent",
-    "CarParamsPrevRoute", "GitDiff", "LastGPSPosition", "LiveParameters",
-    "LiveTorqueParameters", "NavDestination", "NavPastDestinations"
-  ]
+  allowed_keys = {key for key, _, _ in frogpilot_default_params}
+  allowed_keys -= EXCLUDED_KEYS
 
   toggle_values = decode_parameters(request_data['data'])
   for key, value in toggle_values.items():
-    if key in excluded_keys:
+    if key not in allowed_keys:
       continue
     params.put(key, value)
 
   update_frogpilot_toggles()
+
+def capture_tmux_log():
+  os.makedirs(TMUX_LOGS_PATH, exist_ok=True)
+
+  timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+  log_filename = f"tmux_log_{timestamp}.txt"
+  log_path = os.path.join(TMUX_LOGS_PATH, log_filename)
+
+  try:
+    subprocess.run(["tmux", "capture-pane", "-J", "-S", "-"], check=True)
+    result = subprocess.run(["tmux", "show-buffer"], capture_output=True, text=True, check=True)
+
+    with open(log_path, "w", encoding="utf-8") as log_file:
+      log_file.write(result.stdout)
+
+    subprocess.run(["tmux", "delete-buffer"], check=True)
+
+    return log_filename
+
+  except subprocess.CalledProcessError as e:
+    raise Exception(f"Error capturing tmux log: {e}")
 
 def lock_doors():
   panda = Panda()

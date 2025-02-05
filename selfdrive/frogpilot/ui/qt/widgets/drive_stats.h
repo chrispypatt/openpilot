@@ -25,7 +25,7 @@ private:
   void updateFrogPilotStats(const QJsonObject &obj, StatsLabels &labels);
 
   Params params;
-  Params paramsTracking{"/persist/tracking"};
+  Params paramsTracking{"/cache/tracking"};
 
   bool metric;
 

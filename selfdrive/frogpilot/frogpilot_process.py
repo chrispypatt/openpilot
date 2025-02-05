@@ -11,15 +11,14 @@ from cereal import messaging
 from openpilot.common.params import Params
 from openpilot.common.realtime import Priority, config_realtime_process
 from openpilot.common.time import system_time_valid
-from openpilot.system.hardware import HARDWARE
 
 from openpilot.selfdrive.frogpilot.assets.model_manager import ModelManager, MODEL_DOWNLOAD_PARAM
 from openpilot.selfdrive.frogpilot.assets.theme_manager import ThemeManager
 from openpilot.selfdrive.frogpilot.controls.frogpilot_planner import FrogPilotPlanner
 from openpilot.selfdrive.frogpilot.controls.lib.frogpilot_tracking import FrogPilotTracking
 from openpilot.selfdrive.frogpilot.frogpilot_functions import backup_toggles
-from openpilot.selfdrive.frogpilot.frogpilot_utilities import flash_panda, is_url_pingable, lock_doors, run_thread_with_lock, send_sentry_reports, update_maps, update_openpilot
-from openpilot.selfdrive.frogpilot.frogpilot_variables import FrogPilotVariables, get_frogpilot_toggles, params, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_utilities import flash_panda, is_url_pingable, lock_doors, run_thread_with_lock, update_maps, update_openpilot
+from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, FrogPilotVariables, get_frogpilot_toggles, params, params_memory
 
 def assets_checks(model_manager, theme_manager):
   if params_memory.get_bool("DownloadAllModels"):
@@ -28,7 +27,7 @@ def assets_checks(model_manager, theme_manager):
   if params_memory.get_bool("FlashPanda"):
     run_thread_with_lock("flash_panda", flash_panda)
 
-  model_to_download = params_memory.get(MODEL_DOWNLOAD_PARAM, encoding='utf-8')
+  model_to_download = params_memory.get(MODEL_DOWNLOAD_PARAM, encoding="utf-8")
   if model_to_download is not None:
     run_thread_with_lock("download_model", model_manager.download_model, (model_to_download,))
 
@@ -47,7 +46,7 @@ def assets_checks(model_manager, theme_manager):
   ]
 
   for param, asset_type in assets:
-    asset_to_download = params_memory.get(param, encoding='utf-8')
+    asset_to_download = params_memory.get(param, encoding="utf-8")
     if asset_to_download is not None:
       run_thread_with_lock("download_theme", theme_manager.download_theme, (asset_type, asset_to_download, param))
 
@@ -65,13 +64,13 @@ def update_checks(manually_updated, model_manager, now, theme_manager, frogpilot
 def frogpilot_thread():
   config_realtime_process(5, Priority.CTRL_LOW)
 
-  error_log = Path(sentry.CRASHES_DIR) / "error.txt"
+  error_log = CRASHES_DIR / "error.txt"
   if error_log.is_file():
     error_log.unlink()
 
-  params_storage = Params("/persist/params")
+  params_cache = Params("/cache/params")
 
-  frogpilot_planner = FrogPilotPlanner(error_log)
+  frogpilot_planner = FrogPilotPlanner()
   frogpilot_tracking = FrogPilotTracking()
   frogpilot_variables = FrogPilotVariables()
   model_manager = ModelManager()
@@ -88,18 +87,18 @@ def frogpilot_thread():
 
   toggles_last_updated = datetime.datetime.now()
 
-  pm = messaging.PubMaster(['frogpilotPlan'])
-  sm = messaging.SubMaster(['carControl', 'carState', 'controlsState', 'deviceState', 'driverMonitoringState',
-                            'managerState', 'modelV2', 'pandaStates', 'radarState',
-                            'frogpilotCarControl', 'frogpilotCarState', 'frogpilotNavigation'],
-                            poll='modelV2', ignore_avg_freq=['radarState'])
+  pm = messaging.PubMaster(["frogpilotPlan"])
+  sm = messaging.SubMaster(["carControl", "carState", "controlsState", "deviceState", "driverMonitoringState",
+                            "managerState", "modelV2", "pandaStates", "radarState",
+                            "frogpilotCarControl", "frogpilotCarState", "frogpilotNavigation"],
+                            poll="modelV2", ignore_avg_freq=["radarState"])
 
   while True:
     sm.update()
 
     now = datetime.datetime.now()
 
-    started = sm['deviceState'].started
+    started = sm["deviceState"].started
 
     if params_memory.get_bool("FrogPilotTogglesUpdated") or theme_updated:
       frogpilot_variables.update(theme_manager.theme_assets["holiday_theme"], started)
@@ -108,13 +107,13 @@ def frogpilot_thread():
       theme_updated = theme_manager.update_active_theme(time_validated, frogpilot_toggles)
 
       if time_validated:
-        run_thread_with_lock("backup_toggles", backup_toggles, (params_storage,))
+        run_thread_with_lock("backup_toggles", backup_toggles, (params_cache,))
 
       toggles_last_updated = now
     toggles_updated = (now - toggles_last_updated).total_seconds() <= 1
 
     if not started and started_previously:
-      frogpilot_planner = FrogPilotPlanner(error_log)
+      frogpilot_planner = FrogPilotPlanner()
       frogpilot_tracking = FrogPilotTracking()
 
       run_update_checks = True
@@ -125,23 +124,21 @@ def frogpilot_thread():
       if frogpilot_toggles.lock_doors_timer != 0:
         run_thread_with_lock("lock_doors", lock_doors, (frogpilot_toggles.lock_doors_timer, sm))
     elif started and not started_previously:
-      run_thread_with_lock("send_sentry_reports", send_sentry_reports, (frogpilot_toggles, frogpilot_variables, params, frogpilot_tracking.params_tracking))
-
       radarless_model = frogpilot_toggles.radarless_model
 
       if error_log.is_file():
         error_log.unlink()
 
-    if started and sm.updated['modelV2']:
-      frogpilot_planner.update(sm['carControl'], sm['carState'], sm['controlsState'], sm['frogpilotCarControl'], sm['frogpilotCarState'],
-                               sm['frogpilotNavigation'], sm['modelV2'], radarless_model, sm['radarState'], frogpilot_toggles)
+    if started and sm.updated["modelV2"]:
+      frogpilot_planner.update(sm["carControl"], sm["carState"], sm["controlsState"], sm["frogpilotCarControl"], sm["frogpilotCarState"],
+                               sm["frogpilotNavigation"], sm["modelV2"], radarless_model, sm["radarState"], frogpilot_toggles)
       frogpilot_planner.publish(sm, pm, toggles_updated)
 
-      frogpilot_tracking.update(sm['carState'], sm['controlsState'], sm['frogpilotCarControl'])
+      frogpilot_tracking.update(sm["carState"], sm["controlsState"], sm["frogpilotCarControl"])
     elif not started and toggles_updated:
-      frogpilot_plan_send = messaging.new_message('frogpilotPlan')
+      frogpilot_plan_send = messaging.new_message("frogpilotPlan")
       frogpilot_plan_send.frogpilotPlan.togglesUpdated = toggles_updated
-      pm.send('frogpilotPlan', frogpilot_plan_send)
+      pm.send("frogpilotPlan", frogpilot_plan_send)
 
     started_previously = started
 

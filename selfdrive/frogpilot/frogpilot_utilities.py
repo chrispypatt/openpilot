@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import http.client
 import json
 import math
 import numpy as np
@@ -13,19 +12,17 @@ import zipfile
 import openpilot.system.sentry as sentry
 
 from pathlib import Path
-from urllib.error import HTTPError, URLError
+from urllib.error import HTTPError
 
 from cereal import log
-from openpilot.common.numpy_fast import interp
 from openpilot.common.realtime import DT_DMON, DT_HW
-from openpilot.common.time import system_time_valid
 from openpilot.selfdrive.car.toyota.carcontroller import LOCK_CMD
 from openpilot.system.hardware import HARDWARE
 from panda import Panda
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import MAPD_PATH, MAPS_PATH, params, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_variables import EARTH_RADIUS, MAPD_PATH, MAPS_PATH, params, params_memory
 
-EARTH_RADIUS = 6378137  # Radius of the Earth in meters
+running_threads = {}
 
 locks = {
   "backup_toggles": threading.Lock(),
@@ -34,15 +31,12 @@ locks = {
   "download_theme": threading.Lock(),
   "flash_panda": threading.Lock(),
   "lock_doors": threading.Lock(),
-  "send_sentry_reports": threading.Lock(),
   "update_checks": threading.Lock(),
   "update_maps": threading.Lock(),
   "update_models": threading.Lock(),
   "update_openpilot": threading.Lock(),
   "update_themes": threading.Lock()
 }
-
-running_threads = {}
 
 def run_thread_with_lock(name, target, args=()):
   if not running_threads.get(name, threading.Thread()).is_alive():
@@ -70,8 +64,8 @@ def calculate_lane_width(lane, current_lane, road_edge):
   current_x = np.array(current_lane.x)
   current_y = np.array(current_lane.y)
 
-  lane_y_interp = interp(current_x, np.array(lane.x), np.array(lane.y))
-  road_edge_y_interp = interp(current_x, np.array(road_edge.x), np.array(road_edge.y))
+  lane_y_interp = np.interp(current_x, np.array(lane.x), np.array(lane.y))
+  road_edge_y_interp = np.interp(current_x, np.array(road_edge.x), np.array(road_edge.y))
 
   distance_to_lane = np.mean(np.abs(current_y - lane_y_interp))
   distance_to_road_edge = np.mean(np.abs(current_y - road_edge_y_interp))
@@ -88,7 +82,7 @@ def calculate_road_curvature(modelData, v_ego):
 def delete_file(path):
   path = Path(path)
   try:
-    if path.is_file():
+    if path.is_file() or path.is_symlink():
       path.unlink()
       print(f"Deleted file: {path}")
     elif path.is_dir():
@@ -119,7 +113,7 @@ def flash_panda():
   Panda().wait_for_panda(None, 30)
   params_memory.put_bool("FlashPanda", False)
 
-def is_url_pingable(url, timeout=5):
+def is_url_pingable(url, timeout=10):
   try:
     request = urllib.request.Request(
       url,
@@ -129,21 +123,11 @@ def is_url_pingable(url, timeout=5):
         "Connection": "keep-alive"
       }
     )
-    urllib.request.urlopen(request, timeout=timeout)
-    return True
-  except TimeoutError:
-    print(f"TimeoutError: The operation timed out for {url}")
-    return False
-  except http.client.RemoteDisconnected:
-    print(f"RemoteDisconnected: The server closed the connection without responding for {url}")
-    return False
-  except URLError as error:
-    print(f"URLError encountered for {url}: {error}")
-    return False
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+      return response.status == 200
   except Exception as error:
-    print(f"Failed to ping {url}: {error}")
-    sentry.capture_exception(error)
-    return False
+    print(f"Unexpected error when pinging {url}: {error}")
+  return False
 
 def lock_doors(lock_doors_timer, sm):
   while any(proc.name == "dmonitoringd" and proc.running for proc in sm["managerState"].processes):
@@ -189,24 +173,12 @@ def run_cmd(cmd, success_message, fail_message):
     print(fail_message)
     sentry.capture_exception(error)
 
-def send_sentry_reports(frogpilot_toggles, frogpilot_variables, params, params_tracking):
-  if params.get_bool("UserLogged"):
-    return
-
-  while not is_url_pingable("https://sentry.io"):
-    time.sleep(1)
-
-  sentry.capture_fingerprint(frogpilot_toggles, params, params_tracking)
-  sentry.capture_frogpilot_stats(frogpilot_toggles, frogpilot_variables.short_branch)
-
-  params.put_bool("UserLogged", True)
-
 def update_maps(now):
   while not MAPD_PATH.exists():
     time.sleep(60)
 
   maps_selected = json.loads(params.get("MapsSelected", encoding="utf-8") or "{}")
-  if not maps_selected.get("nations") and not maps_selected.get("states"):
+  if not (maps_selected.get("nations") or maps_selected.get("states")):
     return
 
   day = now.day
@@ -237,17 +209,20 @@ def update_openpilot(manually_updated, frogpilot_toggles):
     return
 
   subprocess.run(["pkill", "-SIGUSR1", "-f", "system.updated.updated"], check=False)
-  time.sleep(60)
+  while not params.get("UpdaterState", encoding="utf-8") == "checking...":
+    time.sleep(DT_HW)
+  while params.get("UpdaterState", encoding="utf-8") == "checking...":
+    time.sleep(DT_HW)
 
   if not params.get_bool("UpdaterFetchAvailable"):
     return
 
   while params.get("UpdaterState", encoding="utf-8") != "idle":
-    time.sleep(60)
+    time.sleep(DT_HW)
 
   subprocess.run(["pkill", "-SIGHUP", "-f", "system.updated.updated"], check=False)
   while not params.get_bool("UpdateAvailable"):
-    time.sleep(60)
+    time.sleep(DT_HW)
 
   while params.get_bool("IsOnroad") or running_threads.get("lock_doors", threading.Thread()).is_alive():
     time.sleep(60)

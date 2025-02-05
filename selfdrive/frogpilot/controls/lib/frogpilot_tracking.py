@@ -4,7 +4,7 @@ from openpilot.common.realtime import DT_MDL
 
 class FrogPilotTracking:
   def __init__(self):
-    self.params_tracking = Params("/persist/tracking")
+    self.params_tracking = Params("/cache/tracking")
 
     self.total_drives = self.params_tracking.get_int("FrogPilotDrives")
     self.total_kilometers = self.params_tracking.get_float("FrogPilotKilometers")

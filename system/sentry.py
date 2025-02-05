@@ -12,13 +12,13 @@ from openpilot.system.hardware import HARDWARE, PC
 from openpilot.common.swaglog import cloudlog
 from openpilot.system.version import get_build_metadata, get_version
 
-CRASHES_DIR = Path("/data/crashes")
+from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR
 
 class SentryProject(Enum):
   # python project
-  SELFDRIVE = "https://5ad1714d27324c74a30f9c538bff3b8d@o4505034923769856.ingest.us.sentry.io/4505034930651136"
+  SELFDRIVE = "https://0c2fea9f108f30f51d26ee7d259580ea@o4505034923769856.ingest.us.sentry.io/4505034930651136"
   # native project
-  SELFDRIVE_NATIVE = "https://5ad1714d27324c74a30f9c538bff3b8d@o4505034923769856.ingest.us.sentry.io/4505034930651136"
+  SELFDRIVE_NATIVE = "https://0c2fea9f108f30f51d26ee7d259580ea@o4505034923769856.ingest.us.sentry.io/4505034930651136"
 
 
 def report_tombstone(fn: str, message: str, contents: str) -> None:
@@ -52,54 +52,6 @@ def capture_exception(*args, **kwargs) -> None:
     cloudlog.exception("sentry exception")
 
 
-def capture_fingerprint(frogpilot_toggles, params, params_tracking):
-  if frogpilot_toggles.block_user:
-    sentry_sdk.capture_message("Blocked user from using the development branch", level="warning")
-    sentry_sdk.flush()
-    return
-
-  param_types = {
-    "FrogPilot Controls": ParamKeyType.FROGPILOT_CONTROLS,
-    "FrogPilot Vehicles": ParamKeyType.FROGPILOT_VEHICLES,
-    "FrogPilot Visuals": ParamKeyType.FROGPILOT_VISUALS,
-    "FrogPilot Other": ParamKeyType.FROGPILOT_OTHER,
-    "FrogPilot Tracking": ParamKeyType.FROGPILOT_TRACKING,
-  }
-
-  matched_params = {label: {} for label in param_types}
-  for key in params.all_keys():
-    for label, key_type in param_types.items():
-      if params.get_key_type(key) & key_type:
-        if key_type == ParamKeyType.FROGPILOT_TRACKING:
-          value = f"{params_tracking.get_int(key):,}"
-        else:
-          if isinstance(params.get(key), bytes):
-            value = params.get(key, encoding="utf-8")
-          else:
-            value = params.get(key) or "0"
-
-        if isinstance(value, str) and "." in value:
-          value = value.rstrip("0").rstrip(".")
-        matched_params[label][key.decode("utf-8")] = value
-
-  with sentry_sdk.push_scope() as scope:
-    for label, key_values in matched_params.items():
-      scope.set_context(label, key_values)
-
-    fingerprint = [params.get("DongleId", encoding="utf-8"), frogpilot_toggles.car_model]
-    scope.fingerprint = fingerprint
-    sentry_sdk.capture_message(f"Logged user: {fingerprint}", level="info")
-    sentry_sdk.flush()
-
-
-def capture_frogpilot_stats(frogpilot_toggles, branch):
-  sentry_sdk.capture_message(f"Logged user on: {branch}", level="info")
-  sentry_sdk.capture_message(f"User driving a: {frogpilot_toggles.car_model}", level="info")
-  sentry_sdk.capture_message(f"User has a: {frogpilot_toggles.car_make.capitalize()}", level="info")
-  sentry_sdk.capture_message(f"User using: {frogpilot_toggles.model_name.replace(' (Default)', '')}", level="info")
-  sentry_sdk.flush()
-
-
 def capture_report(discord_user, report, frogpilot_toggles):
   error_file_path = CRASHES_DIR / "error.txt"
   error_content = "No error log found."
@@ -119,8 +71,6 @@ def set_tag(key: str, value: str) -> None:
 
 
 def save_exception(exc_text: str) -> None:
-  CRASHES_DIR.mkdir(parents=True, exist_ok=True)
-
   files = [
     CRASHES_DIR / datetime.now().strftime("%Y-%m-%d--%H-%M-%S.log"),
     CRASHES_DIR / "error.txt"

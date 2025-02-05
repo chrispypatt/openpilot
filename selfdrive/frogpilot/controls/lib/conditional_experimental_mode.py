@@ -16,7 +16,7 @@ class ConditionalExperimentalMode:
     self.experimental_mode = False
     self.stop_light_detected = False
 
-  def update(self, carState, frogpilotCarState, frogpilotNavigation, modelData, v_ego, v_lead, frogpilot_toggles):
+  def update(self, carState, frogpilotCarState, frogpilotNavigation, v_ego, v_lead, frogpilot_toggles):
     if frogpilot_toggles.experimental_mode_via_press:
       self.status_value = params_memory.get_int("CEStatus")
     else:
@@ -24,14 +24,14 @@ class ConditionalExperimentalMode:
 
     if self.status_value not in {1, 2, 3, 4, 5, 6} and not carState.standstill:
       self.update_conditions(frogpilotCarState, v_ego, v_lead, frogpilot_toggles)
-      self.experimental_mode = self.check_conditions(carState, frogpilotNavigation, modelData, v_ego, v_lead, frogpilot_toggles)
+      self.experimental_mode = self.check_conditions(carState, frogpilotNavigation, v_ego, v_lead, frogpilot_toggles)
       params_memory.put_int("CEStatus", self.status_value if self.experimental_mode else 0)
     else:
       self.experimental_mode = self.status_value in {2, 4, 6} or carState.standstill and self.experimental_mode and self.frogpilot_planner.model_stopped
       self.stop_light_detected &= self.status_value not in {1, 2, 3, 4, 5, 6}
       self.stop_light_filter.x = 0
 
-  def check_conditions(self, carState, frogpilotNavigation, modelData, v_ego, v_lead, frogpilot_toggles):
+  def check_conditions(self, carState, frogpilotNavigation, v_ego, v_lead, frogpilot_toggles):
     below_speed = frogpilot_toggles.conditional_limit > v_ego >= 1 and not self.frogpilot_planner.frogpilot_following.following_lead
     below_speed_with_lead = frogpilot_toggles.conditional_limit_lead > v_ego >= 1 and self.frogpilot_planner.frogpilot_following.following_lead
     if below_speed or below_speed_with_lead:
@@ -44,7 +44,7 @@ class ConditionalExperimentalMode:
       self.status_value = 9
       return True
 
-    approaching_maneuver = modelData.navEnabled and (frogpilotNavigation.approachingIntersection or frogpilotNavigation.approachingTurn)
+    approaching_maneuver = frogpilotNavigation.approachingIntersection or frogpilotNavigation.approachingTurn
     if frogpilot_toggles.conditional_navigation and approaching_maneuver and (frogpilot_toggles.conditional_navigation_lead or not self.frogpilot_planner.frogpilot_following.following_lead):
       self.status_value = 10 if frogpilotNavigation.approachingIntersection else 11
       return True

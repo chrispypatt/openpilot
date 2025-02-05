@@ -63,7 +63,7 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : ListWidget(parent) {
     QStringList branches = QString::fromStdString(params.get("UpdaterAvailableBranches")).split(",");
     if (!uiState()->scene.frogs_go_moo) {
       branches.removeAll("FrogPilot-Development");
-      branches.removeAll("FrogPilot-New");
+      branches.removeAll("FrogPilot-Vetting");
       branches.removeAll("FrogPilot-Test");
       branches.removeAll("MAKE-PRS-HERE");
     }
@@ -91,7 +91,7 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : ListWidget(parent) {
     if (ConfirmationDialog::confirm(tr("Are you sure you want to uninstall?"), tr("Uninstall"), this)) {
       if (FrogPilotConfirmationDialog::yesorno(tr("Do you want to delete deep storage FrogPilot assets? This includes your toggle settings for quick reinstalls."), this)) {
         if (FrogPilotConfirmationDialog::yesorno(tr("Are you sure? This is 100% unrecoverable and if you reinstall FrogPilot you'll lose all your previous settings!"), this)) {
-          std::system("rm -rf /persist/params");
+          std::system("rm -rf /cache/params");
         }
       }
       params.putBool("DoUninstall", true);
