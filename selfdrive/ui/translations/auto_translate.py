@@ -4,15 +4,16 @@ import argparse
 import json
 import os
 import pathlib
-import xml.etree.ElementTree as ET
-from typing import cast
-
 import requests
+import xml.etree.ElementTree as ET
+
+from langdetect import detect
+from typing import cast
 
 TRANSLATIONS_DIR = pathlib.Path(__file__).resolve().parent
 TRANSLATIONS_LANGUAGES = TRANSLATIONS_DIR / "languages.json"
 
-OPENAI_MODEL = "gpt-4"
+OPENAI_MODEL = "gpt-4o"
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 OPENAI_PROMPT = "You are a professional translator from English to {language} (ISO 639 language code). " + \
                 "The following sentence or word is in the GUI of a software called openpilot, translate it accordingly."
@@ -60,7 +61,8 @@ def translate_phrase(text: str, language: str) -> str:
   )
 
   if 400 <= response.status_code < 600:
-    raise requests.HTTPError(f'Error {response.status_code}: {response.json()}', response=response)
+    print(f'Error {response.status_code}: {response.text}')
+    return ""
 
   data = response.json()
 
@@ -86,21 +88,37 @@ def translate_file(path: pathlib.Path, language: str, all_: bool) -> None:
       if source is None or translation is None:
         raise ValueError("source or translation not found")
 
-      if not all_ and translation.attrib.get("type") != "unfinished":
+      current_type = translation.attrib.get("type", "")
+      if not all_ and current_type in ("", f"{OPENAI_MODEL}-generated"):
         continue
 
       llm_translation = translate_phrase(cast(str, source.text), language)
+
+      if not llm_translation.strip():
+        print(f"Skipping empty translation for: {source.text}")
+        continue
+
+      try:
+        detected_lang = detect(llm_translation)
+        if detected_lang == "en":
+          print(f"Warning: Detected English translation which does not match expected language '{language}'.")
+          continue
+      except Exception as e:
+        print(f"Language detection failed for '{llm_translation}': {e}")
+        continue
 
       print(f"Source: {source.text}\n" +
             f"Current translation: {translation.text}\n" +
             f"LLM translation: {llm_translation}")
 
       translation.text = llm_translation
+      translation.set("type", f"{OPENAI_MODEL}-generated")
 
   with path.open("w", encoding="utf-8") as fp:
     fp.write('<?xml version="1.0" encoding="utf-8"?>\n' +
              '<!DOCTYPE TS>\n' +
-             ET.tostring(root, encoding="utf-8").decode())
+             ET.tostring(root, encoding="utf-8", short_empty_elements=False).decode() +
+             "\n")
 
 
 def main():
