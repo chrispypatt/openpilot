@@ -110,7 +110,7 @@ class FrogPilotEvents:
         self.max_acceleration = 0
 
       if not self.dejaVu_played and carState.vEgo > CRUISING_SPEED * 2:
-        if carState.vEgo > (1 / self.frogpilot_planner.road_curvature)**0.75 * 2 > CRUISING_SPEED * 2 and abs(carState.steeringAngleDeg) > 30:
+        if carState.vEgo > (1 / abs(self.frogpilot_planner.road_curvature))**0.75 * 2 > CRUISING_SPEED * 2 and abs(carState.steeringAngleDeg) > 30:
           self.events.add(EventName.dejaVuCurve)
           self.dejaVu_played = True
           self.random_event_playing = True

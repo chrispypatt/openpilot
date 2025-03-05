@@ -121,8 +121,8 @@ class FrogPilotVCruise:
       self.slc_target = 0
 
     # Pfeiferj's Vision Turn Controller
-    if frogpilot_toggles.vision_turn_speed_controller and v_ego > CRUISING_SPEED and carControl.longActive and self.frogpilot_planner.road_curvature_detected:
-      self.vtsc_target = ((TARGET_LAT_A * frogpilot_toggles.turn_aggressiveness) / (self.frogpilot_planner.road_curvature * frogpilot_toggles.curve_sensitivity))**0.5
+    if frogpilot_toggles.vision_turn_speed_controller and carControl.longActive and self.frogpilot_planner.road_curvature_detected:
+      self.vtsc_target = ((TARGET_LAT_A * frogpilot_toggles.turn_aggressiveness) / (abs(self.frogpilot_planner.road_curvature) * frogpilot_toggles.curve_sensitivity))**0.5
       self.vtsc_target = np.clip(self.vtsc_target, CRUISING_SPEED, v_cruise)
     else:
       self.vtsc_target = v_cruise if v_cruise != V_CRUISE_UNSET else 0

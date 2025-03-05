@@ -24,8 +24,8 @@ private:
   bool hasNNFFLog;
   bool hasOpenpilotLongitudinal;
   bool isHKGCanFd;
-  bool isPIDCar;
   bool isSubaru;
+  bool isTorqueCar;
   bool liveValid;
   bool started;
 

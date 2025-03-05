@@ -56,5 +56,5 @@ void MapSelectionControl::updateSelectedMaps() {
     }
   }
 
-  params.put("MapsSelected", QString::fromUtf8(QJsonDocument(QJsonObject{{selectionType, mapSelections}}).toJson(QJsonDocument::Compact)).toStdString());
+  params.putNonBlocking("MapsSelected", QString::fromUtf8(QJsonDocument(QJsonObject{{selectionType, mapSelections}}).toJson(QJsonDocument::Compact)).toStdString());
 }

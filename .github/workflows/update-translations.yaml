@@ -20,7 +20,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install langdetect requests
+        run: pip install requests
 
       - name: Install Qt5 Tools
         run: sudo apt update && sudo apt install -y qttools5-dev-tools

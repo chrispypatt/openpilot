@@ -61,7 +61,7 @@ class FrogPilotPlanner:
 
     self.frogpilot_acceleration.update(frogpilotCarState, v_ego, frogpilot_toggles)
 
-    if frogpilot_toggles.conditional_experimental_mode:
+    if frogpilot_toggles.conditional_experimental_mode and controlsState.enabled:
       self.cem.update(carState, frogpilotCarState, frogpilotNavigation, v_ego, v_lead, frogpilot_toggles)
     elif frogpilot_toggles.force_stops or frogpilot_toggles.green_light_alert or frogpilot_toggles.show_stopping_point:
       self.cem.curve_detected = False
@@ -98,8 +98,8 @@ class FrogPilotPlanner:
     self.model_stopped = self.model_length < CRUISING_SPEED * PLANNER_TIME
     self.model_stopped |= self.frogpilot_vcruise.forcing_stop
 
-    self.road_curvature = calculate_road_curvature(modelData, v_ego) if v_ego > CRUISING_SPEED else 1
-    self.road_curvature_detected = (1 / self.road_curvature)**0.5 < v_ego
+    self.road_curvature = calculate_road_curvature(modelData, v_ego)
+    self.road_curvature_detected = v_ego > CRUISING_SPEED and (1 / abs(self.road_curvature))**0.5 < v_ego
 
     self.tracking_lead = self.set_lead_status(carState, v_lead)
     self.v_cruise = self.frogpilot_vcruise.update(carControl, carState, controlsState, frogpilotCarControl, frogpilotCarState, frogpilotNavigation, gps_position, v_cruise, v_ego, frogpilot_toggles)
@@ -144,7 +144,9 @@ class FrogPilotPlanner:
     frogpilotPlan.vtscControllingCurve = bool(self.frogpilot_vcruise.mtsc_target > self.frogpilot_vcruise.vtsc_target)
     frogpilotPlan.vtscSpeed = float(self.frogpilot_vcruise.vtsc_target)
 
-    frogpilotPlan.redLight = self.cem.stop_light_detected
+    frogpilotPlan.redLight = bool(self.cem.stop_light_detected)
+
+    frogpilotPlan.roadCurvature = self.road_curvature
 
     frogpilotPlan.slcMapSpeedLimit = self.frogpilot_vcruise.slc.map_speed_limit
     frogpilotPlan.slcOverridden = bool(self.frogpilot_vcruise.override_slc)

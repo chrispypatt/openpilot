@@ -24,6 +24,7 @@ from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, EXCLU
 
 def backup_directory(backup, destination, success_message, fail_message, minimum_backup_size=0, compressed=False):
   in_progress_destination = destination.parent / (destination.name + "_in_progress")
+  in_progress_destination.mkdir(parents=True, exist_ok=True)
 
   if compressed:
     destination_compressed = destination.parent / (destination.name + ".tar.zst")

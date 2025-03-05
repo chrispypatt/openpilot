@@ -50,7 +50,7 @@ FrogPilotLateralPanel::FrogPilotLateralPanel(FrogPilotSettingsWindow *parent) : 
 
         if (hasAutoTune) {
           modifiedAdvancedLateralTuneKeys.erase("ForceAutoTune");
-        } else if (isPIDCar) {
+        } else if (!isTorqueCar) {
           modifiedAdvancedLateralTuneKeys.erase("ForceAutoTuneOff");
           modifiedAdvancedLateralTuneKeys.erase("SteerFriction");
           modifiedAdvancedLateralTuneKeys.erase("SteerKP");
@@ -126,7 +126,7 @@ FrogPilotLateralPanel::FrogPilotLateralPanel(FrogPilotSettingsWindow *parent) : 
       }
       lateralToggle = new FrogPilotParamValueControl(param, title, desc, icon, 0, 5, QString(), laneChangeTimeLabels, 0.1);
     } else if (param == "LaneDetectionWidth") {
-      lateralToggle = new FrogPilotParamValueControl(param, title, desc, icon, 0, 15, tr(" feet"), std::map<float, QString>(), 0.1);
+      lateralToggle = new FrogPilotParamValueControl(param, title, desc, icon, 0, 15, tr(" feet"), std::map<float, QString>(), 0.1, true);
     } else if (param == "MinimumLaneChangeSpeed") {
       lateralToggle = new FrogPilotParamValueControl(param, title, desc, icon, 0, 99, tr("mph"), std::map<float, QString>(), 1, true);
 
@@ -187,7 +187,7 @@ FrogPilotLateralPanel::FrogPilotLateralPanel(FrogPilotSettingsWindow *parent) : 
       modifiedAdvancedLateralTuneKeys.erase("SteerKP");
       modifiedAdvancedLateralTuneKeys.erase("SteerLatAccel");
       modifiedAdvancedLateralTuneKeys.erase("SteerRatio");
-    } else if (isPIDCar) {
+    } else if (!isTorqueCar) {
       modifiedAdvancedLateralTuneKeys.erase("SteerFriction");
       modifiedAdvancedLateralTuneKeys.erase("SteerKP");
       modifiedAdvancedLateralTuneKeys.erase("SteerLatAccel");
@@ -290,8 +290,8 @@ void FrogPilotLateralPanel::showEvent(QShowEvent *event) {
   hasNNFFLog = parent->hasNNFFLog;
   hasOpenpilotLongitudinal = parent->hasOpenpilotLongitudinal;
   isHKGCanFd = parent->isHKGCanFd;
-  isPIDCar = parent->isPIDCar;
   isSubaru = parent->isSubaru;
+  isTorqueCar = parent->isTorqueCar;
   liveValid = parent->liveValid;
   frictionStock = parent->frictionStock;
   kpStock = parent->kpStock;

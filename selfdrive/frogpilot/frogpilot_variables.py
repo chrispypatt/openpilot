@@ -57,8 +57,9 @@ DEFAULT_TINYGRAD_MODEL_NAME = "Not Too Shabby 👀📡"
 DEFAULT_TINYGRAD_MODEL_VERSION = "v7"
 
 EXCLUDED_KEYS = {
-  "AvailableModels", "AvailableModelNames", "CarParamsPersistent", "ExperimentalModels", "ModelDrivesAndScores",
-  "ModelVersions", "openpilotMinutes", "UpdaterAvailableBranches"
+  "AvailableModels", "AvailableModelNames", "CarParamsPersistent", "ExperimentalLongitudinalEnabled",
+  "ExperimentalModels", "ModelDrivesAndScores", "ModelVersions", "openpilotMinutes",
+  "SpeedLimits", "UpdaterAvailableBranches"
 }
 
 def get_frogpilot_toggles(block=True):
@@ -407,7 +408,7 @@ class FrogPilotVariables:
         has_cc_long = bool(CP.flags & GMFlags.CC_LONG.value)
         has_pedal = CP.enableGasInterceptor
         has_radar = not CP.radarUnavailable
-        is_pid_car = CP.lateralTuning.which() == "pid"
+        is_torque_car = CP.lateralTuning.which() == "torque"
         max_acceleration_enabled = bool(CP.alternativeExperience & ALTERNATIVE_EXPERIENCE.RAISE_LONGITUDINAL_LIMITS_TO_ISO_MAX)
         openpilot_longitudinal = CP.openpilotLongitudinalControl
         pcm_cruise = CP.pcmCruise
@@ -424,7 +425,7 @@ class FrogPilotVariables:
       has_cc_long = False
       has_pedal = False
       has_radar = False
-      is_pid_car = False
+      is_torque_car = False
       max_acceleration_enabled = False
       openpilot_longitudinal = False
       pcm_cruise = False
@@ -452,15 +453,15 @@ class FrogPilotVariables:
     toggle.use_wheel_speed = advanced_custom_ui and (params.get_bool("WheelSpeed") if tuning_level >= level["WheelSpeed"] else default.get_bool("WheelSpeed"))
 
     advanced_lateral_tuning = params.get_bool("AdvancedLateralTune") if tuning_level >= level["AdvancedLateralTune"] else default.get_bool("AdvancedLateralTune")
-    toggle.force_auto_tune = advanced_lateral_tuning and not has_auto_tune and not is_pid_car and (params.get_bool("ForceAutoTune") if tuning_level >= level["ForceAutoTune"] else default.get_bool("ForceAutoTune"))
-    toggle.force_auto_tune_off = advanced_lateral_tuning and has_auto_tune and not is_pid_car and (params.get_bool("ForceAutoTuneOff") if tuning_level >= level["ForceAutoTuneOff"] else default.get_bool("ForceAutoTuneOff"))
+    toggle.force_auto_tune = advanced_lateral_tuning and not has_auto_tune and is_torque_car and (params.get_bool("ForceAutoTune") if tuning_level >= level["ForceAutoTune"] else default.get_bool("ForceAutoTune"))
+    toggle.force_auto_tune_off = advanced_lateral_tuning and has_auto_tune and is_torque_car and (params.get_bool("ForceAutoTuneOff") if tuning_level >= level["ForceAutoTuneOff"] else default.get_bool("ForceAutoTuneOff"))
     stock_steer_friction = params.get_float("SteerFrictionStock")
     toggle.steer_friction = params.get_float("SteerFriction") if advanced_lateral_tuning and tuning_level >= level["SteerFriction"] else stock_steer_friction
-    toggle.use_custom_steer_friction = toggle.steer_friction != stock_steer_friction and not is_pid_car and not toggle.force_auto_tune or toggle.force_auto_tune_off
-    toggle.steer_kp = [[0], [params.get_float("SteerKP") if advanced_lateral_tuning and not is_pid_car and tuning_level >= level["SteerKP"] else params.get_float("SteerKPStock")]]
+    toggle.use_custom_steer_friction = toggle.steer_friction != stock_steer_friction and is_torque_car and not toggle.force_auto_tune or toggle.force_auto_tune_off
+    toggle.steer_kp = [[0], [params.get_float("SteerKP") if advanced_lateral_tuning and is_torque_car and tuning_level >= level["SteerKP"] else params.get_float("SteerKPStock")]]
     stock_steer_lat_accel_factor = params.get_float("SteerLatAccelStock")
     toggle.steer_lat_accel_factor = params.get_float("SteerLatAccel") if advanced_lateral_tuning and tuning_level >= level["SteerLatAccel"] else stock_steer_lat_accel_factor
-    toggle.use_custom_lat_accel_factor = toggle.steer_lat_accel_factor != stock_steer_lat_accel_factor and not is_pid_car and not toggle.force_auto_tune or toggle.force_auto_tune_off
+    toggle.use_custom_lat_accel_factor = toggle.steer_lat_accel_factor != stock_steer_lat_accel_factor and is_torque_car and not toggle.force_auto_tune or toggle.force_auto_tune_off
     stock_steer_ratio = params.get_float("SteerRatioStock")
     toggle.steer_ratio = params.get_float("SteerRatio") if advanced_lateral_tuning and tuning_level >= level["SteerRatio"] else stock_steer_ratio
     toggle.use_custom_steer_ratio = toggle.steer_ratio != stock_steer_ratio and not toggle.force_auto_tune or toggle.force_auto_tune_off

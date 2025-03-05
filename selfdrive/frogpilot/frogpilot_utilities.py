@@ -67,14 +67,15 @@ def calculate_distance_to_point(ax, ay, bx, by):
 def calculate_lane_width(inner_lane, outter_lane, position):
   inner_lane = np.interp(position, inner_lane.x, inner_lane.y)
   outter_lane = np.interp(position, outter_lane.x, outter_lane.y)
+
   return float(abs(inner_lane - outter_lane))
 
 # Credit goes to Pfeiferj!
 def calculate_road_curvature(modelData, v_ego):
-  orientation_rate = np.abs(modelData.orientationRate.z)
+  orientation_rate = np.array(modelData.orientationRate.z)
   velocity = modelData.velocity.x
   max_pred_lat_acc = np.amax(orientation_rate * velocity)
-  return max_pred_lat_acc / max(v_ego, 1)**2
+  return float(max_pred_lat_acc / max(v_ego, 1)**2)
 
 def delete_file(path):
   path = Path(path)

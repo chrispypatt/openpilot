@@ -116,16 +116,7 @@ void update_model(UIState *s,
                   const cereal::UiPlan::Reader &plan) {
   SubMaster &sm = *(s->sm);
   UIScene &scene = s->scene;
-  auto orientation_rate = model.getOrientationRate().getZ();
-  auto velocity = model.getVelocity().getX();
-  float max_lat_acc = 0.0f;
-  for (size_t i = 0; i < orientation_rate.size(); i++) {
-    float lat_acc = orientation_rate[i] * velocity[i];
-    if (std::abs(lat_acc) > std::abs(max_lat_acc)) {
-      max_lat_acc = lat_acc;
-    }
-  }
-  scene.left_curve = max_lat_acc < 0;
+  scene.left_curve = sm["frogpilotPlan"].getFrogpilotPlan().getRoadCurvature() < 0;
   float path_offset_z = sm["liveCalibration"].getLiveCalibration().getHeight()[0];
   auto plan_position = plan.getPosition();
   scene.model_length = model.getPosition().getX()[33 - 1];
