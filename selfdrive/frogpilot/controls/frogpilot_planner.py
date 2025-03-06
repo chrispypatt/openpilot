@@ -99,12 +99,12 @@ class FrogPilotPlanner:
     self.model_stopped |= self.frogpilot_vcruise.forcing_stop
 
     self.road_curvature = calculate_road_curvature(modelData, v_ego)
-    self.road_curvature_detected = v_ego > CRUISING_SPEED and (1 / abs(self.road_curvature))**0.5 < v_ego
+    self.road_curvature_detected = (1 / abs(self.road_curvature))**0.5 < v_ego > CRUISING_SPEED
 
-    self.tracking_lead = self.set_lead_status(carState, v_lead)
+    self.tracking_lead = self.set_lead_status(v_lead)
     self.v_cruise = self.frogpilot_vcruise.update(carControl, carState, controlsState, frogpilotCarControl, frogpilotCarState, frogpilotNavigation, gps_position, v_cruise, v_ego, frogpilot_toggles)
 
-  def set_lead_status(self, carState, v_lead):
+  def set_lead_status(self, v_lead):
     following_lead = self.lead_one.status
     following_lead &= self.lead_one.dRel < self.model_length + STOP_DISTANCE
 

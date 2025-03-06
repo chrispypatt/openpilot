@@ -73,8 +73,10 @@ def calculate_lane_width(inner_lane, outter_lane, position):
 # Credit goes to Pfeiferj!
 def calculate_road_curvature(modelData, v_ego):
   orientation_rate = np.array(modelData.orientationRate.z)
-  velocity = modelData.velocity.x
-  max_pred_lat_acc = np.amax(orientation_rate * velocity)
+  velocity = np.array(modelData.velocity.x)
+
+  max_pred_lat_acc = max(np.max(orientation_rate * velocity), np.min(orientation_rate * velocity), key=abs)
+
   return float(max_pred_lat_acc / max(v_ego, 1)**2)
 
 def delete_file(path):

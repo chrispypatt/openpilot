@@ -107,12 +107,14 @@ def backup_toggles(params_cache):
       params_cache.put(key, new_value)
       changes_found = True
 
-  if not changes_found:
+  backup_path = Path("/data/toggle_backups")
+  maximum_backups = 5
+
+  existing_backups = list(backup_path.glob("*"))
+  if not changes_found and existing_backups:
     print("Toggles are identical to the previous backup. Aborting...")
     return
 
-  backup_path = Path("/data/toggle_backups")
-  maximum_backups = 5
   cleanup_backups(backup_path, maximum_backups)
 
   directory = Path("/data/params_backup/d")
