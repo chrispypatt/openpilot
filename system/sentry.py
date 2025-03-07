@@ -87,6 +87,7 @@ def capture_memory_log():
   with sentry_sdk.push_scope() as scope:
     scope.set_extra("total_memory_usage_percent", (total_used / total_memory) * 100)
     scope.set_extra("top_processes", top_processes)
+    scope.set_extra("updater_state", Params().get("UpdaterState", encoding="utf-8"))
     sentry_sdk.capture_message(message, level="fatal")
     sentry_sdk.flush()
 
