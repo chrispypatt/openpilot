@@ -64,11 +64,17 @@ def calculate_distance_to_point(ax, ay, bx, by):
 
   return EARTH_RADIUS * c
 
-def calculate_lane_width(inner_lane, outter_lane, position):
-  inner_lane = np.interp(position, inner_lane.x, inner_lane.y)
-  outter_lane = np.interp(position, outter_lane.x, outter_lane.y)
+def calculate_lane_width(lane, current_lane, road_edge):
+  current_x = np.array(current_lane.x)
+  current_y = np.array(current_lane.y)
 
-  return float(abs(inner_lane - outter_lane))
+  lane_y_interp = np.interp(current_x, np.array(lane.x), np.array(lane.y))
+  road_edge_y_interp = np.interp(current_x, np.array(road_edge.x), np.array(road_edge.y))
+
+  distance_to_lane = np.mean(np.abs(current_y - lane_y_interp))
+  distance_to_road_edge = np.mean(np.abs(current_y - road_edge_y_interp))
+
+  return float(min(distance_to_lane, distance_to_road_edge))
 
 # Credit goes to Pfeiferj!
 def calculate_road_curvature(modelData, v_ego):
