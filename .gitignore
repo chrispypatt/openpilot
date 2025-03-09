@@ -36,6 +36,7 @@ a.out
 *.pyxbldc
 *.vcd
 *.qm
+*_pyx.cpp
 config.json
 clcache
 compile_commands.json
@@ -74,9 +75,9 @@ comma*.sh
 selfdrive/modeld/thneed/compile
 selfdrive/modeld/models/*.thneed
 selfdrive/modeld/models/*.pkl
-sunnypilot/modeld/thneed/compile
-sunnypilot/modeld/models/*.thneed
-sunnypilot/modeld/models/*.pkl
+sunnypilot/modeld*/thneed/compile
+sunnypilot/modeld*/models/*.thneed
+sunnypilot/modeld*/models/*.pkl
 
 *.bz2
 *.zst

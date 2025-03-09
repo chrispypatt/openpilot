@@ -76,9 +76,13 @@ def is_snpe_model(started, params, CP: car.CarParams) -> bool:
   """Check if the active model runner is SNPE."""
   return bool(get_active_model_runner(params, not started) == custom.ModelManagerSP.Runner.snpe)
 
+def is_tinygrad_model(started, params, CP: car.CarParams) -> bool:
+  """Check if the active model runner is SNPE."""
+  return bool(get_active_model_runner(params, not started) == custom.ModelManagerSP.Runner.tinygrad)
+
 def is_stock_model(started, params, CP: car.CarParams) -> bool:
   """Check if the active model runner is stock."""
-  return not is_snpe_model(started, params, CP)
+  return bool(get_active_model_runner(params, not started) == custom.ModelManagerSP.Runner.stock)
 
 def or_(*fns):
   return lambda *args: operator.or_(*(fn(*args) for fn in fns))
@@ -89,21 +93,23 @@ def and_(*fns):
 procs = [
   DaemonProcess("manage_athenad", "system.athena.manage_athenad", "AthenadPid"),
 
+  NativeProcess("loggerd", "system/loggerd", ["./loggerd"], logging),
+  NativeProcess("encoderd", "system/loggerd", ["./encoderd"], only_onroad),
+  NativeProcess("stream_encoderd", "system/loggerd", ["./encoderd", "--stream"], notcar),
+  PythonProcess("logmessaged", "system.logmessaged", always_run),
+
   NativeProcess("camerad", "system/camerad", ["./camerad"], driverview, enabled=not WEBCAM),
   PythonProcess("webcamerad", "tools.webcam.camerad", driverview, enabled=WEBCAM),
   NativeProcess("logcatd", "system/logcatd", ["./logcatd"], only_onroad),
   NativeProcess("proclogd", "system/proclogd", ["./proclogd"], only_onroad),
-  PythonProcess("logmessaged", "system.logmessaged", always_run),
   PythonProcess("micd", "system.micd", iscar),
   PythonProcess("timed", "system.timed", always_run, enabled=not PC),
 
-  # TODO Make python process once TG allows opening QCOM from child proc
-  NativeProcess("dmonitoringmodeld", "selfdrive/modeld", ["./dmonitoringmodeld"], driverview, enabled=(WEBCAM or not PC)),
-  NativeProcess("encoderd", "system/loggerd", ["./encoderd"], only_onroad),
-  NativeProcess("stream_encoderd", "system/loggerd", ["./encoderd", "--stream"], notcar),
-  NativeProcess("loggerd", "system/loggerd", ["./loggerd"], logging),
-  # TODO Make python process once TG allows opening QCOM from child proc
-  NativeProcess("modeld", "selfdrive/modeld", ["./modeld"], and_(only_onroad, is_stock_model)),
+  # TODO: Make python process once TG allows opening QCOM from child pro
+  # https://github.com/tinygrad/tinygrad/blob/ac9c96dae1656dc220ee4acc39cef4dd449aa850/tinygrad/device.py#L26
+  NativeProcess("modeld", "selfdrive/modeld", ["./modeld.py"], and_(only_onroad, is_stock_model)),
+  NativeProcess("dmonitoringmodeld", "selfdrive/modeld", ["./dmonitoringmodeld.py"], driverview, enabled=(WEBCAM or not PC)),
+
   NativeProcess("sensord", "system/sensord", ["./sensord"], only_onroad, enabled=not PC),
   NativeProcess("ui", "selfdrive/ui", ["./ui"], always_run, watchdog_max_dt=(5 if not PC else None)),
   PythonProcess("soundd", "selfdrive.ui.soundd", only_onroad),
@@ -146,6 +152,7 @@ procs = [
 procs += [
   PythonProcess("models_manager", "sunnypilot.models.manager", only_offroad),
   NativeProcess("modeld_snpe", "sunnypilot/modeld", ["./modeld"], and_(only_onroad, is_snpe_model)),
+  NativeProcess("modeld_tinygrad", "sunnypilot/modeld_v2", ["./modeld"], and_(only_onroad, is_tinygrad_model)),
 ]
 
 if os.path.exists("./github_runner.sh"):
