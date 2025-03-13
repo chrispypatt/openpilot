@@ -547,16 +547,16 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
   painter.setBrush(bg);
   painter.drawPolygon(scene.track_vertices);
 
-  if (scene.show_stopping_point && scene.red_light && speed > 1 && !(conditionalStatus == 1 || conditionalStatus == 3 || conditionalStatus == 5)) {
-    QPointF last_point = scene.track_vertices.last();
-    QPointF adjusted_point = last_point - QPointF(stopSignImg.width() / 2, stopSignImg.height());
+  if (scene.show_stopping_point && scene.red_light && speed > 1) {
+    QPointF center_point = (scene.track_vertices.first() + scene.track_vertices.last()) / 2.0;
+    QPointF adjusted_point = center_point - QPointF(stopSignImg.width() / 2, stopSignImg.height());
     painter.drawPixmap(adjusted_point, stopSignImg);
 
     if (scene.show_stopping_point_metrics) {
       QFont font = InterFont(35, QFont::DemiBold);
       QString text = QString::number(std::nearbyint(modelLength * distanceConversion)) + leadDistanceUnit;
       int text_width = QFontMetrics(font).horizontalAdvance(text);
-      QPointF text_position = last_point - QPointF(text_width / 2, stopSignImg.height() + 35);
+      QPointF text_position = center_point - QPointF(text_width / 2, stopSignImg.height() + 35);
 
       painter.save();
       painter.setFont(font);

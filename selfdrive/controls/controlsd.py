@@ -353,7 +353,7 @@ class Controls:
       self.events.add(EventName.usbError)
     if CS.canTimeout:
       self.events.add(EventName.canBusMissing)
-    elif not CS.canValid:
+    elif not CS.canValid and not params_memory.get_bool("ForceOnroad"):
       self.events.add(EventName.canError)
 
     # generic catch-all. ideally, a more specific event should be added above instead

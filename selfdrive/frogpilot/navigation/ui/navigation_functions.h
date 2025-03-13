@@ -3,7 +3,6 @@
 #include <filesystem>
 
 #include <QDateTime>
-#include <QJsonArray>
 
 #include "selfdrive/frogpilot/ui/qt/widgets/frogpilot_controls.h"
 
@@ -211,19 +210,9 @@ private:
   void loadSelectedMaps();
   void updateSelectedMaps();
 
-  bool isCountry;
-
   Params params;
 
   QButtonGroup *mapButtons;
-
-  QGridLayout *mapLayout;
-
-  QJsonArray mapSelections;
-
-  QList<QAbstractButton *> maps;
-
-  QMap<QString, QString> mapData;
 
   QString selectionType;
 };

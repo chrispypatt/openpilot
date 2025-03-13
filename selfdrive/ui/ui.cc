@@ -363,6 +363,8 @@ static void update_state(UIState *s) {
     scene.light_sensor = -1;
   }
   scene.started = sm["deviceState"].getDeviceState().getStarted() && scene.ignition;
+  scene.started |= scene.force_onroad;
+  scene.started &= !s->params_memory.getBool("ForceOffroad");
 
   scene.world_objects_visible = scene.world_objects_visible ||
                                 (scene.started &&
@@ -513,9 +515,6 @@ void UIState::updateStatus() {
 
     scene.wake_up_screen = controls_state.getAlertStatus() != cereal::ControlsState::AlertStatus::NORMAL || status != previous_status;
   }
-
-  scene.started |= scene.force_onroad;
-  scene.started &= !params_memory.getBool("ForceOffroad");
 
   // Handle onroad/offroad transition
   if (scene.started != started_prev || sm->frame == 1) {
