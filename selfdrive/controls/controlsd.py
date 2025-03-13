@@ -22,7 +22,7 @@ from openpilot.common.swaglog import cloudlog
 from openpilot.selfdrive.car.car_helpers import get_car_interface, get_startup_event
 from openpilot.selfdrive.controls.lib.alertmanager import AlertManager, set_offroad_alert
 from openpilot.selfdrive.controls.lib.drive_helpers import VCruiseHelper, clip_curvature
-from openpilot.selfdrive.controls.lib.events import Events, ET
+from openpilot.selfdrive.controls.lib.events import ET, EVENTS, Events
 from openpilot.selfdrive.controls.lib.latcontrol import LatControl, MIN_LATERAL_CONTROL_SPEED
 from openpilot.selfdrive.controls.lib.latcontrol_pid import LatControlPID
 from openpilot.selfdrive.controls.lib.latcontrol_angle import LatControlAngle, STEER_ANGLE_SATURATION_THRESHOLD
@@ -725,18 +725,19 @@ class Controls:
 
   def update_frogpilot_variables(self, CS):
     self.always_on_lateral_active = self.frogpilot_toggles.always_on_lateral_set
-    if self.frogpilot_toggles.always_on_lateral_main:
-      self.always_on_lateral_active &= CS.cruiseState.available
-    elif self.frogpilot_toggles.use_lkas_for_aol and self.frogpilot_toggles.always_on_lateral_lkas:
+
+    if self.frogpilot_toggles.use_lkas_for_aol and self.frogpilot_toggles.always_on_lateral_lkas:
       self.always_on_lateral_active &= not self.sm['frogpilotCarState'].alwaysOnLateralDisabled
     else:
-      self.always_on_lateral_active &= CS.cruiseState.enabled
+      self.always_on_lateral_active |= self.frogpilot_toggles.always_on_lateral_main or CS.cruiseState.enabled
+      self.always_on_lateral_active &= CS.cruiseState.available
+
     self.always_on_lateral_active &= CS.gearShifter not in NON_DRIVING_GEARS
     self.always_on_lateral_active &= self.sm['frogpilotPlan'].lateralCheck
     self.always_on_lateral_active &= self.sm['liveCalibration'].calPerc >= 1
     self.always_on_lateral_active &= not (self.frogpilot_toggles.always_on_lateral_lkas and self.sm['frogpilotCarState'].alwaysOnLateralDisabled)
     self.always_on_lateral_active &= not (CS.brakePressed and CS.vEgo < self.frogpilot_toggles.always_on_lateral_pause_speed) or CS.standstill
-    self.always_on_lateral_active &= not self.events.contains(ET.IMMEDIATE_DISABLE)
+    self.always_on_lateral_active &= not any(ET.IMMEDIATE_DISABLE in EVENTS.get(event, {}) for event in self.events.events if event != EventName.speedTooLow)
 
     if self.frogpilot_toggles.conditional_experimental_mode or self.frogpilot_toggles.slc_fallback_experimental_mode:
       self.experimental_mode = self.sm['frogpilotPlan'].experimentalMode

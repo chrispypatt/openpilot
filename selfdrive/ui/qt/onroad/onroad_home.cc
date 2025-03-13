@@ -93,10 +93,10 @@ void OnroadWindow::updateState(const UIState &s) {
   friction = scene.friction;
   latAccel = scene.lat_accel;
   liveValid = scene.live_valid;
-  showBlindspot = scene.show_blind_spot && (blindSpotLeft || blindSpotRight);
+  showBlindspot = scene.show_blind_spot;
   showFPS = scene.show_fps;
   showJerk = scene.jerk_metrics;
-  showSignal = scene.signal_metrics && (turnSignalLeft || turnSignalRight);
+  showSignal = scene.signal_metrics;
   showSteering = scene.steering_metrics;
   showTuning = scene.lateral_tuning_metrics;
   speedJerk = scene.speed_jerk;

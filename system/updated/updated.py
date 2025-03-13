@@ -201,10 +201,13 @@ def finalize_update(params) -> None:
   try:
     if params.get_bool("IsOnroad"):
       run(["git", "config", "pack.threads", "1"], FINALIZED)
-      run(["git", "config", "pack.windowMemory", "64m"], FINALIZED)
-
-    run(["git", "gc"], FINALIZED)
-    run(["git", "lfs", "prune"], FINALIZED)
+      run(["git", "config", "pack.windowMemory", "32m"], FINALIZED)
+      run(["git", "config", "pack.deltaCacheSize", "32m"], FINALIZED)
+      run(["git", "repack", "-a", "-d", "-l", "--max-pack-size=20m"], FINALIZED)
+      run(["git", "prune"], FINALIZED)
+    else:
+      run(["git", "gc"], FINALIZED)
+      run(["git", "lfs", "prune"], FINALIZED)
     cloudlog.event("Done git cleanup", duration=time.monotonic() - t)
   except subprocess.CalledProcessError:
     cloudlog.exception(f"Failed git cleanup, took {time.monotonic() - t:.3f} s")

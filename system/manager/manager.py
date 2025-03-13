@@ -66,6 +66,7 @@ def manager_init() -> None:
     else:
       params_cache.put(k, params.get(k))
   params.remove("DoToggleReset")
+
   frogpilot_boot_functions(build_metadata, params_cache)
 
   # Create folders needed for msgq

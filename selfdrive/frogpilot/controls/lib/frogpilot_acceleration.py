@@ -15,19 +15,19 @@ A_CRUISE_MAX_VALS_SPORT =      [3.0, 2.5, 2.0, 1.5, 1.0, 0.8, 0.6]
 A_CRUISE_MAX_VALS_SPORT_PLUS = [4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0]
 
 def get_max_accel_eco(v_ego):
-  return np.interp(v_ego, A_CRUISE_MAX_BP_CUSTOM, A_CRUISE_MAX_VALS_ECO)
+  return float(np.interp(v_ego, A_CRUISE_MAX_BP_CUSTOM, A_CRUISE_MAX_VALS_ECO))
 
 def get_max_accel_sport(v_ego):
-  return np.interp(v_ego, A_CRUISE_MAX_BP_CUSTOM, A_CRUISE_MAX_VALS_SPORT)
+  return float(np.interp(v_ego, A_CRUISE_MAX_BP_CUSTOM, A_CRUISE_MAX_VALS_SPORT))
 
 def get_max_accel_sport_plus(v_ego):
-  return np.interp(v_ego, A_CRUISE_MAX_BP_CUSTOM, A_CRUISE_MAX_VALS_SPORT_PLUS)
+  return float(np.interp(v_ego, A_CRUISE_MAX_BP_CUSTOM, A_CRUISE_MAX_VALS_SPORT_PLUS))
 
 def get_max_accel_low_speeds(max_accel, v_cruise):
-  return np.interp(v_cruise, [0., CITY_SPEED_LIMIT / 2, CITY_SPEED_LIMIT], [max_accel / 4, max_accel / 2, max_accel])
+  return float(np.interp(v_cruise, [0., CITY_SPEED_LIMIT / 2, CITY_SPEED_LIMIT], [max_accel / 4, max_accel / 2, max_accel]))
 
 def get_max_accel_ramp_off(max_accel, v_cruise, v_ego):
-  return np.interp(v_cruise - v_ego, [0., 1., 5., 10.], [0., 0.5, 1.0, max_accel])
+  return float(np.interp(v_cruise - v_ego, [0., 1., 5., 10.], [0., 0.5, 1.0, max_accel]))
 
 def get_max_allowed_accel(v_ego):
   return float(np.interp(v_ego, [0., 5., 20.], [4.0, 4.0, 2.0]))  # ISO 15622:2018
@@ -65,7 +65,7 @@ class FrogPilotAcceleration:
 
     if frogpilot_toggles.human_acceleration:
       if self.frogpilot_planner.frogpilot_following.following_lead and not frogpilotCarState.trafficModeActive:
-        self.max_accel = np.clip(self.frogpilot_planner.lead_one.aLeadK, self.max_accel, get_max_allowed_accel(v_ego))
+        self.max_accel = float(np.clip(self.frogpilot_planner.lead_one.aLeadK, self.max_accel, get_max_allowed_accel(v_ego)))
       self.max_accel = min(get_max_accel_low_speeds(self.max_accel, self.frogpilot_planner.v_cruise), self.max_accel)
       self.max_accel = min(get_max_accel_ramp_off(self.max_accel, self.frogpilot_planner.v_cruise, v_ego), self.max_accel)
 

@@ -32,7 +32,7 @@ def backup_directory(backup, destination, success_message, fail_message, minimum
       print("Backup already exists. Aborting...")
       return
 
-    run_cmd(["sudo", "rsync", "-avq", f"{backup}/.", in_progress_destination], "", fail_message)
+    run_cmd(["sudo", "rsync", "-avq", f"{backup}/.", in_progress_destination], "", fail_message, capture_output=False)
 
     tar_file = destination.parent / (destination.name + "_in_progress.tar")
     with tarfile.open(tar_file, "w") as tar:
@@ -64,7 +64,7 @@ def backup_directory(backup, destination, success_message, fail_message, minimum
       print("Backup already exists. Aborting...")
       return
 
-    run_cmd(["sudo", "rsync", "-avq", f"{backup}/.", in_progress_destination], success_message, fail_message)
+    run_cmd(["sudo", "rsync", "-avq", f"{backup}/.", in_progress_destination], success_message, fail_message, capture_output=False)
     in_progress_destination.rename(destination)
 
 def cleanup_backups(directory, limit, compressed=False):
@@ -99,12 +99,14 @@ def backup_toggles(params_cache):
     if key in EXCLUDED_KEYS:
       continue
 
-    new_value = params.get(key) or "0"
-    current_value = params_backup.get(key) or "0"
+    new_value = params.get(key)
+    current_value = params_backup.get(key)
 
     if new_value != current_value:
-      params_backup.put(key, new_value)
-      params_cache.put(key, new_value)
+      if new_value is not None:
+        params_backup.put(key, new_value)
+        params_cache.put(key, new_value)
+
       changes_found = True
 
   backup_path = Path("/data/toggle_backups")

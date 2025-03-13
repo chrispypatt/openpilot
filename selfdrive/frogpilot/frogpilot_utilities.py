@@ -64,16 +64,25 @@ def calculate_distance_to_point(ax, ay, bx, by):
 
   return EARTH_RADIUS * c
 
-def calculate_lane_width(lane, current_lane, road_edge):
-  current_x = np.array(current_lane.x)
-  current_y = np.array(current_lane.y)
+def calculate_lane_width(lane, current_lane, road_edge=None):
+  current_x = np.asarray(current_lane.x)
+  current_y = np.asarray(current_lane.y)
 
-  lane_y_interp = np.interp(current_x, np.array(lane.x), np.array(lane.y))
-  road_edge_y_interp = np.interp(current_x, np.array(road_edge.x), np.array(road_edge.y))
+  lane_x = np.asarray(lane.x)
+  lane_y = np.asarray(lane.y)
+
+  lane_y_interp = np.interp(current_x, lane_x, lane_y)
 
   distance_to_lane = np.mean(np.abs(current_y - lane_y_interp))
-  distance_to_road_edge = np.mean(np.abs(current_y - road_edge_y_interp))
+  if road_edge is None:
+    return float(distance_to_lane)
 
+  road_edge_x = np.asarray(road_edge.x)
+  road_edge_y = np.asarray(road_edge.y)
+
+  road_edge_y_interp = np.interp(current_x, road_edge_x, road_edge_y)
+
+  distance_to_road_edge = np.mean(np.abs(current_y - road_edge_y_interp))
   return float(min(distance_to_lane, distance_to_road_edge))
 
 # Credit goes to Pfeiferj!
@@ -125,7 +134,7 @@ def is_url_pingable(url, timeout=10):
       return response.status == 200
   except Exception as error:
     print(f"Unexpected error when pinging {url}: {error}")
-  return False
+    return False
 
 def lock_doors(lock_doors_timer, sm):
   while any(proc.name == "dmonitoringd" and proc.running for proc in sm["managerState"].processes):
@@ -162,13 +171,14 @@ def lock_doors(lock_doors_timer, sm):
 
   params.remove("IsDriverViewEnabled")
 
-def run_cmd(cmd, success_message, fail_message):
+def run_cmd(cmd, success_message, fail_message, capture_output=True):
   try:
-    result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    subprocess.run(cmd, capture_output=capture_output, text=capture_output, check=True)
     print(success_message)
   except subprocess.CalledProcessError as error:
     print(f"Command failed with return code {error.returncode}")
-    print(f"Error Output: {error.stderr.strip()}")
+    if error.stderr:
+      print(f"Error Output: {error.stderr.strip()}")
     sentry.capture_exception(error)
   except Exception as error:
     print(f"Unexpected error occurred: {error}")

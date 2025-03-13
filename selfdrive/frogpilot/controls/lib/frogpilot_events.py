@@ -45,6 +45,7 @@ class FrogPilotEvents:
 
     if self.random_event_playing:
       self.random_event_timer += DT_MDL
+
       if self.random_event_timer >= 4:
         update_wheel_image(frogpilot_toggles.wheel_image, frogpilot_toggles.current_holiday_theme, False)
         params_memory.put_bool("UpdateWheelImage", True)
@@ -54,7 +55,7 @@ class FrogPilotEvents:
     if self.frogpilot_planner.frogpilot_vcruise.forcing_stop:
       self.events.add(EventName.forcingStop)
 
-    if frogpilot_toggles.green_light_alert and not self.frogpilot_planner.tracking_lead and carState.standstill and carState.gearShifter not in NON_DRIVING_GEARS:
+    if not self.frogpilot_planner.tracking_lead and carState.standstill and carState.gearShifter not in NON_DRIVING_GEARS and frogpilot_toggles.green_light_alert:
       if not self.frogpilot_planner.model_stopped and self.stopped_for_light:
         self.events.add(EventName.greenLight)
       self.stopped_for_light = self.frogpilot_planner.cem.stop_light_detected
@@ -65,7 +66,7 @@ class FrogPilotEvents:
       self.events.add(EventName.holidayActive)
       self.holiday_theme_played = True
 
-    if frogpilot_toggles.lead_departing_alert and self.frogpilot_planner.tracking_lead and carState.standstill:
+    if self.frogpilot_planner.tracking_lead and carState.standstill and frogpilot_toggles.lead_departing_alert:
       if self.tracking_lead_distance == 0:
         self.tracking_lead_distance = lead_distance
 
@@ -76,6 +77,10 @@ class FrogPilotEvents:
         self.events.add(EventName.leadDeparting)
     else:
       self.tracking_lead_distance = 0
+
+    if not self.nnff_played and self.startup_seen and controlsState.alertText1 == "" and len(self.events) == 0 and params.get("NNFFModelName", encoding="utf-8") is not None:
+      self.events.add(EventName.torqueNNLoad)
+      self.nnff_played = True
 
     if not self.random_event_playing and frogpilot_toggles.random_events:
       acceleration = carState.aEgo
@@ -124,6 +129,7 @@ class FrogPilotEvents:
       saturated_alert_match = any((controlsState.alertText1, controlsState.alertText2) == (EVENTS[e][ET.WARNING].alert_text_1, EVENTS[e][ET.WARNING].alert_text_2) for e in saturated_event_names)
       if saturated_alert_match:
         event_choices = []
+
         if not self.firefox_played:
           event_choices.append("firefoxSteerSaturated")
         if not self.goat_played:
@@ -131,8 +137,9 @@ class FrogPilotEvents:
         if not self.this_is_fine_played:
           event_choices.append("thisIsFineSteerSaturated")
 
-        if random.random() < RANDOM_EVENTS_CHANCE and event_choices:
+        if event_choices and random.random() < RANDOM_EVENTS_CHANCE:
           event_choice = random.choice(event_choices)
+
           if event_choice == "firefoxSteerSaturated":
             self.events.add(EventName.firefoxSteerSaturated)
             update_wheel_image("firefox")
@@ -148,6 +155,7 @@ class FrogPilotEvents:
             update_wheel_image("this_is_fine")
             params_memory.put_bool("UpdateWheelImage", True)
             self.this_is_fine_played = True
+
           self.random_event_playing = True
 
       if not self.vCruise69_played and 70 > max(controlsState.vCruise, controlsState.vCruiseCluster) * (1 if frogpilot_toggles.is_metric else CV.KPH_TO_MPH) >= 69:
@@ -159,14 +167,20 @@ class FrogPilotEvents:
         fcw_alert_match = controlsState.alertText1 == EVENTS[EventName.fcw][ET.PERMANENT].alert_text_1 and controlsState.alertText2 == EVENTS[EventName.fcw][ET.PERMANENT].alert_text_2
         stock_aeb_alert_match = controlsState.alertText1 == EVENTS[EventName.stockAeb][ET.PERMANENT].alert_text_1 and controlsState.alertText2 == EVENTS[EventName.stockAeb][ET.PERMANENT].alert_text_2
         if fcw_alert_match or stock_aeb_alert_match:
-          if random.random() < RANDOM_EVENTS_CHANCE:
-            event_choice = random.choice(event_choices)
-            if event_choice == "toBeContinued":
-              self.events.add(EventName.toBeContinued)
-            elif event_choice == "yourFrogTriedToKillMe":
-              self.events.add(EventName.yourFrogTriedToKillMe)
-            self.fcw_played = True
-            self.random_event_playing = True
+          event_choices = []
+
+          event_choices.append("toBeContinued")
+          event_choices.append("yourFrogTriedToKillMe")
+
+          event_choice = random.choice(event_choices)
+
+          if event_choice == "toBeContinued":
+            self.events.add(EventName.toBeContinued)
+          elif event_choice == "yourFrogTriedToKillMe":
+            self.events.add(EventName.yourFrogTriedToKillMe)
+
+          self.fcw_played = True
+          self.random_event_playing = True
 
       if not self.youveGotMail_played and frogpilotCarControl.alwaysOnLateralActive and not self.always_on_lateral_active_previously:
         if random.random() < RANDOM_EVENTS_CHANCE:
@@ -179,12 +193,7 @@ class FrogPilotEvents:
       self.events.add(EventName.speedLimitChanged)
 
     startup_alert_match = controlsState.alertText1 == frogpilot_toggles.startup_alert_top and controlsState.alertText2 == frogpilot_toggles.startup_alert_bottom
-    if startup_alert_match:
-      self.startup_seen = True
-
-    if not self.nnff_played and self.startup_seen and controlsState.alertText1 == "" and len(self.events) == 0 and params.get("NNFFModelName", encoding="utf-8") is not None:
-      self.events.add(EventName.torqueNNLoad)
-      self.nnff_played = True
+    self.startup_seen |= startup_alert_match
 
     if frogpilotCarState.trafficModeActive != self.previous_traffic_mode:
       if self.previous_traffic_mode:

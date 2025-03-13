@@ -16,6 +16,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Switch to FrogPilot-Staging branch
+        run: |
+          git fetch origin
+          git checkout ${{ env.BRANCH_STAGING }} || git checkout -b ${{ env.BRANCH_STAGING }}
+
       - name: Get previous commit date
         id: get-commit-date
         run: |

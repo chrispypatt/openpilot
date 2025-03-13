@@ -116,12 +116,12 @@ class FrogPilotPlanner:
     frogpilot_plan_send.valid = sm.all_checks(service_list=["carState", "controlsState"])
     frogpilotPlan = frogpilot_plan_send.frogpilotPlan
 
-    frogpilotPlan.accelerationJerk = float(A_CHANGE_COST * self.frogpilot_following.acceleration_jerk)
-    frogpilotPlan.accelerationJerkStock = float(A_CHANGE_COST * self.frogpilot_following.base_acceleration_jerk)
-    frogpilotPlan.dangerJerk = float(DANGER_ZONE_COST * self.frogpilot_following.danger_jerk)
-    frogpilotPlan.speedJerk = float(J_EGO_COST * self.frogpilot_following.speed_jerk)
-    frogpilotPlan.speedJerkStock = float(J_EGO_COST * self.frogpilot_following.base_speed_jerk)
-    frogpilotPlan.tFollow = float(self.frogpilot_following.t_follow)
+    frogpilotPlan.accelerationJerk = A_CHANGE_COST * self.frogpilot_following.acceleration_jerk
+    frogpilotPlan.accelerationJerkStock = A_CHANGE_COST * self.frogpilot_following.base_acceleration_jerk
+    frogpilotPlan.dangerJerk = DANGER_ZONE_COST * self.frogpilot_following.danger_jerk
+    frogpilotPlan.speedJerk = J_EGO_COST * self.frogpilot_following.speed_jerk
+    frogpilotPlan.speedJerkStock = J_EGO_COST * self.frogpilot_following.base_speed_jerk
+    frogpilotPlan.tFollow = self.frogpilot_following.t_follow
 
     frogpilotPlan.desiredFollowDistance = self.frogpilot_following.desired_follow_distance
 
@@ -137,14 +137,14 @@ class FrogPilotPlanner:
 
     frogpilotPlan.lateralCheck = self.lateral_check
 
-    frogpilotPlan.maxAcceleration = float(self.frogpilot_acceleration.max_accel)
-    frogpilotPlan.minAcceleration = float(self.frogpilot_acceleration.min_accel)
+    frogpilotPlan.maxAcceleration = self.frogpilot_acceleration.max_accel
+    frogpilotPlan.minAcceleration = self.frogpilot_acceleration.min_accel
 
     frogpilotPlan.mtscSpeed = float(self.frogpilot_vcruise.mtsc_target)
     frogpilotPlan.vtscControllingCurve = bool(self.frogpilot_vcruise.mtsc_target > self.frogpilot_vcruise.vtsc_target)
     frogpilotPlan.vtscSpeed = float(self.frogpilot_vcruise.vtsc_target)
 
-    frogpilotPlan.redLight = bool(self.cem.stop_light_detected)
+    frogpilotPlan.redLight = self.cem.stop_light_detected
 
     frogpilotPlan.roadCurvature = self.road_curvature
 

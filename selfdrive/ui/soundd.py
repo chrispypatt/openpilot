@@ -118,23 +118,23 @@ class Soundd:
       filename, play_count, volume = sound_list[sound]
 
       if sound in self.random_events_map:
-        wavefile = wave.open(str(self.random_events_directory / filename), 'r')
+        wave_path = self.random_events_directory / filename
       else:
-        try:
-          wavefile = wave.open(str(self.sound_directory / filename), 'r')
-        except FileNotFoundError:
+        wave_path = self.sound_directory / filename
+        if not wave_path.exists():
           if filename == "prompt_repeat.wav":
             filename = "prompt.wav"
-          if filename == "startup.wav":
+          elif filename == "startup.wav":
             filename = "engage.wav"
-          wavefile = wave.open(BASEDIR + "/selfdrive/assets/sounds/" + filename, 'r')
+          wave_path = Path(BASEDIR) / "selfdrive/assets/sounds" / filename
 
-      assert wavefile.getnchannels() == 1
-      assert wavefile.getsampwidth() == 2
-      assert wavefile.getframerate() == SAMPLE_RATE
+      with wave.open(str(wave_path), 'r') as wavefile:
+        assert wavefile.getnchannels() == 1
+        assert wavefile.getsampwidth() == 2
+        assert wavefile.getframerate() == SAMPLE_RATE
 
-      length = wavefile.getnframes()
-      self.loaded_sounds[sound] = np.frombuffer(wavefile.readframes(length), dtype=np.int16).astype(np.float32) / (2**16/2)
+        length = wavefile.getnframes()
+        self.loaded_sounds[sound] = np.frombuffer(wavefile.readframes(length), dtype=np.int16).astype(np.float32) / (2**16/2)
 
   def get_sound_data(self, frames): # get "frames" worth of data from the current alert sound, looping when required
 

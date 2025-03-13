@@ -36,10 +36,8 @@ QStringList getCarNames(const QString &carMake, QMap<QString, QString> &carModel
   };
 
   QStringList carNameList;
-  QSet<QString> uniqueCarNames;
 
-  QString filePath = QString("../car/%1/values.py").arg(makeMap.value(carMake, carMake));
-  QFile valuesFile(filePath);
+  QFile valuesFile(QString("../car/%1/values.py").arg(makeMap.value(carMake, carMake)));
   if (!valuesFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
     return carNameList;
   }
@@ -68,13 +66,10 @@ QStringList getCarNames(const QString &carMake, QMap<QString, QString> &carModel
         QStringList carNameParts = carName.split(" ");
         for (const QString &part : carNameParts) {
           if (part.compare(carMake, Qt::CaseInsensitive) == 0) {
-            if (!uniqueCarNames.contains(carName)) {
-              uniqueCarNames.insert(carName);
-              carNameList.append(carName);
-              carModels[carName] = platformName;
-            }
-            break;
+            carNameList.append(carName);
+            carModels[carName] = platformName;
           }
+          break;
         }
       }
     }
@@ -150,20 +145,20 @@ FrogPilotVehiclesPanel::FrogPilotVehiclesPanel(FrogPilotSettingsWindow *parent) 
   FrogPilotListWidget *toyotaList = new FrogPilotListWidget(this);
 
   std::vector<std::tuple<QString, QString, QString, QString>> vehicleToggles {
-    {"GMToggles", tr("General Motors Toggles"), tr("Toggles catered towards 'General Motors' vehicles."), ""},
-    {"ExperimentalGMTune", tr("Enable FrogsGoMoo's Experimental Longitudinal Tune"), tr("Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!"), ""},
-    {"VoltSNG", tr("Enable Stop and Go Hack"), tr("Force stop and go for the 2017 Chevy Volt."), ""},
-    {"LongPitch", tr("Smoothen Pedal Response While Going Downhill/Uphill"), tr("Smoothen the gas and brake response when driving downhill or uphill."), ""},
+    {"GMToggles", tr("General Motors Toggles"), tr("Toggles catered towards \"General Motors\" vehicles."), ""},
+    {"ExperimentalGMTune", tr("FrogsGoMoo's Experimental Longitudinal Tune"), tr("FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!"), ""},
+    {"LongPitch", tr("Smoothen Pedal Response While Going Downhill/Uphill"), tr("Smoothens the gas and brake response when driving downhill or uphill."), ""},
+    {"VoltSNG", tr("Stop and Go Hack"), tr("Forces stop and go for the \"2017 Chevy Volt\"."), ""},
 
-    {"HKGToggles", tr("Hyundai/Kia/Genesis Toggles"), tr("Toggles catered towards 'Hyundai/Kia/Genesis' vehicles."), ""},
-    {"NewLongAPI", tr("Enable comma's New Longitudinal API"), tr("Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles."), ""},
+    {"HKGToggles", tr("Hyundai/Kia/Genesis Toggles"), tr("Toggles catered towards \"Hyundai/Kia/Genesis\" vehicles."), ""},
+    {"NewLongAPI", tr("comma's New Longitudinal API"), tr("comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles."), ""},
 
-    {"ToyotaToggles", tr("Toyota/Lexus Toggles"), tr("Toggles catered towards 'Toyota/Lexus' vehicles."), ""},
-    {"ToyotaDoors", tr("Automatically Lock/Unlock Doors"), tr("Automatically lock the doors when in drive and unlock when in park."), ""},
-    {"ClusterOffset", tr("Cluster Speed Offset"), tr("Set the cluster offset openpilot uses to try and match the speed displayed on the dash."), ""},
-    {"FrogsGoMoosTweak", tr("Enable FrogsGoMoo's Personal Tweaks"), tr("FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother."), ""},
-    {"SNGHack", tr("Enable Stop and Go Hack"), tr("Force stop and go for vehicles without stock stop and go functionality."), ""},
-    {"LockDoorsTimer", tr("Lock Doors On Ignition Off After"), tr("Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats."), ""},
+    {"ToyotaToggles", tr("Toyota/Lexus Toggles"), tr("Toggles catered towards \"Toyota/Lexus\" vehicles."), ""},
+    {"ToyotaDoors", tr("Automatically Lock/Unlock Doors"), tr("Automatically locks the doors when shifting into drive and unlocks them when shifting into park."), ""},
+    {"ClusterOffset", tr("Cluster Speed Offset"), tr("The cluster offset openpilot uses to try and match the speed displayed on the dash."), ""},
+    {"FrogsGoMoosTweak", tr("FrogsGoMoo's Personal Tweaks"), tr("FrogsGoMoo's personal tweaks for quicker acceleration and smoother braking."), ""},
+    {"LockDoorsTimer", tr("Lock Doors On Ignition Off After"), tr("Automatically locks the doors after the car's ignition has been turned off and no one is detected in either of the front seats."), ""},
+    {"SNGHack", tr("Stop and Go Hack"), tr("Forces stop and go for \"Toyota/Lexus\" vehicles without stock stop and go functionality."), ""},
   };
 
   for (const auto &[param, title, desc, icon] : vehicleToggles) {
