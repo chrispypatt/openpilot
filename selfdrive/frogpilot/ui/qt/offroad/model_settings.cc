@@ -164,6 +164,8 @@ FrogPilotModelPanel::FrogPilotModelPanel(FrogPilotSettingsWindow *parent) : Frog
               params_memory.put("ModelToDownload", modelFileToNameMap.key(modelToDownload).toStdString());
               params_memory.put("ModelDownloadProgress", "Downloading...");
 
+              downloadModelBtn->setText(0, tr("CANCEL"));
+
               downloadModelBtn->setValue("Downloading...");
 
               downloadModelBtn->setVisibleButton(1, false);
@@ -179,6 +181,8 @@ FrogPilotModelPanel::FrogPilotModelPanel(FrogPilotSettingsWindow *parent) : Frog
 
             params_memory.putBool("DownloadAllModels", true);
             params_memory.put("ModelDownloadProgress", "Downloading...");
+
+            downloadModelBtn->setText(1, tr("CANCEL"));
 
             downloadModelBtn->setValue("Downloading...");
 

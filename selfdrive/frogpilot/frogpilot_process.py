@@ -12,7 +12,7 @@ from openpilot.common.params import Params
 from openpilot.common.realtime import Priority, config_realtime_process
 from openpilot.common.time import system_time_valid
 
-from openpilot.selfdrive.frogpilot.assets.model_manager import ModelManager, MODEL_DOWNLOAD_PARAM
+from openpilot.selfdrive.frogpilot.assets.model_manager import ModelManager, MODEL_DOWNLOAD_ALL_PARAM, MODEL_DOWNLOAD_PARAM
 from openpilot.selfdrive.frogpilot.assets.theme_manager import ThemeManager
 from openpilot.selfdrive.frogpilot.controls.frogpilot_planner import FrogPilotPlanner
 from openpilot.selfdrive.frogpilot.controls.lib.frogpilot_tracking import FrogPilotTracking
@@ -21,7 +21,7 @@ from openpilot.selfdrive.frogpilot.frogpilot_utilities import flash_panda, is_ur
 from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, FrogPilotVariables, get_frogpilot_toggles, params, params_memory
 
 def assets_checks(model_manager, theme_manager):
-  if params_memory.get_bool("DownloadAllModels"):
+  if params_memory.get_bool(MODEL_DOWNLOAD_ALL_PARAM):
     run_thread_with_lock("download_all_models", model_manager.download_all_models)
 
   if params_memory.get_bool("FlashPanda"):

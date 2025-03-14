@@ -2,6 +2,7 @@
 import json
 import math
 import numpy as np
+import os
 import shutil
 import subprocess
 import threading
@@ -116,8 +117,15 @@ def extract_zip(zip_file, extract_path):
   print(f"Extraction completed: {zip_file} has been removed")
 
 def flash_panda():
-  HARDWARE.reset_internal_panda()
-  Panda().wait_for_panda(None, 30)
+  for serial in Panda.list():
+    try:
+      panda = Panda(serial)
+      panda.reset(enter_bootstub=True)
+      panda.flash()
+      panda.close()
+    except Exception as e:
+      print(f"Error flashing Panda {serial}: {e}")
+
   params_memory.remove("FlashPanda")
 
 def is_url_pingable(url, timeout=10):
@@ -164,12 +172,16 @@ def lock_doors(lock_doors_timer, sm):
     sm.update()
 
   panda = Panda()
-  panda.set_safety_mode(panda.SAFETY_ALLOUTPUT)
-  panda.can_send(0x750, LOCK_CMD, 0)
+
+  os.system("pkill -STOP -f pandad")
+
   panda.set_safety_mode(panda.SAFETY_TOYOTA)
+  panda.can_send(0x750, LOCK_CMD, 0)
   panda.send_heartbeat()
 
   params.remove("IsDriverViewEnabled")
+
+  os.system("pkill -CONT -f pandad")
 
 def run_cmd(cmd, success_message, fail_message, capture_output=True):
   try:

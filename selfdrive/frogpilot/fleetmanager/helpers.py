@@ -26,6 +26,7 @@ import math
 import os
 import requests
 import subprocess
+import traceback
 
 import openpilot.system.sentry as sentry
 
@@ -503,18 +504,104 @@ def capture_tmux_log():
     raise Exception(f"Error capturing tmux log: {e}")
 
 def lock_doors():
-  panda = Panda()
-  panda.set_safety_mode(panda.SAFETY_ALLOUTPUT)
-  panda.can_send(0x750, LOCK_CMD, 0)
-  panda.set_safety_mode(panda.SAFETY_TOYOTA)
-  panda.send_heartbeat()
+  try:
+    print("Attempting to lock doors...")
+
+    panda = Panda()
+    print(f"Panda connected: {panda.get_usb_serial()}")
+    print(f"Firmware Version: {panda.get_version()}")
+    print(f"Hardware Type: {panda.get_type()}")
+    initial_safety = panda.health()["safety_mode"]
+    print(f"Initial Safety Mode: {initial_safety}")
+
+    os.system("pkill -STOP -f pandad")
+
+    print("Setting safety mode to SAFETY_TOYOTA...")
+    panda.set_safety_mode(panda.SAFETY_TOYOTA)
+
+    new_safety = panda.health()["safety_mode"]
+    print(f"Safety Mode after change: {new_safety}")
+
+    if new_safety != panda.SAFETY_TOYOTA:
+      print("Failed to set SAFETY_TOYOTA! Aborting.")
+      return
+
+    can_health = panda.can_health(0)
+    print(f"CAN0 Health: {can_health}")
+
+    print(f"Sending CAN message to lock doors (ID=0x750, CMD={LOCK_CMD.hex()})...")
+    panda.can_send(0x750, LOCK_CMD, 0)
+
+    new_can_health = panda.can_health(0)
+    print(f"CAN0 Health after send: {new_can_health}")
+
+    final_safety = panda.health()["safety_mode"]
+    print(f"Final Safety Mode: {final_safety}")
+
+    print("Sending Panda heartbeat...")
+    panda.send_heartbeat()
+
+    print("Closing Panda connection.")
+    panda.close()
+
+    print("Lock doors operation completed successfully!")
+
+    print("Starting the pandad process...")
+    os.system("pkill -CONT -f pandad")
+
+  except Exception as error:
+    print(f"Error in lock_doors(): {error}")
+    print(traceback.format_exc())
 
 def unlock_doors():
-  panda = Panda()
-  panda.set_safety_mode(panda.SAFETY_ALLOUTPUT)
-  panda.can_send(0x750, UNLOCK_CMD, 0)
-  panda.set_safety_mode(panda.SAFETY_TOYOTA)
-  panda.send_heartbeat()
+  try:
+    print("Attempting to unlock doors...")
+
+    panda = Panda()
+    print(f"Panda connected: {panda.get_usb_serial()}")
+    print(f"Firmware Version: {panda.get_version()}")
+    print(f"Hardware Type: {panda.get_type()}")
+    initial_safety = panda.health()["safety_mode"]
+    print(f"Initial Safety Mode: {initial_safety}")
+
+    os.system("pkill -STOP -f pandad")
+
+    print("Setting safety mode to SAFETY_TOYOTA...")
+    panda.set_safety_mode(panda.SAFETY_TOYOTA)
+
+    new_safety = panda.health()["safety_mode"]
+    print(f"Safety Mode after change: {new_safety}")
+
+    if new_safety != panda.SAFETY_TOYOTA:
+      print("Failed to set SAFETY_TOYOTA! Aborting.")
+      return
+
+    can_health = panda.can_health(0)
+    print(f"CAN0 Health: {can_health}")
+
+    print(f"Sending CAN message to unlock doors (ID=0x750, CMD={UNLOCK_CMD.hex()})...")
+    panda.can_send(0x750, UNLOCK_CMD, 0)
+
+    new_can_health = panda.can_health(0)
+    print(f"CAN0 Health after send: {new_can_health}")
+
+    final_safety = panda.health()["safety_mode"]
+    print(f"Final Safety Mode: {final_safety}")
+
+    print("Sending Panda heartbeat...")
+    panda.send_heartbeat()
+
+    print("Closing Panda connection.")
+    panda.close()
+
+    print("Unlock doors operation completed successfully!")
+
+    print("Starting the pandad process...")
+    os.system("pkill -CONT -f pandad")
+
+  except Exception as error:
+    print(f"Error in unlock_doors(): {error}")
+    print(traceback.format_exc())
 
 def reboot_device():
   HARDWARE.reboot()

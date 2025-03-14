@@ -18,6 +18,7 @@ VERSION = "v13"
 CANCEL_DOWNLOAD_PARAM = "CancelModelDownload"
 DOWNLOAD_PROGRESS_PARAM = "ModelDownloadProgress"
 MODEL_DOWNLOAD_PARAM = "ModelToDownload"
+MODEL_DOWNLOAD_ALL_PARAM = "DownloadAllModels"
 
 class ModelManager:
   def __init__(self):
@@ -218,24 +219,21 @@ class ModelManager:
     if model_info:
       available_models = [model["id"] for model in model_info]
       available_model_names = [re.sub(r"[🗺️👀📡]", "", model["name"]).strip() for model in model_info]
+
       for model_id, model_name in zip(available_models, available_model_names):
-        model_files = list(MODELS_PATH.glob(f"{model_id}.*"))
-        if not model_files:
-          print(f"Model {model_id} does not exist. Preparing to download...")
-
-          if params_memory.get_bool(CANCEL_DOWNLOAD_PARAM):
-            handle_error(None, "Download cancelled...", "Download cancelled...", MODEL_DOWNLOAD_PARAM, DOWNLOAD_PROGRESS_PARAM, params_memory)
-            return
-
+        model_downloaded = list(MODELS_PATH.glob(f"{model_id}.*"))
+        if not model_downloaded:
+          print(f"Model {model_id} is not downloaded. Preparing to download...")
           self.queue_model_download(model_id, model_name)
 
       while not all(any(file.is_file() for file in MODELS_PATH.glob(f"{model}.*")) for model in available_models):
         if params_memory.get_bool(CANCEL_DOWNLOAD_PARAM):
+          handle_error(None, "Download cancelled...", "Download cancelled...", MODEL_DOWNLOAD_ALL_PARAM, DOWNLOAD_PROGRESS_PARAM, params_memory)
           handle_error(None, "Download cancelled...", "Download cancelled...", MODEL_DOWNLOAD_PARAM, DOWNLOAD_PROGRESS_PARAM, params_memory)
           return
         time.sleep(1)
 
       params_memory.put(DOWNLOAD_PROGRESS_PARAM, "All models downloaded!")
     else:
-      handle_error(None, "Unable to fetch models...", "Model list unavailable", MODEL_DOWNLOAD_PARAM, DOWNLOAD_PROGRESS_PARAM, params_memory)
+      handle_error(None, "Unable to fetch models...", "Model list unavailable", MODEL_DOWNLOAD_ALL_PARAM, DOWNLOAD_PROGRESS_PARAM, params_memory)
       return

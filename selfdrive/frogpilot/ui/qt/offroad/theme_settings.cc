@@ -249,7 +249,7 @@ FrogPilotThemesPanel::FrogPilotThemesPanel(FrogPilotSettingsWindow *parent) : Fr
 
             params_memory.putBool("CancelThemeDownload", true);
 
-            updateAssetParam("DownloadableIcons", params, colorSchemeToDownload, true);
+            updateAssetParam("DownloadableIcons", params, iconPackToDownload, true);
 
             QTimer::singleShot(2500, [this]() {
               cancellingDownload = false;
@@ -300,7 +300,7 @@ FrogPilotThemesPanel::FrogPilotThemesPanel(FrogPilotSettingsWindow *parent) : Fr
 
             params_memory.putBool("CancelThemeDownload", true);
 
-            updateAssetParam("DownloadableSignals", params, colorSchemeToDownload, true);
+            updateAssetParam("DownloadableSignals", params, signalAnimationToDownload, true);
 
             QTimer::singleShot(2500, [this]() {
               cancellingDownload = false;
@@ -351,7 +351,7 @@ FrogPilotThemesPanel::FrogPilotThemesPanel(FrogPilotSettingsWindow *parent) : Fr
 
             params_memory.putBool("CancelThemeDownload", true);
 
-            updateAssetParam("DownloadableSounds", params, colorSchemeToDownload, true);
+            updateAssetParam("DownloadableSounds", params, soundPackToDownload, true);
 
             QTimer::singleShot(2500, [this]() {
               cancellingDownload = false;
@@ -402,7 +402,7 @@ FrogPilotThemesPanel::FrogPilotThemesPanel(FrogPilotSettingsWindow *parent) : Fr
 
             params_memory.putBool("CancelThemeDownload", true);
 
-            updateAssetParam("DownloadableWheels", params, colorSchemeToDownload, true);
+            updateAssetParam("DownloadableWheels", params, wheelToDownload, true);
 
             QTimer::singleShot(2500, [this]() {
               cancellingDownload = false;
