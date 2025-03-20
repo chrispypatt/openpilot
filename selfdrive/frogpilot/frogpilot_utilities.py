@@ -2,18 +2,18 @@
 import json
 import math
 import numpy as np
-import os
+import requests
 import shutil
 import subprocess
 import threading
 import time
+import urllib.error
 import urllib.request
 import zipfile
 
 import openpilot.system.sentry as sentry
 
 from pathlib import Path
-from urllib.error import HTTPError
 
 from cereal import log
 from openpilot.common.realtime import DT_DMON, DT_HW
@@ -39,19 +39,20 @@ locks = {
   "update_themes": threading.Lock()
 }
 
-def run_thread_with_lock(name, target, args=()):
+def run_thread_with_lock(name, target, args=(), report=True):
   if not running_threads.get(name, threading.Thread()).is_alive():
     with locks[name]:
       def wrapped_target(*t_args):
         try:
           target(*t_args)
-        except HTTPError as error:
-          print(f"HTTP error while accessing {api_url}: {error}")
+        except urllib.error.HTTPError as error:
+          print(f"HTTP error: {error}")
         except subprocess.CalledProcessError as error:
           print(f"CalledProcessError in thread '{name}': {error}")
         except Exception as error:
           print(f"Error in thread '{name}': {error}")
-          sentry.capture_exception(error)
+          if report:
+            sentry.capture_exception(error)
       thread = threading.Thread(target=wrapped_target, args=args, daemon=True)
       thread.start()
       running_threads[name] = thread
@@ -123,26 +124,29 @@ def flash_panda():
       panda.reset(enter_bootstub=True)
       panda.flash()
       panda.close()
-    except Exception as e:
-      print(f"Error flashing Panda {serial}: {e}")
+    except Exception as error:
+      print(f"Error flashing Panda {serial}: {error}")
+      sentry.capture_exception(error)
 
   params_memory.remove("FlashPanda")
 
 def is_url_pingable(url, timeout=10):
   try:
-    request = urllib.request.Request(
-      url,
-      headers={
-        "User-Agent": "Mozilla/5.0 (compatible; Python urllib)",
-        "Accept": "*/*",
-        "Connection": "keep-alive"
-      }
-    )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-      return response.status == 200
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers, timeout=timeout)
+    return response.status_code < 400
+  except requests.ConnectionError:
+    print(f"ConnectionError while pinging {url}")
+  except requests.HTTPError:
+    print(f"HTTPError while fetching from {url}")
+  except requests.RequestException:
+    print(f"RequestException while pinging {url}")
+  except requests.Timeout:
+    print(f"Timeout while pinging {url}")
   except Exception as error:
-    print(f"Unexpected error when pinging {url}: {error}")
-    return False
+    sentry.capture_exception(error)
+    print(f"Unexpected error while pinging {url}: {error}")
+  return False
 
 def lock_doors(lock_doors_timer, sm):
   while any(proc.name == "dmonitoringd" and proc.running for proc in sm["managerState"].processes):
@@ -172,30 +176,27 @@ def lock_doors(lock_doors_timer, sm):
     sm.update()
 
   panda = Panda()
-
-  os.system("pkill -STOP -f pandad")
-
   panda.set_safety_mode(panda.SAFETY_TOYOTA)
   panda.can_send(0x750, LOCK_CMD, 0)
   panda.send_heartbeat()
 
   params.remove("IsDriverViewEnabled")
 
-  os.system("pkill -CONT -f pandad")
-
-def run_cmd(cmd, success_message, fail_message, capture_output=True):
+def run_cmd(cmd, success_message, fail_message, report=True):
   try:
-    subprocess.run(cmd, capture_output=capture_output, text=capture_output, check=True)
+    subprocess.run(cmd, capture_output=True, text=True, check=True)
     print(success_message)
   except subprocess.CalledProcessError as error:
     print(f"Command failed with return code {error.returncode}")
     if error.stderr:
       print(f"Error Output: {error.stderr.strip()}")
-    sentry.capture_exception(error)
+    if report:
+      sentry.capture_exception(error)
   except Exception as error:
     print(f"Unexpected error occurred: {error}")
     print(fail_message)
-    sentry.capture_exception(error)
+    if report:
+      sentry.capture_exception(error)
 
 def update_maps(now):
   while not MAPD_PATH.exists():

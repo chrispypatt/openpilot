@@ -339,7 +339,7 @@ FrogPilotLongitudinalPanel::FrogPilotLongitudinalPanel(FrogPilotSettingsWindow *
         QStringList selectedPriorities;
 
         for (int i = 1; i <= 3; ++i) {
-          QStringList availablePriorities = (i == 1) ? primaryPriorities : otherPriorities;
+          QStringList availablePriorities = i == 1 ? primaryPriorities : otherPriorities;
           availablePriorities = availablePriorities.toSet().subtract(selectedPriorities.toSet()).toList();
 
           if (!hasDashSpeedLimits) {
@@ -354,9 +354,9 @@ FrogPilotLongitudinalPanel::FrogPilotLongitudinalPanel(FrogPilotSettingsWindow *
             break;
           }
 
-          params.put(QString("SLCPriority%1").arg(i).toStdString(), selection.toStdString());
           selectedPriorities.append(selection);
 
+          params.put(QString("SLCPriority%1").arg(i).toStdString(), selection.toStdString());
           if (selection == tr("None")) {
             for (int j = i + 1; j <= 3; ++j) {
               params.put(QString("SLCPriority%1").arg(j).toStdString(), tr("None").toStdString());
@@ -370,17 +370,20 @@ FrogPilotLongitudinalPanel::FrogPilotLongitudinalPanel(FrogPilotSettingsWindow *
         }
 
         selectedPriorities.removeAll(tr("None"));
-        slcPriorityButton->setValue(selectedPriorities.join(", "));
+        if (!selectedPriorities.isEmpty()) {
+          slcPriorityButton->setValue(selectedPriorities.join(", "));
+        }
       });
 
-      QStringList initialPriorities;
+      QStringList selectedPriorities;
       for (int i = 1; i <= 3; ++i) {
         QString priority = QString::fromStdString(params.get(QString("SLCPriority%1").arg(i).toStdString()));
-        if (!priority.isEmpty() && priority != tr("None") && primaryPriorities.contains(priority)) {
-          initialPriorities.append(priority);
+        if (primaryPriorities.contains(priority)) {
+          selectedPriorities.append(priority);
         }
       }
-      slcPriorityButton->setValue(initialPriorities.join(", "));
+      slcPriorityButton->setValue(selectedPriorities.join(", "));
+
       longitudinalToggle = slcPriorityButton;
     } else if (param == "SLCOffsets") {
       ButtonControl *manageSLCOffsetsBtn = new ButtonControl(title, tr("MANAGE"), desc);

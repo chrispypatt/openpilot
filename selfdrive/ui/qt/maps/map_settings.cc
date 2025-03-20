@@ -141,11 +141,9 @@ void MapSettings::refresh() {
 
   setUpdatesEnabled(true);
 
-  // Use IP for NOO without Prime
-  if (!uiState()->hasPrime()) {
-    QString ipAddress = QString("%1:8082").arg(wifi->getIp4Address());
-    subtitle->setText(tr("Manage at %1").arg(ipAddress));
-  }
+  // Use IP for NOO
+  QString ipAddress = QString("%1:8082").arg(wifi->getIp4Address());
+  subtitle->setText(tr("Manage at %1").arg(ipAddress));
 }
 
 void MapSettings::navigateTo(const QJsonObject &place) {

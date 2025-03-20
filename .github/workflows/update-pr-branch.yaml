@@ -23,7 +23,6 @@ jobs:
       - name: Identify the 'Compile FrogPilot' commit
         id: find_parent
         run: |
-          set -e
           COMMIT=$(git rev-list HEAD -n 1 --grep="Compile FrogPilot")
           if [ -z "$COMMIT" ]; then
             echo "Commit with message 'Compile FrogPilot' not found." >&2
@@ -43,13 +42,11 @@ jobs:
 
       - name: Checkout MAKE-PRS-HERE Branch
         run: |
-          set -e
           git fetch origin ${{ env.TARGET_BRANCH }}
           git checkout ${{ env.TARGET_BRANCH }}
 
       - name: Clean MAKE-PRS-HERE and Update Files
         run: |
-          set -e
           git rm -r --ignore-unmatch .
           git clean -fdx
 
@@ -67,19 +64,17 @@ jobs:
 
       - name: Set Git Username and Email
         run: |
-          set -e
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: Commit and Push Changes
         run: |
-          set -e
           TZ_VALUE="America/Phoenix"
           current_day=$(TZ="$TZ_VALUE" date +"%-d")
           month=$(TZ="$TZ_VALUE" date +"%B")
           year=$(TZ="$TZ_VALUE" date +"%Y")
 
-          if [ "$current_day" -eq 11 ] || [ "$current_day" -eq 12 ] || [ "$current_day" -eq 13 ]; then
+          if [[ "$current_day" =~ ^1[123]$ ]]; then
             suffix="th"
           else
             case $(($current_day % 10)) in

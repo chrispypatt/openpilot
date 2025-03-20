@@ -156,7 +156,7 @@ FrogPilotVehiclesPanel::FrogPilotVehiclesPanel(FrogPilotSettingsWindow *parent) 
     {"ToyotaToggles", tr("Toyota/Lexus Toggles"), tr("Toggles catered towards \"Toyota/Lexus\" vehicles."), ""},
     {"ToyotaDoors", tr("Automatically Lock/Unlock Doors"), tr("Automatically locks the doors when shifting into drive and unlocks them when shifting into park."), ""},
     {"ClusterOffset", tr("Cluster Speed Offset"), tr("The cluster offset openpilot uses to try and match the speed displayed on the dash."), ""},
-    {"FrogsGoMoosTweak", tr("FrogsGoMoo's Personal Tweaks"), tr("FrogsGoMoo's personal tweaks for quicker acceleration and smoother braking."), ""},
+    {"FrogsGoMoosTweak", tr("FrogsGoMoo's Personal Tweaks"), tr("FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking."), ""},
     {"LockDoorsTimer", tr("Lock Doors On Ignition Off After"), tr("Automatically locks the doors after the car's ignition has been turned off and no one is detected in either of the front seats."), ""},
     {"SNGHack", tr("Stop and Go Hack"), tr("Forces stop and go for \"Toyota/Lexus\" vehicles without stock stop and go functionality."), ""},
   };
@@ -221,6 +221,10 @@ FrogPilotVehiclesPanel::FrogPilotVehiclesPanel(FrogPilotSettingsWindow *parent) 
     } else {
       settingsList->addItem(vehicleToggle);
     }
+
+    QObject::connect(vehicleToggle, &AbstractControl::showDescriptionEvent, [this]() {
+      update();
+    });
   }
 
   ScrollView *settingsPanel = new ScrollView(settingsList, this);

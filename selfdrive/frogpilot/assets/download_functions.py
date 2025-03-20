@@ -35,6 +35,7 @@ def download_file(cancel_param, destination, progress_param, url, download_param
 
     total_size = get_remote_file_size(url)
     if total_size == 0:
+      handle_error(None, "Download invalid...", "Download invalid...", download_param, progress_param, params_memory)
       return
 
     with requests.get(url, stream=True, timeout=10) as response:
@@ -65,6 +66,23 @@ def download_file(cancel_param, destination, progress_param, url, download_param
   except Exception as error:
     handle_request_error(error, destination, download_param, progress_param, params_memory)
 
+def get_remote_file_size(url):
+  try:
+    response = requests.head(url, headers={"Accept-Encoding": "identity"}, timeout=10)
+    response.raise_for_status()
+    return int(response.headers.get("Content-Length", 0))
+  except Exception as error:
+    handle_request_error(error, None, None, None, None)
+    return 0
+
+def get_repository_url():
+  if is_url_pingable("https://github.com"):
+    if check_github_rate_limit():
+      return GITHUB_URL
+  if is_url_pingable("https://gitlab.com"):
+    return GITLAB_URL
+  return None
+
 def handle_error(destination, error_message, error, download_param, progress_param, params_memory):
   if destination:
     delete_file(destination)
@@ -84,23 +102,6 @@ def handle_request_error(error, destination, download_param, progress_param, par
 
   error_message = error_map.get(type(error), "Unexpected error")
   handle_error(destination, f"Failed: {error_message}", error, download_param, progress_param, params_memory)
-
-def get_remote_file_size(url):
-  try:
-    response = requests.head(url, headers={"Accept-Encoding": "identity"}, timeout=10)
-    response.raise_for_status()
-    return int(response.headers.get("Content-Length", 0))
-  except Exception as error:
-    handle_request_error(error, None, None, None, None)
-    return 0
-
-def get_repository_url():
-  if is_url_pingable("https://github.com"):
-    if check_github_rate_limit():
-      return GITHUB_URL
-  if is_url_pingable("https://gitlab.com"):
-    return GITLAB_URL
-  return None
 
 def verify_download(file_path, url):
   remote_file_size = get_remote_file_size(url)

@@ -5,8 +5,6 @@ import time
 
 import openpilot.system.sentry as sentry
 
-from pathlib import Path
-
 from cereal import messaging
 from openpilot.common.params import Params
 from openpilot.common.realtime import Priority, config_realtime_process
@@ -28,7 +26,7 @@ def assets_checks(model_manager, theme_manager):
     run_thread_with_lock("flash_panda", flash_panda)
 
   model_to_download = params_memory.get(MODEL_DOWNLOAD_PARAM, encoding="utf-8")
-  if model_to_download is not None:
+  if model_to_download:
     run_thread_with_lock("download_model", model_manager.download_model, (model_to_download,))
 
   report_data = json.loads(params_memory.get("IssueReported", encoding="utf-8") or "{}")
@@ -47,7 +45,7 @@ def assets_checks(model_manager, theme_manager):
 
   for param, asset_type in assets:
     asset_to_download = params_memory.get(param, encoding="utf-8")
-    if asset_to_download is not None:
+    if asset_to_download:
       run_thread_with_lock("download_theme", theme_manager.download_theme, (asset_type, asset_to_download, param))
 
 def update_checks(manually_updated, model_manager, now, theme_manager, frogpilot_toggles, boot_run=False):
@@ -107,7 +105,7 @@ def frogpilot_thread():
       theme_updated = theme_manager.update_active_theme(time_validated, frogpilot_toggles)
 
       if time_validated:
-        run_thread_with_lock("backup_toggles", backup_toggles, (params_cache,))
+        run_thread_with_lock("backup_toggles", backup_toggles, (params_cache,), report=False)
 
       toggles_last_updated = now
     toggles_updated = (now - toggles_last_updated).total_seconds() <= 1
@@ -121,7 +119,7 @@ def frogpilot_thread():
       frogpilot_variables.update(theme_manager.theme_assets["holiday_theme"], started)
       frogpilot_toggles = get_frogpilot_toggles()
 
-      if frogpilot_toggles.lock_doors_timer != 0:
+      if frogpilot_toggles.lock_doors_timer:
         run_thread_with_lock("lock_doors", lock_doors, (frogpilot_toggles.lock_doors_timer, sm))
     elif started and not started_previously:
       radarless_model = frogpilot_toggles.radarless_model

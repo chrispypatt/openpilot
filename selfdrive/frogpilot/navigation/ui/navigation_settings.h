@@ -2,11 +2,11 @@
 
 #include "selfdrive/frogpilot/ui/qt/offroad/frogpilot_settings.h"
 
-class FrogPilotPrimelessPanel : public FrogPilotListWidget {
+class FrogPilotNavigationPanel : public FrogPilotListWidget {
   Q_OBJECT
 
 public:
-  explicit FrogPilotPrimelessPanel(FrogPilotSettingsWindow *parent);
+  explicit FrogPilotNavigationPanel(FrogPilotSettingsWindow *parent);
 
 signals:
   void closeMapBoxInstructions();

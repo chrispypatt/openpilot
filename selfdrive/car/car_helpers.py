@@ -186,14 +186,11 @@ def get_car_interface(CP):
 
 
 def get_car(logcan, sendcan, disable_openpilot_long, experimental_long_allowed, params, num_pandas=1, frogpilot_toggles=None):
-  car_model = params.get("CarModel", encoding='utf-8')
-  force_fingerprint = params.get_bool("ForceFingerprint")
-
   candidate, fingerprints, vin, car_fw, source, exact_match = fingerprint(logcan, sendcan, num_pandas)
 
-  if candidate is None or force_fingerprint:
-    if car_model is not None:
-      candidate = car_model
+  if candidate is None or frogpilot_toggles.force_fingerprint:
+    if frogpilot_toggles.car_model is not None:
+      candidate = frogpilot_toggles.car_model
     else:
       cloudlog.event("car doesn't match any fingerprints", fingerprints=repr(fingerprints), error=True)
       candidate = "MOCK"

@@ -1,6 +1,6 @@
-#include "selfdrive/frogpilot/navigation/ui/primeless_settings.h"
+#include "selfdrive/frogpilot/navigation/ui/navigation_settings.h"
 
-void FrogPilotPrimelessPanel::createMapboxKeyControl(ButtonControl *&control, const QString &label, const std::string &paramKey, const QString &prefix, FrogPilotListWidget *list) {
+void FrogPilotNavigationPanel::createMapboxKeyControl(ButtonControl *&control, const QString &label, const std::string &paramKey, const QString &prefix, FrogPilotListWidget *list) {
   control = new ButtonControl(label, "", tr("Manage your %1.").arg(label));
   QObject::connect(control, &ButtonControl::clicked, [=] {
     if (control->text() == tr("ADD")) {
@@ -29,7 +29,7 @@ void FrogPilotPrimelessPanel::createMapboxKeyControl(ButtonControl *&control, co
   list->addItem(control);
 }
 
-FrogPilotPrimelessPanel::FrogPilotPrimelessPanel(FrogPilotSettingsWindow *parent) : FrogPilotListWidget(parent), parent(parent) {
+FrogPilotNavigationPanel::FrogPilotNavigationPanel(FrogPilotSettingsWindow *parent) : FrogPilotListWidget(parent), parent(parent) {
   QVBoxLayout *mainLayout = new QVBoxLayout();
   addItem(mainLayout);
 
@@ -51,9 +51,6 @@ FrogPilotPrimelessPanel::FrogPilotPrimelessPanel(FrogPilotSettingsWindow *parent
     amapKeyControl2->setVisible(id == 1);
 
     googleKeyControl->setVisible(id == 2);
-
-    publicMapboxKeyControl->setVisible(id == 0);
-    secretMapboxKeyControl->setVisible(id == 0);
 
     params.putInt("SearchInput", id);
     update();
@@ -147,10 +144,10 @@ FrogPilotPrimelessPanel::FrogPilotPrimelessPanel(FrogPilotSettingsWindow *parent
   primelessLayout->addWidget(instructionsPanel);
 
   QObject::connect(parent, &FrogPilotSettingsWindow::closeMapBoxInstructions, [this] {primelessLayout->setCurrentIndex(0);});
-  QObject::connect(uiState(), &UIState::uiUpdate, this, &FrogPilotPrimelessPanel::updateState);
+  QObject::connect(uiState(), &UIState::uiUpdate, this, &FrogPilotNavigationPanel::updateState);
 }
 
-void FrogPilotPrimelessPanel::showEvent(QShowEvent *event) {
+void FrogPilotNavigationPanel::showEvent(QShowEvent *event) {
   QString ipAddress = uiState()->wifi->getIp4Address();
   ipLabel->setText(ipAddress.isEmpty() ? tr("Device Offline") : QString("%1:8082").arg(ipAddress));
 
@@ -164,23 +161,20 @@ void FrogPilotPrimelessPanel::showEvent(QShowEvent *event) {
   amapKeyControl2->setVisible(searchInput == 1);
 
   googleKeyControl->setVisible(searchInput == 2);
-
-  publicMapboxKeyControl->setVisible(searchInput == 0);
-  secretMapboxKeyControl->setVisible(searchInput == 0);
 }
 
-void FrogPilotPrimelessPanel::hideEvent(QHideEvent *event) {
+void FrogPilotNavigationPanel::hideEvent(QHideEvent *event) {
   primelessLayout->setCurrentIndex(0);
 }
 
-void FrogPilotPrimelessPanel::mousePressEvent(QMouseEvent *event) {
+void FrogPilotNavigationPanel::mousePressEvent(QMouseEvent *event) {
   if (primelessLayout->currentIndex() == 1) {
     closeMapBoxInstructions();
     primelessLayout->setCurrentIndex(0);
   }
 }
 
-void FrogPilotPrimelessPanel::updateButtons() {
+void FrogPilotNavigationPanel::updateButtons() {
   amapKeyControl1->setText(QString::fromStdString(params.get("AMapKey1")) != "0" ? tr("REMOVE") : tr("ADD"));
   amapKeyControl2->setText(QString::fromStdString(params.get("AMapKey2")) != "0" ? tr("REMOVE") : tr("ADD"));
 
@@ -193,7 +187,7 @@ void FrogPilotPrimelessPanel::updateButtons() {
   secretMapboxKeyControl->setText(mapboxSecretKeySet ? tr("REMOVE") : tr("ADD"));
 }
 
-void FrogPilotPrimelessPanel::updateState(const UIState &s) {
+void FrogPilotNavigationPanel::updateState(const UIState &s) {
   if (!isVisible() || s.sm->frame % (UI_FREQ / 2) != 0) {
     return;
   }
@@ -204,7 +198,7 @@ void FrogPilotPrimelessPanel::updateState(const UIState &s) {
   parent->keepScreenOn = primelessLayout->currentIndex() == 1;
 }
 
-void FrogPilotPrimelessPanel::updateStep() {
+void FrogPilotNavigationPanel::updateStep() {
   QString currentStep;
   if (setupCompleted) {
     currentStep = "../frogpilot/navigation/navigation_training/setup_completed.png";

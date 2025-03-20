@@ -7,9 +7,10 @@ from typing import Any
 
 import capnp
 from cereal import messaging, log, car
+from openpilot.common.filter_simple import FirstOrderFilter
 from openpilot.common.numpy_fast import interp
 from openpilot.common.params import Params
-from openpilot.common.realtime import DT_CTRL, Ratekeeper, Priority, config_realtime_process
+from openpilot.common.realtime import DT_CTRL, DT_MDL, Ratekeeper, Priority, config_realtime_process
 from openpilot.common.swaglog import cloudlog
 
 from openpilot.common.simple_kalman import KF1D
@@ -55,7 +56,7 @@ class Track:
   def __init__(self, identifier: int, v_lead: float, kalman_params: KalmanParams):
     self.identifier = identifier
     self.cnt = 0
-    self.aLeadTau = _LEAD_ACCEL_TAU
+    self.aLeadTau = FirstOrderFilter(_LEAD_ACCEL_TAU, 0.45, DT_MDL)
     self.K_A = kalman_params.A
     self.K_C = kalman_params.C
     self.K_K = kalman_params.K
@@ -78,20 +79,11 @@ class Track:
 
     # Learn if constant acceleration
     if abs(self.aLeadK) < 0.5:
-      self.aLeadTau = _LEAD_ACCEL_TAU
+      self.aLeadTau.x = _LEAD_ACCEL_TAU
     else:
-      self.aLeadTau *= 0.9
+      self.aLeadTau.update(0.0)
 
     self.cnt += 1
-
-  def get_key_for_cluster(self):
-    # Weigh y higher since radar is inaccurate in this dimension
-    return [self.dRel, self.yRel*2, self.vRel]
-
-  def reset_a_lead(self, aLeadK: float, aLeadTau: float):
-    self.kf = KF1D([[self.vLead], [aLeadK]], self.K_A, self.K_C, self.K_K)
-    self.aLeadK = aLeadK
-    self.aLeadTau = aLeadTau
 
   def get_RadarState(self, model_prob: float = 0.0):
     return {
@@ -101,7 +93,7 @@ class Track:
       "vLead": float(self.vLead),
       "vLeadK": float(self.vLeadK),
       "aLeadK": float(self.aLeadK),
-      "aLeadTau": float(self.aLeadTau),
+      "aLeadTau": float(self.aLeadTau.x),
       "status": True,
       "fcw": self.is_potential_fcw(model_prob),
       "modelProb": model_prob,
@@ -123,13 +115,14 @@ class Track:
       return lead_y > right_lane
 
   def potential_far_lead(self, standstill: bool, model_data: capnp._DynamicStructReader):
-    if standstill or self.vLeadK < 1:
+    if standstill or self.vLeadK < 1 or abs(self.yRel) > 1:
       return False
 
     lead_y = self.yRel + interp(self.dRel, model_data.position.x, model_data.position.y)
 
     left_lane = interp(self.dRel, model_data.laneLines[1].x, model_data.laneLines[1].y)
     right_lane = interp(self.dRel, model_data.laneLines[2].x, model_data.laneLines[2].y)
+
     return left_lane < lead_y < right_lane
 
   def potential_low_speed_lead(self, v_ego: float):

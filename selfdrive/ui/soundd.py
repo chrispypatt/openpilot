@@ -14,7 +14,7 @@ from openpilot.common.swaglog import cloudlog
 
 from openpilot.system import micd
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import ACTIVE_THEME_PATH, CRASHES_DIR, RANDOM_EVENTS_PATH, get_frogpilot_toggles, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ACTIVE_THEME_PATH, CRASHES_DIR, RANDOM_EVENTS_PATH, get_frogpilot_toggles
 
 SAMPLE_RATE = 48000
 SAMPLE_BUFFER = 4096 # (approx 100ms)
@@ -84,6 +84,7 @@ class Soundd:
     self.frogpilot_toggles = get_frogpilot_toggles()
 
     self.openpilot_crashed_played = False
+    self.restart_stream = False
 
     self.auto_volume = 0
 
@@ -206,7 +207,7 @@ class Soundd:
       rk = Ratekeeper(20)
 
       cloudlog.info(f"soundd stream started: {stream.samplerate=} {stream.channels=} {stream.dtype=} {stream.device=}, {stream.blocksize=}")
-      while not params_memory.get_bool("TestingSound"):
+      while True:
         sm.update(0)
 
         if sm.updated['microphone'] and self.current_alert == AudibleAlert.none: # only update volume filter when not playing alert
@@ -237,6 +238,13 @@ class Soundd:
           self.frogpilot_toggles = get_frogpilot_toggles()
           self.update_frogpilot_sounds()
 
+        if self.restart_stream:
+          stream.close()
+          stream = self.get_stream(sd)
+          stream.start()
+
+          self.restart_stream = False
+
   def update_frogpilot_sounds(self):
     self.volume_map = {
       AudibleAlert.engage: self.frogpilot_toggles.engage_volume,
@@ -260,7 +268,10 @@ class Soundd:
 
     if self.frogpilot_toggles.sound_pack != self.previous_sound_pack:
       self.load_sounds()
+
       self.previous_sound_pack = self.frogpilot_toggles.sound_pack
+
+      self.restart_stream = True
 
 def main():
   s = Soundd()

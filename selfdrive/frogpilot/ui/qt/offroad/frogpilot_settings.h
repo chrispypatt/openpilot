@@ -61,7 +61,6 @@ private:
   bool panelOpen;
 
   FrogPilotButtonsControl *drivingPanelButtons;
-  FrogPilotButtonsControl *navigationPanelButtons;
   FrogPilotButtonsControl *systemPanelButtons;
 
   Params params;

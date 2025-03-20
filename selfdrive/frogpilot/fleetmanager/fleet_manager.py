@@ -36,8 +36,6 @@ from openpilot.common.realtime import set_core_affinity
 from openpilot.common.swaglog import cloudlog
 from openpilot.system.hardware.hw import Paths
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import has_prime
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -189,9 +187,6 @@ def addr_input():
     if valid_addr:
       return redirect(url_for('nav_confirmation', addr=addr, lon=lon, lat=lat))
     return render_template("error.html")
-
-  if has_prime():
-    return render_template("prime.html")
 
   if search_input == 0:
     if fleet.get_public_token() is None:

@@ -3,8 +3,6 @@
 #include "selfdrive/frogpilot/ui/qt/offroad/sounds_settings.h"
 
 void playSound(const std::string &alert, int volume) {
-  Params params_memory{"/dev/shm/params"};
-
   std::string stockPath = "/data/openpilot/selfdrive/assets/sounds/" + alert + ".wav";
   std::string themePath = "/data/openpilot/selfdrive/frogpilot/assets/active_theme/sounds/" + alert + ".wav";
 
@@ -17,15 +15,9 @@ void playSound(const std::string &alert, int volume) {
     return;
   }
 
-  params_memory.putBool("TestingSound", true);
-
   std::system("pkill -f 'ffplay'");
 
-  volume = std::clamp(volume, 0, 100);
-  std::string command = "ffplay -nodisp -autoexit -volume " + std::to_string(volume) + " \"" + filePath + "\"";
-  std::system(command.c_str());
-
-  params_memory.putBool("TestingSound", false);
+  std::system(("ffplay -nodisp -autoexit -volume " + std::to_string(std::clamp(volume, 0, 100)) + " \"" + filePath + "\"").c_str());
 }
 
 FrogPilotSoundsPanel::FrogPilotSoundsPanel(FrogPilotSettingsWindow *parent) : FrogPilotListWidget(parent), parent(parent) {
@@ -100,8 +92,14 @@ FrogPilotSoundsPanel::FrogPilotSoundsPanel(FrogPilotSettingsWindow *parent) : Fr
   for (const QString &key : alertVolumeControlKeys) {
     FrogPilotParamValueButtonControl *toggle = static_cast<FrogPilotParamValueButtonControl*>(toggles[key]);
     QObject::connect(toggle, &FrogPilotParamValueButtonControl::buttonClicked, [this, key]() {
+      if (started) {
+        ConfirmationDialog::alert(tr("Your car needs to be off before testing sounds."), this);
+        return;
+      }
+
       QString alertKey = key;
       alertKey.remove("Volume");
+
       QString snakeCaseKey;
       for (int i = 0; i < alertKey.size(); ++i) {
         QChar c = alertKey[i];
@@ -118,6 +116,7 @@ FrogPilotSoundsPanel::FrogPilotSoundsPanel(FrogPilotSettingsWindow *parent) : Fr
   }
 
   QObject::connect(parent, &FrogPilotSettingsWindow::closeParentToggle, this, &FrogPilotSoundsPanel::hideToggles);
+  QObject::connect(uiState(), &UIState::uiUpdate, this, &FrogPilotSoundsPanel::updateState);
 }
 
 void FrogPilotSoundsPanel::showEvent(QShowEvent *event) {
@@ -127,6 +126,14 @@ void FrogPilotSoundsPanel::showEvent(QShowEvent *event) {
   tuningLevel = parent->tuningLevel;
 
   hideToggles();
+}
+
+void FrogPilotSoundsPanel::updateState(const UIState &s) {
+  if (!isVisible()) {
+    return;
+  }
+
+  started = s.scene.started;
 }
 
 void FrogPilotSoundsPanel::showToggles(const std::set<QString> &keys) {

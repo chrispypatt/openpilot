@@ -190,7 +190,7 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
     p.drawText(set_speed_rect.adjusted(0, 77, 0, 0), Qt::AlignTop | Qt::AlignHCenter, setSpeedStr);
   }
 
-  if (!speedLimitChanged && is_cruise_set && (setSpeed - mtscSpeed > 1 || setSpeed - vtscSpeed > 1) && !hideCSCUI) {
+  if (!speedLimitChanged && !hideCSCUI) {
     std::function<void(const QRect&, const QString&, bool)> drawCurveSpeedControl = [&](const QRect &rect, const QString &speedStr, bool isMtsc) {
       if (isMtsc && !vtscControllingCurve) {
         p.setPen(QPen(greenColor(), 10));
@@ -260,7 +260,7 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
     }
     p.restore();
 
-    if (speedLimitChanged && !(setSpeed - mtscSpeed > 1 || setSpeed - vtscSpeed > 1)) {
+    if (speedLimitChanged && hideCSCUI) {
       QRect new_sign_rect(sign_rect.translated(sign_rect.width() + 25, 0));
       new_sign_rect.setWidth(newSpeedLimitStr.size() >= 3 ? 200 : 175);
 
@@ -476,15 +476,8 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
   if (experimentalMode || scene.acceleration_path || scene.rainbow_path) {
     // The first half of track_vertices are the points for the right side of the path
     // and the indices match the positions of accel from uiPlan
-    const auto &acceleration_const = sm["uiPlan"].getUiPlan().getAccel();
-    const int max_len = std::min<int>(scene.track_vertices.length() / 2, acceleration_const.size());
-
-    // Copy of the acceleration vector
-    std::vector<float> acceleration;
-    acceleration.reserve(acceleration_const.size());
-    for (size_t i = 0; i < acceleration_const.size(); ++i) {
-      acceleration.push_back(acceleration_const[i]);
-    }
+    const auto &acceleration = sm["modelV2"].getModelV2().getAcceleration().getX();
+    const int max_len = std::min<int>(scene.track_vertices.length() / 2, acceleration.size());
 
     const float hue_shift_speed = 0.5; // Adjust this value to control the speed of the rainbow scroll
     static float hue_base = 0.0; // Base hue that changes over time
@@ -547,7 +540,7 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
   painter.setBrush(bg);
   painter.drawPolygon(scene.track_vertices);
 
-  if (scene.show_stopping_point && scene.red_light && speed > 1) {
+  if (scene.show_stopping_point && scene.red_light && scene.track_vertices.length() > 1) {
     QPointF center_point = (scene.track_vertices.first() + scene.track_vertices.last()) / 2.0;
     QPointF adjusted_point = center_point - QPointF(stopSignImg.width() / 2, stopSignImg.height());
     painter.drawPixmap(adjusted_point, stopSignImg);
@@ -1045,7 +1038,7 @@ void AnnotatedCameraWidget::updateFrogPilotVariables(int alert_height, const UIS
 
   experimentalMode = scene.experimental_mode;
 
-  hideCSCUI = scene.hide_csc_ui;
+  hideCSCUI = scene.hide_csc_ui || scene.accel_pressed || !(setSpeed - mtscSpeed > 1 || setSpeed - vtscSpeed > 1) || !is_cruise_set;
   hideMapIcon = scene.hide_map_icon;
   hideMaxSpeed = scene.hide_max_speed;
   hideSpeed = scene.hide_speed;

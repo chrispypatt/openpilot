@@ -48,7 +48,7 @@ qt_src = ["main.cc", "qt/sidebar.cc", "qt/body.cc",
           "qt/onroad/buttons.cc", "qt/onroad/alerts.cc"]
 
 frogpilot_src = ["../frogpilot/navigation/ui/maps_settings.cc", "../frogpilot/navigation/ui/navigation_functions.cc",
-                 "../frogpilot/navigation/ui/primeless_settings.cc", "../frogpilot/screenrecorder/omx_encoder.cc",
+                 "../frogpilot/navigation/ui/navigation_settings.cc", "../frogpilot/screenrecorder/omx_encoder.cc",
                  "../frogpilot/screenrecorder/screenrecorder.cc", "../frogpilot/ui/qt/offroad/data_settings.cc",
                  "../frogpilot/ui/qt/offroad/device_settings.cc", "../frogpilot/ui/qt/offroad/frogpilot_settings.cc",
                  "../frogpilot/ui/qt/offroad/lateral_settings.cc", "../frogpilot/ui/qt/offroad/longitudinal_settings.cc",
