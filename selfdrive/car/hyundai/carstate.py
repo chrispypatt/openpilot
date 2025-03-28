@@ -61,12 +61,18 @@ class CarState(CarStateBase):
   # Traffic signals for Speed Limit Controller - Credit goes to Multikyd!
   def calculate_speed_limit(self, cp, cp_cam):
     if self.CP.carFingerprint in CANFD_CAR:
-      speed_limit_bus = cp if self.CP.flags & HyundaiFlags.CANFD_HDA2 else cp_cam
+      if self.CP.flags & HyundaiFlags.CANFD_HDA2:
+        speed_limit_bus = cp
+      else:
+        speed_limit_bus = cp_cam
       return speed_limit_bus.vl["CLUSTER_SPEED_LIMIT"]["SPEED_LIMIT_1"]
     else:
+      speed_limit_cam = cp_cam.vl["LKAS12"]["CF_Lkas_TsrSpeed_Display_Clu"] if self.CP.flags & HyundaiFlags.LKAS12 else 0
       speed_limit_nav = cp.vl["Navi_HU"]["SpeedLim_Nav_Clu"] if self.CP.flags & HyundaiFlags.NAV_MSG else 0
-      speed_limit_cam = cp_cam.vl["LKAS12"]["CF_Lkas_TsrSpeed_Display_Clu"] if self.CP.flags & HyundaiFlags.LKAS12 else None
-      return speed_limit_cam if speed_limit_cam is not None and speed_limit_cam not in (0, 255) else speed_limit_nav
+
+      if speed_limit_cam not in (0, 255):
+        return speed_limit_cam
+      return speed_limit_nav
 
   def update(self, cp, cp_cam, frogpilot_toggles):
     if self.CP.carFingerprint in CANFD_CAR:

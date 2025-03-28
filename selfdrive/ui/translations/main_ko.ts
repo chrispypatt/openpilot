@@ -146,10 +146,6 @@
         <translation type="gpt-4o-generated">m/s</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">킬로미터/시간</translation>
-    </message>
-    <message>
         <source>PENDING</source>
         <translation type="gpt-4o-generated">대기 중</translation>
     </message>
@@ -605,8 +601,20 @@
         <translation type="gpt-4o-generated">모든 토글 백업을 삭제하시겠습니까?</translation>
     </message>
     <message>
-        <source>Do you want to compress this backup? The final result will be significantly smaller and will run in the background.</source>
-        <translation type="gpt-4o-generated">이 백업을 압축하시겠습니까? 최종 결과는 크게 작아지며 백그라운드에서 실행됩니다.</translation>
+        <source>Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background.</source>
+        <translation type="gpt-4o-generated">이 백업을 압축하시겠습니까? 추가로 몇 분이 걸리지만, 결과 파일의 크기는 상당히 작아지며 백그라운드에서 실행됩니다.</translation>
+    </message>
+    <message>
+        <source>Delete Error Logs</source>
+        <translation type="gpt-4o-generated">오류 로그 삭제</translation>
+    </message>
+    <message>
+        <source>Permanently deletes all stored error logs from your device. Ideal for freeing up space.</source>
+        <translation type="gpt-4o-generated">기기에서 저장된 모든 오류 로그를 영구적으로 삭제합니다. 공간을 확보하는 데 이상적입니다.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete all of the error logs?</source>
+        <translation type="gpt-4o-generated">모든 오류 로그를 영구적으로 삭제하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -630,14 +638,6 @@
     <message>
         <source>Increase Thermal Safety Limit</source>
         <translation type="gpt-4o-generated">열 안전 한계 증가</translation>
-    </message>
-    <message>
-        <source>Low Battery Shutdown Threshold</source>
-        <translation type="gpt-4o-generated">배터리 부족 종료 임계값</translation>
-    </message>
-    <message>
-        <source>Turn Off Data Tracking</source>
-        <translation type="gpt-4o-generated">데이터 추적 끄기</translation>
     </message>
     <message>
         <source>Turn Off Data Uploads</source>
@@ -688,10 +688,6 @@
         <translation type="gpt-4o-generated">시간</translation>
     </message>
     <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">도로에서만</translation>
-    </message>
-    <message>
         <source> volts</source>
         <translation type="gpt-4o-generated">볼트</translation>
     </message>
@@ -708,68 +704,72 @@
         <translation type="gpt-4o-generated">경고: 이로 인해 콤마의 권장 온도 한계를 초과하여 기기를 작동하면 조기 마모 또는 손상이 발생할 수 있습니다!</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from being recorded and the data will be unobtainable!</source>
-        <translation type="gpt-4o-generated">경고: 이렇게 하면 주행 기록이 저장되지 않으며 데이터를 얻을 수 없습니다!</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!</source>
         <translation type="gpt-4o-generated">경고: 이것은 귀하의 주행 기록이 comma connect에 표시되지 않게 하여 디버깅 및 지원에 영향을 미칠 수 있습니다!</translation>
-    </message>
-    <message>
-        <source>Controls how long the device stays on after you stop driving.</source>
-        <translation type="gpt-4o-generated">운전 중지 후 장치가 켜진 상태로 유지되는 시간을 제어합니다.</translation>
-    </message>
-    <message>
-        <source>Allows the device to work without an internet connection.</source>
-        <translation type="gpt-4o-generated">기기가 인터넷 연결 없이 작동할 수 있도록 허용합니다.</translation>
-    </message>
-    <message>
-        <source>Allows the device to run at higher temperatures than recommended.</source>
-        <translation type="gpt-4o-generated">기기가 권장 온도보다 높은 온도에서 작동하도록 허용합니다.</translation>
-    </message>
-    <message>
-        <source>Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
-        <translation type="gpt-4o-generated">장치 종료 임계값을 관리하여 차량 배터리가 과도하게 소모되고 잠재적으로 손상되는 것을 방지합니다.</translation>
-    </message>
-    <message>
-        <source>Disables all data tracking to improve privacy.</source>
-        <translation type="gpt-4o-generated">개인정보 보호를 위해 모든 데이터 추적을 비활성화합니다.</translation>
-    </message>
-    <message>
-        <source>Stops the device from sending any data to the servers.</source>
-        <translation type="gpt-4o-generated">장치가 서버로 데이터를 전송하지 않도록 방지합니다.</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness when you're not driving.</source>
-        <translation type="gpt-4o-generated">운전 중이 아닐 때 화면 밝기를 조절합니다.</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness while you're driving.</source>
-        <translation type="gpt-4o-generated">운전 중 화면 밝기를 조절합니다.</translation>
-    </message>
-    <message>
-        <source>Enables a button in the onroad UI to record the screen.</source>
-        <translation type="gpt-4o-generated">도로 UI에서 화면 녹화를 위한 버튼을 활성화합니다.</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off when you're not driving.</source>
-        <translation type="gpt-4o-generated">운전하지 않을 때 화면이 꺼질 때까지 걸리는 시간을 제어합니다.</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off while you're driving.</source>
-        <translation type="gpt-4o-generated">운전 중 화면이 꺼지기까지 걸리는 시간을 설정합니다.</translation>
     </message>
     <message>
         <source>Screen Off</source>
         <translation type="gpt-4o-generated">화면 끄기</translation>
     </message>
     <message>
-        <source>Use Konik.ai's Server Instead of Comma's</source>
-        <translation type="gpt-4o-generated">Konik.ai의 서버를 대신 사용하십시오.</translation>
+        <source>Battery Shutdown Threshold</source>
+        <translation type="gpt-4o-generated">배터리 종료 임계값</translation>
     </message>
     <message>
-        <source>Upload your driving data to Konik.ai's server instead of comma's.</source>
-        <translation type="gpt-4o-generated">운전 데이터를 comma 대신 Konik.ai 서버에 업로드하세요.</translation>
+        <source>The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
+        <translation type="gpt-4o-generated">자동차 배터리가 과도하게 소모되거나 손상되는 것을 방지하기 위해 장치를 자동으로 종료하는 데 사용되는 배터리 수준 임계값.</translation>
+    </message>
+    <message>
+        <source>How long the device stays on after you go offroad.</source>
+        <translation type="gpt-4o-generated">장치를 오프로드 한 후 켜져 있는 시간.</translation>
+    </message>
+    <message>
+        <source>Turn Off Data Logging</source>
+        <translation type="gpt-4o-generated">데이터 로깅 끄기</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
+        <translation type="gpt-4o-generated">경고: 이 설정은 주행 기록을 방지하며 모든 데이터가 검색 불가능하게 됩니다!</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're not driving.</source>
+        <translation type="gpt-4o-generated">운전하지 않을 때의 화면 밝기.</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're driving.</source>
+        <translation type="gpt-4o-generated">운전 중 화면 밝기.</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off when you're not driving.</source>
+        <translation type="gpt-4o-generated">운전하지 않을 때 화면이 꺼지는 데 걸리는 시간.</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off while you're driving.</source>
+        <translation type="gpt-4o-generated">운전 중 화면이 꺼질 때까지 걸리는 시간.</translation>
+    </message>
+    <message>
+        <source>Only Disable While Onroad</source>
+        <translation type="gpt-4o-generated">주행 중일 때만 비활성화</translation>
+    </message>
+    <message>
+        <source>Allow the device to work indefinitely without an internet connection.</source>
+        <translation type="gpt-4o-generated">기기가 인터넷 연결 없이 무기한 작동할 수 있도록 허용합니다.</translation>
+    </message>
+    <message>
+        <source>Allow the device to run at higher temperatures than comma recommends.</source>
+        <translation type="gpt-4o-generated">장치가 comma에서 권장하는 것보다 높은 온도에서 작동하도록 허용합니다.</translation>
+    </message>
+    <message>
+        <source>Disable all data logging to improve privacy.</source>
+        <translation type="gpt-4o-generated">모든 데이터 로깅을 비활성화하여 프라이버시를 향상시킵니다.</translation>
+    </message>
+    <message>
+        <source>Prevent the device from sending any data to comma's servers.</source>
+        <translation type="gpt-4o-generated">장치가 comma의 서버로 데이터를 전송하지 않도록 방지합니다.</translation>
+    </message>
+    <message>
+        <source>Enable a button in the onroad UI to record the screen.</source>
+        <translation type="gpt-4o-generated">도로 주행 UI에서 화면 녹화를 위한 버튼 활성화.</translation>
     </message>
 </context>
 <context>
@@ -779,44 +779,12 @@
         <translation type="gpt-4o-generated">항상 켜져 있는 측면 제어</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
-
-Deactivate only occurs with the 'Cruise Control' button.</source>
-        <translation type="gpt-4o-generated">openpilot의 조향 제어는 브레이크 또는 가속 페달이 눌러져도 활성 상태로 유지됩니다.
-
-'크루즈 컨트롤' 버튼을 눌러야만 비활성화됩니다.</translation>
-    </message>
-    <message>
-        <source>Control with LKAS Button</source>
-        <translation type="gpt-4o-generated">LKAS 버튼으로 제어</translation>
-    </message>
-    <message>
-        <source>Enable with Cruise Control</source>
-        <translation type="gpt-4o-generated">크루즈 컨트롤과 함께 활성화</translation>
-    </message>
-    <message>
         <source>Pause on Brake Below</source>
         <translation type="gpt-4o-generated">브레이크 시 일시 중지 아래</translation>
     </message>
     <message>
-        <source>Lane Change Settings</source>
-        <translation type="gpt-4o-generated">차선 변경 설정</translation>
-    </message>
-    <message>
-        <source>How openpilot handles lane changes.</source>
-        <translation type="gpt-4o-generated">openpilot이 차선 변경을 처리하는 방법.</translation>
-    </message>
-    <message>
         <source>Lane Change Delay</source>
         <translation type="gpt-4o-generated">차선 변경 지연</translation>
-    </message>
-    <message>
-        <source>Lane Width Requirement</source>
-        <translation type="gpt-4o-generated">차선 너비 요구사항</translation>
-    </message>
-    <message>
-        <source>Minimum Speed for Lane Change</source>
-        <translation type="gpt-4o-generated">차선 변경 최소 속도</translation>
     </message>
     <message>
         <source>Lateral Tuning</source>
@@ -835,16 +803,8 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">생활의 질 개선</translation>
     </message>
     <message>
-        <source>Miscellaneous lateral focused features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">전반적인 openpilot 경험을 향상시키기 위한 다양한 측면 기능.</translation>
-    </message>
-    <message>
         <source>Pause Steering Below</source>
         <translation type="gpt-4o-generated">조향 중단 아래</translation>
-    </message>
-    <message>
-        <source>Pauses steering control when driving below the set speed.</source>
-        <translation type="gpt-4o-generated">설정 속도 미만으로 주행할 때 조향 제어를 일시 중지합니다.</translation>
     </message>
     <message>
         <source>mph</source>
@@ -855,20 +815,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">피트</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">킬로미터 매 시 (km/h)</translation>
-    </message>
-    <message>
         <source> meters</source>
         <translation type="gpt-4o-generated">미터</translation>
     </message>
     <message>
         <source>Advanced Lateral Tuning</source>
         <translation type="gpt-4o-generated">고급 측면 조정</translation>
-    </message>
-    <message>
-        <source>Advanced settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">openpilot의 측면 제어를 세밀하게 조정하기 위한 고급 설정.</translation>
     </message>
     <message>
         <source>Friction (Default: %1)</source>
@@ -879,20 +831,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">마찰</translation>
     </message>
     <message>
-        <source>Adjusts the resistance in steering. Higher values provide more stable steering but can make it feel heavy, while lower values allow lighter steering but may feel too sensitive.</source>
-        <translation type="gpt-4o-generated">조향 저항을 조절합니다. 높은 값을 설정하면 조향이 더 안정적이지만 무겁게 느껴질 수 있으며, 낮은 값을 설정하면 조향이 가볍지만 너무 민감하게 느껴질 수 있습니다.</translation>
-    </message>
-    <message>
         <source>Kp Factor (Default: %1)</source>
         <translation type="gpt-4o-generated">Kp 계수 (기본값: %1)</translation>
     </message>
     <message>
         <source>Kp Factor</source>
         <translation type="gpt-4o-generated">Kp 계수</translation>
-    </message>
-    <message>
-        <source>Adjusts how aggressively the car corrects its steering. Higher values offer quicker corrections but may feel jerky, while lower values make steering smoother but slower to respond.</source>
-        <translation type="gpt-4o-generated">차량의 조향 보정 강도를 조절합니다. 값이 높을수록 조향 보정이 빠르지만 불안정할 수 있으며, 값이 낮을수록 조향이 부드럽지만 반응이 느릴 수 있습니다.</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -903,10 +847,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">횡가속도</translation>
     </message>
     <message>
-        <source>Adjusts how fast the car can steer from side to side. Higher values allow quicker lane changes but can feel unstable, while lower values provide smoother steering but may feel sluggish.</source>
-        <translation type="gpt-4o-generated">차량이 좌우로 조향할 수 있는 속도를 조정합니다. 높은 값은 빠른 차선 변경을 가능하게 하지만 불안정하게 느껴질 수 있고, 낮은 값은 부드러운 조향을 제공하지만 느리게 느껴질 수 있습니다.</translation>
-    </message>
-    <message>
         <source>Steer Ratio (Default: %1)</source>
         <translation type="gpt-4o-generated">조향 비율 (기본값: %1)</translation>
     </message>
@@ -915,104 +855,168 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">조향비율</translation>
     </message>
     <message>
-        <source>Adjusts how much openpilot needs to turn the wheel to steer. Higher values feel like driving a truck, more stable at high speeds, but harder to steer quickly at low speeds, while lower values feel like a go-kart, easier to steer in tight spots but more sensitive and less stable at high speeds.</source>
-        <translation type="gpt-4o-generated">openpilot이 조향하기 위해 핸들을 얼마나 돌려야 하는지를 조정합니다. 값을 높이면 트럭을 운전하는 것 같은 느낌이 들며, 고속에서 더 안정적이지만 저속에서는 빠르게 조향하기 어려워집니다. 값을 낮추면 고카트를 운전하는 것 같은 느낌이 들며, 좁은 공간에서 조향하기 쉬워지지만 고속에서는 더 민감하고 덜 안정적입니다.</translation>
-    </message>
-    <message>
         <source>Force Auto Tune On</source>
         <translation type="gpt-4o-generated">자동 조율 강제 실행</translation>
-    </message>
-    <message>
-        <source>Forces comma's auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">지원되지 않는 차량에 대한 comma의 자동 횡방향 조정을 강제합니다.</translation>
     </message>
     <message>
         <source>Force Auto Tune Off</source>
         <translation type="gpt-4o-generated">자동 조정 강제 해제</translation>
     </message>
     <message>
-        <source>Forces comma's auto lateral tuning off for supported vehicles.</source>
-        <translation type="gpt-4o-generated">지원되는 차량의 경우 comma의 자동 횡방향 튜닝을 해제합니다.</translation>
-    </message>
-    <message>
-        <source>Controls the current state of 'Always on Lateral' with the 'LKAS' button.</source>
-        <translation type="gpt-4o-generated">'LKAS' 버튼으로 '항상 켜짐 Lateral'의 현재 상태를 제어합니다.</translation>
-    </message>
-    <message>
-        <source>Activates 'Always on Lateral' whenever 'Cruise Control' is active bypassing the requirement to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">'크루즈 컨트롤'이 활성화될 때마다 '항상 켜기'가 활성화되어 openpilot을 먼저 활성화할 필요 없이 작동합니다.</translation>
-    </message>
-    <message>
-        <source>Pauses 'Always on Lateral' when the brake pedal is pressed below the set speed.</source>
-        <translation type="gpt-4o-generated">브레이크 페달이 설정 속도 이하로 눌렸을 때 '항상 측면 유지'를 일시 중지합니다.</translation>
-    </message>
-    <message>
         <source>Automatic Lane Changes</source>
         <translation type="gpt-4o-generated">자동 차로 변경</translation>
-    </message>
-    <message>
-        <source>Conducts lane changes without needing to touch the steering wheel upon turn signal activation.</source>
-        <translation type="gpt-4o-generated">턴 시그널 활성화 시 스티어링 휠을 터치할 필요 없이 차선 변경을 수행합니다.</translation>
-    </message>
-    <message>
-        <source>Delays lane changes by the set time to prevent sudden changes.</source>
-        <translation type="gpt-4o-generated">갑작스러운 차선 변경을 방지하기 위해 설정된 시간만큼 차선 변경을 지연시킵니다.</translation>
-    </message>
-    <message>
-        <source>Sets the minimum lane width for openpilot to detect a lane as a lane.</source>
-        <translation type="gpt-4o-generated">openpilot이 차선을 차선으로 감지하는 최소 차선 너비를 설정합니다.</translation>
-    </message>
-    <message>
-        <source>Sets the minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">openpilot이 차선 변경을 수행하기 위해 필요한 최소 속도를 설정합니다.</translation>
     </message>
     <message>
         <source>Only One Lane Change Per Signal</source>
         <translation type="gpt-4o-generated">신호당 한 번의 차선 변경만 가능</translation>
     </message>
     <message>
-        <source>Limits lane changes to one per turn signal activation.</source>
-        <translation type="gpt-4o-generated">차선 변경을 방향 지시등 활성화당 한 번으로 제한합니다.</translation>
-    </message>
-    <message>
-        <source>Settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">openpilot의 횡방향 제어를 세부 조정하기 위한 설정.</translation>
-    </message>
-    <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
         <translation type="gpt-4o-generated">차선 변경 속도 이하에서 강제 전환 요구</translation>
     </message>
     <message>
-        <source>Forces the model to use turn desires when driving below the minimum lane change speed to help make left and right turns more precisely.</source>
-        <translation type="gpt-4o-generated">모델이 최소 차로 변경 속도 이하로 주행할 때 좌회전 및 우회전을 보다 정확하게 수행하도록 턴 욕구를 사용하도록 강제합니다.</translation>
-    </message>
-    <message>
-        <source>Uses Twilsonco's 'Neural Network FeedForward' for more precise steering control.</source>
-        <translation type="gpt-4o-generated">Twilsonco의 'Neural Network FeedForward'를 사용하여 더욱 정확한 조향 제어를 제공합니다.</translation>
-    </message>
-    <message>
-        <source>Smoothens the steering control when entering and exiting curves by using Twilsonco's torque adjustments.</source>
-        <translation type="gpt-4o-generated">Twilsonco의 토크 조정을 사용하여 곡선 진입 및 탈출 시 조향 제어를 부드럽게 합니다.</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Friction'?</source>
-        <translation type="gpt-4o-generated">'마찰'에 대한 설정을 완전히 재설정하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Kp Factor'?</source>
-        <translation type="gpt-4o-generated">'Kp 계수' 설정을 완전히 초기화하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Lateral Accel'?</source>
-        <translation type="gpt-4o-generated">'Lateral Accel'에 대한 설정을 완전히 초기화하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Steer Ratio'?</source>
-        <translation type="gpt-4o-generated">'Steer Ratio'에 대한 설정을 완전히 초기화하시겠습니까?</translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="gpt-4o-generated">즉시</translation>
+    </message>
+    <message>
+        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">openpilot의 횡방향 제어를 세밀하게 조정하기 위한 고급 설정.</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
+        <translation type="gpt-4o-generated">지원되지 않는 차량에 대해 comma의 자동 측면 튜닝을 강제로 활성화합니다.</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
+        <translation type="gpt-4o-generated">지원되는 차량에 대한 comma의 자동 측면 튜닝을 강제로 비활성화합니다.</translation>
+    </message>
+    <message>
+        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
+
+Deactivation only occurs with the "Cruise Control" button.</source>
+        <translation type="gpt-4o-generated">openpilot의 조향 제어는 브레이크 또는 가스 페달을 밟아도 활성 상태로 유지됩니다.
+
+"크루즈 컨트롤" 버튼으로만 비활성화됩니다.</translation>
+    </message>
+    <message>
+        <source>Control With LKAS Button</source>
+        <translation type="gpt-4o-generated">LKAS 버튼으로 제어</translation>
+    </message>
+    <message>
+        <source>Control the current state of "Always on Lateral" with the "LKAS" button.</source>
+        <translation type="gpt-4o-generated">"LKAS" 버튼으로 "Always on Lateral"의 현재 상태를 제어합니다.</translation>
+    </message>
+    <message>
+        <source>Enable With Cruise Control</source>
+        <translation type="gpt-4o-generated">크루즈 컨트롤과 함께 활성화</translation>
+    </message>
+    <message>
+        <source>Customize how openpilot handles lane changes.</source>
+        <translation type="gpt-4o-generated">openpilot이 차선 변경을 처리하는 방식을 사용자 정의하세요.</translation>
+    </message>
+    <message>
+        <source>openpilot won't initiate a lane change into detected lanes narrower than this width.</source>
+        <translation type="gpt-4o-generated">openpilot은(는) 탐지된 차선의 너비가 이 너비보다 좁을 경우 차선 변경을 시작하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Minimum Lane Change Speed</source>
+        <translation type="gpt-4o-generated">최소 차선 변경 속도</translation>
+    </message>
+    <message>
+        <source>Minimum speed required for openpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">openpilot이 차선 변경을 수행하기 위해 필요한 최소 속도.</translation>
+    </message>
+    <message>
+        <source>Settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">openpilot의 측면 제어를 미세 조정하기 위한 설정.</translation>
+    </message>
+    <message>
+        <source>Force turn desires below the minimum lane change speed to improve turning accuracy.</source>
+        <translation type="gpt-4o-generated">차선 변경 최소 속도 이하에서는 강제로 회전 욕구를 낮추어 회전 정확성을 향상시킵니다.</translation>
+    </message>
+    <message>
+        <source>Miscellaneous lateral control features to improve your overall openpilot experience.</source>
+        <translation type="gpt-4o-generated">전체적인 openpilot 경험을 향상시키기 위한 기타 측면 제어 기능.</translation>
+    </message>
+    <message>
+        <source>Pause steering control when driving below the configured speed.</source>
+        <translation type="gpt-4o-generated">설정된 속도 이하로 주행할 때 조향 제어 일시 중지.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Friction" values?</source>
+        <translation type="gpt-4o-generated">"마찰" 값을 완전히 초기화하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Kp Factor" values?</source>
+        <translation type="gpt-4o-generated">"Kp 요인" 값을 완전히 재설정하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Lateral Accel" values?</source>
+        <translation type="gpt-4o-generated">"Lateral Accel" 값을 완전히 재설정하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Steer Ratio" values?</source>
+        <translation type="gpt-4o-generated">"조향 비율" 값을 완전히 초기화하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="gpt-4o-generated">끄기</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">km/h</translation>
+    </message>
+    <message>
+        <source>Lane Changes</source>
+        <translation type="gpt-4o-generated">차로 변경</translation>
+    </message>
+    <message>
+        <source>Lane Detection Width</source>
+        <translation type="gpt-4o-generated">차선 감지 너비</translation>
+    </message>
+    <message>
+        <source>Adjust steering resistance. Higher values feel more stable but heavier; lower values feel lighter but more sensitive.</source>
+        <translation type="gpt-4o-generated">조향 저항 조정. 높은 값은 더 안정적이지만 무겁게 느껴지고, 낮은 값은 더 가볍지만 민감하게 느껴집니다.</translation>
+    </message>
+    <message>
+        <source>Adjust how aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values respond more smoothly but slower.</source>
+        <translation type="gpt-4o-generated">openpilot이 방향 조정을 얼마나 적극적으로 수행할지를 조정합니다. 값이 높을수록 반응 속도가 빨라지지만 거칠게 느껴질 수 있으며, 값이 낮을수록 반응 속도가 부드러워지지만 느려질 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Control how quickly openpilot can steer laterally. Higher values allow faster maneuvers but may feel unstable; lower values provide smoother, slower steering.</source>
+        <translation type="gpt-4o-generated">openpilot이 가로 방향으로 얼마나 빠르게 조향할 수 있는지를 제어하십시오. 높은 값은 더 빠른 조작을 허용하지만 불안정하게 느껴질 수 있으며, 낮은 값은 더 부드럽고 느린 조향을 제공합니다.</translation>
+    </message>
+    <message>
+        <source>Adjust how much the wheel turns to steer. Higher values feel like a truck—stable at speed but sluggish in corners; lower values feel like a go-kart—quick but twitchy.</source>
+        <translation type="gpt-4o-generated">조향을 위해 휠이 얼마나 도는지를 조정하세요. 값이 높을수록 트럭 같아서 빠른 속도에서는 안정적이지만 코너에서는 느립니다. 값이 낮을수록 고카트 같아서 빠르지만 반응이 예민합니다.</translation>
+    </message>
+    <message>
+        <source>Allow "Always on Lateral" to be active whenever "Cruise Control" is active, bypassing the need to enable openpilot first.</source>
+        <translation type="gpt-4o-generated">"항상 측면 유지"를 활성화하여 "크루즈 컨트롤"이 활성화될 때마다 openpilot을 먼저 활성화할 필요 없이 작동할 수 있도록 허용합니다.</translation>
+    </message>
+    <message>
+        <source>Temporarily disable "Always on Lateral" below the configured speed when the brake is pressed.</source>
+        <translation type="gpt-4o-generated">브레이크를 밟았을 때 설정된 속도 아래에서 "항상 측면 켜기"를 일시적으로 비활성화합니다.</translation>
+    </message>
+    <message>
+        <source>Automatically initiate lane changes when the turn signal is active — no steering input required!</source>
+        <translation type="gpt-4o-generated">방향 지시등이 활성화되면 자동으로 차선 변경을 시작합니다 — 조향 입력이 필요 없습니다!</translation>
+    </message>
+    <message>
+        <source>Delay automatic lane changes by the configured time.</source>
+        <translation type="gpt-4o-generated">자동 차선 변경을 설정된 시간만큼 지연합니다.</translation>
+    </message>
+    <message>
+        <source>Limit lane changes to one per turn signal activation.</source>
+        <translation type="gpt-4o-generated">턴 시그널 활성화당 차선 변경을 한 번으로 제한합니다.</translation>
+    </message>
+    <message>
+        <source>Use Twilsonco's "Neural Network FeedForward" for smoother steering, trained on past driving data from your car model.</source>
+        <translation type="gpt-4o-generated">Twilsonco의 "Neural Network FeedForward"를 사용하여 부드러운 조향을 제공하며, 귀하의 차량 모델에서 수집된 과거 주행 데이터를 기반으로 훈련되었습니다.</translation>
+    </message>
+    <message>
+        <source>Smoothen steering control during curves using Twilsonco's torque adjustments.</source>
+        <translation type="gpt-4o-generated">Twilsonco의 토크 조정을 사용하여 곡선 주행 시 조향 제어를 부드럽게 합니다.</translation>
     </message>
 </context>
 <context>
@@ -1312,26 +1316,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
     <message>
         <source> seconds</source>
         <translation type="gpt-4o-generated">초</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (0-34 kph)</source>
-        <translation type="gpt-4o-generated">속도 제한 오프셋 (0-34 kph)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (35-54 kph)</source>
-        <translation type="gpt-4o-generated">제한 속도 오프셋 (35-54 km/h)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (55-64 kph)</source>
-        <translation type="gpt-4o-generated">속도 제한 오프셋 (55-64 kph)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (65-99 kph)</source>
-        <translation type="gpt-4o-generated">속도 제한 오프셋 (65-99 kph)</translation>
-    </message>
-    <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">킬로미터 매 시간</translation>
     </message>
     <message>
         <source> meters</source>
@@ -1880,22 +1864,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">'느긋한' 성격의 설정을 완전히 재설정하시겠습니까?</translation>
     </message>
     <message>
-        <source>Sets the speed limit offset for speeds between 0-34 kph.</source>
-        <translation type="gpt-4o-generated">속도가 0-34kph인 경우의 속도 제한 오프셋을 설정합니다.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 35-54 kph.</source>
-        <translation type="gpt-4o-generated">속도 제한 오프셋을 35-54 kph 사이의 속도로 설정합니다.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 55-64 kph.</source>
-        <translation type="gpt-4o-generated">55-64km/h 사이 속도에 대한 속도 제한 오프셋을 설정합니다.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 65-99 kph.</source>
-        <translation type="gpt-4o-generated">65-99 km/h 사이의 속도에 대한 속도 제한 오프셋을 설정합니다.</translation>
-    </message>
-    <message>
         <source>Sets the speed limit offset for speeds between 0-34 mph.</source>
         <translation type="gpt-4o-generated">0-34 mph 사이 속도에 대한 속도 제한 오프셋을 설정합니다.</translation>
     </message>
@@ -1928,36 +1896,40 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">현재 상태를 주행 중 UI에 표시합니다.</translation>
     </message>
     <message>
-        <source>Reset Curve Data</source>
-        <translation type="gpt-4o-generated">곡선 데이터 초기화</translation>
+        <source>Speed Limit Offset (0-34 km/h)</source>
+        <translation type="gpt-4o-generated">속도 제한 오프셋 (0-34 km/h)</translation>
     </message>
     <message>
-        <source>Resets the data for the 'Smart' 'Curve Detection Method'.</source>
-        <translation type="gpt-4o-generated">'스마트' '곡선 감지 방법'의 데이터를 재설정합니다.</translation>
+        <source>Speed Limit Offset (35-54 km/h)</source>
+        <translation type="gpt-4o-generated">속도 제한 오프셋 (35-54 km/h)</translation>
     </message>
     <message>
-        <source>Speed Limit Filler</source>
-        <translation type="gpt-4o-generated">속도 제한 채우기</translation>
+        <source>Speed Limit Offset (55-64 km/h)</source>
+        <translation type="gpt-4o-generated">속도 제한 오프셋 (55-64 km/h)</translation>
     </message>
     <message>
-        <source>Uses speed limit data from your dashboard, 'Mapbox', and 'Navigate on Openpilot' to identify missing speed limits on 'OpenStreetMap'. The data can be downloaded via 'Fleet Manager' in the 'Tools' section and used at 'https://nerftool.glitch.me/' via the 'Load Custom Data' button.</source>
-        <translation type="gpt-4o-generated">사용자의 대시보드, 'Mapbox', 'Navigate on Openpilot'의 속도 제한 데이터를 사용하여 'OpenStreetMap'의 누락된 속도 제한을 식별합니다. 데이터는 '도구' 섹션의 'Fleet Manager'를 통해 다운로드할 수 있으며, 'Load Custom Data' 버튼을 통해 'https://nerftool.glitch.me/'에서 사용할 수 있습니다.</translation>
+        <source>Speed Limit Offset (65-99 km/h)</source>
+        <translation type="gpt-4o-generated">속도 제한 편차 (65-99 km/h)</translation>
     </message>
     <message>
-        <source>Use Mapbox For Missing Speed Limits</source>
-        <translation type="gpt-4o-generated">누락된 속도 제한에 Mapbox 사용</translation>
+        <source>Sets the speed limit offset for speeds between 0-34 km/h.</source>
+        <translation type="gpt-4o-generated">0-34 km/h 사이의 속도에 대한 속도 제한 오프셋을 설정합니다.</translation>
     </message>
     <message>
-        <source>Uses data from 'Mapbox' when all the current speed limit sources aren't currently providing a speed limit.</source>
-        <translation type="gpt-4o-generated">모든 현재 속도 제한 소스가 속도 제한을 제공하지 않을 때 'Mapbox'의 데이터를 사용합니다.</translation>
+        <source>Sets the speed limit offset for speeds between 35-54 km/h.</source>
+        <translation type="gpt-4o-generated">35-54 km/h 사이의 속도에 대한 속도 제한 오프셋을 설정합니다.</translation>
     </message>
     <message>
-        <source>Smart</source>
-        <translation type="gpt-4o-generated">스마트</translation>
+        <source>Sets the speed limit offset for speeds between 55-64 km/h.</source>
+        <translation type="gpt-4o-generated">55-64 km/h 사이의 속도에서 속도 제한 오프셋을 설정합니다.</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely reset your curvature data?</source>
-        <translation type="gpt-4o-generated">곡률 데이터를 완전히 재설정하시겠습니까?</translation>
+        <source>Sets the speed limit offset for speeds between 65-99 km/h.</source>
+        <translation type="gpt-4o-generated">속도가 65-99 km/h 사이일 때 속도 제한 오프셋을 설정합니다.</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">km/시간</translation>
     </message>
 </context>
 <context>
@@ -2205,10 +2177,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">지도 데이터</translation>
     </message>
     <message>
-        <source>PRIMELESS NAVIGATION</source>
-        <translation type="gpt-4o-generated">프라임리스 내비게이션</translation>
-    </message>
-    <message>
         <source>DEVICE CONTROLS</source>
         <translation type="gpt-4o-generated">장치 제어</translation>
     </message>
@@ -2219,14 +2187,6 @@ This overrides 'Conditional Experimental Mode'.</source>
     <message>
         <source>Manage FrogPilot's features that affect acceleration, braking, and steering.</source>
         <translation type="gpt-4o-generated">FrogPilot의 가속, 제동 및 조향에 영향을 미치는 기능을 관리합니다.</translation>
-    </message>
-    <message>
-        <source>Manage map data to be used with 'Curve Speed Control' and 'Speed Limit Controller' and setup 'Navigate On openpilot (NOO)' without a comma prime subscription.</source>
-        <translation type="gpt-4o-generated">'곡선 속도 제어' 및 '속도 제한 컨트롤러'와 함께 사용할 지도 데이터를 관리하고, 구독 없이 '오픈파일럿 내비게이션(NOO)'을 설정하세요.</translation>
-    </message>
-    <message>
-        <source>Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">FrogPilot을 유지 관리하고 문제를 해결하기 위해 장치의 내부 설정을 다른 도구 및 유틸리티와 함께 관리하세요.</translation>
     </message>
     <message>
         <source>Manage openpilot's theme and onroad widgets.</source>
@@ -2275,8 +2235,20 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">경고: 이는 잠재적으로 위험한 설정을 해제하며, 운전 경험을 극적으로 변화시킬 수 있습니다!</translation>
     </message>
     <message>
-        <source>The 'Developer' preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
-        <translation type="gpt-4o-generated">'개발자' 프리셋은 FrogPilot에서 100시간 이상 또는 openpilot에서 250시간 이상 사용한 사용자에게만 제공됩니다.</translation>
+        <source>NAVIGATION</source>
+        <translation type="gpt-4o-generated">내비게이션</translation>
+    </message>
+    <message>
+        <source>Download map data that can be used with "Curve Speed Control" and "Speed Limit Controller" and set up "Navigate On openpilot (NOO)".</source>
+        <translation type="gpt-4o-generated">"커브 속도 제어" 및 "속도 제한 컨트롤러"와 함께 사용할 수 있는 지도 데이터를 다운로드하고 "오픈파일럿 내비게이션(NOO)"을 설정하세요.</translation>
+    </message>
+    <message>
+        <source>Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot.</source>
+        <translation type="gpt-4o-generated">장치의 내부 설정을 관리하고 FrogPilot 유지 및 문제 해결에 사용되는 다른 도구 및 유틸리티를 함께 관리합니다.</translation>
+    </message>
+    <message>
+        <source>The "Developer" preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
+        <translation type="gpt-4o-generated">"개발자" 프리셋은 FrogPilot에서 100시간 이상, 또는 openpilot에서 250시간 이상 사용한 사용자에게만 제공됩니다.</translation>
     </message>
 </context>
 <context>
@@ -2292,20 +2264,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     <message>
         <source>Disengage Volume</source>
         <translation type="gpt-4o-generated">해제 볼륨</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Adaptive Cruise Disabled
-Parking Brake Engaged
-Brake Pedal Pressed
-Speed too Low</source>
-        <translation type="gpt-4o-generated">관련 경고:
-
-적응형 크루즈 비활성화
-주차 브레이크 작동 중
-브레이크 페달 눌림
-속도 너무 낮음</translation>
     </message>
     <message>
         <source>Engage Volume</source>
@@ -2324,20 +2282,6 @@ openpilot 작동 중</translation>
     <message>
         <source>Prompt Volume</source>
         <translation type="gpt-4o-generated">프롬프트 볼륨</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Car Detected in Blindspot
-Speed too Low
-Steer Unavailable Below 'X'
-Take Control, Turn Exceeds Steering Limit</source>
-        <translation type="gpt-4o-generated">관련 경고:
-
-사각지대에 차량 감지
-속도가 너무 낮음
-'X' 이하에서는 조향 불가
-조향 한계를 초과한 회전, 제어 필요</translation>
     </message>
     <message>
         <source>Prompt Distracted Volume</source>
@@ -2410,36 +2354,8 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
         <translation type="gpt-4o-generated">선도차량 출발 알림</translation>
     </message>
     <message>
-        <source>Loud Blindspot Alert</source>
-        <translation type="gpt-4o-generated">큰 사각지대 경고音</translation>
-    </message>
-    <message>
-        <source>Custom alerts for openpilot events.</source>
-        <translation type="gpt-4o-generated">openpilot 이벤트에 대한 사용자 정의 알림.</translation>
-    </message>
-    <message>
-        <source>Enables the famed 'Goat Scream' that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">전 세계 FrogPilot 사용자들에게 기쁨과 분노를 선사한 유명한 '염소 비명'을 활성화합니다!</translation>
-    </message>
-    <message>
-        <source>Plays an alert when a traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">신호등이 빨간색에서 녹색으로 바뀔 때 알림을 재생합니다.</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the lead vehicle starts starts to depart when at a standstill.</source>
-        <translation type="gpt-4o-generated">정지 상태에서 앞차가 출발할 때 알림을 재생합니다.</translation>
-    </message>
-    <message>
-        <source>Plays a louder alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
-        <translation type="gpt-4o-generated">차선을 변경하려고 할 때 사각지대에서 차량이 감지되면 더 큰 경고음을 재생합니다.</translation>
-    </message>
-    <message>
         <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">속도 제한 변경 알림</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">속도 제한이 변경될 때 경고음을 재생합니다.</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -2448,6 +2364,62 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
     <message>
         <source>Muted</source>
         <translation type="gpt-4o-generated">음소거됨</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Adaptive Cruise Disabled
+Brake Pedal Pressed
+Parking Brake Engaged
+Speed too Low</source>
+        <translation type="gpt-4o-generated">관련 경고:
+
+적응형 크루즈 비활성화됨
+브레이크 페달 눌림
+주차 브레이크 작동 중
+속도가 너무 낮음</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Car Detected in Blindspot
+Steer Unavailable Below "X"
+Speed too Low
+Take Control, Turn Exceeds Steering Limit</source>
+        <translation type="gpt-4o-generated">관련 경고:
+
+사각지대에 차량 감지됨
+"X" 아래에서는 조향 불가
+속도가 너무 낮음
+조향 한계를 초과하여 제어하세요.</translation>
+    </message>
+    <message>
+        <source>Custom FrogPilot alerts for openpilot events.</source>
+        <translation type="gpt-4o-generated">오픈파일럿 이벤트에 대한 사용자 지정 FrogPilot 알림.</translation>
+    </message>
+    <message>
+        <source>Enable the famed "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">FrogPilot 사용자들에게 전 세계적으로 기쁨과 분노를 안겨준 유명한 "염소 비명"을 활성화하세요!</translation>
+    </message>
+    <message>
+        <source>Play an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">신호등이 빨간 불에서 초록 불로 바뀔 때 경고음을 재생합니다.</translation>
+    </message>
+    <message>
+        <source>Play an alert when the lead vehicle starts starts to depart.</source>
+        <translation type="gpt-4o-generated">선행 차량이 출발할 때 경고음 재생.</translation>
+    </message>
+    <message>
+        <source>Loud Blindspot Vehicle Alert</source>
+        <translation type="gpt-4o-generated">큰 사각지대 차량 알림</translation>
+    </message>
+    <message>
+        <source>Play a loud alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
+        <translation type="gpt-4o-generated">차선 변경 시 사각지대에 차량이 감지되면 경고음을 크게 재생합니다.</translation>
+    </message>
+    <message>
+        <source>Play an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">속도 제한이 변경될 때 알림을 재생합니다.</translation>
     </message>
 </context>
 <context>
@@ -2708,10 +2680,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">플래시</translation>
     </message>
     <message>
-        <source>Flashes the Panda device's firmware if you're running into issues.</source>
-        <translation type="gpt-4o-generated">문제가 발생하면 Panda 장치의 펌웨어를 플래시합니다.</translation>
-    </message>
-    <message>
         <source>Are you sure you want to flash the Panda?</source>
         <translation type="gpt-4o-generated">판다를 플래시하시겠습니까?</translation>
     </message>
@@ -2736,10 +2704,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">강제로 시작된 상태</translation>
     </message>
     <message>
-        <source>Forces openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">openpilot을 오프로드 또는 온로드로 강제합니다.</translation>
-    </message>
-    <message>
         <source>OFFROAD</source>
         <translation type="gpt-4o-generated">오프로드</translation>
     </message>
@@ -2760,10 +2724,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">보고서</translation>
     </message>
     <message>
-        <source>Let 'FrogsGoMoo' know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">'FrogsGoMoo'에게 직면하고 있는 문제에 대해 알려주세요.</translation>
-    </message>
-    <message>
         <source>What's going on?</source>
         <translation type="gpt-4o-generated">무슨 일이야?</translation>
     </message>
@@ -2778,10 +2738,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>What's your Discord username?</source>
         <translation type="gpt-4o-generated">귀하의 디스코드 사용자 이름은 무엇입니까?</translation>
-    </message>
-    <message>
-        <source>Thanks for letting us know! Your report has been submitted.</source>
-        <translation type="gpt-4o-generated">알려주셔서 감사합니다! 보고서가 제출되었습니다.</translation>
     </message>
     <message>
         <source>Reset Toggles to Default</source>
@@ -2810,6 +2766,30 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>Reset!</source>
         <translation type="gpt-4o-generated">재설정!</translation>
+    </message>
+    <message>
+        <source>Debug Mode</source>
+        <translation type="gpt-4o-generated">디버그 모드</translation>
+    </message>
+    <message>
+        <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
+        <translation type="gpt-4o-generated">다음 주행 중 FrogPilot 개발자 메트릭스를 모두 활용하여 FrogPilot을 디버깅하거나, 버그 보고 또는 자체 디버깅을 수행합니다.</translation>
+    </message>
+    <message>
+        <source>Force openpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">openpilot을 오프로드 또는 온로드 강제 실행.</translation>
+    </message>
+    <message>
+        <source>Let "FrogsGoMoo" know about an issue you're facing.</source>
+        <translation type="gpt-4o-generated">"FrogsGoMoo"에게 당신이 겪고 있는 문제를 알려주세요.</translation>
+    </message>
+    <message>
+        <source>Your report has been submitted. Thanks for letting us know!</source>
+        <translation type="gpt-4o-generated">보고서가 제출되었습니다. 알려주셔서 감사합니다!</translation>
+    </message>
+    <message>
+        <source>Flash the Panda's firmware. Use if you're running into issues with the Panda.</source>
+        <translation type="gpt-4o-generated">판다의 펌웨어를 플래시하세요. 판다에 문제가 있을 경우 사용하세요.</translation>
     </message>
 </context>
 <context>
@@ -2851,28 +2831,12 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">openpilot 종방향 제어를 완전히 비활성화하시겠습니까?</translation>
     </message>
     <message>
-        <source>Force stop and go for the 2017 Chevy Volt.</source>
-        <translation type="gpt-4o-generated">2017년식 쉐보레 볼트의 강제 정지 및 출발.</translation>
-    </message>
-    <message>
         <source>Automatically Lock/Unlock Doors</source>
         <translation type="gpt-4o-generated">자동으로 문 잠금/해제</translation>
     </message>
     <message>
-        <source>Automatically lock the doors when in drive and unlock when in park.</source>
-        <translation type="gpt-4o-generated">운전 중일 때 자동으로 문을 잠그고 주차 시 자동으로 문을 엽니다.</translation>
-    </message>
-    <message>
         <source>Cluster Speed Offset</source>
         <translation type="gpt-4o-generated">클러스터 속도 오프셋</translation>
-    </message>
-    <message>
-        <source>Set the cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">계기판에 표시된 속도와 일치하도록 openpilot이 사용하는 클러스터 오프셋을 설정합니다.</translation>
-    </message>
-    <message>
-        <source>Force stop and go for vehicles without stock stop and go functionality.</source>
-        <translation type="gpt-4o-generated">기본 정지 및 시작 기능이 없는 차량에 대해 강제 정지 및 시작 기능 제공.</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -2891,60 +2855,16 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">제너럴 모터스 토글</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'General Motors' vehicles.</source>
-        <translation type="gpt-4o-generated">'제너럴 모터스' 차량에 맞춰진 토글입니다.</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Experimental Longitudinal Tune</source>
-        <translation type="gpt-4o-generated">FrogsGoMoo의 실험적인 종방향 튜닝 활성화</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!</source>
-        <translation type="gpt-4o-generated">FrogsGoMoo의 실험적인 GM 종방향 튜닝을 활성화합니다. 이는 추측에 기반하여 설계된 것입니다. 사용에 주의하십시오!</translation>
-    </message>
-    <message>
-        <source>Enable Stop and Go Hack</source>
-        <translation type="gpt-4o-generated">정지 및 출발 해크 활성화</translation>
-    </message>
-    <message>
         <source>Smoothen Pedal Response While Going Downhill/Uphill</source>
         <translation type="gpt-4o-generated">내리막/오르막길에서 페달 반응 부드럽게 조정</translation>
-    </message>
-    <message>
-        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
-        <translation type="gpt-4o-generated">내리막길이나 오르막길 운전 시 가속 및 제동 반응을 부드럽게 조정합니다.</translation>
     </message>
     <message>
         <source>Hyundai/Kia/Genesis Toggles</source>
         <translation type="gpt-4o-generated">현대/기아/제네시스 토글</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'Hyundai/Kia/Genesis' vehicles.</source>
-        <translation type="gpt-4o-generated">'현대/기아/제네시스' 차량을 위한 토글.</translation>
-    </message>
-    <message>
-        <source>Enable comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">comma의 새로운 종방향 API 활성화</translation>
-    </message>
-    <message>
-        <source>Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
-        <translation type="gpt-4o-generated">comma의 새로운 종방향 제어 시스템을 활성화하세요. 이 시스템은 가속 및 제동에서 큰 향상을 보여주었지만 일부 현대/기아/제네시스 차량에서는 문제가 발생합니다.</translation>
-    </message>
-    <message>
         <source>Toyota/Lexus Toggles</source>
         <translation type="gpt-4o-generated">토요타/렉서스 전환기</translation>
-    </message>
-    <message>
-        <source>Toggles catered towards 'Toyota/Lexus' vehicles.</source>
-        <translation type="gpt-4o-generated">'Toyota/Lexus' 차량을 위한 전환기.</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Personal Tweaks</source>
-        <translation type="gpt-4o-generated">FrogsGoMoo의 개인 조정 활성화</translation>
-    </message>
-    <message>
-        <source>FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother.</source>
-        <translation type="gpt-4o-generated">FrogsGoMoo의 개인 수정 사항으로, 더 빠르게 출발하고 더 부드럽게 정지하도록 합니다.</translation>
     </message>
     <message>
         <source>MANAGE</source>
@@ -2955,20 +2875,72 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">점화 끄기 후 도어 잠금</translation>
     </message>
     <message>
-        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
-        <translation type="gpt-4o-generated">차의 시동이 꺼진 후 앞좌석에 아무도 감지되지 않으면 자동으로 문을 잠급니다.</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation type="gpt-4o-generated">절대 안 함</translation>
     </message>
     <message>
-        <source>'Taco Bell Run' Turn Torque Hack</source>
-        <translation type="gpt-4o-generated">'Taco Bell Run' 회전 토크 해킹</translation>
+        <source>Toggles catered towards "General Motors" vehicles.</source>
+        <translation type="gpt-4o-generated">"General Motors" 차량을 위한 토글.</translation>
     </message>
     <message>
-        <source>Enable comma's steering torque hack they used to help handle left and right turns more precisely during their 2022 'Taco Bell' drive by increasing the allowed torque while turning.</source>
-        <translation type="gpt-4o-generated">콤마의 조향 토크 해크를 활성화하여 2022년 '타코 벨' 드라이브 동안 좌회전 및 우회전을 더 정밀하게 처리하도록 도와줍니다. 회전 시 허용되는 토크를 증가시킵니다.</translation>
+        <source>FrogsGoMoo's Experimental Longitudinal Tune</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo의 실험적 종방향 튜닝</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo의 실험적인 GM 종방향 튜닝은 단지 추측을 기반으로 정지 및 출발 제어를 부드럽게 하려는 것입니다. 사용에 따른 위험은 사용자 본인이 감수해야 합니다!</translation>
+    </message>
+    <message>
+        <source>Stop and Go Hack</source>
+        <translation type="gpt-4o-generated">정지 및 이동 해킹</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Hyundai/Kia/Genesis" vehicles.</source>
+        <translation type="gpt-4o-generated">"현대/기아/제네시스" 차량을 위한 토글.</translation>
+    </message>
+    <message>
+        <source>comma's New Longitudinal API</source>
+        <translation type="gpt-4o-generated">콤마의 새로운 종방향 API</translation>
+    </message>
+    <message>
+        <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
+        <translation type="gpt-4o-generated">comma의 새로운 종방향 제어 시스템은 가속 및 제동에서 큰 개선을 보여주었지만 일부 현대/기아/제네시스 차량에서는 문제가 있습니다.</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Toyota/Lexus" vehicles.</source>
+        <translation type="gpt-4o-generated">"토요타/렉서스" 차량에 맞춘 토글.</translation>
+    </message>
+    <message>
+        <source>The cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">openpilot이(가) 대시보드에 표시된 속도와 일치하려고 사용하는 클러스터 오프셋.</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's Personal Tweaks</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo의 개인 조정</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking.</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo의 개인 조정은 더 빠른 가속과 부드러운 제동을 목표로 합니다.</translation>
+    </message>
+    <message>
+        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
+        <translation type="gpt-4o-generated">내리막길이나 오르막길 운전 시 가속 및 제동 반응을 부드럽게 조절합니다.</translation>
+    </message>
+    <message>
+        <source>Force stop and go for the "2017 Chevy Volt".</source>
+        <translation type="gpt-4o-generated">"2017 Chevy Volt"에 대해 강제 정지 및 출발.</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors when shifting into drive and unlocks them when shifting into park.</source>
+        <translation type="gpt-4o-generated">운전 모드로 변속할 때 문을 자동으로 잠그고 주차 모드로 변속할 때 문을 자동으로 잠금 해제합니다.</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
+        <translation type="gpt-4o-generated">자동차 점화가 꺼지고 앞좌석에 아무도 감지되지 않으면 자동으로 문을 잠급니다.</translation>
+    </message>
+    <message>
+        <source>Force stop and go for "Toyota/Lexus" vehicles without stock stop and go functionality.</source>
+        <translation type="gpt-4o-generated">"Toyota/Lexus" 차량에서 기본 정지 및 출발 기능이 없는 경우 강제로 정지 및 출발 기능 사용.</translation>
     </message>
 </context>
 <context>
@@ -3793,16 +3765,12 @@ Default matches half of the MUTCD standard of 4 inches.</source>
         <translation>"새 장치 추가"를 클릭하고 오른쪽 QR 코드를 스캔하세요</translation>
     </message>
     <message>
-        <source>Pair your device to your Konik.ai account</source>
-        <translation type="gpt-4o-generated">기기를 Konik.ai 계정에 연결하세요.</translation>
+        <source>Go to https://connect.comma.ai on your phone</source>
+        <translation type="gpt-4o-generated">휴대폰에서 https://connect.comma.ai 로 이동하세요.</translation>
     </message>
     <message>
-        <source>Go to %1 on your phone</source>
-        <translation type="gpt-4o-generated">휴대폰에서 %1로 이동하세요</translation>
-    </message>
-    <message>
-        <source>Bookmark %1 to your home screen to use it like an app</source>
-        <translation type="gpt-4o-generated">%1을(를) 홈 화면에 추가하여 앱처럼 사용하세요.</translation>
+        <source>Bookmark connect.comma.ai to your home screen to use it like an app</source>
+        <translation type="gpt-4o-generated">connect.comma.ai를 홈 화면에 추가하여 앱처럼 사용하세요.</translation>
     </message>
 </context>
 <context>

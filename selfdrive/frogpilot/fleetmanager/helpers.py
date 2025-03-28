@@ -44,7 +44,7 @@ from openpilot.system.loggerd.xattr_cache import getxattr
 from panda import Panda
 from tools.lib.route import SegmentName
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, EXCLUDED_KEYS, frogpilot_default_params, params, update_frogpilot_toggles
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ERROR_LOGS_PATH, EXCLUDED_KEYS, frogpilot_default_params, params, update_frogpilot_toggles
 
 XOR_KEY = "s8#pL3*Xj!aZ@dWq"
 
@@ -65,7 +65,7 @@ if PC:
   TMUX_LOGS_PATH = os.path.join(str(Path.home()), ".comma", "tmux_logs")
 else:
   SCREENRECORD_PATH = "/data/media/screen_recordings/"
-  ERROR_LOGS_PATH = CRASHES_DIR
+  ERROR_LOGS_PATH = ERROR_LOGS_PATH
   TMUX_LOGS_PATH = "/data/tmux_logs/"
 
 

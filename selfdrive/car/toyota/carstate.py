@@ -28,17 +28,15 @@ PERM_STEER_FAULTS = (3, 17)
 # Traffic signals for Speed Limit Controller - Credit goes to the DragonPilot team!
 @staticmethod
 def calculate_speed_limit(cp_cam, frogpilot_toggles):
-  signals = ["TSGN1", "SPDVAL1", "SPLSGN1", "TSGN2", "SPLSGN2", "TSGN3", "SPLSGN3", "TSGN4", "SPLSGN4"]
-  traffic_signals = {signal: cp_cam.vl["RSA1"].get(signal, cp_cam.vl["RSA2"].get(signal)) for signal in signals}
+  speed_limit_unit = cp_cam.vl["RSA1"]["TSGN1"]
+  speed_limit_value = cp_cam.vl["RSA1"]["SPDVAL1"]
 
-  tsgn1 = traffic_signals.get("TSGN1")
-  spdval1 = traffic_signals.get("SPDVAL1")
-
-  if tsgn1 == 1 and not frogpilot_toggles.force_mph_dashboard:
-    return spdval1 * CV.KPH_TO_MS
-  elif tsgn1 == 36 or frogpilot_toggles.force_mph_dashboard:
-    return spdval1 * CV.MPH_TO_MS
-  return 0
+  if speed_limit_unit == 1 and not frogpilot_toggles.force_mph_dashboard:
+    return speed_limit_value * CV.KPH_TO_MS
+  elif speed_limit_unit == 36 or frogpilot_toggles.force_mph_dashboard:
+    return speed_limit_value * CV.MPH_TO_MS
+  else:
+    return 0
 
 
 class CarState(CarStateBase):

@@ -31,8 +31,6 @@ private:
 
   QMap<QString, QString> carModels;
 
-  QStackedLayout *vehiclesLayout;
-
   ParamControl *disableOpenpilotLong;
 
   Params params;

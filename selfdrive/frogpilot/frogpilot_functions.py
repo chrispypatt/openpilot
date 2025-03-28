@@ -20,7 +20,7 @@ from openpilot.system.hardware import HARDWARE
 from openpilot.selfdrive.frogpilot.assets.model_manager import ModelManager
 from openpilot.selfdrive.frogpilot.assets.theme_manager import HOLIDAY_THEME_PATH, ThemeManager
 from openpilot.selfdrive.frogpilot.frogpilot_utilities import delete_file, run_cmd
-from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, EXCLUDED_KEYS, MODELS_PATH, THEME_SAVE_PATH, FrogPilotVariables, frogpilot_default_params, get_frogpilot_toggles, params
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ERROR_LOGS_PATH, EXCLUDED_KEYS, MODELS_PATH, THEME_SAVE_PATH, FrogPilotVariables, frogpilot_default_params, get_frogpilot_toggles, params
 
 def backup_directory(backup, destination, success_message, fail_message, minimum_backup_size=0, compressed=False):
   in_progress_destination = destination.parent / (destination.name + "_in_progress")
@@ -29,6 +29,7 @@ def backup_directory(backup, destination, success_message, fail_message, minimum
   if compressed:
     destination_compressed = destination.parent / (destination.name + ".tar.zst")
     if destination_compressed.exists():
+      delete_file(in_progress_destination)
       print("Backup already exists. Aborting...")
       return
 
@@ -61,6 +62,7 @@ def backup_directory(backup, destination, success_message, fail_message, minimum
       params.put_int("MinimumBackupSize", compressed_backup_size)
   else:
     if destination.exists():
+      delete_file(in_progress_destination)
       print("Backup already exists. Aborting...")
       return
 
@@ -109,12 +111,12 @@ def backup_toggles(params_cache):
   backup_path = Path("/data/toggle_backups")
   maximum_backups = 5
 
+  cleanup_backups(backup_path, maximum_backups)
+
   existing_backups = list(backup_path.glob("*"))
   if not changes_found and existing_backups:
     print("Toggles are identical to the previous backup. Aborting...")
     return
-
-  cleanup_backups(backup_path, maximum_backups)
 
   directory = Path("/data/params_backup/d")
   destination_directory = backup_path / f"{datetime.datetime.now().strftime('%Y-%m-%d_%I-%M%p').lower()}_auto"
@@ -149,7 +151,7 @@ def setup_frogpilot(build_metadata):
   run_cmd(["sudo", "mount", "-o", "remount,rw", "/persist"], "Successfully remounted /persist as read-write", "Failed to remount /persist")
   run_cmd(["sudo", "chmod", "0777", "/cache"], "Successfully updated /cache permissions", "Failed to update /cache permissions")
 
-  CRASHES_DIR.mkdir(parents=True, exist_ok=True)
+  ERROR_LOGS_PATH.mkdir(parents=True, exist_ok=True)
   MODELS_PATH.mkdir(parents=True, exist_ok=True)
   THEME_SAVE_PATH.mkdir(parents=True, exist_ok=True)
 

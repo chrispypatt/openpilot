@@ -12,15 +12,19 @@ env:
 jobs:
   update_branch:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout FrogPilot-Staging Branch
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Checkout ${{ env.SOURCE_BRANCH }}
         uses: actions/checkout@v3
         with:
-          ref: ${{ env.SOURCE_BRANCH }}
+          ref: "${{ env.SOURCE_BRANCH }}"
           fetch-depth: 0
 
-      - name: Identify the 'Compile FrogPilot' commit
+      - name: Find "Compile FrogPilot" Commit in ${{ env.SOURCE_BRANCH }}
         id: find_parent
         run: |
           COMMIT=$(git rev-list HEAD -n 1 --grep="Compile FrogPilot")
@@ -40,34 +44,32 @@ jobs:
           echo "parent_commit=$PARENT" >> "$GITHUB_OUTPUT"
           echo "compile_commit=$COMMIT" >> "$GITHUB_OUTPUT"
 
-      - name: Checkout MAKE-PRS-HERE Branch
+      - name: Checkout ${{ env.TARGET_BRANCH }}
         run: |
-          git fetch origin ${{ env.TARGET_BRANCH }}
-          git checkout ${{ env.TARGET_BRANCH }}
+          git fetch origin "${{ env.TARGET_BRANCH }}"
+          git checkout "${{ env.TARGET_BRANCH }}"
 
-      - name: Clean MAKE-PRS-HERE and Update Files
+      - name: Clean ${{ env.TARGET_BRANCH }} and Apply Updates from ${{ env.SOURCE_BRANCH }}
         run: |
           git rm -r --ignore-unmatch .
           git clean -fdx
 
-          PARENT_COMMIT=${{ steps.find_parent.outputs.parent_commit }}
-          git checkout $PARENT_COMMIT -- .
+          PARENT_COMMIT="${{ steps.find_parent.outputs.parent_commit }}"
+          git checkout "$PARENT_COMMIT" -- .
 
-          COMPILE_COMMIT=${{ steps.find_parent.outputs.compile_commit }}
-          SOURCE_HEAD=$(git rev-parse origin/${{ env.SOURCE_BRANCH }})
+          COMPILE_COMMIT="${{ steps.find_parent.outputs.compile_commit }}"
+          SOURCE_HEAD=$(git rev-parse "origin/${{ env.SOURCE_BRANCH }}")
+
           if [ "$COMPILE_COMMIT" != "$SOURCE_HEAD" ]; then
-            echo "Applying changes from commits after the compile commit..."
-            git cherry-pick --no-commit ${COMPILE_COMMIT}..$SOURCE_HEAD
+            echo "Applying changes from '${{ env.SOURCE_BRANCH }}' branch..."
+            git cherry-pick --no-commit "${COMPILE_COMMIT}".."$SOURCE_HEAD"
           fi
+
+          rm -f .github/update_date
 
           git add --all
 
-      - name: Set Git Username and Email
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Commit and Push Changes
+      - name: Commit and Push to ${{ env.TARGET_BRANCH }}
         run: |
           TZ_VALUE="America/Phoenix"
           current_day=$(TZ="$TZ_VALUE" date +"%-d")
@@ -94,4 +96,4 @@ jobs:
           else
             git commit -m "$commit_message"
           fi
-          git push origin ${{ env.TARGET_BRANCH }} --force
+          git push origin "${{ env.TARGET_BRANCH }}" --force

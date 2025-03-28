@@ -591,25 +591,25 @@ void FrogPilotLongitudinalPanel::updateMetric(bool metric, bool bootRun) {
   FrogPilotParamValueControl *setSpeedOffsetToggle = static_cast<FrogPilotParamValueControl*>(toggles["SetSpeedOffset"]);
 
   if (metric) {
-    offset1Toggle->setTitle(tr("Speed Limit Offset (0-34 kph)"));
-    offset2Toggle->setTitle(tr("Speed Limit Offset (35-54 kph)"));
-    offset3Toggle->setTitle(tr("Speed Limit Offset (55-64 kph)"));
-    offset4Toggle->setTitle(tr("Speed Limit Offset (65-99 kph)"));
+    offset1Toggle->setTitle(tr("Speed Limit Offset (0-34 km/h)"));
+    offset2Toggle->setTitle(tr("Speed Limit Offset (35-54 km/h)"));
+    offset3Toggle->setTitle(tr("Speed Limit Offset (55-64 km/h)"));
+    offset4Toggle->setTitle(tr("Speed Limit Offset (65-99 km/h)"));
 
-    offset1Toggle->setDescription(tr("Sets the speed limit offset for speeds between 0-34 kph."));
-    offset2Toggle->setDescription(tr("Sets the speed limit offset for speeds between 35-54 kph."));
-    offset3Toggle->setDescription(tr("Sets the speed limit offset for speeds between 55-64 kph."));
-    offset4Toggle->setDescription(tr("Sets the speed limit offset for speeds between 65-99 kph."));
+    offset1Toggle->setDescription(tr("Sets the speed limit offset for speeds between 0-34 km/h."));
+    offset2Toggle->setDescription(tr("Sets the speed limit offset for speeds between 35-54 km/h."));
+    offset3Toggle->setDescription(tr("Sets the speed limit offset for speeds between 55-64 km/h."));
+    offset4Toggle->setDescription(tr("Sets the speed limit offset for speeds between 65-99 km/h."));
 
-    ceSignal->updateControl(0, 150, tr("kph"));
-    ceSpeedToggle->updateControl(0, 150, tr("kph"));
-    customCruiseToggle->updateControl(1, 150, tr("kph"));
-    customCruiseLongToggle->updateControl(1, 150, tr("kph"));
-    offset1Toggle->updateControl(-99, 99, tr("kph"));
-    offset2Toggle->updateControl(-99, 99, tr("kph"));
-    offset3Toggle->updateControl(-99, 99, tr("kph"));
-    offset4Toggle->updateControl(-99, 99, tr("kph"));
-    setSpeedOffsetToggle->updateControl(0, 150, tr("kph"));
+    ceSignal->updateControl(0, 150, tr("km/h"));
+    ceSpeedToggle->updateControl(0, 150, tr("km/h"));
+    customCruiseToggle->updateControl(1, 150, tr("km/h"));
+    customCruiseLongToggle->updateControl(1, 150, tr("km/h"));
+    offset1Toggle->updateControl(-99, 99, tr("km/h"));
+    offset2Toggle->updateControl(-99, 99, tr("km/h"));
+    offset3Toggle->updateControl(-99, 99, tr("km/h"));
+    offset4Toggle->updateControl(-99, 99, tr("km/h"));
+    setSpeedOffsetToggle->updateControl(0, 150, tr("km/h"));
 
     increasedStoppedDistanceToggle->updateControl(0, 3, tr(" meters"));
   } else {

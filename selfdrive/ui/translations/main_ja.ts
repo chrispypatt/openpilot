@@ -146,10 +146,6 @@
         <translation type="gpt-4o-generated">m/s</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">km/h</translation>
-    </message>
-    <message>
         <source>PENDING</source>
         <translation type="gpt-4o-generated">保留中</translation>
     </message>
@@ -605,8 +601,20 @@
         <translation type="gpt-4o-generated">すべてのトグルバックアップを削除してもよろしいですか？</translation>
     </message>
     <message>
-        <source>Do you want to compress this backup? The final result will be significantly smaller and will run in the background.</source>
-        <translation type="gpt-4o-generated">このバックアップを圧縮しますか？ 最終結果は大幅に小さくなり、バックグラウンドで実行されます。</translation>
+        <source>Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background.</source>
+        <translation type="gpt-4o-generated">このバックアップを圧縮しますか？これには数分余分にかかりますが、結果としてサイズが大幅に小さくなり、バックグラウンドで実行されます。</translation>
+    </message>
+    <message>
+        <source>Delete Error Logs</source>
+        <translation type="gpt-4o-generated">エラーログを削除</translation>
+    </message>
+    <message>
+        <source>Permanently deletes all stored error logs from your device. Ideal for freeing up space.</source>
+        <translation type="gpt-4o-generated">デバイスに保存されているすべてのエラーログを永久に削除します。スペースを解放するのに最適です。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete all of the error logs?</source>
+        <translation type="gpt-4o-generated">エラーログをすべて完全に削除してもよろしいですか？</translation>
     </message>
 </context>
 <context>
@@ -630,14 +638,6 @@
     <message>
         <source>Increase Thermal Safety Limit</source>
         <translation type="gpt-4o-generated">熱安全限界の増加</translation>
-    </message>
-    <message>
-        <source>Low Battery Shutdown Threshold</source>
-        <translation type="gpt-4o-generated">低バッテリーシャットダウンしきい値</translation>
-    </message>
-    <message>
-        <source>Turn Off Data Tracking</source>
-        <translation type="gpt-4o-generated">データ追跡をオフにする</translation>
     </message>
     <message>
         <source>Turn Off Data Uploads</source>
@@ -688,10 +688,6 @@
         <translation type="gpt-4o-generated">時間</translation>
     </message>
     <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">オンロードのみ</translation>
-    </message>
-    <message>
         <source> volts</source>
         <translation type="gpt-4o-generated">ボルト</translation>
     </message>
@@ -708,68 +704,72 @@
         <translation type="gpt-4o-generated">警告: 推奨温度範囲を超えてデバイスを動作させると、早期摩耗や損傷を引き起こす可能性があります!</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from being recorded and the data will be unobtainable!</source>
-        <translation type="gpt-4o-generated">警告: これにより運転が記録されなくなり、データが取得できなくなります!</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!</source>
         <translation type="gpt-4o-generated">警告: これにより、ドライブがカンマコネクトに表示されなくなり、デバッグやサポートに影響を与える可能性があります！</translation>
-    </message>
-    <message>
-        <source>Controls how long the device stays on after you stop driving.</source>
-        <translation type="gpt-4o-generated">運転を停止した後、デバイスがオンのままになる時間を制御します。</translation>
-    </message>
-    <message>
-        <source>Allows the device to work without an internet connection.</source>
-        <translation type="gpt-4o-generated">デバイスがインターネット接続なしで動作することを許可します。</translation>
-    </message>
-    <message>
-        <source>Allows the device to run at higher temperatures than recommended.</source>
-        <translation type="gpt-4o-generated">デバイスが推奨される温度を超えて高温で動作することを許可します。</translation>
-    </message>
-    <message>
-        <source>Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
-        <translation type="gpt-4o-generated">デバイスをシャットダウンするしきい値を管理し、車のバッテリーが過度に消耗して損傷するのを防ぎます。</translation>
-    </message>
-    <message>
-        <source>Disables all data tracking to improve privacy.</source>
-        <translation type="gpt-4o-generated">すべてのデータ追跡を無効にしてプライバシーを向上させます。</translation>
-    </message>
-    <message>
-        <source>Stops the device from sending any data to the servers.</source>
-        <translation type="gpt-4o-generated">デバイスがサーバーにデータを送信するのを停止します。</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness when you're not driving.</source>
-        <translation type="gpt-4o-generated">運転していないときの画面の明るさを制御します。</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness while you're driving.</source>
-        <translation type="gpt-4o-generated">運転中の画面の明るさを調整します。</translation>
-    </message>
-    <message>
-        <source>Enables a button in the onroad UI to record the screen.</source>
-        <translation type="gpt-4o-generated">オンロードUIに画面を記録するボタンを有効にします。</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off when you're not driving.</source>
-        <translation type="gpt-4o-generated">運転していないときに画面がオフになるまでの時間を設定します。</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off while you're driving.</source>
-        <translation type="gpt-4o-generated">運転中に画面がオフになるまでの時間を制御します。</translation>
     </message>
     <message>
         <source>Screen Off</source>
         <translation type="gpt-4o-generated">画面オフ</translation>
     </message>
     <message>
-        <source>Use Konik.ai's Server Instead of Comma's</source>
-        <translation type="gpt-4o-generated">Konik.aiのサーバーをコンマの代わりに使用する</translation>
+        <source>Battery Shutdown Threshold</source>
+        <translation type="gpt-4o-generated">バッテリーシャットダウンの閾値</translation>
     </message>
     <message>
-        <source>Upload your driving data to Konik.ai's server instead of comma's.</source>
-        <translation type="gpt-4o-generated">ドライブデータをカーナットAIのサーバーにアップロードします（コンマのサーバーではなく）。</translation>
+        <source>The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
+        <translation type="gpt-4o-generated">車のバッテリーの過放電や潜在的な損傷を防ぐために、デバイスを自動的にシャットダウンするために使用されるバッテリーレベルの閾値。</translation>
+    </message>
+    <message>
+        <source>How long the device stays on after you go offroad.</source>
+        <translation type="gpt-4o-generated">デバイスがオフロード後にどのくらいの間オンのままになるか。</translation>
+    </message>
+    <message>
+        <source>Turn Off Data Logging</source>
+        <translation type="gpt-4o-generated">データログをオフにする</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
+        <translation type="gpt-4o-generated">警告: これにより運転記録が保存されず、すべてのデータが取得不可能になります！</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're not driving.</source>
+        <translation type="gpt-4o-generated">運転していない時の画面の明るさ。</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're driving.</source>
+        <translation type="gpt-4o-generated">運転中の画面の明るさ。</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off when you're not driving.</source>
+        <translation type="gpt-4o-generated">運転していない時に画面がオフになるまでの時間。</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off while you're driving.</source>
+        <translation type="gpt-4o-generated">運転中に画面がオフになるまでの時間。</translation>
+    </message>
+    <message>
+        <source>Only Disable While Onroad</source>
+        <translation type="gpt-4o-generated">走行中のみ無効化</translation>
+    </message>
+    <message>
+        <source>Allow the device to work indefinitely without an internet connection.</source>
+        <translation type="gpt-4o-generated">デバイスがインターネット接続なしで無期限に動作することを許可する。</translation>
+    </message>
+    <message>
+        <source>Allow the device to run at higher temperatures than comma recommends.</source>
+        <translation type="gpt-4o-generated">デバイスをカンマが推奨するより高い温度で動作させることを許可します。</translation>
+    </message>
+    <message>
+        <source>Disable all data logging to improve privacy.</source>
+        <translation type="gpt-4o-generated">すべてのデータログを無効にしてプライバシーを向上させる。</translation>
+    </message>
+    <message>
+        <source>Prevent the device from sending any data to comma's servers.</source>
+        <translation type="gpt-4o-generated">デバイスがカンマのサーバーにデータを送信するのを防ぎます。</translation>
+    </message>
+    <message>
+        <source>Enable a button in the onroad UI to record the screen.</source>
+        <translation type="gpt-4o-generated">オンロードUIで画面を録画するボタンを有効にする。</translation>
     </message>
 </context>
 <context>
@@ -779,44 +779,12 @@
         <translation type="gpt-4o-generated">常時有効な横方向制御</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
-
-Deactivate only occurs with the 'Cruise Control' button.</source>
-        <translation type="gpt-4o-generated">openpilotのステアリング制御は、ブレーキやアクセルペダルが押されてもアクティブなままです。
-
-「クルーズコントロール」ボタンでのみ無効化されます。</translation>
-    </message>
-    <message>
-        <source>Control with LKAS Button</source>
-        <translation type="gpt-4o-generated">LKASボタンで制御</translation>
-    </message>
-    <message>
-        <source>Enable with Cruise Control</source>
-        <translation type="gpt-4o-generated">クルーズコントロールで有効化</translation>
-    </message>
-    <message>
         <source>Pause on Brake Below</source>
         <translation type="gpt-4o-generated">以下のブレーキで一時停止</translation>
     </message>
     <message>
-        <source>Lane Change Settings</source>
-        <translation type="gpt-4o-generated">車線変更設定</translation>
-    </message>
-    <message>
-        <source>How openpilot handles lane changes.</source>
-        <translation type="gpt-4o-generated">openpilot が車線変更をどのように処理するか。</translation>
-    </message>
-    <message>
         <source>Lane Change Delay</source>
         <translation type="gpt-4o-generated">車線変更の遅延</translation>
-    </message>
-    <message>
-        <source>Lane Width Requirement</source>
-        <translation type="gpt-4o-generated">車線幅の要件</translation>
-    </message>
-    <message>
-        <source>Minimum Speed for Lane Change</source>
-        <translation type="gpt-4o-generated">車線変更の最低速度</translation>
     </message>
     <message>
         <source>Lateral Tuning</source>
@@ -835,16 +803,8 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">生活の質の向上</translation>
     </message>
     <message>
-        <source>Miscellaneous lateral focused features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">全体的なopenpilot体験を向上させるための様々な横方向機能。</translation>
-    </message>
-    <message>
         <source>Pause Steering Below</source>
         <translation type="gpt-4o-generated">ステアリングを一時停止</translation>
-    </message>
-    <message>
-        <source>Pauses steering control when driving below the set speed.</source>
-        <translation type="gpt-4o-generated">設定された速度以下で走行中にステアリング制御を一時停止します。</translation>
     </message>
     <message>
         <source>mph</source>
@@ -855,20 +815,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">フィート</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">km/h</translation>
-    </message>
-    <message>
         <source> meters</source>
         <translation type="gpt-4o-generated">メートル</translation>
     </message>
     <message>
         <source>Advanced Lateral Tuning</source>
         <translation type="gpt-4o-generated">高度な横方向の調整</translation>
-    </message>
-    <message>
-        <source>Advanced settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">openpilotの横制御を微調整するための高度な設定。</translation>
     </message>
     <message>
         <source>Friction (Default: %1)</source>
@@ -879,20 +831,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">摩擦</translation>
     </message>
     <message>
-        <source>Adjusts the resistance in steering. Higher values provide more stable steering but can make it feel heavy, while lower values allow lighter steering but may feel too sensitive.</source>
-        <translation type="gpt-4o-generated">ステアリングの抵抗を調整します。値を高くすると安定したステアリングが可能になりますが、重く感じることがあります。値を低くすると軽いステアリングが可能になりますが、敏感すぎると感じることがあります。</translation>
-    </message>
-    <message>
         <source>Kp Factor (Default: %1)</source>
         <translation type="gpt-4o-generated">Kpファクター (デフォルト: %1)</translation>
     </message>
     <message>
         <source>Kp Factor</source>
         <translation type="gpt-4o-generated">Kpファクター</translation>
-    </message>
-    <message>
-        <source>Adjusts how aggressively the car corrects its steering. Higher values offer quicker corrections but may feel jerky, while lower values make steering smoother but slower to respond.</source>
-        <translation type="gpt-4o-generated">車がステアリングを修正する際の積極性を調整します。値が高いほど修正が速くなりますが、ぎこちなく感じることがあります。一方、値が低いとステアリングがより滑らかになりますが、反応が遅くなります。</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -903,10 +847,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">横方向加速度</translation>
     </message>
     <message>
-        <source>Adjusts how fast the car can steer from side to side. Higher values allow quicker lane changes but can feel unstable, while lower values provide smoother steering but may feel sluggish.</source>
-        <translation type="gpt-4o-generated">車両が左右にどれだけ速くステアリングできるかを調整します。値を高くするとレーン変更が速くなりますが、不安定に感じることがあります。一方、値を低くするとステアリングがスムーズになりますが、鈍く感じることがあります。</translation>
-    </message>
-    <message>
         <source>Steer Ratio (Default: %1)</source>
         <translation type="gpt-4o-generated">ステアリング比 (デフォルト: %1)</translation>
     </message>
@@ -915,104 +855,168 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">ステア比</translation>
     </message>
     <message>
-        <source>Adjusts how much openpilot needs to turn the wheel to steer. Higher values feel like driving a truck, more stable at high speeds, but harder to steer quickly at low speeds, while lower values feel like a go-kart, easier to steer in tight spots but more sensitive and less stable at high speeds.</source>
-        <translation type="gpt-4o-generated">openpilotがハンドルを回して車を操縦するために必要な量を調整します。高い値はトラックを運転するような感覚で、高速での安定性が増しますが、低速での素早い操縦が難しくなります。一方、低い値はゴーカートのような感覚で、狭い場所での操縦が容易になりますが、高速での安定性は低下し、より敏感になります。</translation>
-    </message>
-    <message>
         <source>Force Auto Tune On</source>
         <translation type="gpt-4o-generated">自動調整を強制的にオンにする</translation>
-    </message>
-    <message>
-        <source>Forces comma's auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">サポートされていない車両のためにcommaの自動横方向チューニングを強制します。</translation>
     </message>
     <message>
         <source>Force Auto Tune Off</source>
         <translation type="gpt-4o-generated">自動チューンオフを強制する</translation>
     </message>
     <message>
-        <source>Forces comma's auto lateral tuning off for supported vehicles.</source>
-        <translation type="gpt-4o-generated">サポートされている車両でコンマの自動横方向調整をオフにします。</translation>
-    </message>
-    <message>
-        <source>Controls the current state of 'Always on Lateral' with the 'LKAS' button.</source>
-        <translation type="gpt-4o-generated">「LKAS」ボタンで「Always on Lateral」の現在の状態を制御します。</translation>
-    </message>
-    <message>
-        <source>Activates 'Always on Lateral' whenever 'Cruise Control' is active bypassing the requirement to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">「クルーズコントロール」がアクティブなときに、openpilotを有効にする必要を無視して「常に横方向」をアクティブにします。</translation>
-    </message>
-    <message>
-        <source>Pauses 'Always on Lateral' when the brake pedal is pressed below the set speed.</source>
-        <translation type="gpt-4o-generated">設定速度未満でブレーキペダルが押されたときに「常時横方向」を一時停止します。</translation>
-    </message>
-    <message>
         <source>Automatic Lane Changes</source>
         <translation type="gpt-4o-generated">自動車線変更</translation>
-    </message>
-    <message>
-        <source>Conducts lane changes without needing to touch the steering wheel upon turn signal activation.</source>
-        <translation type="gpt-4o-generated">ターンシグナルを作動させるだけでハンドルを握ることなく車線変更を行います。</translation>
-    </message>
-    <message>
-        <source>Delays lane changes by the set time to prevent sudden changes.</source>
-        <translation type="gpt-4o-generated">急な車線変更を防ぐために、設定された時間だけ車線変更を遅らせます。</translation>
-    </message>
-    <message>
-        <source>Sets the minimum lane width for openpilot to detect a lane as a lane.</source>
-        <translation type="gpt-4o-generated">openpilotが車線を検出するための最小車線幅を設定します。</translation>
-    </message>
-    <message>
-        <source>Sets the minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">openpilotが車線変更を行うために必要な最小速度を設定します。</translation>
     </message>
     <message>
         <source>Only One Lane Change Per Signal</source>
         <translation type="gpt-4o-generated">シグナルごとに車線変更は1回のみ</translation>
     </message>
     <message>
-        <source>Limits lane changes to one per turn signal activation.</source>
-        <translation type="gpt-4o-generated">ウィンカー操作ごとにレーン変更は1回に制限されます。</translation>
-    </message>
-    <message>
-        <source>Settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">openpilotの横方向制御を微調整するための設定。</translation>
-    </message>
-    <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
         <translation type="gpt-4o-generated">レーン変更速度以下のときにターンの欲求を強制</translation>
     </message>
     <message>
-        <source>Forces the model to use turn desires when driving below the minimum lane change speed to help make left and right turns more precisely.</source>
-        <translation type="gpt-4o-generated">モデルが最小車線変更速度以下で運転しているときに、より正確に左折や右折を行うために、ターン意思を使用するように強制します。</translation>
-    </message>
-    <message>
-        <source>Uses Twilsonco's 'Neural Network FeedForward' for more precise steering control.</source>
-        <translation type="gpt-4o-generated">Twilsonco の「Neural Network FeedForward」を使用して、より正確なステアリング制御を実現します。</translation>
-    </message>
-    <message>
-        <source>Smoothens the steering control when entering and exiting curves by using Twilsonco's torque adjustments.</source>
-        <translation type="gpt-4o-generated">Twilsoncoのトルク調整を使用して、カーブの進入および出口時にステアリング制御をスムーズにします。</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Friction'?</source>
-        <translation type="gpt-4o-generated">「摩擦」の設定を完全にリセットしてよろしいですか？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Kp Factor'?</source>
-        <translation type="gpt-4o-generated">「Kp ファクター」の設定を完全にリセットしてもよろしいですか？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Lateral Accel'?</source>
-        <translation type="gpt-4o-generated">「横加速度」の設定を完全にリセットしてもよろしいですか？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Steer Ratio'?</source>
-        <translation type="gpt-4o-generated">「ステア比」の設定を完全にリセットしてもよろしいですか？</translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="gpt-4o-generated">即時</translation>
+    </message>
+    <message>
+        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">openpilotの横制御を微調整するための高度な設定。</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
+        <translation type="gpt-4o-generated">サポートされていない車両のために、commaの自動横方向調整を強制的に有効にします。</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
+        <translation type="gpt-4o-generated">サポートされている車両に対して、commaの自動横方向調整を強制的に無効化する。</translation>
+    </message>
+    <message>
+        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
+
+Deactivation only occurs with the "Cruise Control" button.</source>
+        <translation type="gpt-4o-generated">openpilotのステアリング制御は、ブレーキやアクセルペダルが押されてもアクティブなままです。
+
+「クルーズコントロール」ボタンでのみ無効化されます。</translation>
+    </message>
+    <message>
+        <source>Control With LKAS Button</source>
+        <translation type="gpt-4o-generated">LKASボタンで制御</translation>
+    </message>
+    <message>
+        <source>Control the current state of "Always on Lateral" with the "LKAS" button.</source>
+        <translation type="gpt-4o-generated">「LKAS」ボタンで「常時横制御」の現在の状態を制御します。</translation>
+    </message>
+    <message>
+        <source>Enable With Cruise Control</source>
+        <translation type="gpt-4o-generated">クルーズコントロールで有効にする</translation>
+    </message>
+    <message>
+        <source>Customize how openpilot handles lane changes.</source>
+        <translation type="gpt-4o-generated">openpilotが車線変更をどのように処理するかをカスタマイズします。</translation>
+    </message>
+    <message>
+        <source>openpilot won't initiate a lane change into detected lanes narrower than this width.</source>
+        <translation type="gpt-4o-generated">openpilotは、この幅よりも狭いと検出された車線への車線変更を開始しません。</translation>
+    </message>
+    <message>
+        <source>Minimum Lane Change Speed</source>
+        <translation type="gpt-4o-generated">最小車線変更速度</translation>
+    </message>
+    <message>
+        <source>Minimum speed required for openpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">openpilotが車線変更を行うために必要な最小速度。</translation>
+    </message>
+    <message>
+        <source>Settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">openpilotの横方向制御を微調整するための設定。</translation>
+    </message>
+    <message>
+        <source>Force turn desires below the minimum lane change speed to improve turning accuracy.</source>
+        <translation type="gpt-4o-generated">レーン変更の最小速度以下でターンの希望を強制して、ターンの精度を向上させる。</translation>
+    </message>
+    <message>
+        <source>Miscellaneous lateral control features to improve your overall openpilot experience.</source>
+        <translation type="gpt-4o-generated">全体的なopenpilotの体験を向上させるための、さまざまな横方向制御機能。</translation>
+    </message>
+    <message>
+        <source>Pause steering control when driving below the configured speed.</source>
+        <translation type="gpt-4o-generated">設定された速度以下で走行しているときにステアリング制御を一時停止します。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Friction" values?</source>
+        <translation type="gpt-4o-generated">"摩擦"の値を完全にリセットしてもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Kp Factor" values?</source>
+        <translation type="gpt-4o-generated">"Kp Factor" の値を完全にリセットしてもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Lateral Accel" values?</source>
+        <translation type="gpt-4o-generated">「横方向加速度」値を完全にリセットしてもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Steer Ratio" values?</source>
+        <translation type="gpt-4o-generated">「ステアリング比」値を完全にリセットしてもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="gpt-4o-generated">オフ</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">km/時</translation>
+    </message>
+    <message>
+        <source>Lane Changes</source>
+        <translation type="gpt-4o-generated">車線変更</translation>
+    </message>
+    <message>
+        <source>Lane Detection Width</source>
+        <translation type="gpt-4o-generated">車線検出幅</translation>
+    </message>
+    <message>
+        <source>Adjust steering resistance. Higher values feel more stable but heavier; lower values feel lighter but more sensitive.</source>
+        <translation type="gpt-4o-generated">ステアリング抵抗を調整します。値が高いほど安定感がありますが重くなり、値が低いほど軽く感じますが敏感になります。</translation>
+    </message>
+    <message>
+        <source>Adjust how aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values respond more smoothly but slower.</source>
+        <translation type="gpt-4o-generated">openpilotがステアリングを修正する強さを調整します。数値を高くすると速く反応しますが、動きが急になる可能性があります。数値を低くすると、より滑らかに反応しますが、遅くなります。</translation>
+    </message>
+    <message>
+        <source>Control how quickly openpilot can steer laterally. Higher values allow faster maneuvers but may feel unstable; lower values provide smoother, slower steering.</source>
+        <translation type="gpt-4o-generated">openpilotが横方向にステアリングする速度を制御します。値を高くすると迅速な操作が可能になりますが、不安定に感じることがあります。値を低くすると、よりスムーズでゆっくりとしたステアリングが可能になります。</translation>
+    </message>
+    <message>
+        <source>Adjust how much the wheel turns to steer. Higher values feel like a truck—stable at speed but sluggish in corners; lower values feel like a go-kart—quick but twitchy.</source>
+        <translation type="gpt-4o-generated">ステアリングホイールの回転量を調整します。値が高いとトラックのように感じられ、スピードは安定しますがコーナーでは鈍く感じます。値が低いとゴーカートのように感じられ、素早く反応しますが敏感です。</translation>
+    </message>
+    <message>
+        <source>Allow "Always on Lateral" to be active whenever "Cruise Control" is active, bypassing the need to enable openpilot first.</source>
+        <translation type="gpt-4o-generated">「クルーズコントロール」がアクティブな場合、「常時オン・ラテラル」を有効にすることを許可し、openpilotを最初に有効にする必要をバイパスします。</translation>
+    </message>
+    <message>
+        <source>Temporarily disable "Always on Lateral" below the configured speed when the brake is pressed.</source>
+        <translation type="gpt-4o-generated">ブレーキが押されたとき、設定された速度以下で「常にラテラルオン」を一時的に無効化します。</translation>
+    </message>
+    <message>
+        <source>Automatically initiate lane changes when the turn signal is active — no steering input required!</source>
+        <translation type="gpt-4o-generated">ウインカーが作動中に自動で車線変更を開始 — ステアリング操作は不要です！</translation>
+    </message>
+    <message>
+        <source>Delay automatic lane changes by the configured time.</source>
+        <translation type="gpt-4o-generated">設定された時間だけ自動車線変更を遅らせます。</translation>
+    </message>
+    <message>
+        <source>Limit lane changes to one per turn signal activation.</source>
+        <translation type="gpt-4o-generated">ウインカーを一度に一回の車線変更に制限します。</translation>
+    </message>
+    <message>
+        <source>Use Twilsonco's "Neural Network FeedForward" for smoother steering, trained on past driving data from your car model.</source>
+        <translation type="gpt-4o-generated">Twilsoncoの「ニューラルネットワークフィードフォワード」を使用して、よりスムーズなステアリングを実現します。これは、あなたの車種の過去の運転データで訓練されています。</translation>
+    </message>
+    <message>
+        <source>Smoothen steering control during curves using Twilsonco's torque adjustments.</source>
+        <translation type="gpt-4o-generated">Twilsoncoのトルク調整を使用して、カーブ中のハンドル操作をスムーズにします。</translation>
     </message>
 </context>
 <context>
@@ -1312,26 +1316,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
     <message>
         <source> seconds</source>
         <translation type="gpt-4o-generated">秒</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (0-34 kph)</source>
-        <translation type="gpt-4o-generated">速度制限オフセット (0-34 km/h)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (35-54 kph)</source>
-        <translation type="gpt-4o-generated">速度制限オフセット (35-54 km/h)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (55-64 kph)</source>
-        <translation type="gpt-4o-generated">速度制限オフセット（55-64 km/h）</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (65-99 kph)</source>
-        <translation type="gpt-4o-generated">速度制限オフセット (65-99 km/h)</translation>
-    </message>
-    <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">km/h</translation>
     </message>
     <message>
         <source> meters</source>
@@ -1880,22 +1864,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">「リラックス」パーソナリティの設定を完全にリセットしてもよろしいですか？</translation>
     </message>
     <message>
-        <source>Sets the speed limit offset for speeds between 0-34 kph.</source>
-        <translation type="gpt-4o-generated">0〜34 km/h の速度に対する速度制限オフセットを設定します。</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 35-54 kph.</source>
-        <translation type="gpt-4o-generated">時速35～54kmの間の速度制限のオフセットを設定します。</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 55-64 kph.</source>
-        <translation type="gpt-4o-generated">速度が55-64 kphの範囲の場合の速度制限オフセットを設定します。</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 65-99 kph.</source>
-        <translation type="gpt-4o-generated">65～99 km/hの速度範囲での速度制限オフセットを設定します。</translation>
-    </message>
-    <message>
         <source>Sets the speed limit offset for speeds between 0-34 mph.</source>
         <translation type="gpt-4o-generated">速度0-34 mphの範囲で速度制限オフセットを設定します。</translation>
     </message>
@@ -1928,36 +1896,40 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">オンロードUIに現在のステータスを表示する。</translation>
     </message>
     <message>
-        <source>Reset Curve Data</source>
-        <translation type="gpt-4o-generated">カーブデータをリセット</translation>
+        <source>Speed Limit Offset (0-34 km/h)</source>
+        <translation type="gpt-4o-generated">速度制限オフセット (0-34 km/h)</translation>
     </message>
     <message>
-        <source>Resets the data for the 'Smart' 'Curve Detection Method'.</source>
-        <translation type="gpt-4o-generated">「スマート」「カーブ検出方法」のデータをリセットします。</translation>
+        <source>Speed Limit Offset (35-54 km/h)</source>
+        <translation type="gpt-4o-generated">速度制限オフセット (35-54 km/h)</translation>
     </message>
     <message>
-        <source>Speed Limit Filler</source>
-        <translation type="gpt-4o-generated">速度制限フィラー</translation>
+        <source>Speed Limit Offset (55-64 km/h)</source>
+        <translation type="gpt-4o-generated">速度制限オフセット (55-64 km/h)</translation>
     </message>
     <message>
-        <source>Uses speed limit data from your dashboard, 'Mapbox', and 'Navigate on Openpilot' to identify missing speed limits on 'OpenStreetMap'. The data can be downloaded via 'Fleet Manager' in the 'Tools' section and used at 'https://nerftool.glitch.me/' via the 'Load Custom Data' button.</source>
-        <translation type="gpt-4o-generated">ダッシュボード、'Mapbox'、および 'Navigate on Openpilot' からの制限速度データを使用して、'OpenStreetMap' 上の欠落している制限速度を特定します。このデータは 'Tools' セクションの 'Fleet Manager' 経由でダウンロードでき、'Load Custom Data' ボタンを使用して 'https://nerftool.glitch.me/' で使用できます。</translation>
+        <source>Speed Limit Offset (65-99 km/h)</source>
+        <translation type="gpt-4o-generated">速度制限オフセット（65-99 km/h）</translation>
     </message>
     <message>
-        <source>Use Mapbox For Missing Speed Limits</source>
-        <translation type="gpt-4o-generated">欠落している速度制限にMapboxを使用</translation>
+        <source>Sets the speed limit offset for speeds between 0-34 km/h.</source>
+        <translation type="gpt-4o-generated">速度が0-34 km/hの間での速度制限オフセットを設定します。</translation>
     </message>
     <message>
-        <source>Uses data from 'Mapbox' when all the current speed limit sources aren't currently providing a speed limit.</source>
-        <translation type="gpt-4o-generated">すべての現在の速度制限ソースが速度制限を提供していない場合、'Mapbox'のデータを使用します。</translation>
+        <source>Sets the speed limit offset for speeds between 35-54 km/h.</source>
+        <translation type="gpt-4o-generated">速度制限オフセットを35-54 km/hの速度範囲で設定します。</translation>
     </message>
     <message>
-        <source>Smart</source>
-        <translation type="gpt-4o-generated">スマート</translation>
+        <source>Sets the speed limit offset for speeds between 55-64 km/h.</source>
+        <translation type="gpt-4o-generated">速度が55-64 km/hの範囲での速度制限オフセットを設定します。</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely reset your curvature data?</source>
-        <translation type="gpt-4o-generated">曲率データを完全にリセットしてもよろしいですか？</translation>
+        <source>Sets the speed limit offset for speeds between 65-99 km/h.</source>
+        <translation type="gpt-4o-generated">65-99 km/h の速度範囲で速度制限のオフセットを設定します。</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">km/h</translation>
     </message>
 </context>
 <context>
@@ -2205,10 +2177,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">地図データ</translation>
     </message>
     <message>
-        <source>PRIMELESS NAVIGATION</source>
-        <translation type="gpt-4o-generated">プライムレスナビゲーション</translation>
-    </message>
-    <message>
         <source>DEVICE CONTROLS</source>
         <translation type="gpt-4o-generated">デバイスコントロール</translation>
     </message>
@@ -2219,14 +2187,6 @@ This overrides 'Conditional Experimental Mode'.</source>
     <message>
         <source>Manage FrogPilot's features that affect acceleration, braking, and steering.</source>
         <translation type="gpt-4o-generated">加速、ブレーキ、およびステアリングに影響するFrogPilotの機能を管理します。</translation>
-    </message>
-    <message>
-        <source>Manage map data to be used with 'Curve Speed Control' and 'Speed Limit Controller' and setup 'Navigate On openpilot (NOO)' without a comma prime subscription.</source>
-        <translation type="gpt-4o-generated">「カーブ速度制御」と「速度制限コントローラー」に使用する地図データを管理し、「運転支援機能 (NOO)」をコマプライムサブスクリプションなしで設定する。</translation>
-    </message>
-    <message>
-        <source>Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">FrogPilotを維持およびトラブルシューティングするために、デバイスの内部設定を他のツールやユーティリティとともに管理します。</translation>
     </message>
     <message>
         <source>Manage openpilot's theme and onroad widgets.</source>
@@ -2275,8 +2235,20 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">警告: これにより、一部の潜在的に危険な設定が解除され、運転体験が大幅に変わる可能性があります！</translation>
     </message>
     <message>
-        <source>The 'Developer' preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
-        <translation type="gpt-4o-generated">「Developer」プリセットは、FrogPilotで100時間以上、またはopenpilotで250時間以上利用したユーザーのみが利用可能です。</translation>
+        <source>NAVIGATION</source>
+        <translation type="gpt-4o-generated">ナビゲーション</translation>
+    </message>
+    <message>
+        <source>Download map data that can be used with "Curve Speed Control" and "Speed Limit Controller" and set up "Navigate On openpilot (NOO)".</source>
+        <translation type="gpt-4o-generated">「カーブスピードコントロール」と「速度制限コントローラー」で使用できる地図データをダウンロードし、「Navigate On openpilot (NOO)」を設定してください。</translation>
+    </message>
+    <message>
+        <source>Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot.</source>
+        <translation type="gpt-4o-generated">デバイスの内部設定を管理し、FrogPilotの保守とトラブルシューティングに使用する他のツールとユーティリティを管理します。</translation>
+    </message>
+    <message>
+        <source>The "Developer" preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
+        <translation type="gpt-4o-generated">「Developer」プリセットは、FrogPilotで100時間以上、またはopenpilotで250時間以上のユーザーのみが利用可能です。</translation>
     </message>
 </context>
 <context>
@@ -2292,20 +2264,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     <message>
         <source>Disengage Volume</source>
         <translation type="gpt-4o-generated">解除音量</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Adaptive Cruise Disabled
-Parking Brake Engaged
-Brake Pedal Pressed
-Speed too Low</source>
-        <translation type="gpt-4o-generated">関連アラート:
-
-アダプティブクルーズ無効
-パーキングブレーキ作動中
-ブレーキペダルが押されています
-速度が低すぎます</translation>
     </message>
     <message>
         <source>Engage Volume</source>
@@ -2324,20 +2282,6 @@ openpilotが作動中</translation>
     <message>
         <source>Prompt Volume</source>
         <translation type="gpt-4o-generated">プロンプト音量</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Car Detected in Blindspot
-Speed too Low
-Steer Unavailable Below 'X'
-Take Control, Turn Exceeds Steering Limit</source>
-        <translation type="gpt-4o-generated">関連アラート：
-
-ブラインドスポットに車を検知
-速度が低すぎます
-ステアリングが『X』以下では利用不可
-制御を取り戻してください、曲がりがステアリングの限界を超えています</translation>
     </message>
     <message>
         <source>Prompt Distracted Volume</source>
@@ -2410,36 +2354,8 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
         <translation type="gpt-4o-generated">リード出発アラート</translation>
     </message>
     <message>
-        <source>Loud Blindspot Alert</source>
-        <translation type="gpt-4o-generated">大きなブラインドスポットアラート</translation>
-    </message>
-    <message>
-        <source>Custom alerts for openpilot events.</source>
-        <translation type="gpt-4o-generated">openpilotイベントのカスタムアラート。</translation>
-    </message>
-    <message>
-        <source>Enables the famed 'Goat Scream' that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">世界中のFrogPilotユーザーに喜びと怒りをもたらした有名な「Goat Scream」を有効にします！</translation>
-    </message>
-    <message>
-        <source>Plays an alert when a traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">信号が赤から青に変わるときにアラートを鳴らします。</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the lead vehicle starts starts to depart when at a standstill.</source>
-        <translation type="gpt-4o-generated">先行車両が停止中から出発し始めたときにアラートを再生します。</translation>
-    </message>
-    <message>
-        <source>Plays a louder alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
-        <translation type="gpt-4o-generated">車線変更を試みる際に、ブラインドスポットに車両が検出された場合により大きな警告音を再生します。</translation>
-    </message>
-    <message>
         <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">速度制限変更アラート</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">速度制限が変更されたときにアラートを鳴らします。</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -2448,6 +2364,62 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
     <message>
         <source>Muted</source>
         <translation type="gpt-4o-generated">ミュート中</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Adaptive Cruise Disabled
+Brake Pedal Pressed
+Parking Brake Engaged
+Speed too Low</source>
+        <translation type="gpt-4o-generated">関連アラート：
+
+アダプティブ クルーズ無効
+ブレーキペダルが押されています
+パーキングブレーキが作動中
+速度が低すぎます</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Car Detected in Blindspot
+Steer Unavailable Below "X"
+Speed too Low
+Take Control, Turn Exceeds Steering Limit</source>
+        <translation type="gpt-4o-generated">関連アラート:
+
+ブラインドスポットに車を検出
+「X」以下ではステアリングが利用不可
+速度が低すぎます
+制御を取ってください、ターンがステアリングリミットを超えています</translation>
+    </message>
+    <message>
+        <source>Custom FrogPilot alerts for openpilot events.</source>
+        <translation type="gpt-4o-generated">openpilot のイベントに対するカスタム FrogPilot アラート。</translation>
+    </message>
+    <message>
+        <source>Enable the famed "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">世界中のFrogPilotユーザーに喜びと怒りをもたらした有名な「ヤギの叫び声」を有効化します！</translation>
+    </message>
+    <message>
+        <source>Play an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">信号が赤から緑に変わったときにアラートを鳴らす。</translation>
+    </message>
+    <message>
+        <source>Play an alert when the lead vehicle starts starts to depart.</source>
+        <translation type="gpt-4o-generated">先行車両が発進し始めたときにアラートを鳴らす。</translation>
+    </message>
+    <message>
+        <source>Loud Blindspot Vehicle Alert</source>
+        <translation type="gpt-4o-generated">大音量ブラインドスポット車両警告</translation>
+    </message>
+    <message>
+        <source>Play a loud alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
+        <translation type="gpt-4o-generated">車線変更を試みる際に、ブラインドスポットに車両が検出された場合、大音量の警告を再生します。</translation>
+    </message>
+    <message>
+        <source>Play an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">速度制限が変更されたときにアラートを再生します。</translation>
     </message>
 </context>
 <context>
@@ -2708,10 +2680,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">フラッシュ</translation>
     </message>
     <message>
-        <source>Flashes the Panda device's firmware if you're running into issues.</source>
-        <translation type="gpt-4o-generated">問題が発生した場合、Pandaデバイスのファームウェアをフラッシュします。</translation>
-    </message>
-    <message>
         <source>Are you sure you want to flash the Panda?</source>
         <translation type="gpt-4o-generated">パンダをフラッシュしてもよろしいですか？</translation>
     </message>
@@ -2736,10 +2704,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">強制開始状態</translation>
     </message>
     <message>
-        <source>Forces openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">openpilotをオフロードまたはオンロードに強制します。</translation>
-    </message>
-    <message>
         <source>OFFROAD</source>
         <translation type="gpt-4o-generated">オフロード</translation>
     </message>
@@ -2760,10 +2724,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">レポート</translation>
     </message>
     <message>
-        <source>Let 'FrogsGoMoo' know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">『FrogsGoMoo』に直面している問題を知らせてください。</translation>
-    </message>
-    <message>
         <source>What's going on?</source>
         <translation type="gpt-4o-generated">どうしましたか？</translation>
     </message>
@@ -2778,10 +2738,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>What's your Discord username?</source>
         <translation type="gpt-4o-generated">あなたのDiscordのユーザー名は何ですか？</translation>
-    </message>
-    <message>
-        <source>Thanks for letting us know! Your report has been submitted.</source>
-        <translation type="gpt-4o-generated">お知らせいただきありがとうございます！ご報告は送信されました。</translation>
     </message>
     <message>
         <source>Reset Toggles to Default</source>
@@ -2810,6 +2766,30 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>Reset!</source>
         <translation type="gpt-4o-generated">リセット！</translation>
+    </message>
+    <message>
+        <source>Debug Mode</source>
+        <translation type="gpt-4o-generated">デバッグモード</translation>
+    </message>
+    <message>
+        <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
+        <translation type="gpt-4o-generated">次のドライブ中にFrogPilotのすべての開発者メトリクスを利用して、バグ報告や自己デバッグのためにFrogPilotをデバッグします。</translation>
+    </message>
+    <message>
+        <source>Force openpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">openpilotをオフロードまたはオンロードで強制的に起動します。</translation>
+    </message>
+    <message>
+        <source>Let "FrogsGoMoo" know about an issue you're facing.</source>
+        <translation type="gpt-4o-generated">「FrogsGoMoo」に直面している問題を知らせてください。</translation>
+    </message>
+    <message>
+        <source>Your report has been submitted. Thanks for letting us know!</source>
+        <translation type="gpt-4o-generated">レポートが送信されました。お知らせいただきありがとうございます！</translation>
+    </message>
+    <message>
+        <source>Flash the Panda's firmware. Use if you're running into issues with the Panda.</source>
+        <translation type="gpt-4o-generated">パンダのファームウェアをフラッシュします。パンダに問題がある場合に使用してください。</translation>
     </message>
 </context>
 <context>
@@ -2851,28 +2831,12 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">openpilotの縦制御を完全に無効にしてもよろしいですか？</translation>
     </message>
     <message>
-        <source>Force stop and go for the 2017 Chevy Volt.</source>
-        <translation type="gpt-4o-generated">2017年式シボレー・ボルトの強制ストップ＆ゴー。</translation>
-    </message>
-    <message>
         <source>Automatically Lock/Unlock Doors</source>
         <translation type="gpt-4o-generated">自動ロック/アンロック ドア</translation>
     </message>
     <message>
-        <source>Automatically lock the doors when in drive and unlock when in park.</source>
-        <translation type="gpt-4o-generated">ドライブ時にドアを自動ロックし、パーク時に自動アンロックします。</translation>
-    </message>
-    <message>
         <source>Cluster Speed Offset</source>
         <translation type="gpt-4o-generated">クラスター速度オフセット</translation>
-    </message>
-    <message>
-        <source>Set the cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">ダッシュボードに表示される速度に合わせるために、openpilot が使用するクラスタオフセットを設定します。</translation>
-    </message>
-    <message>
-        <source>Force stop and go for vehicles without stock stop and go functionality.</source>
-        <translation type="gpt-4o-generated">標準の停止・発進機能がない車両に対して強制的に停止・発進機能を提供します。</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -2891,60 +2855,16 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">ゼネラルモーターズの切り替えスイッチ</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'General Motors' vehicles.</source>
-        <translation type="gpt-4o-generated">「General Motors」車両向けの切り替えオプション。</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Experimental Longitudinal Tune</source>
-        <translation type="gpt-4o-generated">FrogsGoMooの実験的な縦方向チューニングを有効にする</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!</source>
-        <translation type="gpt-4o-generated">FrogsGoMooによる実験的なGM縦方向チューニングを有効にします。これは推測のみに基づいています。ご使用は自己責任でお願いします！</translation>
-    </message>
-    <message>
-        <source>Enable Stop and Go Hack</source>
-        <translation type="gpt-4o-generated">ストップ＆ゴーハックを有効にする</translation>
-    </message>
-    <message>
         <source>Smoothen Pedal Response While Going Downhill/Uphill</source>
         <translation type="gpt-4o-generated">下り坂/上り坂でペダル応答を滑らかにする</translation>
-    </message>
-    <message>
-        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
-        <translation type="gpt-4o-generated">下り坂や上り坂を走行する際のアクセルとブレーキの反応を滑らかにします。</translation>
     </message>
     <message>
         <source>Hyundai/Kia/Genesis Toggles</source>
         <translation type="gpt-4o-generated">ヒュンダイ/キア/ジェネシス切り替え</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'Hyundai/Kia/Genesis' vehicles.</source>
-        <translation type="gpt-4o-generated">「Hyundai/Kia/Genesis」車両向けのトグルスイッチ。</translation>
-    </message>
-    <message>
-        <source>Enable comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">カンマの新しい縦方向APIを有効にする</translation>
-    </message>
-    <message>
-        <source>Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
-        <translation type="gpt-4o-generated">カンマの新しい縦制御システムを有効にします。このシステムは加速とブレーキの面で大きな改善を示していますが、一部のHyundai/Kia/Genesis車両では問題があります。</translation>
-    </message>
-    <message>
         <source>Toyota/Lexus Toggles</source>
         <translation type="gpt-4o-generated">トヨタ/レクサスのトグルスイッチ</translation>
-    </message>
-    <message>
-        <source>Toggles catered towards 'Toyota/Lexus' vehicles.</source>
-        <translation type="gpt-4o-generated">「トグル」は「トヨタ/レクサス」車両向けに調整されています。</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Personal Tweaks</source>
-        <translation type="gpt-4o-generated">FrogsGoMooの個人調整を有効にする</translation>
-    </message>
-    <message>
-        <source>FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother.</source>
-        <translation type="gpt-4o-generated">FrogsGoMooによる個人的な調整で、より速くスタートし、よりスムーズに停止することを目指しています。</translation>
     </message>
     <message>
         <source>MANAGE</source>
@@ -2955,20 +2875,72 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">エンジン停止後にドアをロック</translation>
     </message>
     <message>
-        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
-        <translation type="gpt-4o-generated">車の点火が切れ、前席に誰も検出されない場合に自動でドアをロックする。</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation type="gpt-4o-generated">決して</translation>
     </message>
     <message>
-        <source>'Taco Bell Run' Turn Torque Hack</source>
-        <translation type="gpt-4o-generated">「タコベルラン」ターントルクハック</translation>
+        <source>Toggles catered towards "General Motors" vehicles.</source>
+        <translation type="gpt-4o-generated">「ゼネラルモーターズ」車両向けのトグル。</translation>
     </message>
     <message>
-        <source>Enable comma's steering torque hack they used to help handle left and right turns more precisely during their 2022 'Taco Bell' drive by increasing the allowed torque while turning.</source>
-        <translation type="gpt-4o-generated">カンマのステアリングトルクハックを有効にして、左折や右折をより正確に扱えるようにします。2022年の「タコベル」ドライブ中に、回転時の許容トルクを増やして使用していました。</translation>
+        <source>FrogsGoMoo's Experimental Longitudinal Tune</source>
+        <translation type="gpt-4o-generated">FrogsGoMooの実験的な縦方向調整</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!</source>
+        <translation type="gpt-4o-generated">FrogsGoMooの実験的なGM縦調整で、停止と発進の制御を滑らかにすることを目指していますが、これはあくまで推測に基づいています。使用は自己責任でお願いします！</translation>
+    </message>
+    <message>
+        <source>Stop and Go Hack</source>
+        <translation type="gpt-4o-generated">ストップアンドゴーハック</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Hyundai/Kia/Genesis" vehicles.</source>
+        <translation type="gpt-4o-generated">「Hyundai/Kia/Genesis」車両向けのトグル。</translation>
+    </message>
+    <message>
+        <source>comma's New Longitudinal API</source>
+        <translation type="gpt-4o-generated">commaの新しい縦方向API</translation>
+    </message>
+    <message>
+        <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
+        <translation type="gpt-4o-generated">commaの新しい縦制御システムは、加速とブレーキで大きな改善を示していますが、一部のHyundai/Kia/Genesis車両では問題があります。</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Toyota/Lexus" vehicles.</source>
+        <translation type="gpt-4o-generated">「トヨタ/レクサス」車両向けの切り替えスイッチ。</translation>
+    </message>
+    <message>
+        <source>The cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">openpilotがダッシュボードに表示される速度と一致させるために使用するクラスタオフセット。</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's Personal Tweaks</source>
+        <translation type="gpt-4o-generated">FrogsGoMooの個人調整</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking.</source>
+        <translation type="gpt-4o-generated">FrogsGoMooの個人用調整は、加速を速くし、ブレーキをスムーズにすることを目的としています。</translation>
+    </message>
+    <message>
+        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
+        <translation type="gpt-4o-generated">下り坂や上り坂を運転する際のアクセルとブレーキの反応をスムーズにします。</translation>
+    </message>
+    <message>
+        <source>Force stop and go for the "2017 Chevy Volt".</source>
+        <translation type="gpt-4o-generated">「2017年型シボレー・ボルト」の強制停止と発進。</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors when shifting into drive and unlocks them when shifting into park.</source>
+        <translation type="gpt-4o-generated">シフトをドライブに入れると自動的にドアをロックし、パークに入れるとロックを解除します。</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
+        <translation type="gpt-4o-generated">車のイグニッションがオフになり、前席のどちらにも人が検知されない場合、自動的にドアをロックします。</translation>
+    </message>
+    <message>
+        <source>Force stop and go for "Toyota/Lexus" vehicles without stock stop and go functionality.</source>
+        <translation type="gpt-4o-generated">「Toyota/Lexus」車両で標準の停止・発進機能がない場合の強制停止・発進。</translation>
     </message>
 </context>
 <context>
@@ -3793,16 +3765,12 @@ Default matches half of the MUTCD standard of 4 inches.</source>
         <translation>「新しいデバイスを追加」を押し、右側のQRコードをスキャンしてください。</translation>
     </message>
     <message>
-        <source>Pair your device to your Konik.ai account</source>
-        <translation type="gpt-4o-generated">デバイスをKonik.aiアカウントにペアリングする</translation>
+        <source>Go to https://connect.comma.ai on your phone</source>
+        <translation type="gpt-4o-generated">お使いの電話で https://connect.comma.ai にアクセスしてください。</translation>
     </message>
     <message>
-        <source>Go to %1 on your phone</source>
-        <translation type="gpt-4o-generated">お使いの携帯電話で%1に移動してください</translation>
-    </message>
-    <message>
-        <source>Bookmark %1 to your home screen to use it like an app</source>
-        <translation type="gpt-4o-generated">%1 をホーム画面にブックマークして、アプリのように使用してください。</translation>
+        <source>Bookmark connect.comma.ai to your home screen to use it like an app</source>
+        <translation type="gpt-4o-generated">connect.comma.ai をホーム画面に追加して、アプリのように使いましょう。</translation>
     </message>
 </context>
 <context>

@@ -156,7 +156,7 @@ def about():
 def error_logs():
   rows = fleet.list_file(fleet.ERROR_LOGS_PATH)
   if not rows:
-    return render_template("error.html", error="no error logs found at:<br><br>" + fleet.ERROR_LOGS_PATH)
+    return render_template("error.html", error=f"no error logs found at:<br><br>{fleet.ERROR_LOGS_PATH}")
   return render_template("error_logs.html", rows=rows)
 
 

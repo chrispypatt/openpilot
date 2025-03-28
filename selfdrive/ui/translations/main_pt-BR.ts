@@ -146,10 +146,6 @@
         <translation type="gpt-4o-generated">m/s</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">km/h</translation>
-    </message>
-    <message>
         <source>PENDING</source>
         <translation type="gpt-4o-generated">PENDENTE</translation>
     </message>
@@ -605,8 +601,20 @@
         <translation type="gpt-4o-generated">Tem certeza de que deseja excluir todos os backups de alternância?</translation>
     </message>
     <message>
-        <source>Do you want to compress this backup? The final result will be significantly smaller and will run in the background.</source>
-        <translation type="gpt-4o-generated">Deseja comprimir este backup? O resultado final será significativamente menor e será executado em segundo plano.</translation>
+        <source>Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background.</source>
+        <translation type="gpt-4o-generated">Deseja comprimir este backup? Isso levará alguns minutos a mais, mas o resultado final será significativamente menor e será executado em segundo plano.</translation>
+    </message>
+    <message>
+        <source>Delete Error Logs</source>
+        <translation type="gpt-4o-generated">Excluir Logs de Erro</translation>
+    </message>
+    <message>
+        <source>Permanently deletes all stored error logs from your device. Ideal for freeing up space.</source>
+        <translation type="gpt-4o-generated">Exclui permanentemente todos os registros de erros armazenados no seu dispositivo. Ideal para liberar espaço.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete all of the error logs?</source>
+        <translation type="gpt-4o-generated">Tem certeza de que deseja excluir permanentemente todos os logs de erro?</translation>
     </message>
 </context>
 <context>
@@ -630,14 +638,6 @@
     <message>
         <source>Increase Thermal Safety Limit</source>
         <translation type="gpt-4o-generated">Aumentar o Limite de Segurança Térmica</translation>
-    </message>
-    <message>
-        <source>Low Battery Shutdown Threshold</source>
-        <translation type="gpt-4o-generated">Limite de Desligamento por Baixa Bateria</translation>
-    </message>
-    <message>
-        <source>Turn Off Data Tracking</source>
-        <translation type="gpt-4o-generated">Desativar Rastreamento de Dados</translation>
     </message>
     <message>
         <source>Turn Off Data Uploads</source>
@@ -688,10 +688,6 @@
         <translation type="gpt-4o-generated">horas</translation>
     </message>
     <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">Somente na Estrada</translation>
-    </message>
-    <message>
         <source> volts</source>
         <translation type="gpt-4o-generated">volts</translation>
     </message>
@@ -708,68 +704,72 @@
         <translation type="gpt-4o-generated">AVISO: Isso pode causar desgaste prematuro ou danos ao operar o dispositivo além dos limites de temperatura recomendados pela comma!</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from being recorded and the data will be unobtainable!</source>
-        <translation type="gpt-4o-generated">AVISO: Isso impedirá que suas viagens sejam gravadas e os dados ficarão inacessíveis!</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!</source>
         <translation type="gpt-4o-generated">AVISO: Isso impedirá que suas viagens apareçam no comma connect, o que pode impactar a depuração e o suporte!</translation>
-    </message>
-    <message>
-        <source>Controls how long the device stays on after you stop driving.</source>
-        <translation type="gpt-4o-generated">Controla por quanto tempo o dispositivo permanece ligado após você parar de dirigir.</translation>
-    </message>
-    <message>
-        <source>Allows the device to work without an internet connection.</source>
-        <translation type="gpt-4o-generated">Permite que o dispositivo funcione sem conexão com a internet.</translation>
-    </message>
-    <message>
-        <source>Allows the device to run at higher temperatures than recommended.</source>
-        <translation type="gpt-4o-generated">Permite que o dispositivo funcione em temperaturas mais altas do que as recomendadas.</translation>
-    </message>
-    <message>
-        <source>Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
-        <translation type="gpt-4o-generated">Gerencia o limite para desligar o dispositivo, a fim de proteger a bateria do carro contra descarga excessiva e danos potenciais.</translation>
-    </message>
-    <message>
-        <source>Disables all data tracking to improve privacy.</source>
-        <translation type="gpt-4o-generated">Desativa todo o rastreamento de dados para melhorar a privacidade.</translation>
-    </message>
-    <message>
-        <source>Stops the device from sending any data to the servers.</source>
-        <translation type="gpt-4o-generated">Impede que o dispositivo envie quaisquer dados para os servidores.</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness when you're not driving.</source>
-        <translation type="gpt-4o-generated">Controla o brilho da tela quando você não está dirigindo.</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness while you're driving.</source>
-        <translation type="gpt-4o-generated">Controla o brilho da tela enquanto você dirige.</translation>
-    </message>
-    <message>
-        <source>Enables a button in the onroad UI to record the screen.</source>
-        <translation type="gpt-4o-generated">Habilita um botão na interface de usuário durante a condução para gravar a tela.</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off when you're not driving.</source>
-        <translation type="gpt-4o-generated">Controla quanto tempo leva para a tela desligar quando você não está dirigindo.</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off while you're driving.</source>
-        <translation type="gpt-4o-generated">Controla quanto tempo leva para a tela desligar enquanto você está dirigindo.</translation>
     </message>
     <message>
         <source>Screen Off</source>
         <translation type="gpt-4o-generated">Tela Desligada</translation>
     </message>
     <message>
-        <source>Use Konik.ai's Server Instead of Comma's</source>
-        <translation type="gpt-4o-generated">Usar o servidor do Konik.ai em vez do da Comma</translation>
+        <source>Battery Shutdown Threshold</source>
+        <translation type="gpt-4o-generated">Limite de Desligamento da Bateria</translation>
     </message>
     <message>
-        <source>Upload your driving data to Konik.ai's server instead of comma's.</source>
-        <translation type="gpt-4o-generated">Envie seus dados de direção para o servidor da Konik.ai em vez do da comma.</translation>
+        <source>The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
+        <translation type="gpt-4o-generated">O limite de nível de bateria usado para desligar automaticamente o dispositivo a fim de proteger a bateria do carro contra descarga excessiva e possíveis danos.</translation>
+    </message>
+    <message>
+        <source>How long the device stays on after you go offroad.</source>
+        <translation type="gpt-4o-generated">Quanto tempo o dispositivo permanece ligado após você sair da estrada.</translation>
+    </message>
+    <message>
+        <source>Turn Off Data Logging</source>
+        <translation type="gpt-4o-generated">Desativar Registro de Dados</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
+        <translation type="gpt-4o-generated">AVISO: Isso impedirá que suas viagens sejam gravadas e todos os dados ficarão inacessíveis!</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're not driving.</source>
+        <translation type="gpt-4o-generated">O brilho da tela enquanto você não está dirigindo.</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're driving.</source>
+        <translation type="gpt-4o-generated">O brilho da tela enquanto você dirige.</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off when you're not driving.</source>
+        <translation type="gpt-4o-generated">Quanto tempo leva para a tela desligar quando você não está dirigindo.</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off while you're driving.</source>
+        <translation type="gpt-4o-generated">Quanto tempo leva para a tela desligar enquanto você está dirigindo.</translation>
+    </message>
+    <message>
+        <source>Only Disable While Onroad</source>
+        <translation type="gpt-4o-generated">Desativar Apenas Quando em Estrada</translation>
+    </message>
+    <message>
+        <source>Allow the device to work indefinitely without an internet connection.</source>
+        <translation type="gpt-4o-generated">Permitir que o dispositivo funcione indefinidamente sem conexão com a internet.</translation>
+    </message>
+    <message>
+        <source>Allow the device to run at higher temperatures than comma recommends.</source>
+        <translation type="gpt-4o-generated">Permitir que o dispositivo funcione em temperaturas mais altas do que a comma recomenda.</translation>
+    </message>
+    <message>
+        <source>Disable all data logging to improve privacy.</source>
+        <translation type="gpt-4o-generated">Desativar todos os registros de dados para melhorar a privacidade.</translation>
+    </message>
+    <message>
+        <source>Prevent the device from sending any data to comma's servers.</source>
+        <translation type="gpt-4o-generated">Impedir que o dispositivo envie qualquer dado para os servidores da comma.</translation>
+    </message>
+    <message>
+        <source>Enable a button in the onroad UI to record the screen.</source>
+        <translation type="gpt-4o-generated">Habilitar um botão na interface do usuário na estrada para gravar a tela.</translation>
     </message>
 </context>
 <context>
@@ -779,44 +779,12 @@
         <translation type="gpt-4o-generated">Sempre Ativo Lateralmente</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
-
-Deactivate only occurs with the 'Cruise Control' button.</source>
-        <translation type="gpt-4o-generated">O controle de direção do openpilot permanece ativo mesmo quando os pedais de freio ou acelerador são pressionados.
-
-A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
-    </message>
-    <message>
-        <source>Control with LKAS Button</source>
-        <translation type="gpt-4o-generated">Controle com Botão LKAS</translation>
-    </message>
-    <message>
-        <source>Enable with Cruise Control</source>
-        <translation type="gpt-4o-generated">Habilitar com Controle de Cruzeiro</translation>
-    </message>
-    <message>
         <source>Pause on Brake Below</source>
         <translation type="gpt-4o-generated">Pausar ao Frear Abaixo</translation>
     </message>
     <message>
-        <source>Lane Change Settings</source>
-        <translation type="gpt-4o-generated">Configurações de Mudança de Faixa</translation>
-    </message>
-    <message>
-        <source>How openpilot handles lane changes.</source>
-        <translation type="gpt-4o-generated">Como o openpilot lida com mudanças de faixa.</translation>
-    </message>
-    <message>
         <source>Lane Change Delay</source>
         <translation type="gpt-4o-generated">Atraso na Mudança de Faixa</translation>
-    </message>
-    <message>
-        <source>Lane Width Requirement</source>
-        <translation type="gpt-4o-generated">Requisito de Largura da Faixa</translation>
-    </message>
-    <message>
-        <source>Minimum Speed for Lane Change</source>
-        <translation type="gpt-4o-generated">Velocidade Mínima para Mudança de Faixa</translation>
     </message>
     <message>
         <source>Lateral Tuning</source>
@@ -835,16 +803,8 @@ A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
         <translation type="gpt-4o-generated">Melhorias na Qualidade de Vida</translation>
     </message>
     <message>
-        <source>Miscellaneous lateral focused features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">Recursos diversos focados em lateralidade para melhorar sua experiência geral com o openpilot.</translation>
-    </message>
-    <message>
         <source>Pause Steering Below</source>
         <translation type="gpt-4o-generated">Pausar Direção Abaixo</translation>
-    </message>
-    <message>
-        <source>Pauses steering control when driving below the set speed.</source>
-        <translation type="gpt-4o-generated">Pausa o controle de direção ao dirigir abaixo da velocidade definida.</translation>
     </message>
     <message>
         <source>mph</source>
@@ -855,20 +815,12 @@ A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
         <translation type="gpt-4o-generated">pés</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">km/h</translation>
-    </message>
-    <message>
         <source> meters</source>
         <translation type="gpt-4o-generated">metros</translation>
     </message>
     <message>
         <source>Advanced Lateral Tuning</source>
         <translation type="gpt-4o-generated">Ajuste Lateral Avançado</translation>
-    </message>
-    <message>
-        <source>Advanced settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">Configurações avançadas para ajuste fino dos controles laterais do openpilot.</translation>
     </message>
     <message>
         <source>Friction (Default: %1)</source>
@@ -879,20 +831,12 @@ A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
         <translation type="gpt-4o-generated">Atrito</translation>
     </message>
     <message>
-        <source>Adjusts the resistance in steering. Higher values provide more stable steering but can make it feel heavy, while lower values allow lighter steering but may feel too sensitive.</source>
-        <translation type="gpt-4o-generated">Ajusta a resistência na direção. Valores mais altos proporcionam uma direção mais estável, mas podem fazê-la parecer pesada, enquanto valores mais baixos permitem uma direção mais leve, mas podem parecer muito sensíveis.</translation>
-    </message>
-    <message>
         <source>Kp Factor (Default: %1)</source>
         <translation type="gpt-4o-generated">Fator Kp (Padrão: %1)</translation>
     </message>
     <message>
         <source>Kp Factor</source>
         <translation type="gpt-4o-generated">Fator Kp</translation>
-    </message>
-    <message>
-        <source>Adjusts how aggressively the car corrects its steering. Higher values offer quicker corrections but may feel jerky, while lower values make steering smoother but slower to respond.</source>
-        <translation type="gpt-4o-generated">Ajusta quão agressivamente o carro corrige sua direção. Valores mais altos oferecem correções mais rápidas, mas podem parecer bruscos, enquanto valores mais baixos tornam a direção mais suave, mas mais lenta para responder.</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -903,10 +847,6 @@ A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
         <translation type="gpt-4o-generated">Aceleração Lateral</translation>
     </message>
     <message>
-        <source>Adjusts how fast the car can steer from side to side. Higher values allow quicker lane changes but can feel unstable, while lower values provide smoother steering but may feel sluggish.</source>
-        <translation type="gpt-4o-generated">Ajusta a rapidez com que o carro pode virar de um lado para o outro. Valores mais altos permitem mudanças de faixa mais rápidas, mas podem parecer instáveis, enquanto valores mais baixos proporcionam uma direção mais suave, mas podem parecer lentos.</translation>
-    </message>
-    <message>
         <source>Steer Ratio (Default: %1)</source>
         <translation type="gpt-4o-generated">Relação de Direção (Padrão: %1)</translation>
     </message>
@@ -915,104 +855,168 @@ A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
         <translation type="gpt-4o-generated">Relação de Direção</translation>
     </message>
     <message>
-        <source>Adjusts how much openpilot needs to turn the wheel to steer. Higher values feel like driving a truck, more stable at high speeds, but harder to steer quickly at low speeds, while lower values feel like a go-kart, easier to steer in tight spots but more sensitive and less stable at high speeds.</source>
-        <translation type="gpt-4o-generated">Ajusta quanto o openpilot precisa girar o volante para direcionar. Valores mais altos dão a sensação de dirigir um caminhão, mais estável em altas velocidades, mas mais difícil de manobrar rapidamente em baixas velocidades, enquanto valores mais baixos dão a sensação de um kart, mais fácil de manobrar em locais apertados, mas mais sensível e menos estável em altas velocidades.</translation>
-    </message>
-    <message>
         <source>Force Auto Tune On</source>
         <translation type="gpt-4o-generated">Forçar Sintonia Automática Ativada</translation>
-    </message>
-    <message>
-        <source>Forces comma's auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">Força a calibração automática lateral da comma para veículos não suportados.</translation>
     </message>
     <message>
         <source>Force Auto Tune Off</source>
         <translation type="gpt-4o-generated">Forçar Desativação do Auto Tune</translation>
     </message>
     <message>
-        <source>Forces comma's auto lateral tuning off for supported vehicles.</source>
-        <translation type="gpt-4o-generated">Força o desligamento da calibração automática lateral do comma para veículos compatíveis.</translation>
-    </message>
-    <message>
-        <source>Controls the current state of 'Always on Lateral' with the 'LKAS' button.</source>
-        <translation type="gpt-4o-generated">Controla o estado atual de 'Sempre Ativo Lateral' com o botão 'LKAS'.</translation>
-    </message>
-    <message>
-        <source>Activates 'Always on Lateral' whenever 'Cruise Control' is active bypassing the requirement to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">Ativa "Sempre Ativo Lateral" sempre que o "Controle de Cruzeiro" estiver ativo, ignorando o requisito de ativar o openpilot primeiro.</translation>
-    </message>
-    <message>
-        <source>Pauses 'Always on Lateral' when the brake pedal is pressed below the set speed.</source>
-        <translation type="gpt-4o-generated">Interrompe "Sempre Ativo no Lateral" quando o pedal do freio é pressionado abaixo da velocidade definida.</translation>
-    </message>
-    <message>
         <source>Automatic Lane Changes</source>
         <translation type="gpt-4o-generated">Mudanças de Faixa Automáticas</translation>
-    </message>
-    <message>
-        <source>Conducts lane changes without needing to touch the steering wheel upon turn signal activation.</source>
-        <translation type="gpt-4o-generated">Realiza mudanças de faixa sem a necessidade de tocar no volante ao ativar a seta.</translation>
-    </message>
-    <message>
-        <source>Delays lane changes by the set time to prevent sudden changes.</source>
-        <translation type="gpt-4o-generated">Atrasa mudanças de faixa pelo tempo definido para evitar mudanças bruscas.</translation>
-    </message>
-    <message>
-        <source>Sets the minimum lane width for openpilot to detect a lane as a lane.</source>
-        <translation type="gpt-4o-generated">Define a largura mínima da pista para o openpilot detectar uma pista como pista.</translation>
-    </message>
-    <message>
-        <source>Sets the minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">Define a velocidade mínima necessária para o openpilot realizar uma mudança de faixa.</translation>
     </message>
     <message>
         <source>Only One Lane Change Per Signal</source>
         <translation type="gpt-4o-generated">Apenas uma Mudança de Faixa por Sinalização</translation>
     </message>
     <message>
-        <source>Limits lane changes to one per turn signal activation.</source>
-        <translation type="gpt-4o-generated">Limita as mudanças de faixa a uma por ativação do pisca.</translation>
-    </message>
-    <message>
-        <source>Settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">Configurações para ajustar finamente os controles laterais do openpilot.</translation>
-    </message>
-    <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
         <translation type="gpt-4o-generated">Forçar Desejos de Mudança de Faixa Abaixo da Velocidade de Mudança de Faixa</translation>
     </message>
     <message>
-        <source>Forces the model to use turn desires when driving below the minimum lane change speed to help make left and right turns more precisely.</source>
-        <translation type="gpt-4o-generated">Força o modelo a usar desejos de curva ao dirigir abaixo da velocidade mínima de mudança de faixa para ajudar a fazer curvas à esquerda e à direita com mais precisão.</translation>
-    </message>
-    <message>
-        <source>Uses Twilsonco's 'Neural Network FeedForward' for more precise steering control.</source>
-        <translation type="gpt-4o-generated">Utiliza o 'Neural Network FeedForward' da Twilsonco para um controle de direção mais preciso.</translation>
-    </message>
-    <message>
-        <source>Smoothens the steering control when entering and exiting curves by using Twilsonco's torque adjustments.</source>
-        <translation type="gpt-4o-generated">Suaviza o controle de direção ao entrar e sair de curvas usando os ajustes de torque de Twilsonco.</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Friction'?</source>
-        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente suas configurações para 'Friction'?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Kp Factor'?</source>
-        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente suas configurações para o 'Fator Kp'?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Lateral Accel'?</source>
-        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente suas configurações para 'Aceleração Lateral'?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Steer Ratio'?</source>
-        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente suas configurações de 'Steer Ratio'?</translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="gpt-4o-generated">Instantâneo</translation>
+    </message>
+    <message>
+        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">Configurações avançadas para ajuste fino dos controles laterais do openpilot.</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
+        <translation type="gpt-4o-generated">Forçar a ativação da calibração automática lateral da comma para veículos não suportados.</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
+        <translation type="gpt-4o-generated">Desativar automaticamente a calibração lateral da comma para veículos compatíveis.</translation>
+    </message>
+    <message>
+        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
+
+Deactivation only occurs with the "Cruise Control" button.</source>
+        <translation type="gpt-4o-generated">O controle de direção do openpilot permanece ativo mesmo quando os pedais de freio ou acelerador são pressionados.
+
+A desativação ocorre apenas com o botão "Controle de Cruzeiro".</translation>
+    </message>
+    <message>
+        <source>Control With LKAS Button</source>
+        <translation type="gpt-4o-generated">Controlar com Botão LKAS</translation>
+    </message>
+    <message>
+        <source>Control the current state of "Always on Lateral" with the "LKAS" button.</source>
+        <translation type="gpt-4o-generated">Controle o estado atual de "Sempre Ativo Lateral" com o botão "LKAS".</translation>
+    </message>
+    <message>
+        <source>Enable With Cruise Control</source>
+        <translation type="gpt-4o-generated">Habilitar com Controle de Cruzeiro</translation>
+    </message>
+    <message>
+        <source>Customize how openpilot handles lane changes.</source>
+        <translation type="gpt-4o-generated">Personalize como o openpilot lida com as mudanças de faixa.</translation>
+    </message>
+    <message>
+        <source>openpilot won't initiate a lane change into detected lanes narrower than this width.</source>
+        <translation type="gpt-4o-generated">O openpilot não iniciará uma mudança de faixa em pistas detectadas mais estreitas que essa largura.</translation>
+    </message>
+    <message>
+        <source>Minimum Lane Change Speed</source>
+        <translation type="gpt-4o-generated">Velocidade Mínima para Mudança de Faixa</translation>
+    </message>
+    <message>
+        <source>Minimum speed required for openpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">Velocidade mínima necessária para o openpilot realizar uma mudança de faixa.</translation>
+    </message>
+    <message>
+        <source>Settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">Configurações para ajuste fino dos controles laterais do openpilot.</translation>
+    </message>
+    <message>
+        <source>Force turn desires below the minimum lane change speed to improve turning accuracy.</source>
+        <translation type="gpt-4o-generated">Forçar desejos de mudança de faixa abaixo da velocidade mínima para melhorar a precisão das curvas.</translation>
+    </message>
+    <message>
+        <source>Miscellaneous lateral control features to improve your overall openpilot experience.</source>
+        <translation type="gpt-4o-generated">Recursos diversos de controle lateral para melhorar sua experiência geral com o openpilot.</translation>
+    </message>
+    <message>
+        <source>Pause steering control when driving below the configured speed.</source>
+        <translation type="gpt-4o-generated">Pausar o controle de direção ao dirigir abaixo da velocidade configurada.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Friction" values?</source>
+        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente os valores de "Atrito"?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Kp Factor" values?</source>
+        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente os valores do "Fator Kp"?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Lateral Accel" values?</source>
+        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente os valores de "Aceleração Lateral"?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Steer Ratio" values?</source>
+        <translation type="gpt-4o-generated">Você tem certeza de que deseja redefinir completamente os valores de "Steer Ratio"?</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="gpt-4o-generated">Desligado</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">km/h</translation>
+    </message>
+    <message>
+        <source>Lane Changes</source>
+        <translation type="gpt-4o-generated">Mudanças de Faixa</translation>
+    </message>
+    <message>
+        <source>Lane Detection Width</source>
+        <translation type="gpt-4o-generated">Largura da Detecção de Faixa</translation>
+    </message>
+    <message>
+        <source>Adjust steering resistance. Higher values feel more stable but heavier; lower values feel lighter but more sensitive.</source>
+        <translation type="gpt-4o-generated">Ajustar resistência de direção. Valores mais altos dão uma sensação de estabilidade, mas com mais peso; valores mais baixos dão uma sensação de leveza, mas são mais sensíveis.</translation>
+    </message>
+    <message>
+        <source>Adjust how aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values respond more smoothly but slower.</source>
+        <translation type="gpt-4o-generated">Ajuste o quão agressivamente o openpilot corrige a direção. Valores mais altos respondem mais rapidamente, mas podem parecer bruscos; valores mais baixos respondem mais suavemente, mas mais lentamente.</translation>
+    </message>
+    <message>
+        <source>Control how quickly openpilot can steer laterally. Higher values allow faster maneuvers but may feel unstable; lower values provide smoother, slower steering.</source>
+        <translation type="gpt-4o-generated">Controle a rapidez com que o openpilot pode esterçar lateralmente. Valores mais altos permitem manobras mais rápidas, mas podem parecer instáveis; valores mais baixos proporcionam uma direção mais suave e lenta.</translation>
+    </message>
+    <message>
+        <source>Adjust how much the wheel turns to steer. Higher values feel like a truck—stable at speed but sluggish in corners; lower values feel like a go-kart—quick but twitchy.</source>
+        <translation type="gpt-4o-generated">Ajuste o quanto o volante gira para direcionar. Valores mais altos fazem com que pareça um caminhão—estável em velocidade, mas lento nas curvas; valores mais baixos fazem com que pareça um kart—rápido, mas instável.</translation>
+    </message>
+    <message>
+        <source>Allow "Always on Lateral" to be active whenever "Cruise Control" is active, bypassing the need to enable openpilot first.</source>
+        <translation type="gpt-4o-generated">Permitir que "Sempre Ativo Lateral" esteja ativo sempre que o "Controlador de Velocidade" estiver ativo, dispensando a necessidade de ativar o openpilot primeiro.</translation>
+    </message>
+    <message>
+        <source>Temporarily disable "Always on Lateral" below the configured speed when the brake is pressed.</source>
+        <translation type="gpt-4o-generated">Desative temporariamente "Sempre Ativo Lateral" abaixo da velocidade configurada quando o freio for pressionado.</translation>
+    </message>
+    <message>
+        <source>Automatically initiate lane changes when the turn signal is active — no steering input required!</source>
+        <translation type="gpt-4o-generated">Iniciar automaticamente mudanças de faixa quando o sinal de seta estiver ativo — sem necessidade de entrada de direção!</translation>
+    </message>
+    <message>
+        <source>Delay automatic lane changes by the configured time.</source>
+        <translation type="gpt-4o-generated">Atrasar as mudanças de faixa automáticas pelo tempo configurado.</translation>
+    </message>
+    <message>
+        <source>Limit lane changes to one per turn signal activation.</source>
+        <translation type="gpt-4o-generated">Limitar as mudanças de faixa a uma por ativação do sinal de seta.</translation>
+    </message>
+    <message>
+        <source>Use Twilsonco's "Neural Network FeedForward" for smoother steering, trained on past driving data from your car model.</source>
+        <translation type="gpt-4o-generated">Use o "Neural Network FeedForward" do Twilsonco para uma direção mais suave, treinado com dados de condução anteriores do seu modelo de carro.</translation>
+    </message>
+    <message>
+        <source>Smoothen steering control during curves using Twilsonco's torque adjustments.</source>
+        <translation type="gpt-4o-generated">Suavize o controle de direção durante curvas utilizando os ajustes de torque do Twilsonco.</translation>
     </message>
 </context>
 <context>
@@ -1312,26 +1316,6 @@ A desativação ocorre apenas com o botão 'Controle de Cruzeiro'.</translation>
     <message>
         <source> seconds</source>
         <translation type="gpt-4o-generated">segundos</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (0-34 kph)</source>
-        <translation type="gpt-4o-generated">Deslocamento do Limite de Velocidade (0-34 km/h)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (35-54 kph)</source>
-        <translation type="gpt-4o-generated">Desvio do Limite de Velocidade (35-54 km/h)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (55-64 kph)</source>
-        <translation type="gpt-4o-generated">Compensação do Limite de Velocidade (55-64 km/h)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (65-99 kph)</source>
-        <translation type="gpt-4o-generated">Deslocamento do Limite de Velocidade (65-99 km/h)</translation>
-    </message>
-    <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">km/h</translation>
     </message>
     <message>
         <source> meters</source>
@@ -1880,22 +1864,6 @@ Isso substitui o 'Modo Experimental Condicional'.</translation>
         <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente suas configurações para a personalidade 'Relaxada'?</translation>
     </message>
     <message>
-        <source>Sets the speed limit offset for speeds between 0-34 kph.</source>
-        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 0-34 km/h.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 35-54 kph.</source>
-        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 35-54 km/h.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 55-64 kph.</source>
-        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 55-64 km/h.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 65-99 kph.</source>
-        <translation type="gpt-4o-generated">Define o desvio de limite de velocidade para velocidades entre 65-99 km/h.</translation>
-    </message>
-    <message>
         <source>Sets the speed limit offset for speeds between 0-34 mph.</source>
         <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 0-34 mph.</translation>
     </message>
@@ -1928,36 +1896,40 @@ Isso substitui o 'Modo Experimental Condicional'.</translation>
         <translation type="gpt-4o-generated">Mostrar o status atual na interface de usuário na estrada.</translation>
     </message>
     <message>
-        <source>Reset Curve Data</source>
-        <translation type="gpt-4o-generated">Redefinir Dados da Curva</translation>
+        <source>Speed Limit Offset (0-34 km/h)</source>
+        <translation type="gpt-4o-generated">Deslocamento do Limite de Velocidade (0-34 km/h)</translation>
     </message>
     <message>
-        <source>Resets the data for the 'Smart' 'Curve Detection Method'.</source>
-        <translation type="gpt-4o-generated">Redefine os dados para o 'Método de Detecção de Curvas Inteligente'.</translation>
+        <source>Speed Limit Offset (35-54 km/h)</source>
+        <translation type="gpt-4o-generated">Deslocamento do Limite de Velocidade (35-54 km/h)</translation>
     </message>
     <message>
-        <source>Speed Limit Filler</source>
-        <translation type="gpt-4o-generated">Preenchimento de Limite de Velocidade</translation>
+        <source>Speed Limit Offset (55-64 km/h)</source>
+        <translation type="gpt-4o-generated">Compensação do Limite de Velocidade (55-64 km/h)</translation>
     </message>
     <message>
-        <source>Uses speed limit data from your dashboard, 'Mapbox', and 'Navigate on Openpilot' to identify missing speed limits on 'OpenStreetMap'. The data can be downloaded via 'Fleet Manager' in the 'Tools' section and used at 'https://nerftool.glitch.me/' via the 'Load Custom Data' button.</source>
-        <translation type="gpt-4o-generated">Usa dados de limite de velocidade do seu painel, 'Mapbox' e 'Navigate on Openpilot' para identificar limites de velocidade ausentes no 'OpenStreetMap'. Os dados podem ser baixados via 'Fleet Manager' na seção 'Tools' e usados em 'https://nerftool.glitch.me/' através do botão 'Load Custom Data'.</translation>
+        <source>Speed Limit Offset (65-99 km/h)</source>
+        <translation type="gpt-4o-generated">Deslocamento do Limite de Velocidade (65-99 km/h)</translation>
     </message>
     <message>
-        <source>Use Mapbox For Missing Speed Limits</source>
-        <translation type="gpt-4o-generated">Usar Mapbox Para Limites de Velocidade Ausentes</translation>
+        <source>Sets the speed limit offset for speeds between 0-34 km/h.</source>
+        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 0-34 km/h.</translation>
     </message>
     <message>
-        <source>Uses data from 'Mapbox' when all the current speed limit sources aren't currently providing a speed limit.</source>
-        <translation type="gpt-4o-generated">Usa dados do 'Mapbox' quando todas as fontes atuais de limite de velocidade não estão fornecendo um limite de velocidade.</translation>
+        <source>Sets the speed limit offset for speeds between 35-54 km/h.</source>
+        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 35-54 km/h.</translation>
     </message>
     <message>
-        <source>Smart</source>
-        <translation type="gpt-4o-generated">Inteligente</translation>
+        <source>Sets the speed limit offset for speeds between 55-64 km/h.</source>
+        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 55-64 km/h.</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely reset your curvature data?</source>
-        <translation type="gpt-4o-generated">Tem certeza de que deseja redefinir completamente seus dados de curvatura?</translation>
+        <source>Sets the speed limit offset for speeds between 65-99 km/h.</source>
+        <translation type="gpt-4o-generated">Define o desvio do limite de velocidade para velocidades entre 65-99 km/h.</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">km/h</translation>
     </message>
 </context>
 <context>
@@ -2205,10 +2177,6 @@ Isso substitui o 'Modo Experimental Condicional'.</translation>
         <translation type="gpt-4o-generated">DADOS DO MAPA</translation>
     </message>
     <message>
-        <source>PRIMELESS NAVIGATION</source>
-        <translation type="gpt-4o-generated">NAVEGAÇÃO SEM PRIME</translation>
-    </message>
-    <message>
         <source>DEVICE CONTROLS</source>
         <translation type="gpt-4o-generated">CONTROLES DO DISPOSITIVO</translation>
     </message>
@@ -2219,14 +2187,6 @@ Isso substitui o 'Modo Experimental Condicional'.</translation>
     <message>
         <source>Manage FrogPilot's features that affect acceleration, braking, and steering.</source>
         <translation type="gpt-4o-generated">Gerenciar os recursos do FrogPilot que afetam aceleração, frenagem e direção.</translation>
-    </message>
-    <message>
-        <source>Manage map data to be used with 'Curve Speed Control' and 'Speed Limit Controller' and setup 'Navigate On openpilot (NOO)' without a comma prime subscription.</source>
-        <translation type="gpt-4o-generated">Gerenciar dados de mapa para serem usados com 'Controle de Velocidade em Curvas' e 'Controlador de Limite de Velocidade' e configurar 'Navegar no openpilot (NOO)' sem uma assinatura comma prime.</translation>
-    </message>
-    <message>
-        <source>Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">Gerencie as configurações internas do dispositivo junto com outras ferramentas e utilitários para manter e solucionar problemas do FrogPilot.</translation>
     </message>
     <message>
         <source>Manage openpilot's theme and onroad widgets.</source>
@@ -2275,8 +2235,20 @@ Desenvolvedor - Desbloqueia configurações altamente personalizáveis para entu
         <translation type="gpt-4o-generated">AVISO: Isso desbloqueia algumas configurações potencialmente perigosas que podem alterar DRASTICAMENTE sua experiência de direção!</translation>
     </message>
     <message>
-        <source>The 'Developer' preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
-        <translation type="gpt-4o-generated">O ajuste predefinido 'Desenvolvedor' está disponível apenas para usuários com mais de 100 horas no FrogPilot ou 250 horas com openpilot.</translation>
+        <source>NAVIGATION</source>
+        <translation type="gpt-4o-generated">NAVEGAÇÃO</translation>
+    </message>
+    <message>
+        <source>Download map data that can be used with "Curve Speed Control" and "Speed Limit Controller" and set up "Navigate On openpilot (NOO)".</source>
+        <translation type="gpt-4o-generated">Baixar dados de mapa que podem ser usados com "Controle de Velocidade em Curvas" e "Controlador de Limite de Velocidade" e configurar "Navegar no openpilot (NOO)".</translation>
+    </message>
+    <message>
+        <source>Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot.</source>
+        <translation type="gpt-4o-generated">Gerencie as configurações internas do dispositivo, juntamente com outras ferramentas e utilitários usados para manter e solucionar problemas do FrogPilot.</translation>
+    </message>
+    <message>
+        <source>The "Developer" preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
+        <translation type="gpt-4o-generated">O preset "Desenvolvedor" está disponível apenas para usuários com mais de 100 horas no FrogPilot, ou 250 horas no openpilot.</translation>
     </message>
 </context>
 <context>
@@ -2292,20 +2264,6 @@ Desenvolvedor - Desbloqueia configurações altamente personalizáveis para entu
     <message>
         <source>Disengage Volume</source>
         <translation type="gpt-4o-generated">Volume de Desengate</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Adaptive Cruise Disabled
-Parking Brake Engaged
-Brake Pedal Pressed
-Speed too Low</source>
-        <translation type="gpt-4o-generated">Alertas relacionados:
-
-Controle de Cruzeiro Adaptativo Desativado
-Freio de Estacionamento Acionado
-Pedal de Freio Pressionado
-Velocidade muito Baixa</translation>
     </message>
     <message>
         <source>Engage Volume</source>
@@ -2324,20 +2282,6 @@ openpilot ativado</translation>
     <message>
         <source>Prompt Volume</source>
         <translation type="gpt-4o-generated">Volume do Prompt</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Car Detected in Blindspot
-Speed too Low
-Steer Unavailable Below 'X'
-Take Control, Turn Exceeds Steering Limit</source>
-        <translation type="gpt-4o-generated">Alertas relacionados:
-
-Carro Detectado no Ponto Cego
-Velocidade Muito Baixa
-Direção Indisponível Abaixo de 'X'
-Assuma o Controle, Curva Excede o Limite de Direção</translation>
     </message>
     <message>
         <source>Prompt Distracted Volume</source>
@@ -2410,36 +2354,8 @@ DESENGATE IMEDIATAMENTE, Motorista Não Responsivo</translation>
         <translation type="gpt-4o-generated">Alerta de Saída do Veículo da Frente</translation>
     </message>
     <message>
-        <source>Loud Blindspot Alert</source>
-        <translation type="gpt-4o-generated">Alerta de Ponto Cego Alto</translation>
-    </message>
-    <message>
-        <source>Custom alerts for openpilot events.</source>
-        <translation type="gpt-4o-generated">Alertas personalizados para eventos do openpilot.</translation>
-    </message>
-    <message>
-        <source>Enables the famed 'Goat Scream' that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">Ativa o famoso 'Berro do Bode' que trouxe tanto alegria quanto raiva aos usuários do FrogPilot ao redor do mundo!</translation>
-    </message>
-    <message>
-        <source>Plays an alert when a traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">Emite um alerta quando um semáforo muda de vermelho para verde.</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the lead vehicle starts starts to depart when at a standstill.</source>
-        <translation type="gpt-4o-generated">Reproduz um alerta quando o veículo à frente começa a se mover ao estar parado.</translation>
-    </message>
-    <message>
-        <source>Plays a louder alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
-        <translation type="gpt-4o-generated">Emite um alerta mais alto quando um veículo é detectado no ponto cego ao tentar mudar de faixa.</translation>
-    </message>
-    <message>
         <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">Alerta de Mudança no Limite de Velocidade</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">Reproduz um alerta quando o limite de velocidade muda.</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -2448,6 +2364,62 @@ DESENGATE IMEDIATAMENTE, Motorista Não Responsivo</translation>
     <message>
         <source>Muted</source>
         <translation type="gpt-4o-generated">Silenciado</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Adaptive Cruise Disabled
+Brake Pedal Pressed
+Parking Brake Engaged
+Speed too Low</source>
+        <translation type="gpt-4o-generated">Alertas relacionados:
+
+Controle de Cruzeiro Adaptativo Desativado
+Pedal do Freio Pressionado
+Freio de Estacionamento Acionado
+Velocidade Muito Baixa</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Car Detected in Blindspot
+Steer Unavailable Below "X"
+Speed too Low
+Take Control, Turn Exceeds Steering Limit</source>
+        <translation type="gpt-4o-generated">Alertas relacionados:
+
+Carro detectado no ponto cego
+Direção indisponível abaixo de "X"
+Velocidade muito baixa
+Assuma o controle, a curva excede o limite de direção</translation>
+    </message>
+    <message>
+        <source>Custom FrogPilot alerts for openpilot events.</source>
+        <translation type="gpt-4o-generated">Alertas personalizados do FrogPilot para eventos do openpilot.</translation>
+    </message>
+    <message>
+        <source>Enable the famed "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">Ative o famoso "Berro de Cabra" que trouxe tanto alegria quanto raiva aos usuários do FrogPilot ao redor do mundo!</translation>
+    </message>
+    <message>
+        <source>Play an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">Toque um alerta quando o semáforo mudar de vermelho para verde.</translation>
+    </message>
+    <message>
+        <source>Play an alert when the lead vehicle starts starts to depart.</source>
+        <translation type="gpt-4o-generated">Tocar um alerta quando o veículo à frente começar a se afastar.</translation>
+    </message>
+    <message>
+        <source>Loud Blindspot Vehicle Alert</source>
+        <translation type="gpt-4o-generated">Alerta Alto de Veículo no Ponto Cego</translation>
+    </message>
+    <message>
+        <source>Play a loud alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
+        <translation type="gpt-4o-generated">Tocar um alerta alto quando um veículo for detectado no ponto cego ao tentar mudar de faixa.</translation>
+    </message>
+    <message>
+        <source>Play an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">Tocar um alerta quando o limite de velocidade mudar.</translation>
     </message>
 </context>
 <context>
@@ -2708,10 +2680,6 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
         <translation type="gpt-4o-generated">FLASH</translation>
     </message>
     <message>
-        <source>Flashes the Panda device's firmware if you're running into issues.</source>
-        <translation type="gpt-4o-generated">Atualiza o firmware do dispositivo Panda se você estiver enfrentando problemas.</translation>
-    </message>
-    <message>
         <source>Are you sure you want to flash the Panda?</source>
         <translation type="gpt-4o-generated">Tem certeza de que deseja atualizar o Panda?</translation>
     </message>
@@ -2736,10 +2704,6 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
         <translation type="gpt-4o-generated">Estado Forçado Iniciado</translation>
     </message>
     <message>
-        <source>Forces openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">Força o openpilot a operar fora da estrada ou na estrada.</translation>
-    </message>
-    <message>
         <source>OFFROAD</source>
         <translation type="gpt-4o-generated">FORA DA ESTRADA</translation>
     </message>
@@ -2760,10 +2724,6 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
         <translation type="gpt-4o-generated">RELATÓRIO</translation>
     </message>
     <message>
-        <source>Let 'FrogsGoMoo' know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">Informe o 'FrogsGoMoo' sobre um problema que você está enfrentando.</translation>
-    </message>
-    <message>
         <source>What's going on?</source>
         <translation type="gpt-4o-generated">O que está acontecendo?</translation>
     </message>
@@ -2778,10 +2738,6 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
     <message>
         <source>What's your Discord username?</source>
         <translation type="gpt-4o-generated">Qual é o seu nome de usuário no Discord?</translation>
-    </message>
-    <message>
-        <source>Thanks for letting us know! Your report has been submitted.</source>
-        <translation type="gpt-4o-generated">Obrigado por nos informar! Seu relatório foi enviado.</translation>
     </message>
     <message>
         <source>Reset Toggles to Default</source>
@@ -2810,6 +2766,30 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
     <message>
         <source>Reset!</source>
         <translation type="gpt-4o-generated">Redefinir!</translation>
+    </message>
+    <message>
+        <source>Debug Mode</source>
+        <translation type="gpt-4o-generated">Modo de Depuração</translation>
+    </message>
+    <message>
+        <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
+        <translation type="gpt-4o-generated">Depure o FrogPilot durante a próxima condução utilizando todas as métricas de desenvolvedor do FrogPilot para relatar bugs ou fazer auto-depuração.</translation>
+    </message>
+    <message>
+        <source>Force openpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">Forçar openpilot a ficar fora da estrada ou na estrada.</translation>
+    </message>
+    <message>
+        <source>Let "FrogsGoMoo" know about an issue you're facing.</source>
+        <translation type="gpt-4o-generated">Informe "FrogsGoMoo" sobre um problema que você está enfrentando.</translation>
+    </message>
+    <message>
+        <source>Your report has been submitted. Thanks for letting us know!</source>
+        <translation type="gpt-4o-generated">Seu relatório foi enviado. Obrigado por nos avisar!</translation>
+    </message>
+    <message>
+        <source>Flash the Panda's firmware. Use if you're running into issues with the Panda.</source>
+        <translation type="gpt-4o-generated">Atualize o firmware do Panda. Use se estiver enfrentando problemas com o Panda.</translation>
     </message>
 </context>
 <context>
@@ -2851,28 +2831,12 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
         <translation type="gpt-4o-generated">Tem certeza de que deseja desativar completamente o controle longitudinal do openpilot?</translation>
     </message>
     <message>
-        <source>Force stop and go for the 2017 Chevy Volt.</source>
-        <translation type="gpt-4o-generated">Forçar parar e andar para o Chevy Volt 2017.</translation>
-    </message>
-    <message>
         <source>Automatically Lock/Unlock Doors</source>
         <translation type="gpt-4o-generated">Travar/Destravar Portas Automaticamente</translation>
     </message>
     <message>
-        <source>Automatically lock the doors when in drive and unlock when in park.</source>
-        <translation type="gpt-4o-generated">Travar automaticamente as portas quando em movimento e destravar quando em estacionamento.</translation>
-    </message>
-    <message>
         <source>Cluster Speed Offset</source>
         <translation type="gpt-4o-generated">Deslocamento de Velocidade do Painel</translation>
-    </message>
-    <message>
-        <source>Set the cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">Defina o desvio do cluster que o openpilot usa para tentar igualar a velocidade exibida no painel.</translation>
-    </message>
-    <message>
-        <source>Force stop and go for vehicles without stock stop and go functionality.</source>
-        <translation type="gpt-4o-generated">Forçar parada e partida para veículos sem funcionalidade original de parar e partir.</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -2891,60 +2855,16 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
         <translation type="gpt-4o-generated">Alternadores da General Motors</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'General Motors' vehicles.</source>
-        <translation type="gpt-4o-generated">Alternar voltado para veículos 'General Motors'.</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Experimental Longitudinal Tune</source>
-        <translation type="gpt-4o-generated">Ativar Ajuste Longitudinal Experimental do FrogsGoMoo</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!</source>
-        <translation type="gpt-4o-generated">Habilitar a afinação longitudinal experimental do FrogsGoMoo para GM, que é baseada apenas em suposições. Use por sua própria conta e risco!</translation>
-    </message>
-    <message>
-        <source>Enable Stop and Go Hack</source>
-        <translation type="gpt-4o-generated">Ativar Hack de Parada e Partida</translation>
-    </message>
-    <message>
         <source>Smoothen Pedal Response While Going Downhill/Uphill</source>
         <translation type="gpt-4o-generated">Suavizar resposta do pedal ao descer/subir</translation>
-    </message>
-    <message>
-        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
-        <translation type="gpt-4o-generated">Suavize a resposta do acelerador e do freio ao dirigir ladeira abaixo ou ladeira acima.</translation>
     </message>
     <message>
         <source>Hyundai/Kia/Genesis Toggles</source>
         <translation type="gpt-4o-generated">Alternar Hyundai/Kia/Genesis</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'Hyundai/Kia/Genesis' vehicles.</source>
-        <translation type="gpt-4o-generated">Alternâncias voltadas para veículos 'Hyundai/Kia/Genesis'.</translation>
-    </message>
-    <message>
-        <source>Enable comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">Habilitar a Nova API Longitudinal da comma</translation>
-    </message>
-    <message>
-        <source>Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
-        <translation type="gpt-4o-generated">Ativar o novo sistema de controle longitudinal da comma, que mostrou grande melhoria na aceleração e frenagem, mas apresenta problemas em alguns veículos Hyundai/Kia/Genesis.</translation>
-    </message>
-    <message>
         <source>Toyota/Lexus Toggles</source>
         <translation type="gpt-4o-generated">Alternar Toyota/Lexus</translation>
-    </message>
-    <message>
-        <source>Toggles catered towards 'Toyota/Lexus' vehicles.</source>
-        <translation type="gpt-4o-generated">Alternâncias voltadas para veículos 'Toyota/Lexus'.</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Personal Tweaks</source>
-        <translation type="gpt-4o-generated">Ativar ajustes pessoais de FrogsGoMoo</translation>
-    </message>
-    <message>
-        <source>FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother.</source>
-        <translation type="gpt-4o-generated">Ajustes pessoais do FrogsGoMoo que visam acelerar mais rápido e parar de forma mais suave.</translation>
     </message>
     <message>
         <source>MANAGE</source>
@@ -2955,20 +2875,72 @@ Quer enviar suas próprias animações? Compartilhe-as no canal 'custom-themes' 
         <translation type="gpt-4o-generated">Travar portas ao desligar ignição após</translation>
     </message>
     <message>
-        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
-        <translation type="gpt-4o-generated">Travar automaticamente as portas após a ignição do carro ser desligada e ninguém ser detectado em nenhum dos bancos dianteiros.</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation type="gpt-4o-generated">Nunca</translation>
     </message>
     <message>
-        <source>'Taco Bell Run' Turn Torque Hack</source>
-        <translation type="gpt-4o-generated">'Hack de Torque de Curva Taco Bell'</translation>
+        <source>Toggles catered towards "General Motors" vehicles.</source>
+        <translation type="gpt-4o-generated">Alternadores voltados para veículos "General Motors".</translation>
     </message>
     <message>
-        <source>Enable comma's steering torque hack they used to help handle left and right turns more precisely during their 2022 'Taco Bell' drive by increasing the allowed torque while turning.</source>
-        <translation type="gpt-4o-generated">Ativar o hack de torque de direção da comma que eles usaram para ajudar a lidar com curvas à esquerda e à direita de forma mais precisa durante a sua 'Taco Bell' drive de 2022, aumentando o torque permitido ao virar.</translation>
+        <source>FrogsGoMoo's Experimental Longitudinal Tune</source>
+        <translation type="gpt-4o-generated">Ajuste Longitudinal Experimental de FrogsGoMoo</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!</source>
+        <translation type="gpt-4o-generated">A afinação longitudinal experimental do FrogsGoMoo para GM que visa suavizar o controle de parada e partida com base apenas em suposições. Use por sua própria conta e risco!</translation>
+    </message>
+    <message>
+        <source>Stop and Go Hack</source>
+        <translation type="gpt-4o-generated">Hack de Parar e Andar</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Hyundai/Kia/Genesis" vehicles.</source>
+        <translation type="gpt-4o-generated">Alternâncias voltadas para veículos "Hyundai/Kia/Genesis".</translation>
+    </message>
+    <message>
+        <source>comma's New Longitudinal API</source>
+        <translation type="gpt-4o-generated">Nova API Longitudinal da comma</translation>
+    </message>
+    <message>
+        <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
+        <translation type="gpt-4o-generated">O novo sistema de controle longitudinal da comma que mostrou grande melhoria na aceleração e frenagem, mas tem problemas em alguns veículos Hyundai/Kia/Genesis.</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Toyota/Lexus" vehicles.</source>
+        <translation type="gpt-4o-generated">Alternadores voltados para veículos "Toyota/Lexus".</translation>
+    </message>
+    <message>
+        <source>The cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">O desvio do cluster que o openpilot usa para tentar corresponder à velocidade exibida no painel.</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's Personal Tweaks</source>
+        <translation type="gpt-4o-generated">Ajustes Pessoais de FrogsGoMoo</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking.</source>
+        <translation type="gpt-4o-generated">Modificações pessoais de FrogsGoMoo visam proporcionar uma aceleração mais rápida e frenagens mais suaves.</translation>
+    </message>
+    <message>
+        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
+        <translation type="gpt-4o-generated">Suavizar a resposta do acelerador e do freio ao dirigir em descidas ou subidas.</translation>
+    </message>
+    <message>
+        <source>Force stop and go for the "2017 Chevy Volt".</source>
+        <translation type="gpt-4o-generated">Forçar parar e seguir para o "Chevy Volt 2017".</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors when shifting into drive and unlocks them when shifting into park.</source>
+        <translation type="gpt-4o-generated">Tranca automaticamente as portas ao mudar para dirigir e destranca ao mudar para estacionar.</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
+        <translation type="gpt-4o-generated">Bloquear automaticamente as portas após a ignição do carro ser desligada e ninguém for detectado em nenhum dos assentos da frente.</translation>
+    </message>
+    <message>
+        <source>Force stop and go for "Toyota/Lexus" vehicles without stock stop and go functionality.</source>
+        <translation type="gpt-4o-generated">Forçar parada e partida para veículos "Toyota/Lexus" sem funcionalidade de parada e partida de fábrica.</translation>
     </message>
 </context>
 <context>
@@ -3794,16 +3766,12 @@ O padrão corresponde à metade do padrão MUTCD de 4 polegadas.</translation>
         <translation>Clique "add new device" e escaneie o QR code a seguir</translation>
     </message>
     <message>
-        <source>Pair your device to your Konik.ai account</source>
-        <translation type="gpt-4o-generated">Emparelhe seu dispositivo à sua conta Konik.ai</translation>
+        <source>Go to https://connect.comma.ai on your phone</source>
+        <translation type="gpt-4o-generated">Acesse https://connect.comma.ai no seu telefone</translation>
     </message>
     <message>
-        <source>Go to %1 on your phone</source>
-        <translation type="gpt-4o-generated">Vá para %1 no seu telefone</translation>
-    </message>
-    <message>
-        <source>Bookmark %1 to your home screen to use it like an app</source>
-        <translation type="gpt-4o-generated">Adicione %1 à tela inicial para usá-lo como um aplicativo</translation>
+        <source>Bookmark connect.comma.ai to your home screen to use it like an app</source>
+        <translation type="gpt-4o-generated">Adicione connect.comma.ai à tela inicial para usá-lo como um app</translation>
     </message>
 </context>
 <context>

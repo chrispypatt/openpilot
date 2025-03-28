@@ -14,11 +14,10 @@ signals:
   void openParentToggle();
 
 private:
-  void hideToggles();
   void showEvent(QShowEvent *event) override;
-  void showToggles(const std::set<QString> &keys);
   void updateMetric(bool metric, bool bootRun);
   void updateState(const UIState &s);
+  void updateToggles();
 
   bool hasAutoTune;
   bool hasNNFFLog;
@@ -26,7 +25,6 @@ private:
   bool isHKGCanFd;
   bool isSubaru;
   bool isTorqueCar;
-  bool liveValid;
   bool started;
 
   float frictionStock;
@@ -43,6 +41,8 @@ private:
   std::set<QString> laneChangeKeys = {"LaneChangeTime", "LaneDetectionWidth", "MinimumLaneChangeSpeed", "NudgelessLaneChange", "OneLaneChange"};
   std::set<QString> lateralTuneKeys = {"NNFF", "NNFFLite", "TurnDesires"};
   std::set<QString> qolKeys = {"PauseLateralSpeed"};
+
+  std::set<QString> parentKeys;
 
   FrogPilotParamValueButtonControl *steerFrictionToggle;
   FrogPilotParamValueButtonControl *steerLatAccelToggle;

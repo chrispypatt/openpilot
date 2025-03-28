@@ -1,8 +1,18 @@
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJsonParseError>
+#include <QRegularExpression>
 
 #include "selfdrive/ui/ui.h"
+
+bool FrogPilotConfirmationDialog::toggleReboot(QWidget *parent) {
+  ConfirmationDialog d(tr("Reboot required to take effect."), tr("Reboot Now"), tr("Reboot Later"), false, parent);
+  return d.exec();
+}
+
+bool FrogPilotConfirmationDialog::yesorno(const QString &prompt_text, QWidget *parent) {
+  ConfirmationDialog d(prompt_text, tr("Yes"), tr("No"), false, parent);
+  return d.exec();
+}
 
 void updateFrogPilotToggles() {
   static Params params_memory{"/dev/shm/params"};
@@ -35,12 +45,9 @@ QColor loadThemeColors(const QString &colorKey, bool clearCache) {
   );
 }
 
-bool FrogPilotConfirmationDialog::toggleReboot(QWidget *parent) {
-  ConfirmationDialog d(tr("Reboot required to take effect."), tr("Reboot Now"), tr("Reboot Later"), false, parent);
-  return d.exec();
-}
-
-bool FrogPilotConfirmationDialog::yesorno(const QString &prompt_text, QWidget *parent) {
-  ConfirmationDialog d(prompt_text, tr("Yes"), tr("No"), false, parent);
-  return d.exec();
+QString processModelName(const QString &modelName) {
+  QString modelCleaned = modelName;
+  modelCleaned = modelCleaned.remove(QRegularExpression("[🗺️👀📡]")).simplified();
+  modelCleaned = modelCleaned.replace("(Default)", "");
+  return modelCleaned;
 }

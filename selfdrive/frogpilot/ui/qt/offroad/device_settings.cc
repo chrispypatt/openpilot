@@ -1,21 +1,37 @@
 #include "selfdrive/frogpilot/ui/qt/offroad/device_settings.h"
 
 FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : FrogPilotListWidget(parent), parent(parent) {
+  QStackedLayout *deviceLayout = new QStackedLayout();
+  addItem(deviceLayout);
+
+  FrogPilotListWidget *deviceList = new FrogPilotListWidget(this);
+
+  FrogPilotListWidget *deviceManagementList = new FrogPilotListWidget(this);
+  FrogPilotListWidget *screenList = new FrogPilotListWidget(this);
+
+  ScrollView *devicePanel = new ScrollView(deviceList, this);
+  deviceLayout->addWidget(devicePanel);
+
+  ScrollView *deviceManagementPanel = new ScrollView(deviceManagementList, this);
+  deviceLayout->addWidget(deviceManagementPanel);
+  ScrollView *screenPanel = new ScrollView(screenList, this);
+  deviceLayout->addWidget(screenPanel);
+
   const std::vector<std::tuple<QString, QString, QString, QString>> deviceToggles {
     {"DeviceManagement", tr("Device Settings"), tr("Device behavior settings."), "../frogpilot/assets/toggle_icons/icon_device.png"},
-    {"DeviceShutdown", tr("Device Shutdown Timer"), tr("Controls how long the device stays on after you stop driving."), ""},
-    {"OfflineMode", tr("Disable Internet Requirement"), tr("Allows the device to work without an internet connection."), ""},
-    {"IncreaseThermalLimits", tr("Increase Thermal Safety Limit"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This can cause premature wear or damage by running the device over comma's recommended temperature limits!")).arg(tr("Allows the device to run at higher temperatures than recommended.")), ""},
-    {"LowVoltageShutdown", tr("Low Battery Shutdown Threshold"), tr("Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage."), ""},
-    {"NoLogging", tr("Turn Off Data Tracking"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from being recorded and the data will be unobtainable!")).arg(tr("Disables all data tracking to improve privacy.")), ""},
-    {"NoUploads", tr("Turn Off Data Uploads"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!")).arg(tr("Stops the device from sending any data to the servers.")), ""},
+    {"LowVoltageShutdown", tr("Battery Shutdown Threshold"), tr("The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage."), ""},
+    {"DeviceShutdown", tr("Device Shutdown Timer"), tr("How long the device stays on after you go offroad."), ""},
+    {"OfflineMode", tr("Disable Internet Requirement"), tr("Allow the device to work indefinitely without an internet connection."), ""},
+    {"IncreaseThermalLimits", tr("Increase Thermal Safety Limit"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This can cause premature wear or damage by running the device over comma's recommended temperature limits!")).arg(tr("Allow the device to run at higher temperatures than comma recommends.")), ""},
+    {"NoLogging", tr("Turn Off Data Logging"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from being recorded and all data will be unobtainable!")).arg(tr("Disable all data logging to improve privacy.")), ""},
+    {"NoUploads", tr("Turn Off Data Uploads"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!")).arg(tr("Prevent the device from sending any data to comma's servers.")), ""},
 
     {"ScreenManagement", tr("Screen Settings"), tr("Screen behavior settings."), "../frogpilot/assets/toggle_icons/icon_light.png"},
-    {"ScreenBrightness", tr("Screen Brightness (Offroad)"), tr("Controls the screen brightness when you're not driving."), ""},
-    {"ScreenBrightnessOnroad", tr("Screen Brightness (Onroad)"), tr("Controls the screen brightness while you're driving."), ""},
-    {"ScreenRecorder", tr("Screen Recorder"), tr("Enables a button in the onroad UI to record the screen."), ""},
-    {"ScreenTimeout", tr("Screen Timeout (Offroad)"), tr("Controls how long it takes for the screen to turn off when you're not driving."), ""},
-    {"ScreenTimeoutOnroad", tr("Screen Timeout (Onroad)"), tr("Controls how long it takes for the screen to turn off while you're driving."), ""}
+    {"ScreenBrightness", tr("Screen Brightness (Offroad)"), tr("The screen brightness while you're not driving."), ""},
+    {"ScreenBrightnessOnroad", tr("Screen Brightness (Onroad)"), tr("The screen brightness while you're driving."), ""},
+    {"ScreenRecorder", tr("Screen Recorder"), tr("Enable a button in the onroad UI to record the screen."), ""},
+    {"ScreenTimeout", tr("Screen Timeout (Offroad)"), tr("How long it takes for the screen to turn off when you're not driving."), ""},
+    {"ScreenTimeoutOnroad", tr("Screen Timeout (Onroad)"), tr("How long it takes for the screen to turn off while you're driving."), ""}
   };
 
   for (const auto &[param, title, desc, icon] : deviceToggles) {
@@ -23,8 +39,8 @@ FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : Fr
 
     if (param == "DeviceManagement") {
       FrogPilotManageControl *deviceManagementToggle = new FrogPilotManageControl(param, title, desc, icon);
-      QObject::connect(deviceManagementToggle, &FrogPilotManageControl::manageButtonClicked, [this]() {
-        showToggles(deviceManagementKeys);
+      QObject::connect(deviceManagementToggle, &FrogPilotManageControl::manageButtonClicked, [deviceLayout, deviceManagementPanel]() {
+        deviceLayout->setCurrentWidget(deviceManagementPanel);
       });
       deviceToggle = deviceManagementToggle;
     } else if (param == "DeviceShutdown") {
@@ -35,24 +51,22 @@ FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : Fr
       deviceToggle = new FrogPilotParamValueControl(param, title, desc, icon, 0, 33, QString(), shutdownLabels, 1, true);
     } else if (param == "NoUploads") {
       std::vector<QString> uploadsToggles{"DisableOnroadUploads"};
-      std::vector<QString> uploadsToggleNames{tr("Only Onroad")};
+      std::vector<QString> uploadsToggleNames{tr("Only Disable While Onroad")};
       deviceToggle = new FrogPilotButtonToggleControl(param, title, desc, icon, uploadsToggles, uploadsToggleNames);
     } else if (param == "LowVoltageShutdown") {
       deviceToggle = new FrogPilotParamValueControl(param, title, desc, icon, 11.8, 12.5, tr(" volts"), std::map<float, QString>(), 0.1);
 
     } else if (param == "ScreenManagement") {
       FrogPilotManageControl *screenToggle = new FrogPilotManageControl(param, title, desc, icon);
-      QObject::connect(screenToggle, &FrogPilotManageControl::manageButtonClicked, [this]() {
-        std::set<QString> modifiedScreenKeys = screenKeys;
-
-        showToggles(modifiedScreenKeys);
+      QObject::connect(screenToggle, &FrogPilotManageControl::manageButtonClicked, [deviceLayout, screenPanel]() {
+        deviceLayout->setCurrentWidget(screenPanel);
       });
       deviceToggle = screenToggle;
     } else if (param == "ScreenBrightness" || param == "ScreenBrightnessOnroad") {
       std::map<float, QString> brightnessLabels;
       int minBrightness = (param == "ScreenBrightnessOnroad") ? 0 : 1;
       for (int i = 0; i <= 101; ++i) {
-        brightnessLabels[i] = i == 101 ? tr("Auto") : i == 0 ? tr("Screen Off") : QString::number(i) + "%";
+        brightnessLabels[i] = i == 0 ? tr("Screen Off") : i == 101 ? tr("Auto") : QString::number(i) + "%";
       }
       deviceToggle = new FrogPilotParamValueControl(param, title, desc, icon, minBrightness, 101, QString(), brightnessLabels, 1, true);
     } else if (param == "ScreenTimeout" || param == "ScreenTimeoutOnroad") {
@@ -62,12 +76,23 @@ FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : Fr
       deviceToggle = new ParamControl(param, title, desc, icon);
     }
 
-    addItem(deviceToggle);
     toggles[param] = deviceToggle;
+
+    if (deviceManagementKeys.find(param) != deviceManagementKeys.end()) {
+      deviceManagementList->addItem(deviceToggle);
+    } else if (screenKeys.find(param) != screenKeys.end()) {
+      screenList->addItem(deviceToggle);
+    } else {
+      deviceList->addItem(deviceToggle);
+    }
 
     if (FrogPilotManageControl *frogPilotManageToggle = qobject_cast<FrogPilotManageControl*>(deviceToggle)) {
       QObject::connect(frogPilotManageToggle, &FrogPilotManageControl::manageButtonClicked, this, &FrogPilotDevicePanel::openParentToggle);
     }
+
+    QObject::connect(deviceToggle, &AbstractControl::showDescriptionEvent, [this]() {
+      update();
+    });
   }
 
   static_cast<ParamControl*>(toggles["IncreaseThermalLimits"])->setConfirmation(true, false);
@@ -86,7 +111,7 @@ FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : Fr
     });
   }
 
-  QObject::connect(parent, &FrogPilotSettingsWindow::closeParentToggle, this, &FrogPilotDevicePanel::hideToggles);
+  QObject::connect(parent, &FrogPilotSettingsWindow::closeParentToggle, [deviceLayout, devicePanel] {deviceLayout->setCurrentWidget(devicePanel);});
   QObject::connect(uiState(), &UIState::uiUpdate, this, &FrogPilotDevicePanel::updateState);
 }
 
@@ -94,7 +119,7 @@ void FrogPilotDevicePanel::showEvent(QShowEvent *event) {
   frogpilotToggleLevels = parent->frogpilotToggleLevels;
   tuningLevel = parent->tuningLevel;
 
-  hideToggles();
+  updateToggles();
 }
 
 void FrogPilotDevicePanel::updateState(const UIState &s) {
@@ -105,28 +130,35 @@ void FrogPilotDevicePanel::updateState(const UIState &s) {
   started = s.scene.started;
 }
 
-void FrogPilotDevicePanel::showToggles(const std::set<QString> &keys) {
-  setUpdatesEnabled(false);
+void FrogPilotDevicePanel::updateToggles() {
+  std::set<QString> parentKeys = {
+    "DeviceManagement",
+    "ScreenManagement"
+  };
 
   for (auto &[key, toggle] : toggles) {
-    toggle->setVisible(keys.find(key) != keys.end() && tuningLevel >= frogpilotToggleLevels[key].toDouble());
+    if (parentKeys.find(key) != parentKeys.end()) {
+      toggle->setVisible(false);
+    }
   }
-
-  setUpdatesEnabled(true);
-
-  update();
-}
-
-void FrogPilotDevicePanel::hideToggles() {
-  setUpdatesEnabled(false);
 
   for (auto &[key, toggle] : toggles) {
-    bool subToggles = deviceManagementKeys.find(key) != deviceManagementKeys.end() ||
-                      screenKeys.find(key) != screenKeys.end();
-    toggle->setVisible(!subToggles && tuningLevel >= frogpilotToggleLevels[key].toDouble());
-  }
+    if (parentKeys.find(key) != parentKeys.end()) {
+      continue;
+    }
 
-  setUpdatesEnabled(true);
+    bool setVisible = parent->tuningLevel >= parent->frogpilotToggleLevels[key].toDouble();
+
+    toggle->setVisible(setVisible);
+
+    if (setVisible) {
+      if (deviceManagementKeys.find(key) != deviceManagementKeys.end()) {
+        toggles["DeviceManagement"]->setVisible(true);
+      } else if (screenKeys.find(key) != screenKeys.end()) {
+        toggles["ScreenManagement"]->setVisible(true);
+      }
+    }
+  }
 
   update();
 }

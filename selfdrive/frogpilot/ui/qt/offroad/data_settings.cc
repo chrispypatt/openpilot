@@ -15,10 +15,12 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
         deleteDrivingDataBtn->setValue(tr("Deleting..."));
 
         realdataDir.removeRecursively();
-        util::create_directories(Path::log_root(), 0775);
+        realdataDir.mkpath(".");
 
         deleteDrivingDataBtn->setValue(tr("Deleted!"));
+
         util::sleep_for(2500);
+
         deleteDrivingDataBtn->setEnabled(true);
         deleteDrivingDataBtn->setValue("");
 
@@ -27,6 +29,33 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
     }
   });
   addItem(deleteDrivingDataBtn);
+
+  ButtonControl *deleteErrorLogsBtn = new ButtonControl(tr("Delete Error Logs"), tr("DELETE"), tr("Permanently deletes all stored error logs from your device. Ideal for freeing up space."));
+  QObject::connect(deleteErrorLogsBtn, &ButtonControl::clicked, [=]() {
+    QDir errorLogsDir("/data/error_logs");
+
+    if (ConfirmationDialog::confirm(tr("Are you sure you want to permanently delete all of the error logs?"), tr("Delete"), this)) {
+      std::thread([=]() mutable {
+        parent->keepScreenOn = true;
+
+        deleteErrorLogsBtn->setEnabled(false);
+        deleteErrorLogsBtn->setValue(tr("Deleting..."));
+
+        errorLogsDir.removeRecursively();
+        errorLogsDir.mkpath(".");
+
+        deleteErrorLogsBtn->setValue(tr("Deleted!"));
+
+        util::sleep_for(2500);
+
+        deleteErrorLogsBtn->setEnabled(true);
+        deleteErrorLogsBtn->setValue("");
+
+        parent->keepScreenOn = false;
+      }).detach();
+    }
+  });
+  addItem(deleteErrorLogsBtn);
 
   FrogPilotButtonsControl *screenRecordingsBtn = new FrogPilotButtonsControl(tr("Screen Recordings"), tr("Manage your screen recordings."), "", {tr("DELETE"), tr("DELETE ALL"), tr("RENAME")});
   QObject::connect(screenRecordingsBtn, &FrogPilotButtonsControl::buttonClicked, [=](int id) {
@@ -49,7 +78,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
             QFile::remove(recordingsDir.absoluteFilePath(selection));
 
             screenRecordingsBtn->setValue(tr("Deleted!"));
+
             util::sleep_for(2500);
+
             screenRecordingsBtn->setEnabled(true);
             screenRecordingsBtn->setValue("");
 
@@ -76,7 +107,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
           recordingsDir.mkpath(".");
 
           screenRecordingsBtn->setValue(tr("Deleted!"));
+
           util::sleep_for(2500);
+
           screenRecordingsBtn->setEnabled(true);
           screenRecordingsBtn->setValue("");
 
@@ -110,7 +143,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
             QFile::rename(oldPath, newPath);
 
             screenRecordingsBtn->setValue(tr("Renamed!"));
+
             util::sleep_for(2500);
+
             screenRecordingsBtn->setEnabled(true);
             screenRecordingsBtn->setValue("");
 
@@ -130,14 +165,17 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
     QDir backupDir("/data/backups");
     QStringList backupNames = backupDir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot, QDir::Name).filter(QRegularExpression("^(?!.*_in_progress(?:\\..*)?$).*$"));
 
-    QMap<QString, QString> backupFriendlyMap;
     QRegularExpression autoRegex("^(.*)_(\\d{4}-\\d{2}-\\d{2})_auto(?:\\..*)?$");
+
+    QMap<QString, QString> backupFriendlyMap;
     for (const QString &name : backupNames) {
       QString friendly = name;
+
       QRegularExpressionMatch match = autoRegex.match(name);
       if (match.hasMatch()) {
         friendly = match.captured(1) + ": " + match.captured(2);
       }
+
       backupFriendlyMap.insert(friendly, name);
     }
 
@@ -148,7 +186,7 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
           ConfirmationDialog::alert(tr("A backup with this name already exists. Please choose a different name."), this);
           return;
         }
-        bool compressed = FrogPilotConfirmationDialog::yesorno(tr("Do you want to compress this backup? The final result will be significantly smaller and will run in the background."), this);
+        bool compressed = FrogPilotConfirmationDialog::yesorno(tr("Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background."), this);
         std::thread([=]() {
           parent->keepScreenOn = true;
 
@@ -176,7 +214,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
           }
 
           frogpilotBackupBtn->setValue(tr("Backup created!"));
+
           util::sleep_for(2500);
+
           frogpilotBackupBtn->setEnabled(true);
           frogpilotBackupBtn->setValue("");
 
@@ -211,7 +251,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
             }
 
             frogpilotBackupBtn->setValue(tr("Deleted!"));
+
             util::sleep_for(2500);
+
             frogpilotBackupBtn->setEnabled(true);
             frogpilotBackupBtn->setValue("");
 
@@ -240,7 +282,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
           backupDir.mkpath(".");
 
           frogpilotBackupBtn->setValue(tr("Deleted!"));
+
           util::sleep_for(2500);
+
           frogpilotBackupBtn->setEnabled(true);
           frogpilotBackupBtn->setValue("");
 
@@ -302,8 +346,11 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
             params.putBool("AutomaticUpdates", false);
 
             frogpilotBackupBtn->setValue(tr("Restored!"));
+
             util::sleep_for(2500);
+
             frogpilotBackupBtn->setValue(tr("Rebooting..."));
+
             util::sleep_for(2500);
 
             Hardware::reboot();
@@ -319,11 +366,13 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
     QDir backupDir("/data/toggle_backups");
     QStringList backupNames = backupDir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot, QDir::Name).filter(QRegularExpression("^(?!.*_in_progress$).*$"));
 
-    QMap<QString, QString> backupFriendlyMap;
     QRegularExpression autoRegex("^(\\d{4}-\\d{2}-\\d{2})_(\\d{2}-\\d{2}[APMapm]{2})_auto(?:\\..*)?$");
+
+    QMap<QString, QString> backupFriendlyMap;
     for (const QString &name : backupNames) {
-      QString friendly = name;
       QRegularExpressionMatch match = autoRegex.match(name);
+
+      QString friendly = name;
       if (match.hasMatch()) {
         QString datePart = match.captured(1);
         QString timePart = match.captured(2);
@@ -367,7 +416,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
           std::filesystem::rename(inProgressBackupPath, fullBackupPath);
 
           toggleBackupBtn->setValue(tr("Backup created!"));
+
           util::sleep_for(2500);
+
           toggleBackupBtn->setEnabled(true);
           toggleBackupBtn->setValue("");
 
@@ -398,7 +449,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
             dirToDelete.removeRecursively();
 
             toggleBackupBtn->setValue(tr("Deleted!"));
+
             util::sleep_for(2500);
+
             toggleBackupBtn->setEnabled(true);
             toggleBackupBtn->setValue("");
 
@@ -427,7 +480,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
           backupDir.mkpath(".");
 
           toggleBackupBtn->setValue(tr("Deleted!"));
+
           util::sleep_for(2500);
+
           toggleBackupBtn->setEnabled(true);
           toggleBackupBtn->setValue("");
 
@@ -464,7 +519,9 @@ FrogPilotDataPanel::FrogPilotDataPanel(FrogPilotSettingsWindow *parent) : FrogPi
             updateFrogPilotToggles();
 
             toggleBackupBtn->setValue(tr("Restored!"));
+
             util::sleep_for(2500);
+
             toggleBackupBtn->setEnabled(true);
             toggleBackupBtn->setValue("");
 

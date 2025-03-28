@@ -5,7 +5,10 @@ import os
 import pathlib
 import xml.etree.ElementTree as ET
 
-from openpilot.common.basedir import BASEDIR
+if "BASEDIR" in os.environ:
+  BASEDIR = os.environ.get("BASEDIR")
+else:
+  from openpilot.common.basedir import BASEDIR
 
 UI_DIR = os.path.join(BASEDIR, "selfdrive", "ui")
 FROG_UI_DIR = os.path.join(BASEDIR, "selfdrive", "frogpilot", "ui")
@@ -64,6 +67,9 @@ def update_translations(vanish: bool = False, translation_files: None | list[str
       args += " -pluralonly"
     ret = os.system(args)
     assert ret == 0
+
+    tree = ET.parse(tr_file)
+    root = tree.getroot()
 
     for context in root.findall("context"):
       name = context.find("name")

@@ -13,7 +13,7 @@ from openpilot.system.hardware import HARDWARE, PC
 from openpilot.common.swaglog import cloudlog
 from openpilot.system.version import get_build_metadata, get_version
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ERROR_LOGS_PATH
 
 class SentryProject(Enum):
   # python project
@@ -93,7 +93,7 @@ def capture_memory_log():
 
 
 def capture_report(discord_user, report, frogpilot_toggles):
-  error_file_path = CRASHES_DIR / "error.txt"
+  error_file_path = ERROR_LOGS_PATH / "error.txt"
   error_content = "No error log found."
 
   if error_file_path.exists():
@@ -106,24 +106,14 @@ def capture_report(discord_user, report, frogpilot_toggles):
     sentry_sdk.flush()
 
 
-def send_tmux(log_path):
-  with open(log_path, "r", encoding="utf-8") as log_file:
-    log_content = log_file.read()
-
-  with sentry_sdk.push_scope() as scope:
-    scope.set_context("Tmux Log", log_content)
-    sentry_sdk.capture_message("Lock/Unlock operation completed. Log attached.")
-    sentry_sdk.flush()
-
-
 def set_tag(key: str, value: str) -> None:
   sentry_sdk.set_tag(key, value)
 
 
 def save_exception(exc_text: str) -> None:
   files = [
-    CRASHES_DIR / datetime.now().strftime("%Y-%m-%d--%H-%M-%S.log"),
-    CRASHES_DIR / "error.txt"
+    ERROR_LOGS_PATH / datetime.now().strftime("%Y-%m-%d--%H-%M-%S.log"),
+    ERROR_LOGS_PATH / "error.txt"
   ]
 
   for file_path in files:

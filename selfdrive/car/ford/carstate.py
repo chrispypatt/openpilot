@@ -10,6 +10,18 @@ GearShifter = car.CarState.GearShifter
 TransmissionType = car.CarParams.TransmissionType
 
 
+# Traffic signals for Speed Limit Controller
+@staticmethod
+def calculate_speed_limit(cp_cam):
+  speed_limit_unit = cp_cam.vl["Traffic_RecognitnData"]["TsrVlUnitMsgTxt_D_Rq"]
+  speed_limit_value = cp_cam.vl["Traffic_RecognitnData"]["TsrVLim1MsgTxt_D_Rq"]
+
+  if speed_limit_unit == 1:
+    return speed_limit_value * CV.KPH_TO_MS
+  elif speed_limit_unit == 2:
+    return speed_limit_value * CV.MPH_TO_MS
+
+
 class CarState(CarStateBase):
   def __init__(self, CP):
     super().__init__(CP)
@@ -109,6 +121,9 @@ class CarState(CarStateBase):
     self.lkas_status_stock_values = cp_cam.vl["IPMA_Data"]
 
     # FrogPilot CarState functions
+    if self.CP.flags & FordFlags.CANFD:
+      fp_ret.dashboardSpeedLimit = calculate_speed_limit(cp_cam)
+
     self.lkas_previously_enabled = self.lkas_enabled
     self.lkas_enabled = ret.genericToggle
 
@@ -169,6 +184,11 @@ class CarState(CarStateBase):
       ("ACCDATA_3", 5),
       ("IPMA_Data", 1),
     ]
+
+    if CP.flags & FordFlags.CANFD:
+      messages += [
+        ("Traffic_RecognitnData", 1),
+      ]
 
     if CP.enableBsm and CP.flags & FordFlags.CANFD:
       messages += [

@@ -146,10 +146,6 @@
         <translation type="gpt-4o-generated">م/ث</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">كم/س</translation>
-    </message>
-    <message>
         <source>PENDING</source>
         <translation type="gpt-4o-generated">معلق</translation>
     </message>
@@ -605,8 +601,20 @@
         <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد حذف جميع النسخ الاحتياطية للتبديل؟</translation>
     </message>
     <message>
-        <source>Do you want to compress this backup? The final result will be significantly smaller and will run in the background.</source>
-        <translation type="gpt-4o-generated">هل تريد ضغط النسخة الاحتياطية هذه؟ ستكون النتيجة النهائية أصغر بكثير وستعمل في الخلفية.</translation>
+        <source>Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background.</source>
+        <translation type="gpt-4o-generated">هل تريد ضغط هذا النسخ الاحتياطي؟ سيستغرق ذلك بضع دقائق إضافية، لكن النتيجة النهائية ستكون أصغر بكثير وستعمل في الخلفية.</translation>
+    </message>
+    <message>
+        <source>Delete Error Logs</source>
+        <translation type="gpt-4o-generated">حذف سجلات الأخطاء</translation>
+    </message>
+    <message>
+        <source>Permanently deletes all stored error logs from your device. Ideal for freeing up space.</source>
+        <translation type="gpt-4o-generated">يحذف جميع سجلات الأخطاء المخزنة من جهازك بشكل دائم. مثالي لتحرير المساحة.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete all of the error logs?</source>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد حذف جميع سجلات الأخطاء بشكل دائم؟</translation>
     </message>
 </context>
 <context>
@@ -630,14 +638,6 @@
     <message>
         <source>Increase Thermal Safety Limit</source>
         <translation type="gpt-4o-generated">زيادة حد الأمان الحراري</translation>
-    </message>
-    <message>
-        <source>Low Battery Shutdown Threshold</source>
-        <translation type="gpt-4o-generated">عتبة إيقاف التشغيل بسبب انخفاض البطارية</translation>
-    </message>
-    <message>
-        <source>Turn Off Data Tracking</source>
-        <translation type="gpt-4o-generated">إيقاف تتبع البيانات</translation>
     </message>
     <message>
         <source>Turn Off Data Uploads</source>
@@ -688,10 +688,6 @@
         <translation type="gpt-4o-generated">ساعات</translation>
     </message>
     <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">فقط على الطريق</translation>
-    </message>
-    <message>
         <source> volts</source>
         <translation type="gpt-4o-generated">فولتات</translation>
     </message>
@@ -708,68 +704,72 @@
         <translation type="gpt-4o-generated">تحذير: قد يتسبب ذلك في تآكل أو تلف مبكر بتشغيل الجهاز خارج حدود درجة الحرارة الموصى بها من قبل شركة "كاما"!</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from being recorded and the data will be unobtainable!</source>
-        <translation type="gpt-4o-generated">تحذير: هذا سيمنع تسجيل قيادتك ولن تكون البيانات متاحة!</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!</source>
         <translation type="gpt-4o-generated">تحذير: سيؤدي ذلك إلى منع ظهور قيادتك على comma connect مما قد يؤثر على تصحيح الأخطاء والدعم!</translation>
-    </message>
-    <message>
-        <source>Controls how long the device stays on after you stop driving.</source>
-        <translation type="gpt-4o-generated">يحدد مدة بقاء الجهاز قيد التشغيل بعد التوقف عن القيادة.</translation>
-    </message>
-    <message>
-        <source>Allows the device to work without an internet connection.</source>
-        <translation type="gpt-4o-generated">يسمح للجهاز بالعمل بدون اتصال بالإنترنت.</translation>
-    </message>
-    <message>
-        <source>Allows the device to run at higher temperatures than recommended.</source>
-        <translation type="gpt-4o-generated">يسمح للجهاز بالعمل في درجات حرارة أعلى من الموصى بها.</translation>
-    </message>
-    <message>
-        <source>Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
-        <translation type="gpt-4o-generated">يدير العتبة لإيقاف تشغيل الجهاز لحماية بطارية السيارة من الاستنزاف المفرط والأضرار المحتملة.</translation>
-    </message>
-    <message>
-        <source>Disables all data tracking to improve privacy.</source>
-        <translation type="gpt-4o-generated">يعطّل جميع تتبع البيانات لتحسين الخصوصية.</translation>
-    </message>
-    <message>
-        <source>Stops the device from sending any data to the servers.</source>
-        <translation type="gpt-4o-generated">يمنع الجهاز من إرسال أي بيانات إلى الخوادم.</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness when you're not driving.</source>
-        <translation type="gpt-4o-generated">يتحكم في سطوع الشاشة عند عدم القيادة.</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness while you're driving.</source>
-        <translation type="gpt-4o-generated">يتحكم في سطوع الشاشة أثناء القيادة.</translation>
-    </message>
-    <message>
-        <source>Enables a button in the onroad UI to record the screen.</source>
-        <translation type="gpt-4o-generated">يُمكن زرًا في واجهة المستخدم على الطريق لتسجيل الشاشة.</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off when you're not driving.</source>
-        <translation type="gpt-4o-generated">يتحكم في مدة إطفاء الشاشة عند عدم القيادة.</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off while you're driving.</source>
-        <translation type="gpt-4o-generated">يتحكم في الوقت الذي يستغرقه إيقاف تشغيل الشاشة أثناء القيادة.</translation>
     </message>
     <message>
         <source>Screen Off</source>
         <translation type="gpt-4o-generated">إيقاف الشاشة</translation>
     </message>
     <message>
-        <source>Use Konik.ai's Server Instead of Comma's</source>
-        <translation type="gpt-4o-generated">استخدام خادم Konik.ai بدلاً من خادم Comma</translation>
+        <source>Battery Shutdown Threshold</source>
+        <translation type="gpt-4o-generated">عتبة إيقاف تشغيل البطارية</translation>
     </message>
     <message>
-        <source>Upload your driving data to Konik.ai's server instead of comma's.</source>
-        <translation type="gpt-4o-generated">قم بتحميل بيانات القيادة الخاصة بك إلى خادم Konik.ai بدلاً من خادم comma.</translation>
+        <source>The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
+        <translation type="gpt-4o-generated">عتبة مستوى البطارية المستخدمة لإيقاف تشغيل الجهاز تلقائيًا لحماية بطارية السيارة من الاستنزاف المفرط والأضرار المحتملة.</translation>
+    </message>
+    <message>
+        <source>How long the device stays on after you go offroad.</source>
+        <translation type="gpt-4o-generated">مدة بقاء الجهاز قيد التشغيل بعد الخروج من الطريق.</translation>
+    </message>
+    <message>
+        <source>Turn Off Data Logging</source>
+        <translation type="gpt-4o-generated">إيقاف تسجيل البيانات</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
+        <translation type="gpt-4o-generated">تحذير: سيؤدي هذا إلى منع تسجيل قيادتك ولن يمكن الحصول على أي بيانات!</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're not driving.</source>
+        <translation type="gpt-4o-generated">سطوع الشاشة أثناء عدم القيادة.</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're driving.</source>
+        <translation type="gpt-4o-generated">سطوع الشاشة أثناء القيادة.</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off when you're not driving.</source>
+        <translation type="gpt-4o-generated">المدة التي يستغرقها إيقاف تشغيل الشاشة عند عدم القيادة.</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off while you're driving.</source>
+        <translation type="gpt-4o-generated">المدة الزمنية اللازمة لإطفاء الشاشة أثناء القيادة.</translation>
+    </message>
+    <message>
+        <source>Only Disable While Onroad</source>
+        <translation type="gpt-4o-generated">تعطيل فقط أثناء القيادة على الطريق</translation>
+    </message>
+    <message>
+        <source>Allow the device to work indefinitely without an internet connection.</source>
+        <translation type="gpt-4o-generated">السماح للجهاز بالعمل إلى أجل غير مسمى بدون اتصال بالإنترنت.</translation>
+    </message>
+    <message>
+        <source>Allow the device to run at higher temperatures than comma recommends.</source>
+        <translation type="gpt-4o-generated">السماح للجهاز بالعمل في درجات حرارة أعلى مما توصي به comma.</translation>
+    </message>
+    <message>
+        <source>Disable all data logging to improve privacy.</source>
+        <translation type="gpt-4o-generated">تعطيل تسجيل البيانات بالكامل لتحسين الخصوصية.</translation>
+    </message>
+    <message>
+        <source>Prevent the device from sending any data to comma's servers.</source>
+        <translation type="gpt-4o-generated">منع الجهاز من إرسال أي بيانات إلى خوادم comma.</translation>
+    </message>
+    <message>
+        <source>Enable a button in the onroad UI to record the screen.</source>
+        <translation type="gpt-4o-generated">تمكين زر في واجهة المستخدم على الطريق لتسجيل الشاشة.</translation>
     </message>
 </context>
 <context>
@@ -779,44 +779,12 @@
         <translation type="gpt-4o-generated">دائماً على الوضع الجانبي</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
-
-Deactivate only occurs with the 'Cruise Control' button.</source>
-        <translation type="gpt-4o-generated">يظل التحكم في التوجيه لبرنامج openpilot نشطًا حتى عند الضغط على دوّاسات الفرامل أو الوقود.
-
-يحدث التعطيل فقط عند الضغط على زر ’التحكم في السرعة‘.</translation>
-    </message>
-    <message>
-        <source>Control with LKAS Button</source>
-        <translation type="gpt-4o-generated">التحكم باستخدام زر LKAS</translation>
-    </message>
-    <message>
-        <source>Enable with Cruise Control</source>
-        <translation type="gpt-4o-generated">تمكين مع التحكم في السرعة</translation>
-    </message>
-    <message>
         <source>Pause on Brake Below</source>
         <translation type="gpt-4o-generated">إيقاف عند الفرملة أدناه</translation>
     </message>
     <message>
-        <source>Lane Change Settings</source>
-        <translation type="gpt-4o-generated">إعدادات تغيير المسار</translation>
-    </message>
-    <message>
-        <source>How openpilot handles lane changes.</source>
-        <translation type="gpt-4o-generated">كيف يتعامل openpilot مع تغييرات المسار.</translation>
-    </message>
-    <message>
         <source>Lane Change Delay</source>
         <translation type="gpt-4o-generated">تأخير تغيير المسار</translation>
-    </message>
-    <message>
-        <source>Lane Width Requirement</source>
-        <translation type="gpt-4o-generated">متطلبات عرض المسار</translation>
-    </message>
-    <message>
-        <source>Minimum Speed for Lane Change</source>
-        <translation type="gpt-4o-generated">السرعة الدنيا لتغيير المسار</translation>
     </message>
     <message>
         <source>Lateral Tuning</source>
@@ -835,16 +803,8 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">تحسينات جودة الحياة</translation>
     </message>
     <message>
-        <source>Miscellaneous lateral focused features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">ميزات جانبية متنوعة لتحسين تجربتك العامة مع openpilot.</translation>
-    </message>
-    <message>
         <source>Pause Steering Below</source>
         <translation type="gpt-4o-generated">إيقاف التوجيه أقل من</translation>
-    </message>
-    <message>
-        <source>Pauses steering control when driving below the set speed.</source>
-        <translation type="gpt-4o-generated">يوقف التحكم في التوجيه عند القيادة بسرعات أقل من السرعة المحددة.</translation>
     </message>
     <message>
         <source>mph</source>
@@ -855,20 +815,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">قدم</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">كم/س</translation>
-    </message>
-    <message>
         <source> meters</source>
         <translation type="gpt-4o-generated">أمتار</translation>
     </message>
     <message>
         <source>Advanced Lateral Tuning</source>
         <translation type="gpt-4o-generated">الضبط الجانبي المتقدم</translation>
-    </message>
-    <message>
-        <source>Advanced settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">إعدادات متقدمة لضبط تحكمات التوجيه الجانبي في openpilot بدقة.</translation>
     </message>
     <message>
         <source>Friction (Default: %1)</source>
@@ -879,20 +831,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">الاحتكاك</translation>
     </message>
     <message>
-        <source>Adjusts the resistance in steering. Higher values provide more stable steering but can make it feel heavy, while lower values allow lighter steering but may feel too sensitive.</source>
-        <translation type="gpt-4o-generated">يضبط مقاومة التوجيه. القيم الأعلى توفر توجيهًا أكثر استقرارًا ولكن يمكن أن تجعله يبدو ثقيلًا، بينما القيم الأقل تسمح بتوجيه أخف ولكن قد تبدو حساسة للغاية.</translation>
-    </message>
-    <message>
         <source>Kp Factor (Default: %1)</source>
         <translation type="gpt-4o-generated">معامل Kp (الافتراضي: %1)</translation>
     </message>
     <message>
         <source>Kp Factor</source>
         <translation type="gpt-4o-generated">عامل Kp</translation>
-    </message>
-    <message>
-        <source>Adjusts how aggressively the car corrects its steering. Higher values offer quicker corrections but may feel jerky, while lower values make steering smoother but slower to respond.</source>
-        <translation type="gpt-4o-generated">يضبط مدى شدة تصحيح السيارة لتوجيهها. القيم الأعلى توفر تصحيحات أسرع ولكن قد تبدو متشنجة، بينما القيم الأقل تجعل التوجيه أكثر سلاسة لكن أبطأ في الاستجابة.</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -903,10 +847,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">التسارع الجانبي</translation>
     </message>
     <message>
-        <source>Adjusts how fast the car can steer from side to side. Higher values allow quicker lane changes but can feel unstable, while lower values provide smoother steering but may feel sluggish.</source>
-        <translation type="gpt-4o-generated">يُعدل مدى سرعة توجيه السيارة من جانب إلى آخر. القيم الأعلى تسمح بتغييرات حارة أسرع ولكن قد تشعر بعدم الاستقرار، بينما القيم الأقل توفر توجيهاً أكثر سلاسة ولكن قد تشعر بالبطء.</translation>
-    </message>
-    <message>
         <source>Steer Ratio (Default: %1)</source>
         <translation type="gpt-4o-generated">نسبة التوجيه (الافتراضية: %1)</translation>
     </message>
@@ -915,104 +855,168 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">نسبة التوجيه</translation>
     </message>
     <message>
-        <source>Adjusts how much openpilot needs to turn the wheel to steer. Higher values feel like driving a truck, more stable at high speeds, but harder to steer quickly at low speeds, while lower values feel like a go-kart, easier to steer in tight spots but more sensitive and less stable at high speeds.</source>
-        <translation type="gpt-4o-generated">يضبط مقدار دوران عجلة القيادة الذي يحتاجه openpilot للتوجيه. القيم الأعلى تشبه قيادة شاحنة، أكثر استقراراً عند السرعات العالية، لكن يصعب التوجيه بسرعة عند السرعات المنخفضة، بينما القيم الأقل تشبه قيادة سيارة كارت، أسهل للتوجيه في الأماكن الضيقة ولكن أكثر حساسية وأقل استقراراً عند السرعات العالية.</translation>
-    </message>
-    <message>
         <source>Force Auto Tune On</source>
         <translation type="gpt-4o-generated">تفعيل الضبط التلقائي قسرياً</translation>
-    </message>
-    <message>
-        <source>Forces comma's auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">يفرض ضبط القوة الجانبية التلقائي للمركبات غير المدعومة.</translation>
     </message>
     <message>
         <source>Force Auto Tune Off</source>
         <translation type="gpt-4o-generated">إيقاف الضبط التلقائي بالقوة</translation>
     </message>
     <message>
-        <source>Forces comma's auto lateral tuning off for supported vehicles.</source>
-        <translation type="gpt-4o-generated">يعطل الضبط الجانبي التلقائي للمركبات المدعومة.</translation>
-    </message>
-    <message>
-        <source>Controls the current state of 'Always on Lateral' with the 'LKAS' button.</source>
-        <translation type="gpt-4o-generated">يتحكم في الحالة الحالية لـ 'التوجيه الجانبي الدائم' باستخدام زر 'LKAS'.</translation>
-    </message>
-    <message>
-        <source>Activates 'Always on Lateral' whenever 'Cruise Control' is active bypassing the requirement to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">يقوم بتفعيل 'التوجيه الدائم' كلما كان 'نظام تثبيت السرعة' نشطًا متجاوزًا الحاجة إلى تفعيل openpilot أولاً.</translation>
-    </message>
-    <message>
-        <source>Pauses 'Always on Lateral' when the brake pedal is pressed below the set speed.</source>
-        <translation type="gpt-4o-generated">يوقف "الاتجاه الجانبي دائم التشغيل" عند الضغط على دواسة الفرامل تحت السرعة المحددة.</translation>
-    </message>
-    <message>
         <source>Automatic Lane Changes</source>
         <translation type="gpt-4o-generated">تغييرات المسار التلقائية</translation>
-    </message>
-    <message>
-        <source>Conducts lane changes without needing to touch the steering wheel upon turn signal activation.</source>
-        <translation type="gpt-4o-generated">يجري تغييرات في المسار دون الحاجة إلى لمس عجلة القيادة عند تنشيط إشارة الانعطاف.</translation>
-    </message>
-    <message>
-        <source>Delays lane changes by the set time to prevent sudden changes.</source>
-        <translation type="gpt-4o-generated">يؤخر تغيير الحارات بالوقت المحدد لمنع التغييرات المفاجئة.</translation>
-    </message>
-    <message>
-        <source>Sets the minimum lane width for openpilot to detect a lane as a lane.</source>
-        <translation type="gpt-4o-generated">يحدد الحد الأدنى لعرض المسار الذي يتعين على openpilot اكتشافه كمسار.</translation>
-    </message>
-    <message>
-        <source>Sets the minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">يضبط السرعة الدنيا المطلوبة لكي يقوم openpilot بتغيير المسار.</translation>
     </message>
     <message>
         <source>Only One Lane Change Per Signal</source>
         <translation type="gpt-4o-generated">تغيير مسار واحد فقط لكل إشارة</translation>
     </message>
     <message>
-        <source>Limits lane changes to one per turn signal activation.</source>
-        <translation type="gpt-4o-generated">يحد من تغيير المسار إلى واحد لكل تفعيل للإشارة الالتفافية.</translation>
-    </message>
-    <message>
-        <source>Settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">إعدادات لضبط التحكم الجانبي في openpilot بدقة.</translation>
-    </message>
-    <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
         <translation type="gpt-4o-generated">فرض الرغبات أدناه سرعة تغيير الحارة</translation>
     </message>
     <message>
-        <source>Forces the model to use turn desires when driving below the minimum lane change speed to help make left and right turns more precisely.</source>
-        <translation type="gpt-4o-generated">يجبر النموذج على استخدام الرغبات في الانعطاف عند القيادة تحت السرعة الدنيا لتغيير المسار للمساعدة في جعل الانعطافات لليسار واليمين أكثر دقة.</translation>
-    </message>
-    <message>
-        <source>Uses Twilsonco's 'Neural Network FeedForward' for more precise steering control.</source>
-        <translation type="gpt-4o-generated">يستخدم "Neural Network FeedForward" من Twilsonco للتحكم الأكثر دقة في التوجيه.</translation>
-    </message>
-    <message>
-        <source>Smoothens the steering control when entering and exiting curves by using Twilsonco's torque adjustments.</source>
-        <translation type="gpt-4o-generated">يعمل على تنعيم التحكم في التوجيه عند الدخول والخروج من المنحنيات باستخدام تعديلات العزم من Twilsonco.</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Friction'?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة ضبط الإعدادات تمامًا لـ 'Friction'؟</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Kp Factor'?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين إعدادات 'عامل Kp' بالكامل؟</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Lateral Accel'?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين إعداداتك بالكامل لـ 'التسارع الجانبي'؟</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Steer Ratio'?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة ضبط إعدادات 'Steer Ratio' بالكامل؟</translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="gpt-4o-generated">فوري</translation>
+    </message>
+    <message>
+        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">الإعدادات المتقدمة لضبط التحكم الجانبي في openpilot.</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
+        <translation type="gpt-4o-generated">تمكين ضبط التحكم الجانبي التلقائي من comma بالقوة للمركبات غير المدعومة.</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
+        <translation type="gpt-4o-generated">تعطيل ضبط التوجيه الجانبي التلقائي من comma بالقوة للمركبات المدعومة.</translation>
+    </message>
+    <message>
+        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
+
+Deactivation only occurs with the "Cruise Control" button.</source>
+        <translation type="gpt-4o-generated">يظل التحكم في التوجيه الخاص بـ openpilot نشطًا حتى عند الضغط على دواسات الفرامل أو الوقود.
+
+يتم إلغاء التنشيط فقط عند الضغط على زر "التحكم في السرعة".</translation>
+    </message>
+    <message>
+        <source>Control With LKAS Button</source>
+        <translation type="gpt-4o-generated">التحكم بواسطة زر LKAS</translation>
+    </message>
+    <message>
+        <source>Control the current state of "Always on Lateral" with the "LKAS" button.</source>
+        <translation type="gpt-4o-generated">قم بالتحكم في الحالة الحالية لـ "Always on Lateral" باستخدام زر "LKAS".</translation>
+    </message>
+    <message>
+        <source>Enable With Cruise Control</source>
+        <translation type="gpt-4o-generated">تفعيل مع التحكم في السرعة</translation>
+    </message>
+    <message>
+        <source>Customize how openpilot handles lane changes.</source>
+        <translation type="gpt-4o-generated">خصص كيفية تعامل openpilot مع تغييرات المسار.</translation>
+    </message>
+    <message>
+        <source>openpilot won't initiate a lane change into detected lanes narrower than this width.</source>
+        <translation type="gpt-4o-generated">لن يبدأ openpilot تغيير المسار إلى المسارات المكتشفة الأضيق من هذا العرض.</translation>
+    </message>
+    <message>
+        <source>Minimum Lane Change Speed</source>
+        <translation type="gpt-4o-generated">السرعة الدنيا لتغيير المسار</translation>
+    </message>
+    <message>
+        <source>Minimum speed required for openpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">السرعة الدنيا المطلوبة لكي يقوم openpilot بتغيير المسار.</translation>
+    </message>
+    <message>
+        <source>Settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">الإعدادات لتعديل التحكم الجانبي في openpilot.</translation>
+    </message>
+    <message>
+        <source>Force turn desires below the minimum lane change speed to improve turning accuracy.</source>
+        <translation type="gpt-4o-generated">فرض الرغبات في التحول أقل من سرعة تغيير المسار الدنيا لتحسين دقة الانعطاف.</translation>
+    </message>
+    <message>
+        <source>Miscellaneous lateral control features to improve your overall openpilot experience.</source>
+        <translation type="gpt-4o-generated">ميزات التحكم الجانبي المتنوعة لتحسين تجربتك مع openpilot بشكل عام.</translation>
+    </message>
+    <message>
+        <source>Pause steering control when driving below the configured speed.</source>
+        <translation type="gpt-4o-generated">إيقاف التحكم في التوجيه عند القيادة بسرعة أقل من السرعة المحددة.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Friction" values?</source>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين قيم "الاحتكاك" تمامًا؟</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Kp Factor" values?</source>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين قيم "عامل Kp" بالكامل؟</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Lateral Accel" values?</source>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين قيم "التسارع الجانبي" بالكامل؟</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Steer Ratio" values?</source>
+        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين قيم "نسبة التوجيه" بالكامل؟</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="gpt-4o-generated">إيقاف</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">كم/س</translation>
+    </message>
+    <message>
+        <source>Lane Changes</source>
+        <translation type="gpt-4o-generated">تغييرات المسار</translation>
+    </message>
+    <message>
+        <source>Lane Detection Width</source>
+        <translation type="gpt-4o-generated">عرض اكتشاف المسار</translation>
+    </message>
+    <message>
+        <source>Adjust steering resistance. Higher values feel more stable but heavier; lower values feel lighter but more sensitive.</source>
+        <translation type="gpt-4o-generated">اضبط مقاومة التوجيه. القيم الأعلى تشعر بأنها أكثر استقرارًا ولكنها أثقل؛ القيم الأقل تشعر بأنها أخف ولكنها أكثر حساسية.</translation>
+    </message>
+    <message>
+        <source>Adjust how aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values respond more smoothly but slower.</source>
+        <translation type="gpt-4o-generated">اضبط مدى شدة تصحيح openpilot للتوجيه. القيم الأعلى تستجيب بشكل أسرع ولكنها قد تشعر بالاهتزاز؛ القيم الأدنى تستجيب بشكل أكثر سلاسة ولكن ببطء أكبر.</translation>
+    </message>
+    <message>
+        <source>Control how quickly openpilot can steer laterally. Higher values allow faster maneuvers but may feel unstable; lower values provide smoother, slower steering.</source>
+        <translation type="gpt-4o-generated">تحكم في مدى سرعة توجيه openpilot بشكل جانبي. القيم الأعلى تسمح بمناورات أسرع ولكن قد تشعر بعدم الاستقرار؛ القيم الأدنى توفر توجيهًا أكثر سلاسة وبطئًا.</translation>
+    </message>
+    <message>
+        <source>Adjust how much the wheel turns to steer. Higher values feel like a truck—stable at speed but sluggish in corners; lower values feel like a go-kart—quick but twitchy.</source>
+        <translation type="gpt-4o-generated">عدل مقدار دوران عجلة القيادة للتوجيه. القيم الأعلى تشعر وكأنك تقود شاحنة - مستقرة في السرعة ولكن بطيئة في الزوايا؛ القيم الأقل تشعر وكأنك تقود سيارة كارت - سريعة ولكن عصبية.</translation>
+    </message>
+    <message>
+        <source>Allow "Always on Lateral" to be active whenever "Cruise Control" is active, bypassing the need to enable openpilot first.</source>
+        <translation type="gpt-4o-generated">السماح بتفعيل "التوجيه الجانبي دائماً" كلما كان "التحكم في السرعة" نشطًا، متجاوزًا الحاجة إلى تفعيل openpilot أولاً.</translation>
+    </message>
+    <message>
+        <source>Temporarily disable "Always on Lateral" below the configured speed when the brake is pressed.</source>
+        <translation type="gpt-4o-generated">تعطيل "التوجيه الجانبي الدائم" مؤقتًا عند السرعة المحددة عند الضغط على الفرامل.</translation>
+    </message>
+    <message>
+        <source>Automatically initiate lane changes when the turn signal is active — no steering input required!</source>
+        <translation type="gpt-4o-generated">ابدأ تغيير المسار تلقائيًا عند تفعيل إشارة الانعطاف — لا حاجة إلى تدخل في التوجيه!</translation>
+    </message>
+    <message>
+        <source>Delay automatic lane changes by the configured time.</source>
+        <translation type="gpt-4o-generated">تأخير تغييرات المسار التلقائية بالزمن المحدد.</translation>
+    </message>
+    <message>
+        <source>Limit lane changes to one per turn signal activation.</source>
+        <translation type="gpt-4o-generated">حدد تغيير المسار إلى واحد لكل تفعيل إشارات الانعطاف.</translation>
+    </message>
+    <message>
+        <source>Use Twilsonco's "Neural Network FeedForward" for smoother steering, trained on past driving data from your car model.</source>
+        <translation type="gpt-4o-generated">استخدم "Neural Network FeedForward" من Twilsonco لقيادة أكثر سلاسة، مدربة على بيانات القيادة السابقة من طراز سيارتك.</translation>
+    </message>
+    <message>
+        <source>Smoothen steering control during curves using Twilsonco's torque adjustments.</source>
+        <translation type="gpt-4o-generated">تحسين التحكم في التوجيه أثناء المنحنيات باستخدام تعديلات عزم الدوران من Twilsonco.</translation>
     </message>
 </context>
 <context>
@@ -1312,26 +1316,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
     <message>
         <source> seconds</source>
         <translation type="gpt-4o-generated">ثواني</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (0-34 kph)</source>
-        <translation type="gpt-4o-generated">إزاحة حد السرعة (0-34 كيلومتر/ساعة)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (35-54 kph)</source>
-        <translation type="gpt-4o-generated">إزاحة حد السرعة (35-54 كيلومتر/ساعة)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (55-64 kph)</source>
-        <translation type="gpt-4o-generated">إزاحة حد السرعة (55-64 كم/سا)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (65-99 kph)</source>
-        <translation type="gpt-4o-generated">إزاحة الحد الأقصى للسرعة (65-99 كيلومتر/ساعة)</translation>
-    </message>
-    <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">كم/س</translation>
     </message>
     <message>
         <source> meters</source>
@@ -1880,22 +1864,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة تعيين إعداداتك تمامًا لشخصية "الراحة"؟</translation>
     </message>
     <message>
-        <source>Sets the speed limit offset for speeds between 0-34 kph.</source>
-        <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 0-34 كيلومتر في الساعة.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 35-54 kph.</source>
-        <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 35-54 كيلومتر في الساعة.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 55-64 kph.</source>
-        <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 55-64 كم/س.</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 65-99 kph.</source>
-        <translation type="gpt-4o-generated">يضبط إزاحة الحد الأقصى للسرعة للسرعات بين 65-99 كم/سا.</translation>
-    </message>
-    <message>
         <source>Sets the speed limit offset for speeds between 0-34 mph.</source>
         <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 0-34 ميل في الساعة.</translation>
     </message>
@@ -1928,36 +1896,40 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">عرض الحالة الحالية في واجهة المستخدم للطريق.</translation>
     </message>
     <message>
-        <source>Reset Curve Data</source>
-        <translation type="gpt-4o-generated">إعادة تعيين بيانات المنحنى</translation>
+        <source>Speed Limit Offset (0-34 km/h)</source>
+        <translation type="gpt-4o-generated">إزاحة الحد الأقصى للسرعة (0-34 كم/ساعة)</translation>
     </message>
     <message>
-        <source>Resets the data for the 'Smart' 'Curve Detection Method'.</source>
-        <translation type="gpt-4o-generated">إعادة تعيين البيانات لطريقة "اكتشاف المنحنيات الذكية".</translation>
+        <source>Speed Limit Offset (35-54 km/h)</source>
+        <translation type="gpt-4o-generated">إزاحة حد السرعة (35-54 كم/س)</translation>
     </message>
     <message>
-        <source>Speed Limit Filler</source>
-        <translation type="gpt-4o-generated">معبئ حد السرعة</translation>
+        <source>Speed Limit Offset (55-64 km/h)</source>
+        <translation type="gpt-4o-generated">إزاحة حد السرعة (55-64 كم/س)</translation>
     </message>
     <message>
-        <source>Uses speed limit data from your dashboard, 'Mapbox', and 'Navigate on Openpilot' to identify missing speed limits on 'OpenStreetMap'. The data can be downloaded via 'Fleet Manager' in the 'Tools' section and used at 'https://nerftool.glitch.me/' via the 'Load Custom Data' button.</source>
-        <translation type="gpt-4o-generated">يستخدم بيانات حدود السرعة من لوحة العدادات الخاصة بك، و'Mapbox'، و'Navigate on Openpilot' لتحديد حدود السرعة المفقودة على 'OpenStreetMap'. يمكن تحميل البيانات عبر 'Fleet Manager' في قسم 'Tools' واستخدامها على 'https://nerftool.glitch.me/' عبر زر 'Load Custom Data'.</translation>
+        <source>Speed Limit Offset (65-99 km/h)</source>
+        <translation type="gpt-4o-generated">إزاحة حد السرعة (65-99 كم/س)</translation>
     </message>
     <message>
-        <source>Use Mapbox For Missing Speed Limits</source>
-        <translation type="gpt-4o-generated">استخدم Mapbox لحدود السرعة المفقودة</translation>
+        <source>Sets the speed limit offset for speeds between 0-34 km/h.</source>
+        <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 0-34 كم/ساعة.</translation>
     </message>
     <message>
-        <source>Uses data from 'Mapbox' when all the current speed limit sources aren't currently providing a speed limit.</source>
-        <translation type="gpt-4o-generated">يستخدم البيانات من 'Mapbox' عندما لا توفر جميع مصادر حدود السرعة الحالية حدود السرعة.</translation>
+        <source>Sets the speed limit offset for speeds between 35-54 km/h.</source>
+        <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 35-54 كم/سا.</translation>
     </message>
     <message>
-        <source>Smart</source>
-        <translation type="gpt-4o-generated">ذكي</translation>
+        <source>Sets the speed limit offset for speeds between 55-64 km/h.</source>
+        <translation type="gpt-4o-generated">يضبط إزاحة الحد الأقصى للسرعة للسرعات بين 55-64 كم/ساعة.</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely reset your curvature data?</source>
-        <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد إعادة ضبط بيانات الانحناء بالكامل؟</translation>
+        <source>Sets the speed limit offset for speeds between 65-99 km/h.</source>
+        <translation type="gpt-4o-generated">يضبط تعويض حد السرعة للسرعات بين 65-99 كم/ساعة.</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">كم/س</translation>
     </message>
 </context>
 <context>
@@ -2205,10 +2177,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">بيانات الخريطة</translation>
     </message>
     <message>
-        <source>PRIMELESS NAVIGATION</source>
-        <translation type="gpt-4o-generated">الملاحة بدون PRIME</translation>
-    </message>
-    <message>
         <source>DEVICE CONTROLS</source>
         <translation type="gpt-4o-generated">عناصر التحكم في الجهاز</translation>
     </message>
@@ -2219,14 +2187,6 @@ This overrides 'Conditional Experimental Mode'.</source>
     <message>
         <source>Manage FrogPilot's features that affect acceleration, braking, and steering.</source>
         <translation type="gpt-4o-generated">إدارة ميزات FrogPilot التي تؤثر على التسارع والفرملة والتوجيه.</translation>
-    </message>
-    <message>
-        <source>Manage map data to be used with 'Curve Speed Control' and 'Speed Limit Controller' and setup 'Navigate On openpilot (NOO)' without a comma prime subscription.</source>
-        <translation type="gpt-4o-generated">إدارة بيانات الخرائط لاستخدامها مع 'التحكم في سرعة المنحنيات' و'متحكم حدود السرعة' وضبط 'التنقل على openpilot (NOO)' بدون اشتراك comma prime.</translation>
-    </message>
-    <message>
-        <source>Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">إدارة الإعدادات الداخلية للجهاز إلى جانب أدوات وفوائد أخرى للحفاظ على وتشخيص مشكلات FrogPilot.</translation>
     </message>
     <message>
         <source>Manage openpilot's theme and onroad widgets.</source>
@@ -2275,8 +2235,20 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">تحذير: يؤدي هذا إلى فتح بعض الإعدادات التي قد تكون خطيرة والتي يمكن أن تغير تجربتك في القيادة بشكل كبير!</translation>
     </message>
     <message>
-        <source>The 'Developer' preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
-        <translation type="gpt-4o-generated">الإعداد المسبق لـ "المطور" متاح فقط للمستخدمين الذين لديهم أكثر من 100 ساعة على FrogPilot، أو 250 ساعة مع openpilot.</translation>
+        <source>NAVIGATION</source>
+        <translation type="gpt-4o-generated">الملاحة</translation>
+    </message>
+    <message>
+        <source>Download map data that can be used with "Curve Speed Control" and "Speed Limit Controller" and set up "Navigate On openpilot (NOO)".</source>
+        <translation type="gpt-4o-generated">تنزيل بيانات الخريطة التي يمكن استخدامها مع "التحكم في سرعة المنحنيات" و"متحكم حدود السرعة" وإعداد "التنقل على openpilot (NOO)".</translation>
+    </message>
+    <message>
+        <source>Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot.</source>
+        <translation type="gpt-4o-generated">إدارة الإعدادات الداخلية للجهاز بالإضافة إلى الأدوات والمرافق الأخرى المستخدمة لصيانة واستكشاف أخطاء FrogPilot وإصلاحها.</translation>
+    </message>
+    <message>
+        <source>The "Developer" preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
+        <translation type="gpt-4o-generated">التهيئة "المطور" متاحة فقط للمستخدمين الذين لديهم إما أكثر من 100 ساعة على FrogPilot، أو 250 ساعة مع openpilot.</translation>
     </message>
 </context>
 <context>
@@ -2292,20 +2264,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     <message>
         <source>Disengage Volume</source>
         <translation type="gpt-4o-generated">مستوى صوت فك الارتباط</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Adaptive Cruise Disabled
-Parking Brake Engaged
-Brake Pedal Pressed
-Speed too Low</source>
-        <translation type="gpt-4o-generated">التنبيهات ذات الصلة:
-
-تعطيل نظام التحكم التكيفي
-تشغيل مكبح الانتظار
-تم الضغط على دواسة الفرامل
-السرعة منخفضة جدًا</translation>
     </message>
     <message>
         <source>Engage Volume</source>
@@ -2324,20 +2282,6 @@ openpilot engaged</source>
     <message>
         <source>Prompt Volume</source>
         <translation type="gpt-4o-generated">مستوى الصوت للموجهات الصوتية</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Car Detected in Blindspot
-Speed too Low
-Steer Unavailable Below 'X'
-Take Control, Turn Exceeds Steering Limit</source>
-        <translation type="gpt-4o-generated">التنبيهات ذات الصلة:
-
-تم اكتشاف سيارة في النقطة العمياء
-السرعة منخفضة جدًا
-التوجيه غير متاح تحت 'X'
-تولى التحكم، تجاوز الدوران حد التوجيه</translation>
     </message>
     <message>
         <source>Prompt Distracted Volume</source>
@@ -2410,36 +2354,8 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
         <translation type="gpt-4o-generated">تنبيه مغادرة القيادة</translation>
     </message>
     <message>
-        <source>Loud Blindspot Alert</source>
-        <translation type="gpt-4o-generated">تنبيه النقطة العمياء بصوت عالٍ</translation>
-    </message>
-    <message>
-        <source>Custom alerts for openpilot events.</source>
-        <translation type="gpt-4o-generated">تنبيهات مخصصة لأحداث openpilot.</translation>
-    </message>
-    <message>
-        <source>Enables the famed 'Goat Scream' that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">يُمكن "صرخة الماعز" الشهيرة التي جلبت الفرح والغضب لمستخدمي FrogPilot في جميع أنحاء العالم!</translation>
-    </message>
-    <message>
-        <source>Plays an alert when a traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">يشغّل تنبيهًا عند تغيير إشارة المرور من الأحمر إلى الأخضر.</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the lead vehicle starts starts to depart when at a standstill.</source>
-        <translation type="gpt-4o-generated">يشغّل تنبيهًا عندما يبدأ المركبة الأمامية في التحرك أثناء التوقف.</translation>
-    </message>
-    <message>
-        <source>Plays a louder alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
-        <translation type="gpt-4o-generated">يعرض تنبيها بصوت أعلى عند اكتشاف مركبة في النقطة العمياء عند محاولة تغيير المسار.</translation>
-    </message>
-    <message>
         <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">تنبيه تغيير حد السرعة</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">يشغل تنبيه عند تغيير حد السرعة.</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -2448,6 +2364,59 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
     <message>
         <source>Muted</source>
         <translation type="gpt-4o-generated">مكتوم الصوت</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Adaptive Cruise Disabled
+Brake Pedal Pressed
+Parking Brake Engaged
+Speed too Low</source>
+        <translation type="gpt-4o-generated">التنبيهات ذات الصلة:
+
+تم تعطيل نظام تثبيت السرعة التكيفي
+تم الضغط على دواسة الفرامل
+تم تفعيل فرامل الركن
+السرعة منخفضة جدًا</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Car Detected in Blindspot
+Steer Unavailable Below "X"
+Speed too Low
+Take Control, Turn Exceeds Steering Limit</source>
+        <translation type="gpt-4o-generated">التنبيهات ذات الصلة:
+
+تم كشف سيارة في النقطة العمياء التوجيه غير متاح تحت "X" السرعة منخفضة للغاية استلم التحكم، المنعطف يتجاوز حد التوجيه</translation>
+    </message>
+    <message>
+        <source>Custom FrogPilot alerts for openpilot events.</source>
+        <translation type="gpt-4o-generated">تنبيهات FrogPilot المخصصة لأحداث openpilot.</translation>
+    </message>
+    <message>
+        <source>Enable the famed "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">تفعيل "صرخة الماعز" الشهيرة التي جلبت الفرح والغضب لمستخدمي FrogPilot في جميع أنحاء العالم!</translation>
+    </message>
+    <message>
+        <source>Play an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">تشغيل تنبيه عند تغير إشارة المرور من الأحمر إلى الأخضر.</translation>
+    </message>
+    <message>
+        <source>Play an alert when the lead vehicle starts starts to depart.</source>
+        <translation type="gpt-4o-generated">تشغيل تنبيه عند بدء مغادرة السيارة الأمامية.</translation>
+    </message>
+    <message>
+        <source>Loud Blindspot Vehicle Alert</source>
+        <translation type="gpt-4o-generated">تنبيه المركبة في النقطة العمياء بصوت مرتفع</translation>
+    </message>
+    <message>
+        <source>Play a loud alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
+        <translation type="gpt-4o-generated">تشغيل تنبيه بصوت عالٍ عند اكتشاف مركبة في النقطة العمياء أثناء محاولة تغيير المسار.</translation>
+    </message>
+    <message>
+        <source>Play an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">تشغيل تنبيه عند تغير حد السرعة.</translation>
     </message>
 </context>
 <context>
@@ -2708,10 +2677,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">وميض</translation>
     </message>
     <message>
-        <source>Flashes the Panda device's firmware if you're running into issues.</source>
-        <translation type="gpt-4o-generated">يقوم بتحديث البرنامج الثابت لجهاز باندا إذا كنت تواجه مشاكل.</translation>
-    </message>
-    <message>
         <source>Are you sure you want to flash the Panda?</source>
         <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد فلاش باندا؟</translation>
     </message>
@@ -2736,10 +2701,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">حالة البدء القسري</translation>
     </message>
     <message>
-        <source>Forces openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">يفرض تشغيل openpilot إما خارج الطريق أو على الطريق.</translation>
-    </message>
-    <message>
         <source>OFFROAD</source>
         <translation type="gpt-4o-generated">إيقاف التشغيل</translation>
     </message>
@@ -2760,10 +2721,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">تقرير</translation>
     </message>
     <message>
-        <source>Let 'FrogsGoMoo' know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">دع 'FrogsGoMoo' يعلم بالمشكلة التي تواجهها.</translation>
-    </message>
-    <message>
         <source>What's going on?</source>
         <translation type="gpt-4o-generated">ما الذي يحدث؟</translation>
     </message>
@@ -2778,10 +2735,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>What's your Discord username?</source>
         <translation type="gpt-4o-generated">ما هو اسم مستخدمك على ديسكورد؟</translation>
-    </message>
-    <message>
-        <source>Thanks for letting us know! Your report has been submitted.</source>
-        <translation type="gpt-4o-generated">شكرًا لإعلامنا! تم تقديم تقريرك.</translation>
     </message>
     <message>
         <source>Reset Toggles to Default</source>
@@ -2810,6 +2763,30 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>Reset!</source>
         <translation type="gpt-4o-generated">إعادة تعيين!</translation>
+    </message>
+    <message>
+        <source>Debug Mode</source>
+        <translation type="gpt-4o-generated">وضع التصحيح</translation>
+    </message>
+    <message>
+        <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
+        <translation type="gpt-4o-generated">تصحيح FrogPilot أثناء القيادة التالية باستخدام جميع مقاييس المطور في FrogPilot للإبلاغ عن الأخطاء أو التصحيح الذاتي.</translation>
+    </message>
+    <message>
+        <source>Force openpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">إجبار openpilot على العمل إما خارج الطريق أو على الطريق.</translation>
+    </message>
+    <message>
+        <source>Let "FrogsGoMoo" know about an issue you're facing.</source>
+        <translation type="gpt-4o-generated">أخبر "FrogsGoMoo" عن مشكلة تواجهها.</translation>
+    </message>
+    <message>
+        <source>Your report has been submitted. Thanks for letting us know!</source>
+        <translation type="gpt-4o-generated">تم إرسال تقريرك. شكرًا لإعلامنا!</translation>
+    </message>
+    <message>
+        <source>Flash the Panda's firmware. Use if you're running into issues with the Panda.</source>
+        <translation type="gpt-4o-generated">قم بتحديث البرنامج الثابت لـ Panda. استخدم هذا الخيار إذا كنت تواجه مشاكل مع Panda.</translation>
     </message>
 </context>
 <context>
@@ -2851,28 +2828,12 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">هل أنت متأكد أنك تريد تعطيل التحكم الطولي في openpilot بشكل كامل؟</translation>
     </message>
     <message>
-        <source>Force stop and go for the 2017 Chevy Volt.</source>
-        <translation type="gpt-4o-generated">إيقاف وتشغيل القسري لسيارة شيفروليه فولت 2017.</translation>
-    </message>
-    <message>
         <source>Automatically Lock/Unlock Doors</source>
         <translation type="gpt-4o-generated">قفل/فتح الأبواب تلقائيًا</translation>
     </message>
     <message>
-        <source>Automatically lock the doors when in drive and unlock when in park.</source>
-        <translation type="gpt-4o-generated">قفل الأبواب تلقائيًا عند التشغيل وافتحها عند التوقف.</translation>
-    </message>
-    <message>
         <source>Cluster Speed Offset</source>
         <translation type="gpt-4o-generated">إزاحة سرعة المجموعة</translation>
-    </message>
-    <message>
-        <source>Set the cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">قم بتعيين إزاحة الكتلة التي يستخدمها openpilot لمحاولة مطابقة السرعة المعروضة على لوحة العدادات.</translation>
-    </message>
-    <message>
-        <source>Force stop and go for vehicles without stock stop and go functionality.</source>
-        <translation type="gpt-4o-generated">إجبار التوقف والانطلاق للمركبات التي لا تحتوي على خاصية التوقف والانطلاق المدمجة.</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -2891,60 +2852,16 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">مفاتيح جنرال موتورز</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'General Motors' vehicles.</source>
-        <translation type="gpt-4o-generated">مفاتيح تبديل مخصصة لمركبات "جنرال موتورز".</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Experimental Longitudinal Tune</source>
-        <translation type="gpt-4o-generated">تمكين ضبط الطول التجريبي من FrogsGoMoo</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!</source>
-        <translation type="gpt-4o-generated">تمكين ضبط FrogsGoMoo الطولي التجريبي في GM المبني على التخمين فقط. استخدمه على مسؤوليتك الشخصية!</translation>
-    </message>
-    <message>
-        <source>Enable Stop and Go Hack</source>
-        <translation type="gpt-4o-generated">تمكين خاصية الوقوف والانطلاق</translation>
-    </message>
-    <message>
         <source>Smoothen Pedal Response While Going Downhill/Uphill</source>
         <translation type="gpt-4o-generated">تنعيم استجابة الدواسة أثناء النزول/الصعود</translation>
-    </message>
-    <message>
-        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
-        <translation type="gpt-4o-generated">تنعيم استجابة دواسة الوقود والمكابح عند القيادة نزولاً أو صعوداً.</translation>
     </message>
     <message>
         <source>Hyundai/Kia/Genesis Toggles</source>
         <translation type="gpt-4o-generated">مفاتيح تبديل هيونداي/كيا/جينيسيس</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'Hyundai/Kia/Genesis' vehicles.</source>
-        <translation type="gpt-4o-generated">تبديلات موجهة نحو مركبات 'هيونداي/كيا/جينيسيس'.</translation>
-    </message>
-    <message>
-        <source>Enable comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">تفعيل واجهة برمجة التطبيقات الطولية الجديدة لـ comma</translation>
-    </message>
-    <message>
-        <source>Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
-        <translation type="gpt-4o-generated">تمكين نظام التحكم الطولي الجديد من comma الذي أظهر تحسنًا كبيرًا في التسارع والفرملة، ولكنه يواجه مشاكل في بعض مركبات هيونداي/كيا/جينيسيس.</translation>
-    </message>
-    <message>
         <source>Toyota/Lexus Toggles</source>
         <translation type="gpt-4o-generated">مفاتيح تبديل تويوتا/لكزس</translation>
-    </message>
-    <message>
-        <source>Toggles catered towards 'Toyota/Lexus' vehicles.</source>
-        <translation type="gpt-4o-generated">مفاتيح للتحكم موجهة نحو مركبات 'تويوتا/لكزس'.</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Personal Tweaks</source>
-        <translation type="gpt-4o-generated">تفعيل تعديلات FrogsGoMoo الشخصية</translation>
-    </message>
-    <message>
-        <source>FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother.</source>
-        <translation type="gpt-4o-generated">التعديلات الشخصية لـ FrogsGoMoo التي تهدف إلى التسارع بشكل أسرع والتوقف بشكل أكثر سلاسة.</translation>
     </message>
     <message>
         <source>MANAGE</source>
@@ -2955,20 +2872,72 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">قفل الأبواب بعد إيقاف التشغيل</translation>
     </message>
     <message>
-        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
-        <translation type="gpt-4o-generated">قفل الأبواب تلقائيًا بعد إيقاف تشغيل المحرك وعدم اكتشاف أي شخص في أي من المقاعد الأمامية.</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation type="gpt-4o-generated">أبداً</translation>
     </message>
     <message>
-        <source>'Taco Bell Run' Turn Torque Hack</source>
-        <translation type="gpt-4o-generated">'Taco Bell Run' اختراق عزم الدوران</translation>
+        <source>Toggles catered towards "General Motors" vehicles.</source>
+        <translation type="gpt-4o-generated">مفاتيح التبديل المصممة لسيارات "جنرال موتورز".</translation>
     </message>
     <message>
-        <source>Enable comma's steering torque hack they used to help handle left and right turns more precisely during their 2022 'Taco Bell' drive by increasing the allowed torque while turning.</source>
-        <translation type="gpt-4o-generated">تمكين حيلة عزم التوجيه الخاصة بـ comma والتي استخدموها للمساعدة في التعامل بشكل أكثر دقة مع المنعطفات اليمنى واليسرى أثناء قيادتهم في "تاكو بيل" 2022 من خلال زيادة عزم التوجيه المسموح به أثناء المنعطفات.</translation>
+        <source>FrogsGoMoo's Experimental Longitudinal Tune</source>
+        <translation type="gpt-4o-generated">اللحن الطولي التجريبي لـ FrogsGoMoo</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!</source>
+        <translation type="gpt-4o-generated">ضبط طولي تجريبي من FrogsGoMoo يهدف إلى تحسين سلاسة التحكم في التوقف والانطلاق استنادًا إلى التخمين فقط. استخدمه على مسؤوليتك الخاصة!</translation>
+    </message>
+    <message>
+        <source>Stop and Go Hack</source>
+        <translation type="gpt-4o-generated">اختراق التوقف والانطلاق</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Hyundai/Kia/Genesis" vehicles.</source>
+        <translation type="gpt-4o-generated">خيارات مخصصة لمركبات "هيونداي/كيا/جينيسيس".</translation>
+    </message>
+    <message>
+        <source>comma's New Longitudinal API</source>
+        <translation type="gpt-4o-generated">واجهة برمجة التطبيقات الطولية الجديدة من comma</translation>
+    </message>
+    <message>
+        <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
+        <translation type="gpt-4o-generated">نظام التحكم الطولي الجديد من كوما الذي أظهر تحسناً كبيراً في التسارع والفرملة، لكنه يواجه مشاكل مع بعض مركبات هيونداي/كيا/جينيسيس.</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Toyota/Lexus" vehicles.</source>
+        <translation type="gpt-4o-generated">مفاتيح تبديل مخصصة لمركبات "تويوتا/لكزس".</translation>
+    </message>
+    <message>
+        <source>The cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">إزاحة المجموعة التي يستخدمها openpilot لمحاولة مطابقة السرعة المعروضة على لوحة العدادات.</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's Personal Tweaks</source>
+        <translation type="gpt-4o-generated">تعديلات شخصية لـ FrogsGoMoo</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking.</source>
+        <translation type="gpt-4o-generated">التعديلات الشخصية لـ FrogsGoMoo تهدف إلى توفير تسارع أسرع وكبح أكثر سلاسة.</translation>
+    </message>
+    <message>
+        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
+        <translation type="gpt-4o-generated">تنعيم استجابة دواسة الوقود والفرامل عند القيادة في المنحدرات أو المرتفعات.</translation>
+    </message>
+    <message>
+        <source>Force stop and go for the "2017 Chevy Volt".</source>
+        <translation type="gpt-4o-generated">إيقاف وتشغيل إجباري لـ "شيفروليه فولت 2017".</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors when shifting into drive and unlocks them when shifting into park.</source>
+        <translation type="gpt-4o-generated">يقوم بقفل الأبواب تلقائيًا عند التحويل إلى وضع القيادة ويفتحها عند التحويل إلى وضع الوقوف.</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
+        <translation type="gpt-4o-generated">قفل الأبواب تلقائيًا بعد إطفاء محرك السيارة وعدم وجود أي شخص في المقاعد الأمامية.</translation>
+    </message>
+    <message>
+        <source>Force stop and go for "Toyota/Lexus" vehicles without stock stop and go functionality.</source>
+        <translation type="gpt-4o-generated">إجبار التوقف والانطلاق لمركبات "تويوتا/لكزس" بدون وظيفة التوقف والانطلاق الأصلية.</translation>
     </message>
 </context>
 <context>
@@ -3798,16 +3767,12 @@ Default matches half of the MUTCD standard of 4 inches.</source>
         <translation>انقر "،إضافة جهاز جديد"، وامسح رمز الاستجابة السريعة (QR) على اليمين</translation>
     </message>
     <message>
-        <source>Pair your device to your Konik.ai account</source>
-        <translation type="gpt-4o-generated">اربط جهازك بحساب Konik.ai الخاص بك</translation>
+        <source>Go to https://connect.comma.ai on your phone</source>
+        <translation type="gpt-4o-generated">اذهب إلى https://connect.comma.ai على هاتفك</translation>
     </message>
     <message>
-        <source>Go to %1 on your phone</source>
-        <translation type="gpt-4o-generated">اذهب إلى %1 على هاتفك</translation>
-    </message>
-    <message>
-        <source>Bookmark %1 to your home screen to use it like an app</source>
-        <translation type="gpt-4o-generated">ضع إشارة مرجعية على %1 في الشاشة الرئيسية لاستخدامه مثل التطبيق</translation>
+        <source>Bookmark connect.comma.ai to your home screen to use it like an app</source>
+        <translation type="gpt-4o-generated">احفظ connect.comma.ai على الشاشة الرئيسية لديك لاستخدامه كتطبيق</translation>
     </message>
 </context>
 <context>

@@ -146,10 +146,6 @@
         <translation type="gpt-4o-generated">米/秒</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">公里每小时</translation>
-    </message>
-    <message>
         <source>PENDING</source>
         <translation type="gpt-4o-generated">待处理</translation>
     </message>
@@ -605,8 +601,20 @@
         <translation type="gpt-4o-generated">您确定要删除所有切换备份吗？</translation>
     </message>
     <message>
-        <source>Do you want to compress this backup? The final result will be significantly smaller and will run in the background.</source>
-        <translation type="gpt-4o-generated">是否要压缩此备份？最终结果将明显更小，并将在后台运行。</translation>
+        <source>Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background.</source>
+        <translation type="gpt-4o-generated">您想要压缩此备份吗？这将需要额外的几分钟时间，但最终结果会显著变小，并会在后台运行。</translation>
+    </message>
+    <message>
+        <source>Delete Error Logs</source>
+        <translation type="gpt-4o-generated">删除错误日志</translation>
+    </message>
+    <message>
+        <source>Permanently deletes all stored error logs from your device. Ideal for freeing up space.</source>
+        <translation type="gpt-4o-generated">永久删除设备上存储的所有错误日志。理想用于释放空间。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete all of the error logs?</source>
+        <translation type="gpt-4o-generated">您确定要永久删除所有错误日志吗？</translation>
     </message>
 </context>
 <context>
@@ -630,14 +638,6 @@
     <message>
         <source>Increase Thermal Safety Limit</source>
         <translation type="gpt-4o-generated">提高热安全限制</translation>
-    </message>
-    <message>
-        <source>Low Battery Shutdown Threshold</source>
-        <translation type="gpt-4o-generated">低电量关闭阈值</translation>
-    </message>
-    <message>
-        <source>Turn Off Data Tracking</source>
-        <translation type="gpt-4o-generated">关闭数据跟踪</translation>
     </message>
     <message>
         <source>Turn Off Data Uploads</source>
@@ -688,10 +688,6 @@
         <translation type="gpt-4o-generated">小时</translation>
     </message>
     <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">仅限行车中</translation>
-    </message>
-    <message>
         <source> volts</source>
         <translation type="gpt-4o-generated">伏特</translation>
     </message>
@@ -708,68 +704,72 @@
         <translation type="gpt-4o-generated">警告：通过运行设备超过comma建议的温度限制，这可能导致过早磨损或损坏！</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from being recorded and the data will be unobtainable!</source>
-        <translation type="gpt-4o-generated">警告：这将阻止您的驾驶记录，数据将无法获取！</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!</source>
         <translation type="gpt-4o-generated">警告：这将阻止您的驾驶记录显示在 comma connect 上，可能会影响调试和支持！</translation>
-    </message>
-    <message>
-        <source>Controls how long the device stays on after you stop driving.</source>
-        <translation type="gpt-4o-generated">控制设备在您停止驾驶后保持开启的时间。</translation>
-    </message>
-    <message>
-        <source>Allows the device to work without an internet connection.</source>
-        <translation type="gpt-4o-generated">允许设备在没有互联网连接的情况下工作。</translation>
-    </message>
-    <message>
-        <source>Allows the device to run at higher temperatures than recommended.</source>
-        <translation type="gpt-4o-generated">允许设备在高于推荐的温度下运行。</translation>
-    </message>
-    <message>
-        <source>Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
-        <translation type="gpt-4o-generated">管理设备关闭的阈值，以防止汽车电池过度放电和潜在损坏。</translation>
-    </message>
-    <message>
-        <source>Disables all data tracking to improve privacy.</source>
-        <translation type="gpt-4o-generated">禁用所有数据跟踪以提高隐私。</translation>
-    </message>
-    <message>
-        <source>Stops the device from sending any data to the servers.</source>
-        <translation type="gpt-4o-generated">停止设备向服务器发送任何数据。</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness when you're not driving.</source>
-        <translation type="gpt-4o-generated">控制未驾驶时的屏幕亮度。</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness while you're driving.</source>
-        <translation type="gpt-4o-generated">控制您驾驶时的屏幕亮度。</translation>
-    </message>
-    <message>
-        <source>Enables a button in the onroad UI to record the screen.</source>
-        <translation type="gpt-4o-generated">在行车界面启用一个按钮来录制屏幕。</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off when you're not driving.</source>
-        <translation type="gpt-4o-generated">控制在您未驾驶时屏幕关闭所需的时间。</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off while you're driving.</source>
-        <translation type="gpt-4o-generated">控制屏幕在驾驶时关闭的时间。</translation>
     </message>
     <message>
         <source>Screen Off</source>
         <translation type="gpt-4o-generated">关闭屏幕</translation>
     </message>
     <message>
-        <source>Use Konik.ai's Server Instead of Comma's</source>
-        <translation type="gpt-4o-generated">使用Konik.ai的服务器而不是Comma的</translation>
+        <source>Battery Shutdown Threshold</source>
+        <translation type="gpt-4o-generated">电池关机阈值</translation>
     </message>
     <message>
-        <source>Upload your driving data to Konik.ai's server instead of comma's.</source>
-        <translation type="gpt-4o-generated">将您的驾驶数据上传到Konik.ai的服务器，而不是comma的。</translation>
+        <source>The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
+        <translation type="gpt-4o-generated">用于自动关闭设备以保护汽车电池免受过度耗尽和潜在损坏的电池电量阈值。</translation>
+    </message>
+    <message>
+        <source>How long the device stays on after you go offroad.</source>
+        <translation type="gpt-4o-generated">设备在您驶离道路后保持开启的时间长度。</translation>
+    </message>
+    <message>
+        <source>Turn Off Data Logging</source>
+        <translation type="gpt-4o-generated">关闭数据记录</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
+        <translation type="gpt-4o-generated">警告：这将阻止您的驾驶记录，并且所有数据将无法获取！</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're not driving.</source>
+        <translation type="gpt-4o-generated">未驾驶时的屏幕亮度。</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're driving.</source>
+        <translation type="gpt-4o-generated">驾驶时的屏幕亮度。</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off when you're not driving.</source>
+        <translation type="gpt-4o-generated">当您不驾驶时屏幕关闭所需的时间。</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off while you're driving.</source>
+        <translation type="gpt-4o-generated">在驾驶时屏幕关闭所需的时间。</translation>
+    </message>
+    <message>
+        <source>Only Disable While Onroad</source>
+        <translation type="gpt-4o-generated">仅在行驶时禁用</translation>
+    </message>
+    <message>
+        <source>Allow the device to work indefinitely without an internet connection.</source>
+        <translation type="gpt-4o-generated">允许设备在没有互联网连接的情况下无限期工作。</translation>
+    </message>
+    <message>
+        <source>Allow the device to run at higher temperatures than comma recommends.</source>
+        <translation type="gpt-4o-generated">允许设备在高于comma建议的温度下运行。</translation>
+    </message>
+    <message>
+        <source>Disable all data logging to improve privacy.</source>
+        <translation type="gpt-4o-generated">禁用所有数据记录以提高隐私。</translation>
+    </message>
+    <message>
+        <source>Prevent the device from sending any data to comma's servers.</source>
+        <translation type="gpt-4o-generated">防止设备向comma的服务器发送任何数据。</translation>
+    </message>
+    <message>
+        <source>Enable a button in the onroad UI to record the screen.</source>
+        <translation type="gpt-4o-generated">在行车界面启用一个按钮以录制屏幕。</translation>
     </message>
 </context>
 <context>
@@ -779,44 +779,12 @@
         <translation type="gpt-4o-generated">总是开启横向控制</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
-
-Deactivate only occurs with the 'Cruise Control' button.</source>
-        <translation type="gpt-4o-generated">即使踩下刹车或油门踏板，openpilot 的转向控制仍保持激活状态。
-
-仅在按下“巡航控制”按钮时停用。</translation>
-    </message>
-    <message>
-        <source>Control with LKAS Button</source>
-        <translation type="gpt-4o-generated">通过 LKAS 按钮控制</translation>
-    </message>
-    <message>
-        <source>Enable with Cruise Control</source>
-        <translation type="gpt-4o-generated">启用巡航控制</translation>
-    </message>
-    <message>
         <source>Pause on Brake Below</source>
         <translation type="gpt-4o-generated">在以下情况下刹车暂停</translation>
     </message>
     <message>
-        <source>Lane Change Settings</source>
-        <translation type="gpt-4o-generated">换道设置</translation>
-    </message>
-    <message>
-        <source>How openpilot handles lane changes.</source>
-        <translation type="gpt-4o-generated">openpilot 如何处理变道。</translation>
-    </message>
-    <message>
         <source>Lane Change Delay</source>
         <translation type="gpt-4o-generated">车道变更延迟</translation>
-    </message>
-    <message>
-        <source>Lane Width Requirement</source>
-        <translation type="gpt-4o-generated">车道宽度要求</translation>
-    </message>
-    <message>
-        <source>Minimum Speed for Lane Change</source>
-        <translation type="gpt-4o-generated">车道变更的最低速度</translation>
     </message>
     <message>
         <source>Lateral Tuning</source>
@@ -835,16 +803,8 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">生活质量提升</translation>
     </message>
     <message>
-        <source>Miscellaneous lateral focused features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">各种横向专注功能，以改善您的整体 openpilot 体验。</translation>
-    </message>
-    <message>
         <source>Pause Steering Below</source>
         <translation type="gpt-4o-generated">暂停转向低于</translation>
-    </message>
-    <message>
-        <source>Pauses steering control when driving below the set speed.</source>
-        <translation type="gpt-4o-generated">当车速低于设定速度时暂停转向控制。</translation>
     </message>
     <message>
         <source>mph</source>
@@ -855,20 +815,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">英尺</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">公里每小时 (kph)</translation>
-    </message>
-    <message>
         <source> meters</source>
         <translation type="gpt-4o-generated">米</translation>
     </message>
     <message>
         <source>Advanced Lateral Tuning</source>
         <translation type="gpt-4o-generated">高级横向调节</translation>
-    </message>
-    <message>
-        <source>Advanced settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">高级设置用于微调openpilot的横向控制。</translation>
     </message>
     <message>
         <source>Friction (Default: %1)</source>
@@ -879,20 +831,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">摩擦</translation>
     </message>
     <message>
-        <source>Adjusts the resistance in steering. Higher values provide more stable steering but can make it feel heavy, while lower values allow lighter steering but may feel too sensitive.</source>
-        <translation type="gpt-4o-generated">调整转向的阻力。较高的数值提供更稳定的转向，但可能感觉较重，而较低的数值允许更轻的转向，但可能感觉过于灵敏。</translation>
-    </message>
-    <message>
         <source>Kp Factor (Default: %1)</source>
         <translation type="gpt-4o-generated">Kp系数（默认值：%1）</translation>
     </message>
     <message>
         <source>Kp Factor</source>
         <translation type="gpt-4o-generated">Kp因子</translation>
-    </message>
-    <message>
-        <source>Adjusts how aggressively the car corrects its steering. Higher values offer quicker corrections but may feel jerky, while lower values make steering smoother but slower to respond.</source>
-        <translation type="gpt-4o-generated">调整汽车修正方向盘的灵敏度。较高的数值提供更快的修正但可能感觉颠簸，较低的数值则使转向更平稳但响应较慢。</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -903,10 +847,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">横向加速度</translation>
     </message>
     <message>
-        <source>Adjusts how fast the car can steer from side to side. Higher values allow quicker lane changes but can feel unstable, while lower values provide smoother steering but may feel sluggish.</source>
-        <translation type="gpt-4o-generated">调整车辆从一侧到另一侧转向的速度。较高的数值允许更快的变道，但可能感觉不稳定，而较低的数值提供更平稳的转向，但可能感觉迟缓。</translation>
-    </message>
-    <message>
         <source>Steer Ratio (Default: %1)</source>
         <translation type="gpt-4o-generated">转向比（默认值：%1）</translation>
     </message>
@@ -915,104 +855,168 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">转向比</translation>
     </message>
     <message>
-        <source>Adjusts how much openpilot needs to turn the wheel to steer. Higher values feel like driving a truck, more stable at high speeds, but harder to steer quickly at low speeds, while lower values feel like a go-kart, easier to steer in tight spots but more sensitive and less stable at high speeds.</source>
-        <translation type="gpt-4o-generated">调整openpilot需要多少转动方向盘来转向。较高的数值感觉像开卡车，在高速时更稳定，但在低速时更难快速转向；而较低的数值感觉像开卡丁车，在狭窄区域更容易转向，但在高速时更敏感且不太稳定。</translation>
-    </message>
-    <message>
         <source>Force Auto Tune On</source>
         <translation type="gpt-4o-generated">强制自动调谐开启</translation>
-    </message>
-    <message>
-        <source>Forces comma's auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">强制对不支持的车辆进行comma的自动横向调校。</translation>
     </message>
     <message>
         <source>Force Auto Tune Off</source>
         <translation type="gpt-4o-generated">强制关闭自动调谐</translation>
     </message>
     <message>
-        <source>Forces comma's auto lateral tuning off for supported vehicles.</source>
-        <translation type="gpt-4o-generated">强制关闭对支持车型的comma自动横向调节功能。</translation>
-    </message>
-    <message>
-        <source>Controls the current state of 'Always on Lateral' with the 'LKAS' button.</source>
-        <translation type="gpt-4o-generated">使用“LKAS”按钮控制“始终开启横向”当前状态。</translation>
-    </message>
-    <message>
-        <source>Activates 'Always on Lateral' whenever 'Cruise Control' is active bypassing the requirement to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">在“巡航控制”激活时，跳过首先启用openpilot的要求，激活“始终开启侧向控制”。</translation>
-    </message>
-    <message>
-        <source>Pauses 'Always on Lateral' when the brake pedal is pressed below the set speed.</source>
-        <translation type="gpt-4o-generated">在低于设定速度时按下制动踏板，会暂停“始终开启横向控制”。</translation>
-    </message>
-    <message>
         <source>Automatic Lane Changes</source>
         <translation type="gpt-4o-generated">自动变道</translation>
-    </message>
-    <message>
-        <source>Conducts lane changes without needing to touch the steering wheel upon turn signal activation.</source>
-        <translation type="gpt-4o-generated">在启用转向信号时无需触摸方向盘即可进行变道。</translation>
-    </message>
-    <message>
-        <source>Delays lane changes by the set time to prevent sudden changes.</source>
-        <translation type="gpt-4o-generated">通过设置的时间来延迟变道，以防止突然变道。</translation>
-    </message>
-    <message>
-        <source>Sets the minimum lane width for openpilot to detect a lane as a lane.</source>
-        <translation type="gpt-4o-generated">设置openpilot检测车道的最低车道宽度。</translation>
-    </message>
-    <message>
-        <source>Sets the minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">设置 openpilot 执行变道所需的最低速度。</translation>
     </message>
     <message>
         <source>Only One Lane Change Per Signal</source>
         <translation type="gpt-4o-generated">每次信号仅限变道一次</translation>
     </message>
     <message>
-        <source>Limits lane changes to one per turn signal activation.</source>
-        <translation type="gpt-4o-generated">将车道变更限制为每次转向信号激活一次。</translation>
-    </message>
-    <message>
-        <source>Settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">用于微调 openpilot 横向控制的设置。</translation>
-    </message>
-    <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
         <translation type="gpt-4o-generated">在变道速度以下强制转向愿望</translation>
     </message>
     <message>
-        <source>Forces the model to use turn desires when driving below the minimum lane change speed to help make left and right turns more precisely.</source>
-        <translation type="gpt-4o-generated">在驾驶速度低于最低变道速度时，强制模型使用转向意图，以帮助更精确地进行左转和右转。</translation>
-    </message>
-    <message>
-        <source>Uses Twilsonco's 'Neural Network FeedForward' for more precise steering control.</source>
-        <translation type="gpt-4o-generated">使用Twilsonco的“神经网络前馈”以实现更精确的转向控制。</translation>
-    </message>
-    <message>
-        <source>Smoothens the steering control when entering and exiting curves by using Twilsonco's torque adjustments.</source>
-        <translation type="gpt-4o-generated">通过使用Twilsonco的扭矩调整，在进入和退出曲线时平滑转向控制。</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Friction'?</source>
-        <translation type="gpt-4o-generated">您确定要完全重置“摩擦”的设置吗？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Kp Factor'?</source>
-        <translation type="gpt-4o-generated">您确定要完全重置“Kp 因子”的设置吗？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Lateral Accel'?</source>
-        <translation type="gpt-4o-generated">您确定要完全重置“横向加速度”的设置吗？</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Steer Ratio'?</source>
-        <translation type="gpt-4o-generated">您确定要完全重置“转向比”设置吗？</translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="gpt-4o-generated">瞬时</translation>
+    </message>
+    <message>
+        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">用于微调openpilot横向控制的高级设置。</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
+        <translation type="gpt-4o-generated">强制启用 comma 的自动横向调节功能以支持不支持的车辆。</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
+        <translation type="gpt-4o-generated">强制禁用支持车辆的Comma自动横向调节。</translation>
+    </message>
+    <message>
+        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
+
+Deactivation only occurs with the "Cruise Control" button.</source>
+        <translation type="gpt-4o-generated">即使踩下刹车或油门踏板，openpilot 的方向盘控制仍然保持激活状态。
+
+仅通过“巡航控制”按钮进行停用。</translation>
+    </message>
+    <message>
+        <source>Control With LKAS Button</source>
+        <translation type="gpt-4o-generated">使用 LKAS 按钮控制</translation>
+    </message>
+    <message>
+        <source>Control the current state of "Always on Lateral" with the "LKAS" button.</source>
+        <translation type="gpt-4o-generated">使用“LKAS”按钮控制“始终开启横向控制”的当前状态。</translation>
+    </message>
+    <message>
+        <source>Enable With Cruise Control</source>
+        <translation type="gpt-4o-generated">启用巡航控制</translation>
+    </message>
+    <message>
+        <source>Customize how openpilot handles lane changes.</source>
+        <translation type="gpt-4o-generated">自定义 openpilot 如何处理变道。</translation>
+    </message>
+    <message>
+        <source>openpilot won't initiate a lane change into detected lanes narrower than this width.</source>
+        <translation type="gpt-4o-generated">openpilot 不会在检测到的车道宽度小于此宽度时发起变道。</translation>
+    </message>
+    <message>
+        <source>Minimum Lane Change Speed</source>
+        <translation type="gpt-4o-generated">最低变道速度</translation>
+    </message>
+    <message>
+        <source>Minimum speed required for openpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">openpilot 执行变道所需的最低速度。</translation>
+    </message>
+    <message>
+        <source>Settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">用于微调 openpilot 横向控制的设置。</translation>
+    </message>
+    <message>
+        <source>Force turn desires below the minimum lane change speed to improve turning accuracy.</source>
+        <translation type="gpt-4o-generated">在低于最低变道速度时强制转向需求，以提高转向精度。</translation>
+    </message>
+    <message>
+        <source>Miscellaneous lateral control features to improve your overall openpilot experience.</source>
+        <translation type="gpt-4o-generated">各种横向控制功能，以改善您整体的 openpilot 使用体验。</translation>
+    </message>
+    <message>
+        <source>Pause steering control when driving below the configured speed.</source>
+        <translation type="gpt-4o-generated">在驾驶速度低于配置速度时暂停转向控制。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Friction" values?</source>
+        <translation type="gpt-4o-generated">您确定要完全重置“摩擦”值吗？</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Kp Factor" values?</source>
+        <translation type="gpt-4o-generated">您确定要完全重置您的“Kp 因子”值吗？</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Lateral Accel" values?</source>
+        <translation type="gpt-4o-generated">您确定要完全重置您的“横向加速度”值吗？</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Steer Ratio" values?</source>
+        <translation type="gpt-4o-generated">您确定要完全重置您的“转向比”值吗？</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="gpt-4o-generated">关闭</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">公里/小时</translation>
+    </message>
+    <message>
+        <source>Lane Changes</source>
+        <translation type="gpt-4o-generated">变道</translation>
+    </message>
+    <message>
+        <source>Lane Detection Width</source>
+        <translation type="gpt-4o-generated">车道检测宽度</translation>
+    </message>
+    <message>
+        <source>Adjust steering resistance. Higher values feel more stable but heavier; lower values feel lighter but more sensitive.</source>
+        <translation type="gpt-4o-generated">调整转向阻力。较高的数值感觉更稳定但更重；较低的数值感觉更轻但更敏感。</translation>
+    </message>
+    <message>
+        <source>Adjust how aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values respond more smoothly but slower.</source>
+        <translation type="gpt-4o-generated">调整openpilot纠正转向的积极程度。较高的值响应更快，但可能感觉不稳定；较低的值响应更平稳，但速度较慢。</translation>
+    </message>
+    <message>
+        <source>Control how quickly openpilot can steer laterally. Higher values allow faster maneuvers but may feel unstable; lower values provide smoother, slower steering.</source>
+        <translation type="gpt-4o-generated">控制 openpilot 横向转向的速度。更高的数值允许更快的转向动作，但可能感觉不稳定；较低的数值则提供更平稳、更慢的转向。</translation>
+    </message>
+    <message>
+        <source>Adjust how much the wheel turns to steer. Higher values feel like a truck—stable at speed but sluggish in corners; lower values feel like a go-kart—quick but twitchy.</source>
+        <translation type="gpt-4o-generated">调整方向盘转动的幅度以进行转向。较高的数值感觉像卡车——在高速度下稳定，但在转弯时反应迟缓；较低的数值感觉像卡丁车——快速但不稳定。</translation>
+    </message>
+    <message>
+        <source>Allow "Always on Lateral" to be active whenever "Cruise Control" is active, bypassing the need to enable openpilot first.</source>
+        <translation type="gpt-4o-generated">允许“始终开启横向控制”在“巡航控制”激活时始终处于激活状态，无需先启用openpilot。</translation>
+    </message>
+    <message>
+        <source>Temporarily disable "Always on Lateral" below the configured speed when the brake is pressed.</source>
+        <translation type="gpt-4o-generated">在刹车踏板被踩下时，临时禁用低于配置速度的“始终开启横向控制”。</translation>
+    </message>
+    <message>
+        <source>Automatically initiate lane changes when the turn signal is active — no steering input required!</source>
+        <translation type="gpt-4o-generated">当转向灯激活时，自动启动变道操作—无需转向输入！</translation>
+    </message>
+    <message>
+        <source>Delay automatic lane changes by the configured time.</source>
+        <translation type="gpt-4o-generated">将自动变道延迟配置的时间。</translation>
+    </message>
+    <message>
+        <source>Limit lane changes to one per turn signal activation.</source>
+        <translation type="gpt-4o-generated">限制变道为每次转向灯激活一次。</translation>
+    </message>
+    <message>
+        <source>Use Twilsonco's "Neural Network FeedForward" for smoother steering, trained on past driving data from your car model.</source>
+        <translation type="gpt-4o-generated">使用 Twilsonco 的“神经网络前馈”实现更平稳的转向，该功能基于您车型的过往驾驶数据进行训练。</translation>
+    </message>
+    <message>
+        <source>Smoothen steering control during curves using Twilsonco's torque adjustments.</source>
+        <translation type="gpt-4o-generated">在曲线行驶中使用Twilsonco的扭矩调节来平滑转向控制。</translation>
     </message>
 </context>
 <context>
@@ -1312,26 +1316,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
     <message>
         <source> seconds</source>
         <translation type="gpt-4o-generated">秒钟</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (0-34 kph)</source>
-        <translation type="gpt-4o-generated">速度限制偏移（0-34 公里/小时）</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (35-54 kph)</source>
-        <translation type="gpt-4o-generated">速度限制偏移（35-54 公里/小时）</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (55-64 kph)</source>
-        <translation type="gpt-4o-generated">速度限制偏移（55-64 公里/小时）</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (65-99 kph)</source>
-        <translation type="gpt-4o-generated">速度限制偏移（65-99 公里/小时）</translation>
-    </message>
-    <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">公里每小时</translation>
     </message>
     <message>
         <source> meters</source>
@@ -1880,22 +1864,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">您确定要完全重置“放松”个性的设置吗？</translation>
     </message>
     <message>
-        <source>Sets the speed limit offset for speeds between 0-34 kph.</source>
-        <translation type="gpt-4o-generated">设置速度在0-34公里/小时之间的速度限制偏移量。</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 35-54 kph.</source>
-        <translation type="gpt-4o-generated">设置速度在35-54公里/小时之间的速度限制偏移。</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 55-64 kph.</source>
-        <translation type="gpt-4o-generated">设置55-64公里每小时速度之间的速度限制偏移量。</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 65-99 kph.</source>
-        <translation type="gpt-4o-generated">设置65-99公里/小时之间速度的限速偏差。</translation>
-    </message>
-    <message>
         <source>Sets the speed limit offset for speeds between 0-34 mph.</source>
         <translation type="gpt-4o-generated">设置速度在0-34英里/小时之间的限速偏移。</translation>
     </message>
@@ -1928,36 +1896,40 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">在行车界面显示当前状态。</translation>
     </message>
     <message>
-        <source>Reset Curve Data</source>
-        <translation type="gpt-4o-generated">重置曲线数据</translation>
+        <source>Speed Limit Offset (0-34 km/h)</source>
+        <translation type="gpt-4o-generated">速度限制偏移（0-34 km/h）</translation>
     </message>
     <message>
-        <source>Resets the data for the 'Smart' 'Curve Detection Method'.</source>
-        <translation type="gpt-4o-generated">重置“智能”“曲线检测方法”的数据。</translation>
+        <source>Speed Limit Offset (35-54 km/h)</source>
+        <translation type="gpt-4o-generated">车速限制偏移量 (35-54 公里/小时)</translation>
     </message>
     <message>
-        <source>Speed Limit Filler</source>
-        <translation type="gpt-4o-generated">速度限制填充器</translation>
+        <source>Speed Limit Offset (55-64 km/h)</source>
+        <translation type="gpt-4o-generated">限速偏移 (55-64 公里/小时)</translation>
     </message>
     <message>
-        <source>Uses speed limit data from your dashboard, 'Mapbox', and 'Navigate on Openpilot' to identify missing speed limits on 'OpenStreetMap'. The data can be downloaded via 'Fleet Manager' in the 'Tools' section and used at 'https://nerftool.glitch.me/' via the 'Load Custom Data' button.</source>
-        <translation type="gpt-4o-generated">使用来自您的仪表盘、“Mapbox”和“Navigate on Openpilot”的限速数据来识别“OpenStreetMap”上缺失的限速信息。可以通过“工具”部分的“Fleet Manager”下载数据，并通过“Load Custom Data”按钮在“https://nerftool.glitch.me/”上使用。</translation>
+        <source>Speed Limit Offset (65-99 km/h)</source>
+        <translation type="gpt-4o-generated">速度限制偏移（65-99 km/h）</translation>
     </message>
     <message>
-        <source>Use Mapbox For Missing Speed Limits</source>
-        <translation type="gpt-4o-generated">使用 Mapbox 填补缺失的限速信息</translation>
+        <source>Sets the speed limit offset for speeds between 0-34 km/h.</source>
+        <translation type="gpt-4o-generated">设置速度在0-34 km/h之间的限速偏移。</translation>
     </message>
     <message>
-        <source>Uses data from 'Mapbox' when all the current speed limit sources aren't currently providing a speed limit.</source>
-        <translation type="gpt-4o-generated">当所有当前速度限制来源未提供速度限制时，使用来自“Mapbox”的数据。</translation>
+        <source>Sets the speed limit offset for speeds between 35-54 km/h.</source>
+        <translation type="gpt-4o-generated">设置35-54公里/小时速度范围内的限速偏移。</translation>
     </message>
     <message>
-        <source>Smart</source>
-        <translation type="gpt-4o-generated">智能</translation>
+        <source>Sets the speed limit offset for speeds between 55-64 km/h.</source>
+        <translation type="gpt-4o-generated">设置速度在55-64 km/h之间的限速偏移。</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely reset your curvature data?</source>
-        <translation type="gpt-4o-generated">您确定要完全重置您的曲率数据吗？</translation>
+        <source>Sets the speed limit offset for speeds between 65-99 km/h.</source>
+        <translation type="gpt-4o-generated">设置65-99公里/小时之间速度的限速偏移量。</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">公里/小时</translation>
     </message>
 </context>
 <context>
@@ -2205,10 +2177,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">地图数据</translation>
     </message>
     <message>
-        <source>PRIMELESS NAVIGATION</source>
-        <translation type="gpt-4o-generated">无高级导航</translation>
-    </message>
-    <message>
         <source>DEVICE CONTROLS</source>
         <translation type="gpt-4o-generated">设备控制</translation>
     </message>
@@ -2219,14 +2187,6 @@ This overrides 'Conditional Experimental Mode'.</source>
     <message>
         <source>Manage FrogPilot's features that affect acceleration, braking, and steering.</source>
         <translation type="gpt-4o-generated">管理影响加速、制动和转向的FrogPilot功能。</translation>
-    </message>
-    <message>
-        <source>Manage map data to be used with 'Curve Speed Control' and 'Speed Limit Controller' and setup 'Navigate On openpilot (NOO)' without a comma prime subscription.</source>
-        <translation type="gpt-4o-generated">管理用于“弯道速度控制”和“速度限制控制器”的地图数据，并在没有comma prime订阅的情况下设置“Navigate On openpilot (NOO)”。</translation>
-    </message>
-    <message>
-        <source>Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">管理设备的内部设置以及其他工具和实用程序，以维护和排除 FrogPilot 的故障。</translation>
     </message>
     <message>
         <source>Manage openpilot's theme and onroad widgets.</source>
@@ -2275,8 +2235,20 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">警告：这将解锁一些可能危险的设置，可能会极大地改变您的驾驶体验！</translation>
     </message>
     <message>
-        <source>The 'Developer' preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
-        <translation type="gpt-4o-generated">只有在FrogPilot中超过100小时，或在openpilot中超过250小时的用户才能使用“开发者”预设。</translation>
+        <source>NAVIGATION</source>
+        <translation type="gpt-4o-generated">导航</translation>
+    </message>
+    <message>
+        <source>Download map data that can be used with "Curve Speed Control" and "Speed Limit Controller" and set up "Navigate On openpilot (NOO)".</source>
+        <translation type="gpt-4o-generated">下载可与“曲线速度控制”和“限速控制器”一起使用的地图数据，并设置“openpilot 导航（NOO）”。</translation>
+    </message>
+    <message>
+        <source>Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot.</source>
+        <translation type="gpt-4o-generated">管理设备的内部设置，以及用于维护和故障排除FrogPilot的其他工具和实用程序。</translation>
+    </message>
+    <message>
+        <source>The "Developer" preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
+        <translation type="gpt-4o-generated">“开发者”预设仅对使用FrogPilot超过100小时或使用openpilot超过250小时的用户可用。</translation>
     </message>
 </context>
 <context>
@@ -2292,20 +2264,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     <message>
         <source>Disengage Volume</source>
         <translation type="gpt-4o-generated">解除音量</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Adaptive Cruise Disabled
-Parking Brake Engaged
-Brake Pedal Pressed
-Speed too Low</source>
-        <translation type="gpt-4o-generated">相关警报：
-
-自适应巡航已禁用
-驻车制动已激活
-刹车踏板已踩下
-速度过低</translation>
     </message>
     <message>
         <source>Engage Volume</source>
@@ -2324,20 +2282,6 @@ openpilot 已启用</translation>
     <message>
         <source>Prompt Volume</source>
         <translation type="gpt-4o-generated">提示音量</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Car Detected in Blindspot
-Speed too Low
-Steer Unavailable Below 'X'
-Take Control, Turn Exceeds Steering Limit</source>
-        <translation type="gpt-4o-generated">相关警报：
-
-盲区内检测到车辆
-速度过低
-低于“X”时无法转向
-请接管，转弯超过转向限制</translation>
     </message>
     <message>
         <source>Prompt Distracted Volume</source>
@@ -2410,36 +2354,8 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
         <translation type="gpt-4o-generated">前车驶离提醒</translation>
     </message>
     <message>
-        <source>Loud Blindspot Alert</source>
-        <translation type="gpt-4o-generated">响亮的盲点警报</translation>
-    </message>
-    <message>
-        <source>Custom alerts for openpilot events.</source>
-        <translation type="gpt-4o-generated">自定义警报用于openpilot事件。</translation>
-    </message>
-    <message>
-        <source>Enables the famed 'Goat Scream' that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">启用著名的“山羊尖叫声”，为全球FrogPilot用户带来了欢乐和愤怒！</translation>
-    </message>
-    <message>
-        <source>Plays an alert when a traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">当红灯变为绿灯时播放警报。</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the lead vehicle starts starts to depart when at a standstill.</source>
-        <translation type="gpt-4o-generated">当前车在静止状态下开始离开时，播放警报。</translation>
-    </message>
-    <message>
-        <source>Plays a louder alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
-        <translation type="gpt-4o-generated">在尝试变道时，如果在盲点检测到车辆，将播放更响的警报。</translation>
-    </message>
-    <message>
         <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">限速变更提醒</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">当限速变化时播放警报。</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -2448,6 +2364,62 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
     <message>
         <source>Muted</source>
         <translation type="gpt-4o-generated">静音</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Adaptive Cruise Disabled
+Brake Pedal Pressed
+Parking Brake Engaged
+Speed too Low</source>
+        <translation type="gpt-4o-generated">相关警报：
+
+自适应巡航已禁用
+刹车踏板已按下
+停车制动已启用
+速度过低</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Car Detected in Blindspot
+Steer Unavailable Below "X"
+Speed too Low
+Take Control, Turn Exceeds Steering Limit</source>
+        <translation type="gpt-4o-generated">相关警报：
+
+车辆检测到盲区
+在“X”以下无法转向
+速度过低
+请接管方向盘，转弯超过转向限制</translation>
+    </message>
+    <message>
+        <source>Custom FrogPilot alerts for openpilot events.</source>
+        <translation type="gpt-4o-generated">自定义 FrogPilot 提示以应对 openpilot 事件。</translation>
+    </message>
+    <message>
+        <source>Enable the famed "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">启用广受欢迎的“山羊尖叫声”，它给全球的FrogPilot用户带来了欢乐和愤怒！</translation>
+    </message>
+    <message>
+        <source>Play an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">当红灯变为绿灯时播放提醒。</translation>
+    </message>
+    <message>
+        <source>Play an alert when the lead vehicle starts starts to depart.</source>
+        <translation type="gpt-4o-generated">当前车开始驶离时播放警报。</translation>
+    </message>
+    <message>
+        <source>Loud Blindspot Vehicle Alert</source>
+        <translation type="gpt-4o-generated">大声盲点车辆警报</translation>
+    </message>
+    <message>
+        <source>Play a loud alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
+        <translation type="gpt-4o-generated">当试图变道时，如果在盲点检测到车辆，播放响亮的警报。</translation>
+    </message>
+    <message>
+        <source>Play an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">当限速变化时播放警报。</translation>
     </message>
 </context>
 <context>
@@ -2708,10 +2680,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">闪存</translation>
     </message>
     <message>
-        <source>Flashes the Panda device's firmware if you're running into issues.</source>
-        <translation type="gpt-4o-generated">如果您遇到问题，请刷新Panda设备的固件。</translation>
-    </message>
-    <message>
         <source>Are you sure you want to flash the Panda?</source>
         <translation type="gpt-4o-generated">您确定要刷新Panda吗？</translation>
     </message>
@@ -2736,10 +2704,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">强制启动状态</translation>
     </message>
     <message>
-        <source>Forces openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">强制将 openpilot 设置为离线或在线模式。</translation>
-    </message>
-    <message>
         <source>OFFROAD</source>
         <translation type="gpt-4o-generated">离线</translation>
     </message>
@@ -2760,10 +2724,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">报告</translation>
     </message>
     <message>
-        <source>Let 'FrogsGoMoo' know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">让 'FrogsGoMoo' 知道您遇到的问题。</translation>
-    </message>
-    <message>
         <source>What's going on?</source>
         <translation type="gpt-4o-generated">发生了什么？</translation>
     </message>
@@ -2778,10 +2738,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>What's your Discord username?</source>
         <translation type="gpt-4o-generated">你的 Discord 用户名是什么？</translation>
-    </message>
-    <message>
-        <source>Thanks for letting us know! Your report has been submitted.</source>
-        <translation type="gpt-4o-generated">谢谢告知！您的报告已提交。</translation>
     </message>
     <message>
         <source>Reset Toggles to Default</source>
@@ -2810,6 +2766,30 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>Reset!</source>
         <translation type="gpt-4o-generated">重置！</translation>
+    </message>
+    <message>
+        <source>Debug Mode</source>
+        <translation type="gpt-4o-generated">调试模式</translation>
+    </message>
+    <message>
+        <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
+        <translation type="gpt-4o-generated">在下次驾驶时，通过利用 FrogPilot 的所有开发者指标来调试 FrogPilot，以便进行错误报告或自我调试。</translation>
+    </message>
+    <message>
+        <source>Force openpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">强制 openpilot 处于离线或在线状态。</translation>
+    </message>
+    <message>
+        <source>Let "FrogsGoMoo" know about an issue you're facing.</source>
+        <translation type="gpt-4o-generated">让“FrogsGoMoo”了解您遇到的问题。</translation>
+    </message>
+    <message>
+        <source>Your report has been submitted. Thanks for letting us know!</source>
+        <translation type="gpt-4o-generated">您的报告已提交。感谢您的反馈！</translation>
+    </message>
+    <message>
+        <source>Flash the Panda's firmware. Use if you're running into issues with the Panda.</source>
+        <translation type="gpt-4o-generated">刷新Panda的固件。如果您遇到Panda问题，请使用此选项。</translation>
     </message>
 </context>
 <context>
@@ -2851,28 +2831,12 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">您确定要完全禁用 openpilot 纵向控制吗？</translation>
     </message>
     <message>
-        <source>Force stop and go for the 2017 Chevy Volt.</source>
-        <translation type="gpt-4o-generated">强制启停用于2017款雪佛兰Volt。</translation>
-    </message>
-    <message>
         <source>Automatically Lock/Unlock Doors</source>
         <translation type="gpt-4o-generated">自动锁定/解锁车门</translation>
     </message>
     <message>
-        <source>Automatically lock the doors when in drive and unlock when in park.</source>
-        <translation type="gpt-4o-generated">在行驶时自动锁门，在停车时自动解锁。</translation>
-    </message>
-    <message>
         <source>Cluster Speed Offset</source>
         <translation type="gpt-4o-generated">仪表速度偏移</translation>
-    </message>
-    <message>
-        <source>Set the cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">设置openpilot使用的集群偏移量，以尝试匹配仪表盘上显示的速度。</translation>
-    </message>
-    <message>
-        <source>Force stop and go for vehicles without stock stop and go functionality.</source>
-        <translation type="gpt-4o-generated">对于没有原厂启停功能的车辆强制启停。</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -2891,60 +2855,16 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">通用汽车开关</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'General Motors' vehicles.</source>
-        <translation type="gpt-4o-generated">针对“通用汽车”车辆的切换选项。</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Experimental Longitudinal Tune</source>
-        <translation type="gpt-4o-generated">启用 FrogsGoMoo 的实验性纵向调校</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!</source>
-        <translation type="gpt-4o-generated">启用 FrogsGoMoo 的实验性 GM 纵向调校，该调校完全基于猜测。使用风险自负！</translation>
-    </message>
-    <message>
-        <source>Enable Stop and Go Hack</source>
-        <translation type="gpt-4o-generated">启用停走破解</translation>
-    </message>
-    <message>
         <source>Smoothen Pedal Response While Going Downhill/Uphill</source>
         <translation type="gpt-4o-generated">在下坡/上坡时平滑踏板响应</translation>
-    </message>
-    <message>
-        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
-        <translation type="gpt-4o-generated">在上下坡驾驶时，使油门和刹车响应更加平稳。</translation>
     </message>
     <message>
         <source>Hyundai/Kia/Genesis Toggles</source>
         <translation type="gpt-4o-generated">现代/起亚/捷尼赛思开关按钮</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'Hyundai/Kia/Genesis' vehicles.</source>
-        <translation type="gpt-4o-generated">针对“现代/起亚/捷尼赛思”车辆的切换选项。</translation>
-    </message>
-    <message>
-        <source>Enable comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">启用 comma 的新纵向 API</translation>
-    </message>
-    <message>
-        <source>Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
-        <translation type="gpt-4o-generated">启用comma的新纵向控制系统，该系统在加速和制动方面表现出显著改进，但在某些现代/起亚/捷尼赛思车辆上存在问题。</translation>
-    </message>
-    <message>
         <source>Toyota/Lexus Toggles</source>
         <translation type="gpt-4o-generated">丰田/雷克萨斯开关</translation>
-    </message>
-    <message>
-        <source>Toggles catered towards 'Toyota/Lexus' vehicles.</source>
-        <translation type="gpt-4o-generated">针对“丰田/雷克萨斯”车辆的开关。</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Personal Tweaks</source>
-        <translation type="gpt-4o-generated">启用 FrogsGoMoo 的个人调整</translation>
-    </message>
-    <message>
-        <source>FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother.</source>
-        <translation type="gpt-4o-generated">FrogsGoMoo的个人调整，旨在加速更快和停车更平稳。</translation>
     </message>
     <message>
         <source>MANAGE</source>
@@ -2955,20 +2875,72 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">点火关闭后锁门</translation>
     </message>
     <message>
-        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
-        <translation type="gpt-4o-generated">在车辆点火关闭且前排座位无人检测到时自动锁门。</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation type="gpt-4o-generated">从不</translation>
     </message>
     <message>
-        <source>'Taco Bell Run' Turn Torque Hack</source>
-        <translation type="gpt-4o-generated">'Taco Bell Run' 转向扭矩破解</translation>
+        <source>Toggles catered towards "General Motors" vehicles.</source>
+        <translation type="gpt-4o-generated">针对“通用汽车”车辆的切换选项。</translation>
     </message>
     <message>
-        <source>Enable comma's steering torque hack they used to help handle left and right turns more precisely during their 2022 'Taco Bell' drive by increasing the allowed torque while turning.</source>
-        <translation type="gpt-4o-generated">启用comma的转向扭矩破解功能，他们在2022年的'Taco Bell'驾驶中通过增加转向时允许的扭矩，以更精确地处理左转和右转。</translation>
+        <source>FrogsGoMoo's Experimental Longitudinal Tune</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo 的实验性纵向调校</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo 的实验性 GM 纵向调校，旨在改善停车和起步控制，仅基于猜测。使用风险自负！</translation>
+    </message>
+    <message>
+        <source>Stop and Go Hack</source>
+        <translation type="gpt-4o-generated">启停破解</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Hyundai/Kia/Genesis" vehicles.</source>
+        <translation type="gpt-4o-generated">针对“现代/起亚/捷恩斯”车辆的切换选项。</translation>
+    </message>
+    <message>
+        <source>comma's New Longitudinal API</source>
+        <translation type="gpt-4o-generated">Comma 的新纵向 API</translation>
+    </message>
+    <message>
+        <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
+        <translation type="gpt-4o-generated">comma的新纵向控制系统在加速和制动方面表现出显著改进，但在某些现代/起亚/捷尼赛思车辆上存在问题。</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Toyota/Lexus" vehicles.</source>
+        <translation type="gpt-4o-generated">针对“丰田/雷克萨斯”车辆的切换。</translation>
+    </message>
+    <message>
+        <source>The cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">openpilot使用的偏移量，以尝试匹配仪表盘上显示的速度。</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's Personal Tweaks</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo的个人调整</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking.</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo 的个人调整旨在提供更快的加速和更平滑的制动。</translation>
+    </message>
+    <message>
+        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
+        <translation type="gpt-4o-generated">在下坡或上坡行驶时平滑油门和刹车响应。</translation>
+    </message>
+    <message>
+        <source>Force stop and go for the "2017 Chevy Volt".</source>
+        <translation type="gpt-4o-generated">强制启停适用于“2017款雪佛兰沃尔特”。</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors when shifting into drive and unlocks them when shifting into park.</source>
+        <translation type="gpt-4o-generated">在换入驾驶档时自动锁门，在换入停车档时解锁。</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
+        <translation type="gpt-4o-generated">在汽车点火关闭且前排座位上无人检测到后，自动锁上车门。</translation>
+    </message>
+    <message>
+        <source>Force stop and go for "Toyota/Lexus" vehicles without stock stop and go functionality.</source>
+        <translation type="gpt-4o-generated">为不具备原厂启停功能的“丰田/雷克萨斯”车辆强制启动和停止。</translation>
     </message>
 </context>
 <context>
@@ -3793,16 +3765,12 @@ Default matches half of the MUTCD standard of 4 inches.</source>
         <translation>点击“添加新设备”，扫描右侧二维码</translation>
     </message>
     <message>
-        <source>Pair your device to your Konik.ai account</source>
-        <translation type="gpt-4o-generated">将您的设备与您的Konik.ai账户配对</translation>
+        <source>Go to https://connect.comma.ai on your phone</source>
+        <translation type="gpt-4o-generated">请在您的手机上访问 https://connect.comma.ai</translation>
     </message>
     <message>
-        <source>Go to %1 on your phone</source>
-        <translation type="gpt-4o-generated">在你的手机上进入 %1</translation>
-    </message>
-    <message>
-        <source>Bookmark %1 to your home screen to use it like an app</source>
-        <translation type="gpt-4o-generated">将 %1 添加到您的主屏幕以像应用程序一样使用它</translation>
+        <source>Bookmark connect.comma.ai to your home screen to use it like an app</source>
+        <translation type="gpt-4o-generated">将 connect.comma.ai 添加到主屏幕，以像应用程序一样使用</translation>
     </message>
 </context>
 <context>

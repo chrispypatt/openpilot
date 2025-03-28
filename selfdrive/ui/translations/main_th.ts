@@ -146,10 +146,6 @@
         <translation type="gpt-4o-generated">ม./วินาที</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">กม./ชม.</translation>
-    </message>
-    <message>
         <source>PENDING</source>
         <translation type="gpt-4o-generated">รอดำเนินการ</translation>
     </message>
@@ -605,8 +601,20 @@
         <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการลบการสำรองข้อมูลสลับทั้งหมด?</translation>
     </message>
     <message>
-        <source>Do you want to compress this backup? The final result will be significantly smaller and will run in the background.</source>
-        <translation type="gpt-4o-generated">คุณต้องการบีบอัดการสำรองข้อมูลนี้หรือไม่? ผลลัพธ์สุดท้ายจะมีขนาดเล็กลงมากและจะทำงานในพื้นหลัง</translation>
+        <source>Do you want to compress this backup? This will take an extra few minutes, but the final result will be significantly smaller and will run in the background.</source>
+        <translation type="gpt-4o-generated">คุณต้องการบีบอัดข้อมูลสำรองนี้หรือไม่? การทำเช่นนี้จะใช้เวลาเพิ่มอีกสองสามนาที แต่ผลลัพธ์สุดท้ายจะมีขนาดเล็กลงอย่างมากและจะทำงานอยู่เบื้องหลัง</translation>
+    </message>
+    <message>
+        <source>Delete Error Logs</source>
+        <translation type="gpt-4o-generated">ลบบันทึกข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Permanently deletes all stored error logs from your device. Ideal for freeing up space.</source>
+        <translation type="gpt-4o-generated">ลบไฟล์บันทึกข้อผิดพลาดทั้งหมดจากอุปกรณ์ของคุณอย่างถาวร เหมาะสำหรับเพิ่มพื้นที่ว่าง</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to permanently delete all of the error logs?</source>
+        <translation type="gpt-4o-generated">คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลบันทึกข้อผิดพลาดทั้งหมดอย่างถาวร?</translation>
     </message>
 </context>
 <context>
@@ -630,14 +638,6 @@
     <message>
         <source>Increase Thermal Safety Limit</source>
         <translation type="gpt-4o-generated">เพิ่มขีดจำกัดความปลอดภัยทางความร้อน</translation>
-    </message>
-    <message>
-        <source>Low Battery Shutdown Threshold</source>
-        <translation type="gpt-4o-generated">เกณฑ์ปิดเครื่องเมื่อแบตเตอรี่ต่ำ</translation>
-    </message>
-    <message>
-        <source>Turn Off Data Tracking</source>
-        <translation type="gpt-4o-generated">ปิดการติดตามข้อมูล</translation>
     </message>
     <message>
         <source>Turn Off Data Uploads</source>
@@ -688,10 +688,6 @@
         <translation type="gpt-4o-generated">ชั่วโมง</translation>
     </message>
     <message>
-        <source>Only Onroad</source>
-        <translation type="gpt-4o-generated">เฉพาะขณะขับขี่บนถนน</translation>
-    </message>
-    <message>
         <source> volts</source>
         <translation type="gpt-4o-generated">โวลต์</translation>
     </message>
@@ -708,68 +704,72 @@
         <translation type="gpt-4o-generated">คำเตือน: สิ่งนี้อาจทำให้เกิดการสึกหรอหรือความเสียหายก่อนเวลาอันควรโดยการใช้งานอุปกรณ์เกินขีดจำกัดอุณหภูมิที่แนะนำของ comma!</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from being recorded and the data will be unobtainable!</source>
-        <translation type="gpt-4o-generated">คำเตือน: การกระทำนี้จะทำให้การขับขี่ของคุณไม่ได้รับการบันทึก และข้อมูลจะไม่สามารถเรียกคืนได้!</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from appearing on comma connect which may impact debugging and support!</source>
         <translation type="gpt-4o-generated">คำเตือน: การดำเนินการนี้จะทำให้การขับขี่ของคุณไม่ปรากฏบน comma connect ซึ่งอาจส่งผลต่อการดีบักและการสนับสนุน!</translation>
-    </message>
-    <message>
-        <source>Controls how long the device stays on after you stop driving.</source>
-        <translation type="gpt-4o-generated">ควบคุมระยะเวลาที่อุปกรณ์ยังเปิดอยู่หลังจากคุณหยุดขับรถ</translation>
-    </message>
-    <message>
-        <source>Allows the device to work without an internet connection.</source>
-        <translation type="gpt-4o-generated">อนุญาตให้ใช้งานอุปกรณ์โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</translation>
-    </message>
-    <message>
-        <source>Allows the device to run at higher temperatures than recommended.</source>
-        <translation type="gpt-4o-generated">อนุญาตให้อุปกรณ์ทำงานที่อุณหภูมิสูงกว่าที่แนะนำ</translation>
-    </message>
-    <message>
-        <source>Manages the threshold for shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
-        <translation type="gpt-4o-generated">จัดการเกณฑ์สำหรับปิดอุปกรณ์เพื่อป้องกันแบตเตอรี่รถยนต์จากการระบายที่มากเกินไปและความเสียหายที่อาจเกิดขึ้น</translation>
-    </message>
-    <message>
-        <source>Disables all data tracking to improve privacy.</source>
-        <translation type="gpt-4o-generated">ปิดการติดตามข้อมูลทั้งหมดเพื่อเพิ่มความเป็นส่วนตัว</translation>
-    </message>
-    <message>
-        <source>Stops the device from sending any data to the servers.</source>
-        <translation type="gpt-4o-generated">หยุดอุปกรณ์จากการส่งข้อมูลใดๆ ไปยังเซิร์ฟเวอร์</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness when you're not driving.</source>
-        <translation type="gpt-4o-generated">ควบคุมความสว่างของหน้าจอเมื่อคุณไม่ได้ขับรถ</translation>
-    </message>
-    <message>
-        <source>Controls the screen brightness while you're driving.</source>
-        <translation type="gpt-4o-generated">ควบคุมความสว่างของหน้าจอขณะคุณกำลังขับรถ</translation>
-    </message>
-    <message>
-        <source>Enables a button in the onroad UI to record the screen.</source>
-        <translation type="gpt-4o-generated">เปิดใช้งานปุ่มใน UI บนถนนเพื่อบันทึกหน้าจอ</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off when you're not driving.</source>
-        <translation type="gpt-4o-generated">ควบคุมระยะเวลาที่หน้าจอจะปิดเมื่อคุณไม่ได้ขับรถ</translation>
-    </message>
-    <message>
-        <source>Controls how long it takes for the screen to turn off while you're driving.</source>
-        <translation type="gpt-4o-generated">ควบคุมระยะเวลาที่ใช้ในการปิดหน้าจอขณะขับขี่</translation>
     </message>
     <message>
         <source>Screen Off</source>
         <translation type="gpt-4o-generated">ปิดหน้าจอ</translation>
     </message>
     <message>
-        <source>Use Konik.ai's Server Instead of Comma's</source>
-        <translation type="gpt-4o-generated">ใช้เซิร์ฟเวอร์ของ Konik.ai แทนที่ของ Comma</translation>
+        <source>Battery Shutdown Threshold</source>
+        <translation type="gpt-4o-generated">เกณฑ์การปิดแบตเตอรี่</translation>
     </message>
     <message>
-        <source>Upload your driving data to Konik.ai's server instead of comma's.</source>
-        <translation type="gpt-4o-generated">อัปโหลดข้อมูลการขับขี่ของคุณไปยังเซิร์ฟเวอร์ของ Konik.ai แทนเซิร์ฟเวอร์ของ comma</translation>
+        <source>The battery level threshold used for automatically shutting down the device to protect the car's battery from excessive drain and potential damage.</source>
+        <translation type="gpt-4o-generated">ระดับแบตเตอรี่ที่ใช้สำหรับปิดอุปกรณ์โดยอัตโนมัติเพื่อป้องกันแบตเตอรี่ของรถยนต์จากการระบายไฟฟ้าเกินและความเสียหายที่อาจเกิดขึ้น</translation>
+    </message>
+    <message>
+        <source>How long the device stays on after you go offroad.</source>
+        <translation type="gpt-4o-generated">ระยะเวลาที่อุปกรณ์จะยังคงเปิดอยู่หลังจากที่คุณออกจากเส้นทาง</translation>
+    </message>
+    <message>
+        <source>Turn Off Data Logging</source>
+        <translation type="gpt-4o-generated">ปิดการบันทึกข้อมูล</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
+        <translation type="gpt-4o-generated">คำเตือน: สิ่งนี้จะป้องกันการบันทึกการขับขี่ของคุณและข้อมูลทั้งหมดจะไม่สามารถเข้าถึงได้!</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're not driving.</source>
+        <translation type="gpt-4o-generated">ความสว่างหน้าจอขณะที่คุณไม่ได้ขับรถ</translation>
+    </message>
+    <message>
+        <source>The screen brightness while you're driving.</source>
+        <translation type="gpt-4o-generated">ความสว่างของหน้าจอขณะคุณกำลังขับขี่</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off when you're not driving.</source>
+        <translation type="gpt-4o-generated">ระยะเวลาที่หน้าจอจะปิดเมื่อคุณไม่ได้ขับรถ</translation>
+    </message>
+    <message>
+        <source>How long it takes for the screen to turn off while you're driving.</source>
+        <translation type="gpt-4o-generated">ระยะเวลาที่ใช้ในการปิดหน้าจอขณะขับขี่</translation>
+    </message>
+    <message>
+        <source>Only Disable While Onroad</source>
+        <translation type="gpt-4o-generated">ปิดใช้งานเฉพาะขณะขับขี่บนถนน</translation>
+    </message>
+    <message>
+        <source>Allow the device to work indefinitely without an internet connection.</source>
+        <translation type="gpt-4o-generated">อนุญาตให้อุปกรณ์ทำงานได้อย่างไม่มีกำหนดโดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</translation>
+    </message>
+    <message>
+        <source>Allow the device to run at higher temperatures than comma recommends.</source>
+        <translation type="gpt-4o-generated">อนุญาตให้อุปกรณ์ทำงานที่อุณหภูมิสูงกว่าที่ comma แนะนำ</translation>
+    </message>
+    <message>
+        <source>Disable all data logging to improve privacy.</source>
+        <translation type="gpt-4o-generated">ปิดการบันทึกข้อมูลทั้งหมดเพื่อเพิ่มความเป็นส่วนตัว</translation>
+    </message>
+    <message>
+        <source>Prevent the device from sending any data to comma's servers.</source>
+        <translation type="gpt-4o-generated">ป้องกันอุปกรณ์ไม่ให้ส่งข้อมูลไปยังเซิร์ฟเวอร์ของ comma</translation>
+    </message>
+    <message>
+        <source>Enable a button in the onroad UI to record the screen.</source>
+        <translation type="gpt-4o-generated">เปิดใช้งานปุ่มใน UI บนถนนเพื่อบันทึกหน้าจอ</translation>
     </message>
 </context>
 <context>
@@ -779,44 +779,12 @@
         <translation type="gpt-4o-generated">เปิดใช้การเลี้ยวตลอดเวลา</translation>
     </message>
     <message>
-        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
-
-Deactivate only occurs with the 'Cruise Control' button.</source>
-        <translation type="gpt-4o-generated">การควบคุมพวงมาลัยของ openpilot จะยังคงทำงานต่อไปแม้ว่าแป้นเบรกหรือแป้นคันเร่งจะถูกกด
-
-จะยกเลิกการทำงานได้ก็ต่อเมื่อกดปุ่ม 'Cruise Control' เท่านั้น</translation>
-    </message>
-    <message>
-        <source>Control with LKAS Button</source>
-        <translation type="gpt-4o-generated">ควบคุมด้วยปุ่ม LKAS</translation>
-    </message>
-    <message>
-        <source>Enable with Cruise Control</source>
-        <translation type="gpt-4o-generated">เปิดใช้งานพร้อมกับระบบควบคุมความเร็วคงที่</translation>
-    </message>
-    <message>
         <source>Pause on Brake Below</source>
         <translation type="gpt-4o-generated">หยุดเมื่อเหยียบเบรกต่ำกว่า</translation>
     </message>
     <message>
-        <source>Lane Change Settings</source>
-        <translation type="gpt-4o-generated">การตั้งค่าการเปลี่ยนเลน</translation>
-    </message>
-    <message>
-        <source>How openpilot handles lane changes.</source>
-        <translation type="gpt-4o-generated">วิธีที่ openpilot จัดการการเปลี่ยนเลน</translation>
-    </message>
-    <message>
         <source>Lane Change Delay</source>
         <translation type="gpt-4o-generated">การหน่วงเวลาการเปลี่ยนเลน</translation>
-    </message>
-    <message>
-        <source>Lane Width Requirement</source>
-        <translation type="gpt-4o-generated">ความต้องการความกว้างของเลน</translation>
-    </message>
-    <message>
-        <source>Minimum Speed for Lane Change</source>
-        <translation type="gpt-4o-generated">ความเร็วขั้นต่ำสำหรับเปลี่ยนเลน</translation>
     </message>
     <message>
         <source>Lateral Tuning</source>
@@ -835,16 +803,8 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">การปรับปรุงคุณภาพชีวิต</translation>
     </message>
     <message>
-        <source>Miscellaneous lateral focused features to improve your overall openpilot experience.</source>
-        <translation type="gpt-4o-generated">คุณสมบัติเสริมด้านข้างเพื่อปรับปรุงประสบการณ์การใช้ openpilot ของคุณโดยรวม</translation>
-    </message>
-    <message>
         <source>Pause Steering Below</source>
         <translation type="gpt-4o-generated">หยุดการบังคับเลี้ยวต่ำกว่า</translation>
-    </message>
-    <message>
-        <source>Pauses steering control when driving below the set speed.</source>
-        <translation type="gpt-4o-generated">หยุดการควบคุมพวงมาลัยเมื่อขับขี่ต่ำกว่าความเร็วที่ตั้งไว้</translation>
     </message>
     <message>
         <source>mph</source>
@@ -855,20 +815,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">ฟุต</translation>
     </message>
     <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">กม./ชม.</translation>
-    </message>
-    <message>
         <source> meters</source>
         <translation type="gpt-4o-generated">เมตร</translation>
     </message>
     <message>
         <source>Advanced Lateral Tuning</source>
         <translation type="gpt-4o-generated">การปรับแต่งด้านข้างขั้นสูง</translation>
-    </message>
-    <message>
-        <source>Advanced settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">การตั้งค่าขั้นสูงสำหรับปรับแต่งการควบคุมด้านข้างของ openpilot อย่างละเอียด</translation>
     </message>
     <message>
         <source>Friction (Default: %1)</source>
@@ -879,20 +831,12 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">แรงเสียดทาน</translation>
     </message>
     <message>
-        <source>Adjusts the resistance in steering. Higher values provide more stable steering but can make it feel heavy, while lower values allow lighter steering but may feel too sensitive.</source>
-        <translation type="gpt-4o-generated">ปรับความต้านทานในการควบคุมพวงมาลัย ค่าที่สูงขึ้นจะให้การควบคุมที่มั่นคงมากขึ้นแต่สามารถทำให้รู้สึกหนัก ในขณะที่ค่าที่ต่ำกว่าจะทำให้การควบคุมพวงมาลัยเบาขึ้นแต่สามารถทำให้รู้สึกไวเกินไป</translation>
-    </message>
-    <message>
         <source>Kp Factor (Default: %1)</source>
         <translation type="gpt-4o-generated">ปัจจัย Kp (ค่าเริ่มต้น: %1)</translation>
     </message>
     <message>
         <source>Kp Factor</source>
         <translation type="gpt-4o-generated">ปัจจัย Kp</translation>
-    </message>
-    <message>
-        <source>Adjusts how aggressively the car corrects its steering. Higher values offer quicker corrections but may feel jerky, while lower values make steering smoother but slower to respond.</source>
-        <translation type="gpt-4o-generated">ปรับความรุนแรงในการแก้ไขพวงมาลัยของรถ ค่าที่สูงกว่าจะทำให้การแก้ไขรวดเร็วขึ้นแต่รู้สึกกระตุก ส่วนค่าที่ต่ำกว่าจะทำให้การควบคุมพวงมาลัยราบรื่นขึ้นแต่ตอบสนองช้าลง</translation>
     </message>
     <message>
         <source>Lateral Accel (Default: %1)</source>
@@ -903,10 +847,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">การเร่งเชิงข้าง</translation>
     </message>
     <message>
-        <source>Adjusts how fast the car can steer from side to side. Higher values allow quicker lane changes but can feel unstable, while lower values provide smoother steering but may feel sluggish.</source>
-        <translation type="gpt-4o-generated">ปรับความเร็วที่รถสามารถเลี้ยวซ้ายและขวาได้ ค่าที่สูงขึ้นช่วยให้เปลี่ยนเลนได้เร็วขึ้นแต่อาจรู้สึกไม่มั่นคง ในขณะที่ค่าที่ต่ำกว่าจะให้การเลี้ยวที่นุ่มนวลกว่าแต่รู้สึกช้า</translation>
-    </message>
-    <message>
         <source>Steer Ratio (Default: %1)</source>
         <translation type="gpt-4o-generated">อัตราทดพวงมาลัย (ค่าเริ่มต้น: %1)</translation>
     </message>
@@ -915,104 +855,168 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
         <translation type="gpt-4o-generated">อัตราทดพวงมาลัย</translation>
     </message>
     <message>
-        <source>Adjusts how much openpilot needs to turn the wheel to steer. Higher values feel like driving a truck, more stable at high speeds, but harder to steer quickly at low speeds, while lower values feel like a go-kart, easier to steer in tight spots but more sensitive and less stable at high speeds.</source>
-        <translation type="gpt-4o-generated">ปรับว่าต้องหมุนพวงมาลัยมากแค่ไหนเพื่อให้ openpilot บังคับทิศทาง ค่าที่สูงขึ้นจะให้ความรู้สึกเหมือนขับรถบรรทุก มั่นคงมากขึ้นที่ความเร็วสูง แต่หมุนได้ยากขึ้นที่ความเร็วต่ำ ในขณะที่ค่าที่ต่ำกว่าจะให้ความรู้สึกเหมือนขับโกคาร์ท หมุนง่ายขึ้นในที่แคบแต่มีความไวและมั่นคงน้อยลงที่ความเร็วสูง</translation>
-    </message>
-    <message>
         <source>Force Auto Tune On</source>
         <translation type="gpt-4o-generated">บังคับปรับแต่งอัตโนมัติ</translation>
-    </message>
-    <message>
-        <source>Forces comma's auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">บังคับการปรับแต่งด้านข้างอัตโนมัติของ comma สำหรับยานพาหนะที่ไม่รองรับ</translation>
     </message>
     <message>
         <source>Force Auto Tune Off</source>
         <translation type="gpt-4o-generated">บังคับปิดการปรับอัตโนมัติ</translation>
     </message>
     <message>
-        <source>Forces comma's auto lateral tuning off for supported vehicles.</source>
-        <translation type="gpt-4o-generated">บังคับปิดการปรับแต่งอัตโนมัติของตัวควบคุมด้านข้างสำหรับรถที่รองรับ</translation>
-    </message>
-    <message>
-        <source>Controls the current state of 'Always on Lateral' with the 'LKAS' button.</source>
-        <translation type="gpt-4o-generated">ควบคุมสถานะปัจจุบันของ 'Always on Lateral' ด้วยปุ่ม 'LKAS'.</translation>
-    </message>
-    <message>
-        <source>Activates 'Always on Lateral' whenever 'Cruise Control' is active bypassing the requirement to enable openpilot first.</source>
-        <translation type="gpt-4o-generated">เปิดใช้งาน 'Always on Lateral' เสมอเมื่อ 'Cruise Control' ทำงาน โดยไม่ต้องเปิดใช้งาน openpilot ก่อน</translation>
-    </message>
-    <message>
-        <source>Pauses 'Always on Lateral' when the brake pedal is pressed below the set speed.</source>
-        <translation type="gpt-4o-generated">หยุดการทำงาน 'Always on Lateral' เมื่อเหยียบเบรกที่ความเร็วต่ำกว่าที่ตั้งไว้</translation>
-    </message>
-    <message>
         <source>Automatic Lane Changes</source>
         <translation type="gpt-4o-generated">การเปลี่ยนเลนอัตโนมัติ</translation>
-    </message>
-    <message>
-        <source>Conducts lane changes without needing to touch the steering wheel upon turn signal activation.</source>
-        <translation type="gpt-4o-generated">ดำเนินการเปลี่ยนเลนโดยไม่จำเป็นต้องสัมผัสพวงมาลัยเมื่อเปิดไฟเลี้ยว</translation>
-    </message>
-    <message>
-        <source>Delays lane changes by the set time to prevent sudden changes.</source>
-        <translation type="gpt-4o-generated">หน่วงเวลาการเปลี่ยนเลนตามเวลาที่ตั้งไว้เพื่อป้องกันการเปลี่ยนแปลงที่กะทันหัน</translation>
-    </message>
-    <message>
-        <source>Sets the minimum lane width for openpilot to detect a lane as a lane.</source>
-        <translation type="gpt-4o-generated">กำหนดความกว้างของเลนขั้นต่ำที่ openpilot จะตรวจจับเลนว่าเป็นเลน</translation>
-    </message>
-    <message>
-        <source>Sets the minimum speed required for openpilot to perform a lane change.</source>
-        <translation type="gpt-4o-generated">กำหนดความเร็วขั้นต่ำที่ต้องการให้ openpilot สามารถเปลี่ยนเลนได้</translation>
     </message>
     <message>
         <source>Only One Lane Change Per Signal</source>
         <translation type="gpt-4o-generated">สัญญาณไฟเลี้ยวสามารถเปลี่ยนเลนได้เพียงครั้งเดียว</translation>
     </message>
     <message>
-        <source>Limits lane changes to one per turn signal activation.</source>
-        <translation type="gpt-4o-generated">จำกัดการเปลี่ยนเลนให้เหลือหนึ่งครั้งต่อการเปิดไฟเลี้ยว</translation>
-    </message>
-    <message>
-        <source>Settings for fine tuning openpilot's lateral controls.</source>
-        <translation type="gpt-4o-generated">การตั้งค่าสำหรับการปรับจูนการควบคุมด้านข้างของ openpilot อย่างละเอียด</translation>
-    </message>
-    <message>
         <source>Force Turn Desires Below Lane Change Speed</source>
         <translation type="gpt-4o-generated">บังคับให้ปิดการขับเคลื่อนต่ำกว่าความเร็วในการเปลี่ยนเลน</translation>
     </message>
     <message>
-        <source>Forces the model to use turn desires when driving below the minimum lane change speed to help make left and right turns more precisely.</source>
-        <translation type="gpt-4o-generated">บังคับให้โมเดลใช้ความต้องการเลี้ยวเมื่อขับขี่ด้วยความเร็วต่ำกว่าความเร็วขั้นต่ำที่ใช้ในการเปลี่ยนเลน เพื่อช่วยให้เลี้ยวซ้ายและขวาได้อย่างแม่นยำยิ่งขึ้น</translation>
-    </message>
-    <message>
-        <source>Uses Twilsonco's 'Neural Network FeedForward' for more precise steering control.</source>
-        <translation type="gpt-4o-generated">ใช้ 'Neural Network FeedForward' ของ Twilsonco เพื่อการควบคุมพวงมาลัยที่แม่นยำยิ่งขึ้น</translation>
-    </message>
-    <message>
-        <source>Smoothens the steering control when entering and exiting curves by using Twilsonco's torque adjustments.</source>
-        <translation type="gpt-4o-generated">ปรับการควบคุมพวงมาลัยให้ราบรื่นยิ่งขึ้นเมื่อเข้าและออกจากโค้งโดยใช้การปรับแรงบิดของ Twilsonco</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Friction'?</source>
-        <translation type="gpt-4o-generated">คุณแน่ใจไหมว่าต้องการรีเซ็ตการตั้งค่าทั้งหมดสำหรับ 'Friction'?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Kp Factor'?</source>
-        <translation type="gpt-4o-generated">คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตการตั้งค่า 'Kp Factor' ของคุณทั้งหมด?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Lateral Accel'?</source>
-        <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการรีเซ็ตการตั้งค่าสำหรับ 'Lateral Accel' อย่างสมบูรณ์?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to completely reset your settings for 'Steer Ratio'?</source>
-        <translation type="gpt-4o-generated">คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตการตั้งค่าสำหรับ 'Steer Ratio' ทั้งหมด?</translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="gpt-4o-generated">ทันที</translation>
+    </message>
+    <message>
+        <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">การตั้งค่าขั้นสูงสำหรับปรับแต่งการควบคุมด้านข้างของ openpilot ให้ละเอียดขึ้น</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
+        <translation type="gpt-4o-generated">บังคับเปิดการปรับแต่งการควบคุมด้านข้างอัตโนมัติของ comma สำหรับยานพาหนะที่ไม่รองรับ</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
+        <translation type="gpt-4o-generated">บังคับปิดการปรับแต่งการควบคุมด้านข้างอัตโนมัติของ comma สำหรับยานพาหนะที่รองรับ</translation>
+    </message>
+    <message>
+        <source>openpilot's steering control stays active even when the brake or gas pedals are pressed.
+
+Deactivation only occurs with the "Cruise Control" button.</source>
+        <translation type="gpt-4o-generated">ระบบควบคุมพวงมาลัยของ openpilot ยังคงทำงานอยู่แม้จะเหยียบเบรกหรือคันเร่ง
+
+การปิดใช้งานจะเกิดขึ้นเฉพาะเมื่อกดปุ่ม "Cruise Control"</translation>
+    </message>
+    <message>
+        <source>Control With LKAS Button</source>
+        <translation type="gpt-4o-generated">ควบคุมด้วยปุ่ม LKAS</translation>
+    </message>
+    <message>
+        <source>Control the current state of "Always on Lateral" with the "LKAS" button.</source>
+        <translation type="gpt-4o-generated">ควบคุมสถานะปัจจุบันของ "Always on Lateral" ด้วยปุ่ม "LKAS"</translation>
+    </message>
+    <message>
+        <source>Enable With Cruise Control</source>
+        <translation type="gpt-4o-generated">เปิดใช้งานพร้อมกับระบบควบคุมความเร็วคงที่</translation>
+    </message>
+    <message>
+        <source>Customize how openpilot handles lane changes.</source>
+        <translation type="gpt-4o-generated">ปรับแต่งวิธีที่ openpilot จัดการเปลี่ยนเลน</translation>
+    </message>
+    <message>
+        <source>openpilot won't initiate a lane change into detected lanes narrower than this width.</source>
+        <translation type="gpt-4o-generated">openpilot จะไม่เริ่มเปลี่ยนเลนไปยังเลนที่ตรวจพบว่ามีความกว้างน้อยกว่าค่านี้</translation>
+    </message>
+    <message>
+        <source>Minimum Lane Change Speed</source>
+        <translation type="gpt-4o-generated">ความเร็วขั้นต่ำในการเปลี่ยนเลน</translation>
+    </message>
+    <message>
+        <source>Minimum speed required for openpilot to perform a lane change.</source>
+        <translation type="gpt-4o-generated">ความเร็วขั้นต่ำที่ต้องการสำหรับ openpilot ในการเปลี่ยนเลน</translation>
+    </message>
+    <message>
+        <source>Settings for fine-tuning openpilot's lateral controls.</source>
+        <translation type="gpt-4o-generated">การตั้งค่าสำหรับการปรับแต่งการควบคุมด้านข้างของ openpilot ให้ละเอียดขึ้น</translation>
+    </message>
+    <message>
+        <source>Force turn desires below the minimum lane change speed to improve turning accuracy.</source>
+        <translation type="gpt-4o-generated">บังคับความต้องการเลี้ยวให้อยู่ต่ำกว่าความเร็วขั้นต่ำของการเปลี่ยนเลนเพื่อเพิ่มความแม่นยำในการเลี้ยว</translation>
+    </message>
+    <message>
+        <source>Miscellaneous lateral control features to improve your overall openpilot experience.</source>
+        <translation type="gpt-4o-generated">คุณสมบัติควบคุมด้านข้างเบ็ดเตล็ดเพื่อปรับปรุงประสบการณ์การใช้งาน openpilot ของคุณโดยรวม</translation>
+    </message>
+    <message>
+        <source>Pause steering control when driving below the configured speed.</source>
+        <translation type="gpt-4o-generated">หยุดการควบคุมพวงมาลัยเมื่อขับขี่ด้วยความเร็วต่ำกว่าที่กำหนด</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Friction" values?</source>
+        <translation type="gpt-4o-generated">คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตค่า "แรงเสียดทาน" ทั้งหมดของคุณ?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Kp Factor" values?</source>
+        <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการรีเซ็ตค่า "Kp Factor" ของคุณทั้งหมด?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Lateral Accel" values?</source>
+        <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการรีเซ็ตค่า "Lateral Accel" ของคุณทั้งหมด?</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to completely reset your "Steer Ratio" values?</source>
+        <translation type="gpt-4o-generated">คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตค่าความสัมพันธ์การบังคับเลี้ยว ("Steer Ratio") ของคุณอย่างสมบูรณ์?</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="gpt-4o-generated">ปิด</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">กม./ชม.</translation>
+    </message>
+    <message>
+        <source>Lane Changes</source>
+        <translation type="gpt-4o-generated">การเปลี่ยนเลน</translation>
+    </message>
+    <message>
+        <source>Lane Detection Width</source>
+        <translation type="gpt-4o-generated">ความกว้างการตรวจจับเลน</translation>
+    </message>
+    <message>
+        <source>Adjust steering resistance. Higher values feel more stable but heavier; lower values feel lighter but more sensitive.</source>
+        <translation type="gpt-4o-generated">ปรับความต้านทานของพวงมาลัย ค่าใกล้เคียงสูงจะให้ความรู้สึกมั่นคงขึ้นแต่หนักขึ้น; ค่าใกล้เคียงต่ำจะให้ความรู้สึกเบาขึ้นแต่ไวต่อการตอบสนองมากขึ้น</translation>
+    </message>
+    <message>
+        <source>Adjust how aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values respond more smoothly but slower.</source>
+        <translation type="gpt-4o-generated">ปรับระดับการแก้ไขพวงมาลัยของ openpilot ให้เหมาะสม ค่าที่สูงกว่าจะตอบสนองได้ไวขึ้นแต่อาจรู้สึกกระตุก ค่าที่ต่ำกว่าจะตอบสนองได้ราบรื่นขึ้นแต่ช้ากว่า</translation>
+    </message>
+    <message>
+        <source>Control how quickly openpilot can steer laterally. Higher values allow faster maneuvers but may feel unstable; lower values provide smoother, slower steering.</source>
+        <translation type="gpt-4o-generated">ควบคุมความเร็วที่ openpilot สามารถบังคับเลี้ยวในแนวข้างได้ ค่าที่สูงขึ้นทำให้การเปลี่ยนทิศทางเร็วขึ้นแต่รู้สึกไม่เสถียร; ค่าที่ต่ำลงให้การเลี้ยวที่นุ่มนวลและช้าลง</translation>
+    </message>
+    <message>
+        <source>Adjust how much the wheel turns to steer. Higher values feel like a truck—stable at speed but sluggish in corners; lower values feel like a go-kart—quick but twitchy.</source>
+        <translation type="gpt-4o-generated">ปรับจำนวนการหมุนของพวงมาลัยเพื่อควบคุมทิศทาง ค่าที่สูงขึ้นจะให้ความรู้สึกเหมือนขับรถบรรทุก—มั่นคงในความเร็วแต่ช้าในการเข้าโค้ง; ค่าที่ต่ำลงจะให้ความรู้สึกเหมือนขับรถโกคาร์ท—รวดเร็วแต่ไวต่อการเคลื่อนไหว</translation>
+    </message>
+    <message>
+        <source>Allow "Always on Lateral" to be active whenever "Cruise Control" is active, bypassing the need to enable openpilot first.</source>
+        <translation type="gpt-4o-generated">อนุญาตให้ "Always on Lateral" ทำงานเมื่อใดก็ตามที่ "Cruise Control" ทำงาน ข้ามขั้นตอนการเปิดใช้ openpilot ก่อน</translation>
+    </message>
+    <message>
+        <source>Temporarily disable "Always on Lateral" below the configured speed when the brake is pressed.</source>
+        <translation type="gpt-4o-generated">ปิดใช้งาน "Always on Lateral" ชั่วคราวเมื่อความเร็วต่ำกว่าค่าที่ตั้งไว้เมื่อมีการเหยียบเบรก</translation>
+    </message>
+    <message>
+        <source>Automatically initiate lane changes when the turn signal is active — no steering input required!</source>
+        <translation type="gpt-4o-generated">เปิดเปลี่ยนเลนอัตโนมัติเมื่อเปิดสัญญาณไฟเลี้ยว — ไม่ต้องใช้การบังคับพวงมาลัย!</translation>
+    </message>
+    <message>
+        <source>Delay automatic lane changes by the configured time.</source>
+        <translation type="gpt-4o-generated">หน่วงเวลาการเปลี่ยนเลนอัตโนมัติตามเวลาที่กำหนด</translation>
+    </message>
+    <message>
+        <source>Limit lane changes to one per turn signal activation.</source>
+        <translation type="gpt-4o-generated">จำกัดการเปลี่ยนเลนให้อยู่ที่หนึ่งครั้งต่อการเปิดไฟเลี้ยวหนึ่งครั้ง</translation>
+    </message>
+    <message>
+        <source>Use Twilsonco's "Neural Network FeedForward" for smoother steering, trained on past driving data from your car model.</source>
+        <translation type="gpt-4o-generated">ใช้ "Neural Network FeedForward" ของ Twilsonco สำหรับการควบคุมพวงมาลัยที่ราบรื่นยิ่งขึ้น ซึ่งได้รับการฝึกฝนด้วยข้อมูลการขับขี่ที่ผ่านมาในรุ่นรถของคุณ</translation>
+    </message>
+    <message>
+        <source>Smoothen steering control during curves using Twilsonco's torque adjustments.</source>
+        <translation type="gpt-4o-generated">ปรับควบคุมพวงมาลัยให้เรียบเนียนขึ้นในขณะเลี้ยวโดยใช้การปรับแรงบิดของ Twilsonco</translation>
     </message>
 </context>
 <context>
@@ -1312,26 +1316,6 @@ Deactivate only occurs with the 'Cruise Control' button.</source>
     <message>
         <source> seconds</source>
         <translation type="gpt-4o-generated">วินาที</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (0-34 kph)</source>
-        <translation type="gpt-4o-generated">การปรับความเร็วสูงสุด (0-34 กม./ชม.)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (35-54 kph)</source>
-        <translation type="gpt-4o-generated">การชดเชยขีดจำกัดความเร็ว (35-54 กม./ชม.)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (55-64 kph)</source>
-        <translation type="gpt-4o-generated">การชดเชยขีดจำกัดความเร็ว (55-64 กม./ชม.)</translation>
-    </message>
-    <message>
-        <source>Speed Limit Offset (65-99 kph)</source>
-        <translation type="gpt-4o-generated">การชดเชยความเร็วสูงสุด (65-99 กม./ชม.)</translation>
-    </message>
-    <message>
-        <source>kph</source>
-        <translation type="gpt-4o-generated">กม./ชม.</translation>
     </message>
     <message>
         <source> meters</source>
@@ -1880,22 +1864,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการรีเซ็ตการตั้งค่าสำหรับบุคลิกภาพ 'ผ่อนคลาย' ของคุณทั้งหมด?</translation>
     </message>
     <message>
-        <source>Sets the speed limit offset for speeds between 0-34 kph.</source>
-        <translation type="gpt-4o-generated">ตั้งค่าการชดเชยความเร็วสำหรับความเร็วระหว่าง 0-34 กิโลเมตรต่อชั่วโมง</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 35-54 kph.</source>
-        <translation type="gpt-4o-generated">ตั้งค่าการชดเชยขีดจำกัดความเร็วสำหรับความเร็วระหว่าง 35-54 กิโลเมตรต่อชั่วโมง</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 55-64 kph.</source>
-        <translation type="gpt-4o-generated">ตั้งค่าการชดเชยขีดจำกัดความเร็วสำหรับความเร็วระหว่าง 55-64 กิโลเมตรต่อชั่วโมง</translation>
-    </message>
-    <message>
-        <source>Sets the speed limit offset for speeds between 65-99 kph.</source>
-        <translation type="gpt-4o-generated">ตั้งค่าออฟเซ็ตของความเร็วจำกัดสำหรับความเร็วระหว่าง 65-99 กิโลเมตรต่อชั่วโมง</translation>
-    </message>
-    <message>
         <source>Sets the speed limit offset for speeds between 0-34 mph.</source>
         <translation type="gpt-4o-generated">ตั้งค่าออฟเซ็ตของขีดจำกัดความเร็วสำหรับความเร็วระหว่าง 0-34 ไมล์ต่อชั่วโมง</translation>
     </message>
@@ -1928,36 +1896,40 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">แสดงสถานะปัจจุบันใน UI ขณะขับขี่</translation>
     </message>
     <message>
-        <source>Reset Curve Data</source>
-        <translation type="gpt-4o-generated">รีเซ็ตข้อมูลกราฟ</translation>
+        <source>Speed Limit Offset (0-34 km/h)</source>
+        <translation type="gpt-4o-generated">การชดเชยขีดจำกัดความเร็ว (0-34 กม./ชม.)</translation>
     </message>
     <message>
-        <source>Resets the data for the 'Smart' 'Curve Detection Method'.</source>
-        <translation type="gpt-4o-generated">รีเซ็ตข้อมูลสำหรับ 'วิธีการตรวจจับโค้งอัจฉริยะ'</translation>
+        <source>Speed Limit Offset (35-54 km/h)</source>
+        <translation type="gpt-4o-generated">การชดเชยขีดจำกัดความเร็ว (35-54 กม./ชม.)</translation>
     </message>
     <message>
-        <source>Speed Limit Filler</source>
-        <translation type="gpt-4o-generated">ตัวเติมขีดจำกัดความเร็ว</translation>
+        <source>Speed Limit Offset (55-64 km/h)</source>
+        <translation type="gpt-4o-generated">การชดเชยความเร็วสูงสุด (55-64 กม./ชม.)</translation>
     </message>
     <message>
-        <source>Uses speed limit data from your dashboard, 'Mapbox', and 'Navigate on Openpilot' to identify missing speed limits on 'OpenStreetMap'. The data can be downloaded via 'Fleet Manager' in the 'Tools' section and used at 'https://nerftool.glitch.me/' via the 'Load Custom Data' button.</source>
-        <translation type="gpt-4o-generated">ใช้ข้อมูลจำกัดความเร็วจากแผงหน้าปัดของคุณ 'Mapbox' และ 'Navigate on Openpilot' เพื่อระบุการจำกัดความเร็วที่หายไปใน 'OpenStreetMap' ข้อมูลสามารถดาวน์โหลดได้ผ่าน 'Fleet Manager' ในส่วน 'Tools' และใช้งานที่ 'https://nerftool.glitch.me/' ผ่านปุ่ม 'Load Custom Data'</translation>
+        <source>Speed Limit Offset (65-99 km/h)</source>
+        <translation type="gpt-4o-generated">การชดเชยขีดจำกัดความเร็ว (65-99 กม./ชม.)</translation>
     </message>
     <message>
-        <source>Use Mapbox For Missing Speed Limits</source>
-        <translation type="gpt-4o-generated">ใช้ Mapbox แทนที่ขีดจำกัดความเร็วที่ขาดหาย</translation>
+        <source>Sets the speed limit offset for speeds between 0-34 km/h.</source>
+        <translation type="gpt-4o-generated">ตั้งค่าการปรับความเร็วจำกัดสำหรับความเร็วระหว่าง 0-34 กม./ชม.</translation>
     </message>
     <message>
-        <source>Uses data from 'Mapbox' when all the current speed limit sources aren't currently providing a speed limit.</source>
-        <translation type="gpt-4o-generated">ใช้ข้อมูลจาก 'Mapbox' เมื่อแหล่งข้อมูลจำกัดความเร็วปัจจุบันทั้งหมดไม่ได้ให้ข้อมูลจำกัดความเร็วในขณะนั้น</translation>
+        <source>Sets the speed limit offset for speeds between 35-54 km/h.</source>
+        <translation type="gpt-4o-generated">ตั้งค่าออฟเซ็ตจำกัดความเร็วสำหรับความเร็วระหว่าง 35-54 กม./ชม.</translation>
     </message>
     <message>
-        <source>Smart</source>
-        <translation type="gpt-4o-generated">ฉลาด</translation>
+        <source>Sets the speed limit offset for speeds between 55-64 km/h.</source>
+        <translation type="gpt-4o-generated">กำหนดค่าการเบี่ยงเบนของขีดจำกัดความเร็วสำหรับความเร็วระหว่าง 55-64 กม./ชม.</translation>
     </message>
     <message>
-        <source>Are you sure you want to completely reset your curvature data?</source>
-        <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการรีเซ็ตข้อมูลความโค้งของคุณทั้งหมด?</translation>
+        <source>Sets the speed limit offset for speeds between 65-99 km/h.</source>
+        <translation type="gpt-4o-generated">กำหนดค่าการเพิ่มขีดจำกัดความเร็วสำหรับความเร็วระหว่าง 65-99 กม./ชม.</translation>
+    </message>
+    <message>
+        <source>km/h</source>
+        <translation type="gpt-4o-generated">กม./ชม.</translation>
     </message>
 </context>
 <context>
@@ -2205,10 +2177,6 @@ This overrides 'Conditional Experimental Mode'.</source>
         <translation type="gpt-4o-generated">ข้อมูลแผนที่</translation>
     </message>
     <message>
-        <source>PRIMELESS NAVIGATION</source>
-        <translation type="gpt-4o-generated">การนำทางแบบไม่มี PRIME</translation>
-    </message>
-    <message>
         <source>DEVICE CONTROLS</source>
         <translation type="gpt-4o-generated">อุปกรณ์ควบคุม</translation>
     </message>
@@ -2219,14 +2187,6 @@ This overrides 'Conditional Experimental Mode'.</source>
     <message>
         <source>Manage FrogPilot's features that affect acceleration, braking, and steering.</source>
         <translation type="gpt-4o-generated">จัดการคุณสมบัติของ FrogPilot ที่มีผลต่อการเร่ง, การเบรก, และการบังคับเลี้ยว</translation>
-    </message>
-    <message>
-        <source>Manage map data to be used with 'Curve Speed Control' and 'Speed Limit Controller' and setup 'Navigate On openpilot (NOO)' without a comma prime subscription.</source>
-        <translation type="gpt-4o-generated">จัดการข้อมูลแผนที่ที่ใช้กับ 'Curve Speed Control' และ 'Speed Limit Controller' และตั้งค่า 'Navigate On openpilot (NOO)' โดยไม่ต้องมีการสมัครสมาชิกcomma prime</translation>
-    </message>
-    <message>
-        <source>Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot.</source>
-        <translation type="gpt-4o-generated">จัดการการตั้งค่าภายในของอุปกรณ์พร้อมกับเครื่องมือและโปรแกรมอรรถประโยชน์อื่น ๆ เพื่อบำรุงรักษาและแก้ไขปัญหา FrogPilot</translation>
     </message>
     <message>
         <source>Manage openpilot's theme and onroad widgets.</source>
@@ -2275,8 +2235,20 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">คำเตือน: การปลดล็อกนี้จะทำให้สามารถเปลี่ยนการตั้งค่าที่อาจเป็นอันตรายและเปลี่ยนแปลงประสบการณ์การขับขี่ของคุณอย่างมาก!</translation>
     </message>
     <message>
-        <source>The 'Developer' preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
-        <translation type="gpt-4o-generated">โปรแกรมตั้งค่า 'Developer' จะพร้อมใช้งานเฉพาะผู้ใช้ที่มีชั่วโมงการใช้งาน FrogPilot มากกว่า 100 ชั่วโมง หรือมีชั่วโมงการใช้งาน openpilot มากกว่า 250 ชั่วโมงเท่านั้น</translation>
+        <source>NAVIGATION</source>
+        <translation type="gpt-4o-generated">การนำทาง</translation>
+    </message>
+    <message>
+        <source>Download map data that can be used with "Curve Speed Control" and "Speed Limit Controller" and set up "Navigate On openpilot (NOO)".</source>
+        <translation type="gpt-4o-generated">ดาวน์โหลดข้อมูลแผนที่ที่สามารถใช้กับ "ควบคุมความเร็วโค้ง" และ "ควบคุมจำกัดความเร็ว" และติดตั้ง "การนำทางด้วย openpilot (NOO)"</translation>
+    </message>
+    <message>
+        <source>Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot.</source>
+        <translation type="gpt-4o-generated">จัดการการตั้งค่าภายในของอุปกรณ์พร้อมกับเครื่องมือและยูทิลิตี้อื่นๆ ที่ใช้สำหรับบำรุงรักษาและแก้ไขปัญหา FrogPilot</translation>
+    </message>
+    <message>
+        <source>The "Developer" preset is only available for users with either over 100 hours on FrogPilot, or 250 hours with openpilot.</source>
+        <translation type="gpt-4o-generated">การตั้งค่า "นักพัฒนา" สามารถใช้ได้เฉพาะกับผู้ใช้ที่มีชั่วโมงการใช้งาน FrogPilot มากกว่า 100 ชั่วโมง หรือมีชั่วโมงการใช้งาน openpilot มากกว่า 250 ชั่วโมงเท่านั้น</translation>
     </message>
 </context>
 <context>
@@ -2292,20 +2264,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
     <message>
         <source>Disengage Volume</source>
         <translation type="gpt-4o-generated">ระดับเสียงเมื่อยกเลิกการควบคุม</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Adaptive Cruise Disabled
-Parking Brake Engaged
-Brake Pedal Pressed
-Speed too Low</source>
-        <translation type="gpt-4o-generated">การแจ้งเตือนที่เกี่ยวข้อง:
-
-ระบบครูซคอนโทรลแบบปรับได้ถูกปิดใช้งาน
-เบรกจอดรถถูกดึง
-เหยียบเบรก
-ความเร็วต่ำเกินไป</translation>
     </message>
     <message>
         <source>Engage Volume</source>
@@ -2324,20 +2282,6 @@ openpilot กำลังทำงาน</translation>
     <message>
         <source>Prompt Volume</source>
         <translation type="gpt-4o-generated">ระดับเสียงพร้อมท์</translation>
-    </message>
-    <message>
-        <source>Related alerts:
-
-Car Detected in Blindspot
-Speed too Low
-Steer Unavailable Below 'X'
-Take Control, Turn Exceeds Steering Limit</source>
-        <translation type="gpt-4o-generated">การแจ้งเตือนที่เกี่ยวข้อง:
-
-ตรวจพบรถในจุดบอด
-ความเร็วต่ำเกินไป
-ไม่สามารถบังคับเลี้ยวได้ต่ำกว่า 'X'
-ควบคุมรถเอง การเลี้ยวเกินขีดจำกัดการบังคับเลี้ยว</translation>
     </message>
     <message>
         <source>Prompt Distracted Volume</source>
@@ -2410,36 +2354,8 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
         <translation type="gpt-4o-generated">การแจ้งเตือนการนำออกขบวน</translation>
     </message>
     <message>
-        <source>Loud Blindspot Alert</source>
-        <translation type="gpt-4o-generated">การเตือนจุดบอดเสียงดัง</translation>
-    </message>
-    <message>
-        <source>Custom alerts for openpilot events.</source>
-        <translation type="gpt-4o-generated">การแจ้งเตือนที่กำหนดเองสำหรับเหตุการณ์ openpilot</translation>
-    </message>
-    <message>
-        <source>Enables the famed 'Goat Scream' that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">เปิดใช้งาน 'การกรีดร้องของแพะ' ที่มีชื่อเสียง ที่ได้นำทั้งความสุขและความโกรธมาสู่ผู้ใช้ FrogPilot ทั่วโลก!</translation>
-    </message>
-    <message>
-        <source>Plays an alert when a traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">การแจ้งเตือนจะดังขึ้นเมื่อไฟจราจรเปลี่ยนจากสีแดงเป็นสีเขียว</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the lead vehicle starts starts to depart when at a standstill.</source>
-        <translation type="gpt-4o-generated">เล่นการแจ้งเตือนเมื่อรถคันหน้าที่หยุดอยู่เริ่มเคลื่อนออกไป</translation>
-    </message>
-    <message>
-        <source>Plays a louder alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
-        <translation type="gpt-4o-generated">เล่นการแจ้งเตือนเสียงดังขึ้นเมื่อมีการตรวจพบยานพาหนะในจุดอับสายตาขณะพยายามเปลี่ยนเลน</translation>
-    </message>
-    <message>
         <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">การเตือนการเปลี่ยนแปลงขีดจำกัดความเร็ว</translation>
-    </message>
-    <message>
-        <source>Plays an alert when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">เล่นการแจ้งเตือนเมื่อมีการเปลี่ยนแปลงขีดจำกัดความเร็ว</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -2448,6 +2364,62 @@ DISENGAGE IMMEDIATELY, Driver Unresponsive</source>
     <message>
         <source>Muted</source>
         <translation type="gpt-4o-generated">ปิดเสียง</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Adaptive Cruise Disabled
+Brake Pedal Pressed
+Parking Brake Engaged
+Speed too Low</source>
+        <translation type="gpt-4o-generated">การแจ้งเตือนที่เกี่ยวข้อง:
+
+ระบบควบคุมความเร็วแบบแปรผันถูกปิดใช้งาน
+เหยียบแป้นเบรก
+ดึงเบรกมือขึ้น
+ความเร็วต่ำเกินไป</translation>
+    </message>
+    <message>
+        <source>Related alerts:
+
+Car Detected in Blindspot
+Steer Unavailable Below "X"
+Speed too Low
+Take Control, Turn Exceeds Steering Limit</source>
+        <translation type="gpt-4o-generated">การแจ้งเตือนที่เกี่ยวข้อง:
+
+ตรวจพบรถในจุดบอด
+การควบคุมพวงมาลัยไม่สามารถใช้งานได้ต่ำกว่า "X"
+ความเร็วต่ำเกินไป
+ควบคุมการขับขี่เอง เนื่องจากการเลี้ยวมีมุมเกินขีดจำกัดของพวงมาลัย</translation>
+    </message>
+    <message>
+        <source>Custom FrogPilot alerts for openpilot events.</source>
+        <translation type="gpt-4o-generated">การแจ้งเตือน FrogPilot แบบกำหนดเองสำหรับเหตุการณ์ของ openpilot</translation>
+    </message>
+    <message>
+        <source>Enable the famed "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">เปิดใช้งาน "เสียงแพะร้อง" ที่เป็นที่รู้จัก ซึ่งสร้างทั้งความสุขและความโกรธให้กับผู้ใช้ FrogPilot ทั่วโลก!</translation>
+    </message>
+    <message>
+        <source>Play an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">เล่นการแจ้งเตือนเมื่อสัญญาณไฟจราจรเปลี่ยนจากสีแดงเป็นสีเขียว</translation>
+    </message>
+    <message>
+        <source>Play an alert when the lead vehicle starts starts to depart.</source>
+        <translation type="gpt-4o-generated">เล่นการเตือนเมื่อรถคันนำเริ่มออกตัว</translation>
+    </message>
+    <message>
+        <source>Loud Blindspot Vehicle Alert</source>
+        <translation type="gpt-4o-generated">การแจ้งเตือนรถในจุดบอดที่ดัง</translation>
+    </message>
+    <message>
+        <source>Play a loud alert for when a vehicle is detected in the blindspot when attempting to change lanes.</source>
+        <translation type="gpt-4o-generated">เล่นเสียงแจ้งเตือนดังเมื่อมีการตรวจพบยานพาหนะในจุดบอดขณะพยายามเปลี่ยนเลน</translation>
+    </message>
+    <message>
+        <source>Play an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">เล่นการเตือนเมื่อมีการเปลี่ยนแปลงขีดจำกัดความเร็ว</translation>
     </message>
 </context>
 <context>
@@ -2708,10 +2680,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">แฟลช</translation>
     </message>
     <message>
-        <source>Flashes the Panda device's firmware if you're running into issues.</source>
-        <translation type="gpt-4o-generated">หากคุณพบปัญหา ระบบจะทำการแฟลชเฟิร์มแวร์ของอุปกรณ์ Panda ใหม่</translation>
-    </message>
-    <message>
         <source>Are you sure you want to flash the Panda?</source>
         <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการแฟลช Panda?</translation>
     </message>
@@ -2736,10 +2704,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">สถานะที่เริ่มต้นบังคับ</translation>
     </message>
     <message>
-        <source>Forces openpilot either offroad or onroad.</source>
-        <translation type="gpt-4o-generated">บังคับให้ openpilot อยู่ในโหมดออฟโรดหรือออนโรด</translation>
-    </message>
-    <message>
         <source>OFFROAD</source>
         <translation type="gpt-4o-generated">ออฟโรด</translation>
     </message>
@@ -2760,10 +2724,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">รายงาน</translation>
     </message>
     <message>
-        <source>Let 'FrogsGoMoo' know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">แจ้ง 'FrogsGoMoo' เกี่ยวกับปัญหาที่คุณกำลังเผชิญอยู่</translation>
-    </message>
-    <message>
         <source>What's going on?</source>
         <translation type="gpt-4o-generated">เกิดอะไรขึ้น?</translation>
     </message>
@@ -2778,10 +2738,6 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>What's your Discord username?</source>
         <translation type="gpt-4o-generated">Discord ของคุณชื่ออะไร?</translation>
-    </message>
-    <message>
-        <source>Thanks for letting us know! Your report has been submitted.</source>
-        <translation type="gpt-4o-generated">ขอบคุณที่แจ้งให้เราทราบ! รายงานของคุณได้ถูกส่งแล้ว</translation>
     </message>
     <message>
         <source>Reset Toggles to Default</source>
@@ -2810,6 +2766,30 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
     <message>
         <source>Reset!</source>
         <translation type="gpt-4o-generated">รีเซ็ต!</translation>
+    </message>
+    <message>
+        <source>Debug Mode</source>
+        <translation type="gpt-4o-generated">โหมดดีบัก</translation>
+    </message>
+    <message>
+        <source>Debug FrogPilot during the next drive by utilizing all of FrogPilot's developer metrics for either bug reporting, or self-debugging.</source>
+        <translation type="gpt-4o-generated">แก้ไขปัญหา FrogPilot ในการขับขี่ครั้งถัดไปโดยใช้ตัวชี้วัดสำหรับนักพัฒนาทั้งหมดของ FrogPilot เพื่อรายงานบั๊กหรือแก้ไขปัญหาด้วยตนเอง</translation>
+    </message>
+    <message>
+        <source>Force openpilot either offroad or onroad.</source>
+        <translation type="gpt-4o-generated">บังคับให้ openpilot ทำงานทั้งบนถนนหรือปิดถนน</translation>
+    </message>
+    <message>
+        <source>Let "FrogsGoMoo" know about an issue you're facing.</source>
+        <translation type="gpt-4o-generated">แจ้ง "FrogsGoMoo" เกี่ยวกับปัญหาที่คุณกำลังเผชิญ</translation>
+    </message>
+    <message>
+        <source>Your report has been submitted. Thanks for letting us know!</source>
+        <translation type="gpt-4o-generated">รายงานของคุณได้ถูกส่งแล้ว ขอบคุณที่แจ้งให้เราทราบ!</translation>
+    </message>
+    <message>
+        <source>Flash the Panda's firmware. Use if you're running into issues with the Panda.</source>
+        <translation type="gpt-4o-generated">อัปเดตเฟิร์มแวร์ของ Panda ใช้หากคุณพบปัญหากับ Panda</translation>
     </message>
 </context>
 <context>
@@ -2851,28 +2831,12 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">คุณแน่ใจหรือว่าต้องการปิดการควบคุมตามยาวของ openpilot อย่างสมบูรณ์?</translation>
     </message>
     <message>
-        <source>Force stop and go for the 2017 Chevy Volt.</source>
-        <translation type="gpt-4o-generated">บังคับหยุดและไปสำหรับ Chevy Volt ปี 2017</translation>
-    </message>
-    <message>
         <source>Automatically Lock/Unlock Doors</source>
         <translation type="gpt-4o-generated">ล็อค/ปลดล็อคประตูโดยอัตโนมัติ</translation>
     </message>
     <message>
-        <source>Automatically lock the doors when in drive and unlock when in park.</source>
-        <translation type="gpt-4o-generated">ล็อคประตูอัตโนมัติเมื่ออยู่ในเกียร์ขับและปลดล็อคเมื่ออยู่ในเกียร์จอด</translation>
-    </message>
-    <message>
         <source>Cluster Speed Offset</source>
         <translation type="gpt-4o-generated">ย้ายความเร็วของคลัสเตอร์</translation>
-    </message>
-    <message>
-        <source>Set the cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
-        <translation type="gpt-4o-generated">ตั้งค่าออฟเซ็ตคลัสเตอร์ที่ openpilot ใช้เพื่อพยายามจับคู่ความเร็วที่แสดงบนแดชบอร์ด</translation>
-    </message>
-    <message>
-        <source>Force stop and go for vehicles without stock stop and go functionality.</source>
-        <translation type="gpt-4o-generated">บังคับหยุดและไปสำหรับยานพาหนะที่ไม่มีฟังก์ชันหยุดและไปที่ติดตั้งจากโรงงาน</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -2891,60 +2855,16 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">สวิตช์ General Motors</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'General Motors' vehicles.</source>
-        <translation type="gpt-4o-generated">สวิตช์ที่ปรับแต่งสำหรับรถยนต์ 'General Motors'</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Experimental Longitudinal Tune</source>
-        <translation type="gpt-4o-generated">เปิดใช้งานการปรับจูนระยะยาวเชิงทดลองของ FrogsGoMoo</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's experimental GM longitudinal tune that is based on nothing but guesswork. Use at your own risk!</source>
-        <translation type="gpt-4o-generated">เปิดใช้การปรับจูน GM แบบยาวตามการทดลองของ FrogsGoMoo ที่ไม่ได้อิงจากข้อมูลใดๆ นอกจากการคาดคะเน ใช้โดยยอมรับความเสี่ยงเอง!</translation>
-    </message>
-    <message>
-        <source>Enable Stop and Go Hack</source>
-        <translation type="gpt-4o-generated">เปิดใช้งาน Stop and Go Hack</translation>
-    </message>
-    <message>
         <source>Smoothen Pedal Response While Going Downhill/Uphill</source>
         <translation type="gpt-4o-generated">ปรับการตอบสนองของคันเร่งให้เรียบเนียนขณะขับลงทางลาด/ขึ้นทางลาด</translation>
-    </message>
-    <message>
-        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
-        <translation type="gpt-4o-generated">ทำให้การตอบสนองของคันเร่งและเบรกนุ่มนวลขึ้นเมื่อขับขึ้นหรือลงเนิน</translation>
     </message>
     <message>
         <source>Hyundai/Kia/Genesis Toggles</source>
         <translation type="gpt-4o-generated">Hyundai/Kia/Genesis สลับ</translation>
     </message>
     <message>
-        <source>Toggles catered towards 'Hyundai/Kia/Genesis' vehicles.</source>
-        <translation type="gpt-4o-generated">สวิตช์ที่ปรับให้เหมาะสำหรับรถยนต์ 'Hyundai/Kia/Genesis'</translation>
-    </message>
-    <message>
-        <source>Enable comma's New Longitudinal API</source>
-        <translation type="gpt-4o-generated">เปิดใช้งาน API แบบยาวของ comma ใหม่</translation>
-    </message>
-    <message>
-        <source>Enable comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
-        <translation type="gpt-4o-generated">เปิดใช้งานระบบควบคุมระยะตามยาวใหม่ของ comma ที่แสดงให้เห็นถึงการปรับปรุงที่ยอดเยี่ยมในการเร่งและเบรก แต่มีปัญหากับยานพาหนะบางรุ่นของ Hyundai/Kia/Genesis</translation>
-    </message>
-    <message>
         <source>Toyota/Lexus Toggles</source>
         <translation type="gpt-4o-generated">ตัวเลือกสลับของ Toyota/Lexus</translation>
-    </message>
-    <message>
-        <source>Toggles catered towards 'Toyota/Lexus' vehicles.</source>
-        <translation type="gpt-4o-generated">สวิตช์ที่ปรับให้เหมาะกับรถ 'Toyota/Lexus'</translation>
-    </message>
-    <message>
-        <source>Enable FrogsGoMoo's Personal Tweaks</source>
-        <translation type="gpt-4o-generated">เปิดใช้งานการปรับแต่งส่วนบุคคลของ FrogsGoMoo</translation>
-    </message>
-    <message>
-        <source>FrogsGoMoo's personal tweaks that aim to take off faster and stop smoother.</source>
-        <translation type="gpt-4o-generated">การปรับแต่งส่วนตัวของ FrogsGoMoo ที่มีเป้าหมายให้เริ่มต้นได้เร็วขึ้นและหยุดได้ราบรื่นขึ้น</translation>
     </message>
     <message>
         <source>MANAGE</source>
@@ -2955,20 +2875,72 @@ Want to submit your own animations? Share them in the 'custom-themes' channel on
         <translation type="gpt-4o-generated">ล็อคประตูเมื่อดับเครื่องยนต์หลังจาก</translation>
     </message>
     <message>
-        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
-        <translation type="gpt-4o-generated">ล็อกประตูโดยอัตโนมัติหลังจากดับเครื่องยนต์และไม่พบคนบนที่นั่งหน้าทั้งสองข้าง</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation type="gpt-4o-generated">ไม่เคย</translation>
     </message>
     <message>
-        <source>'Taco Bell Run' Turn Torque Hack</source>
-        <translation type="gpt-4o-generated">'Taco Bell Run' แฮกแรงบิดเลี้ยว</translation>
+        <source>Toggles catered towards "General Motors" vehicles.</source>
+        <translation type="gpt-4o-generated">สวิตช์สำหรับยานยนต์ "General Motors"</translation>
     </message>
     <message>
-        <source>Enable comma's steering torque hack they used to help handle left and right turns more precisely during their 2022 'Taco Bell' drive by increasing the allowed torque while turning.</source>
-        <translation type="gpt-4o-generated">เปิดการปรับแต่งแรงบิดพวงมาลัยของ comma ซึ่งเคยใช้เพื่อช่วยจัดการการเลี้ยวซ้ายและขวาได้อย่างแม่นยำยิ่งขึ้นระหว่างการขับรถ 'Taco Bell' ในปี 2022 โดยการเพิ่มแรงบิดที่อนุญาตในขณะที่ทำการเลี้ยว</translation>
+        <source>FrogsGoMoo's Experimental Longitudinal Tune</source>
+        <translation type="gpt-4o-generated">การปรับแต่งแนวยาวเชิงทดลองของ FrogsGoMoo</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's experimental GM longitudinal tune that aims to smoothen out stopping and takeoff control based on nothing but guesswork. Use at your own risk!</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo's experimental GM longitudinal tune ที่มุ่งเน้นการทำให้การหยุดและการออกตัวลื่นไหลขึ้น โดยอาศัยการคาดเดาเท่านั้น ใช้งานด้วยความเสี่ยงของคุณเอง!</translation>
+    </message>
+    <message>
+        <source>Stop and Go Hack</source>
+        <translation type="gpt-4o-generated">หยุดและไปแฮ็ก</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Hyundai/Kia/Genesis" vehicles.</source>
+        <translation type="gpt-4o-generated">สวิตช์ที่ปรับให้เหมาะกับรถยนต์ "Hyundai/Kia/Genesis"</translation>
+    </message>
+    <message>
+        <source>comma's New Longitudinal API</source>
+        <translation type="gpt-4o-generated">API ตามแนวยาวใหม่ของ comma</translation>
+    </message>
+    <message>
+        <source>comma's new longitudinal control system that has shown great improvement with acceleration and braking, but has issues on some Hyundai/Kia/Genesis vehicles.</source>
+        <translation type="gpt-4o-generated">ระบบควบคุมตามยาวใหม่ของ comma ที่แสดงการพัฒนาที่ยอดเยี่ยมในด้านการเร่งและการเบรก แต่มีปัญหากับรถบางรุ่นของ Hyundai/Kia/Genesis</translation>
+    </message>
+    <message>
+        <source>Toggles catered towards "Toyota/Lexus" vehicles.</source>
+        <translation type="gpt-4o-generated">สวิตช์ที่ปรับให้เหมาะกับรถยนต์ "Toyota/Lexus"</translation>
+    </message>
+    <message>
+        <source>The cluster offset openpilot uses to try and match the speed displayed on the dash.</source>
+        <translation type="gpt-4o-generated">การชดเชยคลัสเตอร์ที่ openpilot ใช้เพื่อพยายามจับคู่ความเร็วที่แสดงบนแดชบอร์ด</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's Personal Tweaks</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo's การปรับแต่งส่วนบุคคล</translation>
+    </message>
+    <message>
+        <source>FrogsGoMoo's personal tweaks aimed to provide quicker acceleration and smoother braking.</source>
+        <translation type="gpt-4o-generated">การปรับแต่งส่วนตัวของ FrogsGoMoo มุ่งเน้นที่การเพิ่มอัตราเร่งให้เร็วขึ้นและการเบรกให้ราบรื่นขึ้น</translation>
+    </message>
+    <message>
+        <source>Smoothen the gas and brake response when driving downhill or uphill.</source>
+        <translation type="gpt-4o-generated">ทำให้การตอบสนองของคันเร่งและเบรกนุ่มนวลเมื่อขับขี่ลงหรือขึ้นเนิน</translation>
+    </message>
+    <message>
+        <source>Force stop and go for the "2017 Chevy Volt".</source>
+        <translation type="gpt-4o-generated">บังคับหยุดและเริ่มต้นใหม่สำหรับ "2017 Chevy Volt"</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors when shifting into drive and unlocks them when shifting into park.</source>
+        <translation type="gpt-4o-generated">ล็อคประตูอัตโนมัติเมื่อเปลี่ยนเกียร์เป็นเกียร์เดินหน้าและปลดล็อคเมื่อเปลี่ยนเกียร์เป็นเกียร์จอด</translation>
+    </message>
+    <message>
+        <source>Automatically lock the doors after the car's ignition has been turned off and no one is detected in either of the front seats.</source>
+        <translation type="gpt-4o-generated">ล็อกประตูโดยอัตโนมัติหลังจากดับเครื่องยนต์รถแล้วและไม่มีผู้ใดอยู่ในที่นั่งด้านหน้า</translation>
+    </message>
+    <message>
+        <source>Force stop and go for "Toyota/Lexus" vehicles without stock stop and go functionality.</source>
+        <translation type="gpt-4o-generated">บังคับหยุดและไปสำหรับรถยนต์ "Toyota/Lexus" ที่ไม่มีฟังก์ชันหยุดและไปจากโรงงาน</translation>
     </message>
 </context>
 <context>
@@ -3793,16 +3765,12 @@ Default matches half of the MUTCD standard of 4 inches.</source>
         <translation>กดที่ "add new device" และสแกนคิวอาร์โค้ดทางด้านขวา</translation>
     </message>
     <message>
-        <source>Pair your device to your Konik.ai account</source>
-        <translation type="gpt-4o-generated">จับคู่อุปกรณ์ของคุณกับบัญชี Konik.ai ของคุณ</translation>
+        <source>Go to https://connect.comma.ai on your phone</source>
+        <translation type="gpt-4o-generated">ไปที่ https://connect.comma.ai บนโทรศัพท์ของคุณ</translation>
     </message>
     <message>
-        <source>Go to %1 on your phone</source>
-        <translation type="gpt-4o-generated">ไปที่ %1 บนโทรศัพท์ของคุณ</translation>
-    </message>
-    <message>
-        <source>Bookmark %1 to your home screen to use it like an app</source>
-        <translation type="gpt-4o-generated">บุ๊กมาร์ก %1 ไปที่หน้าจอหลักของคุณเพื่อใช้งานเหมือนแอป</translation>
+        <source>Bookmark connect.comma.ai to your home screen to use it like an app</source>
+        <translation type="gpt-4o-generated">บันทึก connect.comma.ai ไปยังหน้าจอหลักเพื่อใช้งานเหมือนแอป</translation>
     </message>
 </context>
 <context>

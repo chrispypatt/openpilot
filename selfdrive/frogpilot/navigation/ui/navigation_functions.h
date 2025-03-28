@@ -3,20 +3,22 @@
 #include <filesystem>
 
 #include <QDateTime>
+#include <QDir>
+#include <QDirIterator>
 
 #include "selfdrive/frogpilot/ui/qt/widgets/frogpilot_controls.h"
-
-inline QMap<QString, QString> northeastMap = {
-  {"CT", "Connecticut"}, {"ME", "Maine"}, {"MA", "Massachusetts"},
-  {"NH", "New Hampshire"}, {"NJ", "New Jersey"}, {"NY", "New York"},
-  {"PA", "Pennsylvania"}, {"RI", "Rhode Island"}, {"VT", "Vermont"}
-};
 
 inline QMap<QString, QString> midwestMap = {
   {"IL", "Illinois"}, {"IN", "Indiana"}, {"IA", "Iowa"},
   {"KS", "Kansas"}, {"MI", "Michigan"}, {"MN", "Minnesota"},
   {"MO", "Missouri"}, {"NE", "Nebraska"}, {"ND", "North Dakota"},
   {"OH", "Ohio"}, {"SD", "South Dakota"}, {"WI", "Wisconsin"}
+};
+
+inline QMap<QString, QString> northeastMap = {
+  {"CT", "Connecticut"}, {"ME", "Maine"}, {"MA", "Massachusetts"},
+  {"NH", "New Hampshire"}, {"NJ", "New Jersey"}, {"NY", "New York"},
+  {"PA", "Pennsylvania"}, {"RI", "Rhode Island"}, {"VT", "Vermont"}
 };
 
 inline QMap<QString, QString> southMap = {
@@ -125,29 +127,25 @@ inline QMap<QString, QString> southAmericaMap = {
   {"VE", "Venezuela"}
 };
 
-inline QString calculateDirectorySize(const QString &directoryPath) {
-  namespace fs = std::filesystem;
+inline QString calculateDirectorySize(const QDir &directory) {
+  constexpr double MB = 1024.0 * 1024.0;
+  constexpr double GB = 1024.0 * MB;
 
-  constexpr double oneMB = 1024 * 1024;
-  constexpr double oneGB = 1024 * 1024 * 1024;
-
-  fs::path path(directoryPath.toStdString());
-  if (!fs::exists(path) || !fs::is_directory(path)) {
-    return "0 MB";
+  if (!directory.exists()) {
+    return QStringLiteral("0 MB");
   }
 
   double totalSize = 0;
-  for (fs::recursive_directory_iterator iter(path, fs::directory_options::skip_permission_denied), end; iter != end; ++iter) {
-    const fs::directory_entry &entry = *iter;
-    if (entry.is_regular_file()) {
-      totalSize += entry.file_size();
-    }
+  QDirIterator it(directory.absolutePath(), QDir::Files, QDirIterator::Subdirectories);
+  while (it.hasNext()) {
+    it.next();
+    totalSize += it.fileInfo().size();
   }
 
-  if (totalSize >= oneGB) {
-    return QString::number(totalSize / oneGB, 'f', 2) + " GB";
+  if (totalSize >= GB) {
+    return QString::number(totalSize / GB, 'f', 2) + QStringLiteral(" GB");
   }
-  return QString::number(totalSize / oneMB, 'f', 2) + " MB";
+  return QString::number(totalSize / MB, 'f', 2) + QStringLiteral(" MB");
 }
 
 inline QString daySuffix(int day) {

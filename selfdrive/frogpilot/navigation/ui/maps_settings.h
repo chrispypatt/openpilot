@@ -26,6 +26,7 @@ private:
 
   ButtonControl *downloadMapsButton;
   ButtonControl *removeMapsButton;
+  ButtonControl *resetMapdBtn;
 
   FrogPilotSettingsWindow *parent;
 
@@ -40,9 +41,7 @@ private:
 
   QDateTime startTime;
 
+  QDir mapsFolderPath{"/data/media/0/osm/offline"};
+
   QElapsedTimer elapsedTime;
-
-  QString mapsFolderPath;
-
-  QStackedLayout *mapsLayout;
 };

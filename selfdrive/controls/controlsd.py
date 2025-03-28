@@ -33,7 +33,7 @@ from openpilot.selfdrive.controls.lib.vehicle_model import VehicleModel
 from openpilot.system.hardware import HARDWARE
 
 from openpilot.selfdrive.frogpilot.controls.lib.frogpilot_acceleration import get_max_allowed_accel
-from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, NON_DRIVING_GEARS, get_frogpilot_toggles, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ERROR_LOGS_PATH, NON_DRIVING_GEARS, get_frogpilot_toggles, params_memory
 
 SOFT_DISABLE_TIME = 3  # seconds
 LDW_MIN_SPEED = 31 * CV.MPH_TO_MS
@@ -199,7 +199,7 @@ class Controls:
 
     self.display_timer = 0
 
-    self.error_log = CRASHES_DIR / "error.txt"
+    self.error_log = ERROR_LOGS_PATH / "error.txt"
 
   def set_initial_state(self):
     if REPLAY:
@@ -253,7 +253,7 @@ class Controls:
     if self.sm['deviceState'].freeSpacePercent < 7 and not SIMULATION:
       # under 7% of space free no enable allowed
       self.events.add(EventName.outOfSpace)
-    if self.sm['deviceState'].memoryUsagePercent > 90 and not SIMULATION:
+    if self.sm['deviceState'].memoryUsagePercent > (75 if self.frogpilot_toggles.frogs_go_moo else 90) and not SIMULATION:
       self.events.add(EventName.lowMemory)
       if not self.memory_log_sent:
         sentry.capture_memory_log()

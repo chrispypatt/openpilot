@@ -30,11 +30,8 @@ void FrogPilotNavigationPanel::createMapboxKeyControl(ButtonControl *&control, c
 }
 
 FrogPilotNavigationPanel::FrogPilotNavigationPanel(FrogPilotSettingsWindow *parent) : FrogPilotListWidget(parent), parent(parent) {
-  QVBoxLayout *mainLayout = new QVBoxLayout();
-  addItem(mainLayout);
-
   primelessLayout = new QStackedLayout();
-  mainLayout->addLayout(primelessLayout);
+  addItem(primelessLayout);
 
   FrogPilotListWidget *settingsList = new FrogPilotListWidget(this);
   ipLabel = new LabelControl(tr("Manage Your Settings At"), tr("Device Offline"));
@@ -42,8 +39,8 @@ FrogPilotNavigationPanel::FrogPilotNavigationPanel(FrogPilotSettingsWindow *pare
 
   std::vector<QString> searchOptions{tr("MapBox"), tr("Amap"), tr("Google")};
   FrogPilotButtonsControl *searchInput = new FrogPilotButtonsControl(tr("Destination Search Provider"),
-                                         tr("The search provider used for destination queries in 'Navigate on Openpilot'. "
-                                         "Options include 'MapBox' (recommended), 'Amap', and 'Google Maps'."),
+                                         tr("The search provider used for destination queries in \"Navigate on Openpilot\". "
+                                         "Options include \"MapBox\" (recommended), \"Amap\", and \"Google Maps\"."),
                                          "", searchOptions, true);
 
   QObject::connect(searchInput, &FrogPilotButtonsControl::buttonClicked, [this](int id) {
@@ -77,7 +74,7 @@ FrogPilotNavigationPanel::FrogPilotNavigationPanel(FrogPilotSettingsWindow *pare
       }
     }
   });
-  amapKeyControl1->setText(QString::fromStdString(params.get("AMapKey1")) != "0" ? tr("REMOVE") : tr("ADD"));
+  amapKeyControl1->setText(params.get("AMapKey1").empty() ? tr("ADD") : tr("REMOVE"));
   settingsList->addItem(amapKeyControl1);
 
   amapKeyControl2 = new ButtonControl(tr("Amap Key #2"), "", tr("Manage your Amap key."));
@@ -99,7 +96,7 @@ FrogPilotNavigationPanel::FrogPilotNavigationPanel(FrogPilotSettingsWindow *pare
       }
     }
   });
-  amapKeyControl2->setText(QString::fromStdString(params.get("AMapKey2")) != "0" ? tr("REMOVE") : tr("ADD"));
+  amapKeyControl2->setText(params.get("AMapKey2").empty() ? tr("ADD") : tr("REMOVE"));
   settingsList->addItem(amapKeyControl2);
 
   googleKeyControl = new ButtonControl(tr("Google Maps Key"), "", tr("Manage your Google Maps key."));
@@ -121,16 +118,17 @@ FrogPilotNavigationPanel::FrogPilotNavigationPanel(FrogPilotSettingsWindow *pare
       }
     }
   });
-  googleKeyControl->setText(QString::fromStdString(params.get("GMapKey")) != "0" ? tr("REMOVE") : tr("ADD"));
+  googleKeyControl->setText(params.get("GMapKey").empty() ? tr("ADD") : tr("REMOVE"));
   settingsList->addItem(googleKeyControl);
 
   createMapboxKeyControl(publicMapboxKeyControl, tr("Public Mapbox Key"), "MapboxPublicKey", "pk.", settingsList);
   createMapboxKeyControl(secretMapboxKeyControl, tr("Secret Mapbox Key"), "MapboxSecretKey", "sk.", settingsList);
 
-  ButtonControl *setupButton = new ButtonControl(tr("MapBox Setup Instructions"), tr("VIEW"), tr("View the instructions to set up 'MapBox' for 'Primeless Navigation'."), this);
+  ButtonControl *setupButton = new ButtonControl(tr("MapBox Setup Instructions"), tr("VIEW"), tr("View the instructions to set up \"MapBox\" for \"Primeless Navigation\"."), this);
   QObject::connect(setupButton, &ButtonControl::clicked, [this]() {
     openMapBoxInstructions();
     updateStep();
+
     primelessLayout->setCurrentIndex(1);
   });
   settingsList->addItem(setupButton);
@@ -170,15 +168,16 @@ void FrogPilotNavigationPanel::hideEvent(QHideEvent *event) {
 void FrogPilotNavigationPanel::mousePressEvent(QMouseEvent *event) {
   if (primelessLayout->currentIndex() == 1) {
     closeMapBoxInstructions();
+
     primelessLayout->setCurrentIndex(0);
   }
 }
 
 void FrogPilotNavigationPanel::updateButtons() {
-  amapKeyControl1->setText(QString::fromStdString(params.get("AMapKey1")) != "0" ? tr("REMOVE") : tr("ADD"));
-  amapKeyControl2->setText(QString::fromStdString(params.get("AMapKey2")) != "0" ? tr("REMOVE") : tr("ADD"));
+  amapKeyControl1->setText(params.get("AMapKey1").empty() ? tr("ADD") : tr("REMOVE"));
+  amapKeyControl2->setText(params.get("AMapKey2").empty() ? tr("ADD") : tr("REMOVE"));
 
-  googleKeyControl->setText(QString::fromStdString(params.get("GMapKey")) != "0" ? tr("REMOVE") : tr("ADD"));
+  googleKeyControl->setText(params.get("GMapKey").empty() ? tr("ADD") : tr("REMOVE"));
 
   mapboxPublicKeySet = QString::fromStdString(params.get("MapboxPublicKey")).startsWith("pk");
   mapboxSecretKeySet = QString::fromStdString(params.get("MapboxSecretKey")).startsWith("sk");

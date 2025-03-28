@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import argparse
-import datetime
 import json
 import os
 import pathlib
@@ -16,6 +15,14 @@ OPENAI_MODEL = "gpt-4o"
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 OPENAI_PROMPT = "You are a professional translator from English to {language} (ISO 639 language code). " + \
                 "The following sentence or word is in the GUI of a software called openpilot, translate it accordingly."
+
+FUN_LANGUAGES = {"duck", "frog", "pirate"}
+FUN_PROMPT = "Your task is to playfully reword the English text using a clever, light-touch '{language}' theme. " + \
+             "Lean into in-character expressions, gentle slang, or subtle stylistic flourishes that evoke the theme, while keeping everything readable and user-friendly. " + \
+             "Think Facebook's Pirate mode — not in terms of *what* it says, but *how* it adds personality without breaking clarity. " + \
+             "Do not rename features, alter technical terms, or change any units of measurement (e.g. km/h, mph, m/s², %, volts). " + \
+             "Only rewrite plain English phrases and labels; symbols, units, and structured strings must be left untouched. " + \
+             "Keep the flair subtle — enough to be fun, but not over the top."
 
 
 def get_language_files(languages: list[str] = None) -> dict[str, pathlib.Path]:
@@ -72,6 +79,11 @@ def compare_translations(source: str, old_translation: str, new_translation: str
 
 
 def translate_phrase(text: str, language: str) -> str:
+  system_prompt = OPENAI_PROMPT.format(language=language)
+  if language in FUN_LANGUAGES:
+    fun_prompt = FUN_PROMPT.format(language=language)
+    system_prompt += "\n\n" + fun_prompt
+
   response = requests.post(
     "https://api.openai.com/v1/chat/completions",
     json={
@@ -79,7 +91,7 @@ def translate_phrase(text: str, language: str) -> str:
       "messages": [
         {
           "role": "system",
-          "content": OPENAI_PROMPT.format(language=language),
+          "content": system_prompt,
         },
         {
           "role": "user",
@@ -158,8 +170,15 @@ def translate_file(path: pathlib.Path, language: str, all_: bool, vet_translatio
             f"Current translation: {translation.text}\n" +
             f"Final translation: {final_translation}")
 
-      translation.text = final_translation
-      translation.set("type", f"{OPENAI_MODEL}-generated")
+      if "%n" in cast(str, source.text):
+        translation.text = None
+        plural_elem = ET.Element("numerusform")
+        plural_elem.text = final_translation.strip()
+        translation.clear()
+        translation.append(plural_elem)
+      else:
+        translation.text = final_translation.strip()
+        translation.set("type", f"{OPENAI_MODEL}-generated")
 
   with path.open("w", encoding="utf-8") as fp:
     fp.write('<?xml version="1.0" encoding="utf-8"?>\n' +
@@ -176,6 +195,7 @@ def main():
   group.add_argument("-f", "--file", nargs="+", help="Translate the selected files. (Example: -f fr de)")
 
   arg_parser.add_argument("-t", "--all-translations", action="store_true", default=False, help="Translate all sections. (Default: only unfinished)")
+  arg_parser.add_argument("--vet-translations", action="store_true", default=False, help="Re-evaluate AI-generated translations")
 
   args = arg_parser.parse_args()
 
@@ -192,9 +212,9 @@ def main():
       print(f"No language files found: {missing_files}")
       exit(1)
 
-  vet_translations = datetime.date.today().day == 1
+  vet_translations = args.vet_translations
   if vet_translations:
-    print(f"It is the first of the month; all translations with the '{OPENAI_MODEL}-generated' type will be re-evaluated.")
+    print(f"Re-evaluating all translations with the '{OPENAI_MODEL}-generated' type.")
   else:
     print(f"Translation mode: {'all' if args.all_translations else 'only unfinished'}. Files: {list(files)}")
 

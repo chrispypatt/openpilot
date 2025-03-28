@@ -16,7 +16,7 @@ from openpilot.selfdrive.frogpilot.controls.frogpilot_planner import FrogPilotPl
 from openpilot.selfdrive.frogpilot.controls.lib.frogpilot_tracking import FrogPilotTracking
 from openpilot.selfdrive.frogpilot.frogpilot_functions import backup_toggles
 from openpilot.selfdrive.frogpilot.frogpilot_utilities import flash_panda, is_url_pingable, lock_doors, run_thread_with_lock, update_maps, update_openpilot
-from openpilot.selfdrive.frogpilot.frogpilot_variables import CRASHES_DIR, FrogPilotVariables, get_frogpilot_toggles, params, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ERROR_LOGS_PATH, FrogPilotVariables, get_frogpilot_toggles, params, params_memory
 
 def assets_checks(model_manager, theme_manager):
   if params_memory.get_bool(MODEL_DOWNLOAD_ALL_PARAM):
@@ -62,7 +62,7 @@ def update_checks(manually_updated, model_manager, now, theme_manager, frogpilot
 def frogpilot_thread():
   config_realtime_process(5, Priority.CTRL_LOW)
 
-  error_log = CRASHES_DIR / "error.txt"
+  error_log = ERROR_LOGS_PATH / "error.txt"
   if error_log.is_file():
     error_log.unlink()
 

@@ -69,8 +69,8 @@ void FrogPilotSettingsWindow::createPanelButtons(FrogPilotListWidget *list) {
   std::vector<std::tuple<QString, QString, QString>> panelInfo = {
     {tr("Alerts and Sounds"), tr("Manage FrogPilot's alerts and sounds."), "../frogpilot/assets/toggle_icons/icon_sound.png"},
     {tr("Driving Controls"), tr("Manage FrogPilot's features that affect acceleration, braking, and steering."), "../frogpilot/assets/toggle_icons/icon_steering.png"},
-    {tr("Navigation"), tr("Manage map data that can be used with \"Curve Speed Control\" and \"Speed Limit Controller\" and set up \"Navigate On openpilot (NOO)\"."), "../frogpilot/assets/toggle_icons/icon_map.png"},
-    {tr("System Management"), tr("Manage the device's internal settings along with other tools and utilities to maintain and troubleshoot FrogPilot."), "../frogpilot/assets/toggle_icons/icon_system.png"},
+    {tr("Navigation"), tr("Download map data that can be used with \"Curve Speed Control\" and \"Speed Limit Controller\" and set up \"Navigate On openpilot (NOO)\"."), "../frogpilot/assets/toggle_icons/icon_map.png"},
+    {tr("System Management"), tr("Manage the device's internal settings along with other tools and utilities used to maintain and troubleshoot FrogPilot."), "../frogpilot/assets/toggle_icons/icon_system.png"},
     {tr("Theme and Appearance"), tr("Manage openpilot's theme and onroad widgets."), "../frogpilot/assets/toggle_icons/icon_display.png"},
     {tr("Vehicle Controls"), tr("Manage vehicle-specific settings."), "../frogpilot/assets/toggle_icons/icon_vehicle.png"}
   };
@@ -102,7 +102,9 @@ void FrogPilotSettingsWindow::createPanelButtons(FrogPilotListWidget *list) {
 
     QObject::connect(panelButton, &FrogPilotButtonsControl::buttonClicked, [this, widgets](int id) {
       mainLayout->setCurrentWidget(widgets[id]);
+
       panelOpen = true;
+
       openPanel();
     });
 
@@ -141,11 +143,14 @@ FrogPilotSettingsWindow::FrogPilotSettingsWindow(SettingsWindow *parent) : QFram
 
   QObject::connect(togglePreset, &FrogPilotButtonsControl::buttonClicked, [this](int id) {
     tuningLevel = id;
+
+    params.putInt("TuningLevel", tuningLevel);
+
+    updateVariables();
+
     if (id == 3) {
       ConfirmationDialog::alert(tr("WARNING: This unlocks some potentially dangerous settings that can DRASTICALLY alter your driving experience!"), this);
     }
-    params.putInt("TuningLevel", tuningLevel);
-    updateVariables();
   });
 
   QObject::connect(togglePreset, &FrogPilotButtonsControl::disabledButtonClicked, [this](int id) {
@@ -181,7 +186,9 @@ void FrogPilotSettingsWindow::hideEvent(QHideEvent *event) {
 
 void FrogPilotSettingsWindow::closePanel() {
   mainLayout->setCurrentWidget(frogpilotPanel);
+
   panelOpen = false;
+
   updateFrogPilotToggles();
 }
 
@@ -257,25 +264,8 @@ void FrogPilotSettingsWindow::updateVariables() {
       }
       params.putFloat("SteerRatioStock", steerRatioStock);
     }
-
-    if (params.checkKey("LiveTorqueParameters")) {
-      std::string torqueParams = params.get("LiveTorqueParameters");
-      if (!torqueParams.empty()) {
-        capnp::FlatArrayMessageReader cmsgtp(aligned_buf.align(torqueParams.data(), torqueParams.size()));
-        cereal::Event::Reader LTP = cmsgtp.getRoot<cereal::Event>();
-
-        cereal::LiveTorqueParametersData::Reader liveTorqueParams = LTP.getLiveTorqueParameters();
-
-        liveValid = liveTorqueParams.getLiveValid();
-      } else {
-        liveValid = false;
-      }
-    } else {
-      liveValid = false;
-    }
   }
 
-  drivingPanelButtons->setVisible(hasOpenpilotLongitudinal || tuningLevel >= frogpilotToggleLevels.value("Model").toDouble());
   drivingPanelButtons->setVisibleButton(0, tuningLevel >= frogpilotToggleLevels.value("Model").toDouble());
   drivingPanelButtons->setVisibleButton(1, hasOpenpilotLongitudinal);
 

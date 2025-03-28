@@ -63,6 +63,5 @@ private:
   SafeQueue<OMX_BUFFERHEADERTYPE *> done_out;
 
   AVFormatContext *ofmt_ctx;
-  AVCodecContext *codec_ctx;
   AVStream *out_stream;
 };

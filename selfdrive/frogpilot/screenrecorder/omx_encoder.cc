@@ -1,5 +1,3 @@
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
 #include "selfdrive/frogpilot/screenrecorder/omx_encoder.h"
 
 #include <fcntl.h>
@@ -358,12 +356,10 @@ void OmxEncoder::handle_out_buf(OmxEncoder *encoder, OMX_BUFFERHEADERTYPE *out_b
 
   if (!encoder->wrote_codec_config && encoder->codec_config_len > 0) {
     // extradata will be freed by av_free() in avcodec_free_context()
-    encoder->codec_ctx->extradata = (uint8_t*)av_mallocz(encoder->codec_config_len + AV_INPUT_BUFFER_PADDING_SIZE);
-    encoder->codec_ctx->extradata_size = encoder->codec_config_len;
-    memcpy(encoder->codec_ctx->extradata, encoder->codec_config, encoder->codec_config_len);
+    encoder->out_stream->codecpar->extradata = (uint8_t*)av_mallocz(encoder->codec_config_len + AV_INPUT_BUFFER_PADDING_SIZE);
+    encoder->out_stream->codecpar->extradata_size = encoder->codec_config_len;
+    memcpy(encoder->out_stream->codecpar->extradata, encoder->codec_config, encoder->codec_config_len);
 
-    err = avcodec_parameters_from_context(encoder->out_stream->codecpar, encoder->codec_ctx);
-    assert(err >= 0);
     err = avformat_write_header(encoder->ofmt_ctx, NULL);
     assert(err >= 0);
 
@@ -375,7 +371,8 @@ void OmxEncoder::handle_out_buf(OmxEncoder *encoder, OMX_BUFFERHEADERTYPE *out_b
     AVRational in_timebase = {1, 1000000};
 
     AVPacket pkt;
-    av_init_packet(&pkt);
+    av_new_packet(&pkt, out_buf->nFilledLen);
+    memcpy(pkt.data, buf_data, out_buf->nFilledLen);
     pkt.data = buf_data;
     pkt.size = out_buf->nFilledLen;
 
@@ -392,7 +389,7 @@ void OmxEncoder::handle_out_buf(OmxEncoder *encoder, OMX_BUFFERHEADERTYPE *out_b
       LOGW("ts encoder write issue");
     }
 
-    av_free_packet(&pkt);
+    av_packet_unref(&pkt);
   }
 
   // give omx back the buffer
@@ -468,18 +465,10 @@ void OmxEncoder::encoder_open(const char* filename) {
   out_stream = avformat_new_stream(ofmt_ctx, NULL);
   assert(out_stream);
 
-  // set codec correctly
-  av_register_all();
-
-  AVCodec *codec = avcodec_find_encoder(AV_CODEC_ID_H264);
-  assert(codec);
-
-  codec_ctx = avcodec_alloc_context3(codec);
-  assert(codec_ctx);
-  codec_ctx->width = width;
-  codec_ctx->height = height;
-  codec_ctx->pix_fmt = AV_PIX_FMT_YUV420P;
-  codec_ctx->time_base = {1, fps};
+  out_stream->codecpar->codec_id = AV_CODEC_ID_H264;
+  out_stream->codecpar->codec_type = AVMEDIA_TYPE_VIDEO;
+  out_stream->codecpar->width = width;
+  out_stream->codecpar->height = height;
 
   int err = avio_open(&ofmt_ctx->pb, vid_path, AVIO_FLAG_WRITE);
   assert(err >= 0);
@@ -522,9 +511,11 @@ void OmxEncoder::encoder_close() {
     }
 
     av_write_trailer(ofmt_ctx);
-    avcodec_free_context(&codec_ctx);
     avio_closep(&ofmt_ctx->pb);
-    avformat_free_context(ofmt_ctx);
+    if (out_stream && out_stream->codecpar && out_stream->codecpar->extradata) {
+      av_free(out_stream->codecpar->extradata);
+      out_stream->codecpar->extradata = nullptr;
+    }
     unlink(lock_path);
   }
   is_open = false;

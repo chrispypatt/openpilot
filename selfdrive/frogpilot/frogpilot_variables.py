@@ -39,7 +39,7 @@ MODELS_PATH = Path("/data/models")
 RANDOM_EVENTS_PATH = Path(__file__).parent / "assets/random_events"
 THEME_SAVE_PATH = Path("/data/themes")
 
-CRASHES_DIR = Path("/data/crashes")
+ERROR_LOGS_PATH = Path("/data/error_logs")
 
 MAPD_PATH = Path("/data/media/0/osm/mapd")
 MAPS_PATH = Path("/data/media/0/osm/offline")
@@ -65,9 +65,6 @@ EXCLUDED_KEYS = {
 def get_frogpilot_toggles(block=True):
   return SimpleNamespace(**json.loads(params_memory.get("FrogPilotToggles", block=block) or "{}"))
 
-def has_prime():
-  return params.get_int("PrimeType") > 0
-
 def update_frogpilot_toggles():
   params_memory.put_bool("FrogPilotTogglesUpdated", True)
 
@@ -78,7 +75,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("AdjacentPath", "0", 3),
   ("AdjacentPathMetrics", "0", 3),
   ("AdvancedCustomUI", "0", 2),
-  ("AdvancedLateralTune", "0", 3),
+  ("AdvancedLateralTune", "0", 2),
   ("AggressiveFollow", "1.25", 2),
   ("AggressiveJerkAcceleration", "50", 3),
   ("AggressiveJerkDanger", "100", 3),
@@ -90,7 +87,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("AlwaysOnDM", "0", 0),
   ("AlwaysOnLateral", "1", 0),
   ("AlwaysOnLateralLKAS", "0", 0),
-  ("AlwaysOnLateralMain", "1", 1),
+  ("AlwaysOnLateralMain", "1", 0),
   ("AMapKey1", "", 0),
   ("AMapKey2", "", 0),
   ("AutomaticallyUpdateModels", "1", 1),
@@ -149,7 +146,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("DynamicPedalsOnUI", "1", 2),
   ("EngageVolume", "101", 2),
   ("ExperimentalGMTune", "0", 2),
-  ("ExperimentalLongitudinalEnabled", "0", 0),
+  ("ExperimentalLongitudinalEnabled", "1", 0),
   ("ExperimentalMode", "0", 0),
   ("ExperimentalModeActivation", "1", 1),
   ("ExperimentalModeConfirmed", "0", 0),
@@ -171,7 +168,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("GithubSshKeys", "", 0),
   ("GithubUsername", "", 0),
   ("GMapKey", "", 0),
-  ("GoatScream", "0", 2),
+  ("GoatScream", "0", 1),
   ("GreenLightAlert", "0", 0),
   ("GsmApn", "", 0),
   ("GsmRoaming", "1", 0),
@@ -186,7 +183,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("HumanAcceleration", "1", 2),
   ("HumanFollowing", "1", 2),
   ("IncreasedStoppedDistance", "0", 2),
-  ("IncreaseThermalLimits", "0", 3),
+  ("IncreaseThermalLimits", "0", 2),
   ("IsLdwEnabled", "0", 0),
   ("IsMetric", "0", 0),
   ("JerkInfo", "0", 3),
@@ -205,7 +202,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("LongitudinalTune", "1", 0),
   ("LongPitch", "1", 2),
   ("LoudBlindspotAlert", "0", 0),
-  ("LowVoltageShutdown", str(VBATT_PAUSE_CHARGING), 3),
+  ("LowVoltageShutdown", str(VBATT_PAUSE_CHARGING), 2),
   ("MapAcceleration", "0", 2),
   ("MapDeceleration", "0", 2),
   ("MapGears", "0", 2),
@@ -458,14 +455,15 @@ class FrogPilotVariables:
     toggle.force_auto_tune = advanced_lateral_tuning and not has_auto_tune and is_torque_car and (params.get_bool("ForceAutoTune") if tuning_level >= level["ForceAutoTune"] else default.get_bool("ForceAutoTune"))
     toggle.force_auto_tune_off = advanced_lateral_tuning and has_auto_tune and is_torque_car and (params.get_bool("ForceAutoTuneOff") if tuning_level >= level["ForceAutoTuneOff"] else default.get_bool("ForceAutoTuneOff"))
     stock_steer_friction = params.get_float("SteerFrictionStock")
-    toggle.steer_friction = params.get_float("SteerFriction") if advanced_lateral_tuning and tuning_level >= level["SteerFriction"] else stock_steer_friction
+    toggle.steer_friction = np.clip(params.get_float("SteerFriction") if advanced_lateral_tuning and tuning_level >= level["SteerFriction"] else stock_steer_friction, 0, 0.5)
     toggle.use_custom_steer_friction = toggle.steer_friction != stock_steer_friction and is_torque_car and not toggle.force_auto_tune or toggle.force_auto_tune_off
-    toggle.steer_kp = [[0], [params.get_float("SteerKP") if advanced_lateral_tuning and is_torque_car and tuning_level >= level["SteerKP"] else params.get_float("SteerKPStock")]]
+    stock_steer_kp = params.get_float("SteerKPStock")
+    toggle.steer_kp = [[0], [np.clip(params.get_float("SteerKP") if advanced_lateral_tuning and is_torque_car and tuning_level >= level["SteerKP"] else stock_steer_kp, stock_steer_kp * 0.75, stock_steer_kp * 1.25)]]
     stock_steer_lat_accel_factor = params.get_float("SteerLatAccelStock")
-    toggle.steer_lat_accel_factor = params.get_float("SteerLatAccel") if advanced_lateral_tuning and tuning_level >= level["SteerLatAccel"] else stock_steer_lat_accel_factor
+    toggle.steer_lat_accel_factor = np.clip(params.get_float("SteerLatAccel") if advanced_lateral_tuning and tuning_level >= level["SteerLatAccel"] else stock_steer_lat_accel_factor, stock_steer_lat_accel_factor * 0.75, stock_steer_lat_accel_factor * 1.25)
     toggle.use_custom_lat_accel_factor = toggle.steer_lat_accel_factor != stock_steer_lat_accel_factor and is_torque_car and not toggle.force_auto_tune or toggle.force_auto_tune_off
     stock_steer_ratio = params.get_float("SteerRatioStock")
-    toggle.steer_ratio = params.get_float("SteerRatio") if advanced_lateral_tuning and tuning_level >= level["SteerRatio"] else stock_steer_ratio
+    toggle.steer_ratio = np.clip(params.get_float("SteerRatio") if advanced_lateral_tuning and tuning_level >= level["SteerRatio"] else stock_steer_ratio, stock_steer_ratio * 0.75, stock_steer_ratio * 1.25)
     toggle.use_custom_steer_ratio = toggle.steer_ratio != stock_steer_ratio and not toggle.force_auto_tune or toggle.force_auto_tune_off
 
     toggle.alert_volume_control = params.get_bool("AlertVolumeControl") if tuning_level >= level["AlertVolumeControl"] else default.get_bool("AlertVolumeControl")

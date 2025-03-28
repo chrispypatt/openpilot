@@ -14,7 +14,7 @@ from openpilot.common.swaglog import cloudlog
 
 from openpilot.system import micd
 
-from openpilot.selfdrive.frogpilot.frogpilot_variables import ACTIVE_THEME_PATH, CRASHES_DIR, RANDOM_EVENTS_PATH, get_frogpilot_toggles
+from openpilot.selfdrive.frogpilot.frogpilot_variables import ACTIVE_THEME_PATH, ERROR_LOGS_PATH, RANDOM_EVENTS_PATH, get_frogpilot_toggles, params_memory
 
 SAMPLE_RATE = 48000
 SAMPLE_BUFFER = 4096 # (approx 100ms)
@@ -90,7 +90,7 @@ class Soundd:
 
     self.previous_sound_pack = None
 
-    self.error_log = CRASHES_DIR / "error.txt"
+    self.error_log = ERROR_LOGS_PATH / "error.txt"
     self.random_events_directory = RANDOM_EVENTS_PATH / "sounds"
 
     self.random_events_map = {
@@ -170,7 +170,11 @@ class Soundd:
       self.current_sound_frame = 0
 
   def get_audible_alert(self, sm):
-    if not self.openpilot_crashed_played and self.error_log.is_file():
+    if params_memory.get("TestAlert", encoding="utf-8"):
+      self.update_alert(getattr(AudibleAlert, params_memory.get("TestAlert", encoding="utf-8")))
+
+      params_memory.remove("TestAlert")
+    elif not self.openpilot_crashed_played and self.error_log.is_file():
       if self.frogpilot_toggles.random_events:
         self.update_alert(AudibleAlert.fart)
       else:

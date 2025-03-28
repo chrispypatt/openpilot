@@ -1,6 +1,7 @@
 #include "selfdrive/ui/qt/onroad/annotated_camera.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <algorithm>
 #include <cmath>
 
@@ -479,9 +480,7 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
     const auto &acceleration = sm["modelV2"].getModelV2().getAcceleration().getX();
     const int max_len = std::min<int>(scene.track_vertices.length() / 2, acceleration.size());
 
-    const float hue_shift_speed = 0.5; // Adjust this value to control the speed of the rainbow scroll
-    static float hue_base = 0.0; // Base hue that changes over time
-    hue_base = fmod(hue_base + v_ego * hue_shift_speed, 360.0); // Update base hue to create scrolling effect
+    float acceleration_abs = fabs(scene.acceleration);
 
     for (int i = 0; i < max_len; ++i) {
       // Some points are out of frame
@@ -490,31 +489,17 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
 
       // Flip so 0 is bottom of frame
       float lin_grad_point = (height() - scene.track_vertices[track_idx].y()) / height();
-      float acceleration_abs = fabs(acceleration[i]);
 
-      if (acceleration_abs < 0.25 && scene.rainbow_path) {
-        float saturation = util::map_val(acceleration_abs, 0.0f, 1.0f, 0.6f, 0.8f);
-        float lightness = util::map_val(acceleration_abs, 0.0f, 1.0f, 0.7f, 0.5f);
-        float alpha = util::map_val(acceleration_abs, 0.0f, 1.0f, 0.5f, 0.8f);
+      if ((acceleration_abs < 0.25 || !scene.acceleration_path) && scene.rainbow_path) {
+        float alpha = util::map_val(lin_grad_point, 0.0f, 1.0f, 0.5f, 0.8f);
+        float path_hue = fmodf((lin_grad_point * 360.0f) + (v_ego / UI_FREQ) + (scene.started_timer * UI_FREQ), 360.0f);
 
-        float perspective_factor = lin_grad_point;
-        float rainbow_height = 0.1 + 0.4 * perspective_factor;
-
-        for (int j = 0; j <= 50; ++j) {
-          float color_position = static_cast<float>(j) / 50.0;
-          if (color_position >= lin_grad_point - rainbow_height / 2 && color_position <= lin_grad_point + rainbow_height / 2) {
-            float hue = fmod(hue_base + color_position * 360.0, 360.0);
-            QColor rainbow_color = QColor::fromHslF(hue / 360.0, saturation, lightness, alpha);
-            bg.setColorAt(color_position, rainbow_color);
-          }
-        }
+        bg.setColorAt(lin_grad_point, QColor::fromHslF(path_hue / 360.0f, 1.0f, 0.5f, alpha));
+        bg.setSpread(QGradient::RepeatSpread);
       } else if (acceleration_abs < 0.25 && !useStockColors) {
         QColor color = scene.path_color;
-        bg.setColorAt(0.0f, color);
-        color.setAlphaF(0.5f);
-        bg.setColorAt(0.5f, color);
-        color.setAlphaF(0.1f);
-        bg.setColorAt(1.0f, color);
+        color.setAlphaF(util::map_val(lin_grad_point, 0.0f, 1.0f, 0.5f, 0.1f));
+        bg.setColorAt(lin_grad_point, color);
       } else {
         // speed up: 120, slow down: 0
         float path_hue = fmax(fmin(60 + acceleration[i] * 35, 120), 0);
@@ -530,6 +515,14 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
         i += (i + 2) < max_len ? 1 : 0;
       }
     }
+
+  } else if (!useStockColors) {
+    QColor color = scene.path_color;
+    bg.setColorAt(0.0f, color);
+    color.setAlphaF(0.5f);
+    bg.setColorAt(0.5f, color);
+    color.setAlphaF(0.1f);
+    bg.setColorAt(1.0f, color);
 
   } else {
     bg.setColorAt(0.0, QColor::fromHslF(148 / 360., 0.94, 0.51, 0.4));
@@ -1005,7 +998,7 @@ void AnnotatedCameraWidget::updateFrogPilotVariables(int alert_height, const UIS
   if (is_metric || useSI) {
     accelerationUnit = tr("m/s²");
     leadDistanceUnit = tr(mapOpen ? "m" : "meters");
-    leadSpeedUnit = useSI ? tr("m/s") : tr("kph");
+    leadSpeedUnit = useSI ? tr("m/s") : tr("km/h");
 
     accelerationConversion = 1.0f;
     distanceConversion = 1.0f;
@@ -1038,7 +1031,7 @@ void AnnotatedCameraWidget::updateFrogPilotVariables(int alert_height, const UIS
 
   experimentalMode = scene.experimental_mode;
 
-  hideCSCUI = scene.hide_csc_ui || scene.accel_pressed || !(setSpeed - mtscSpeed > 1 || setSpeed - vtscSpeed > 1) || !is_cruise_set;
+  hideCSCUI = scene.hide_csc_ui || !(setSpeed - mtscSpeed > 1 || setSpeed - vtscSpeed > 1) || !is_cruise_set;
   hideMapIcon = scene.hide_map_icon;
   hideMaxSpeed = scene.hide_max_speed;
   hideSpeed = scene.hide_speed;

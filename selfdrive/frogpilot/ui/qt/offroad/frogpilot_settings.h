@@ -29,7 +29,6 @@ public:
   bool isToyota = true;
   bool isVolt = true;
   bool keepScreenOn = false;
-  bool liveValid = false;
 
   float frictionStock;
   float kpStock;

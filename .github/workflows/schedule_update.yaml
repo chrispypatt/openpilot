@@ -14,41 +14,44 @@ jobs:
   schedule-update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Checkout ${{ env.BRANCH }}
         uses: actions/checkout@v3
         with:
           ref: ${{ env.BRANCH }}
           fetch-depth: 2
 
-      - name: Switch to target branch
+      - name: Schedule Update for ${{ github.event.inputs.scheduled_date }}
         run: |
-          git checkout ${{ env.BRANCH }} || git checkout -b ${{ env.BRANCH }}
-
-      - name: Capture last commit details
-        run: |
-          last_date=$(git log -1 --format="%cI")
-          last_message=$(git log -1 --format="%B")
-
-          echo "LAST_DATE=$last_date" >> $GITHUB_ENV
-          echo "LAST_MESSAGE<<EOF" >> $GITHUB_ENV
-          echo "$last_message" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-
-      - name: Create update date file
-        run: echo "${{ github.event.inputs.scheduled_date }}" > .github/update_date
-
-      - name: Commit update date file
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
+          echo "${{ github.event.inputs.scheduled_date }}" > .github/update_date
           git add .github/update_date
-          git commit -m "Scheduled update for ${{ github.event.inputs.scheduled_date }}"
 
-      - name: Squash update date file commit
+      - name: Get Target Commit (Second Most Recent)
+        id: get_target
         run: |
-          git reset --soft HEAD~1
+          TARGET_COMMIT=$(git rev-parse HEAD~1)
 
-          GIT_COMMITTER_DATE="${{ env.LAST_DATE }}" git commit --amend -m "${{ env.LAST_MESSAGE }}"
+          AUTHOR_DATE=$(git show -s --format=%aD "$TARGET_COMMIT")
+          COMMITTER_DATE=$(git show -s --format=%cD "$TARGET_COMMIT")
 
-          git push origin HEAD --force
+          echo "AUTHOR_DATE=$AUTHOR_DATE" >> $GITHUB_ENV
+          echo "COMMITTER_DATE=$COMMITTER_DATE" >> $GITHUB_ENV
+          echo "TARGET_COMMIT=$TARGET_COMMIT" >> $GITHUB_ENV
+
+      - name: Create Fixup Commit for ${{ env.TARGET_COMMIT }}
+        run: git commit --fixup="${{ env.TARGET_COMMIT }}"
+
+      - name: Autosquash Fixup into Target Commit
+        run: |
+          GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i HEAD~3
+
+      - name: Restore Timestamps on Final Two Commits
+        run: |
+          git rebase --exec "GIT_COMMITTER_DATE='${{ env.COMMITTER_DATE }}' git commit --amend --no-edit --date='${{ env.AUTHOR_DATE }}'" HEAD~2
+
+      - name: Push Updated ${{ env.BRANCH }} Branch
+        run: git push origin "${{ env.BRANCH }}" --force-with-lease

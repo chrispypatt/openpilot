@@ -178,7 +178,7 @@ void OnroadWindow::createMapWidget() {
 void OnroadWindow::offroadTransition(bool offroad) {
 #ifdef ENABLE_MAPS
   if (!offroad) {
-    if (map == nullptr && (uiState()->hasPrime() || !MAPBOX_TOKEN.isEmpty())) {
+    if (map == nullptr && !MAPBOX_TOKEN.isEmpty()) {
       createMapWidget();
     }
   }
