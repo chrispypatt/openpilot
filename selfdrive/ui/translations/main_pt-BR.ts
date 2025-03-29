@@ -771,6 +771,14 @@
         <source>Enable a button in the onroad UI to record the screen.</source>
         <translation type="gpt-4o-generated">Habilitar um botão na interface do usuário na estrada para gravar a tela.</translation>
     </message>
+    <message>
+        <source>Start Recording</source>
+        <translation type="gpt-4o-generated">Iniciar Gravação</translation>
+    </message>
+    <message>
+        <source>Stop Recording</source>
+        <translation type="gpt-4o-generated">Parar Gravação</translation>
+    </message>
 </context>
 <context>
     <name>FrogPilotLateralPanel</name>
@@ -4289,6 +4297,10 @@ Isso pode levar até um minuto.</translation>
     <message>
         <source>Are you sure? This is 100% unrecoverable and if you reinstall FrogPilot you'll lose all your previous settings!</source>
         <translation type="gpt-4o-generated">Tem certeza? Isso é 100% irreversível e, se você reinstalar o FrogPilot, perderá todas as suas configurações anteriores!</translation>
+    </message>
+    <message>
+        <source>This branch must be downloaded before switching. Would you like to download it now?</source>
+        <translation type="gpt-4o-generated">Este branch deve ser baixado antes de mudar. Gostaria de baixá-lo agora?</translation>
     </message>
 </context>
 <context>

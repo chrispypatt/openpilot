@@ -87,6 +87,80 @@ private:
   QVBoxLayout inner_layout;
 };
 
+class FrogPilotButtonControl : public ParamControl {
+  Q_OBJECT
+public:
+  FrogPilotButtonControl(const QString &param, const QString &title, const QString &desc, const QString &icon,
+                         const std::vector<QString> &button_texts,
+                         bool exclusive = false, int minimum_button_width = 225) : ParamControl(param, title, desc, icon) {
+    key = param.toStdString();
+
+    button_group = new QButtonGroup(this);
+    button_group->setExclusive(exclusive);
+    for (int i = 0; i < button_texts.size(); i++) {
+      QPushButton *button = new QPushButton(button_texts[i], this);
+      button->setCheckable(true);
+      button->setStyleSheet(buttonStyle);
+      button->setMinimumWidth(minimum_button_width);
+      hlayout->addWidget(button);
+      button_group->addButton(button, i);
+    }
+
+    hlayout->addWidget(&toggle);
+
+    QObject::connect(button_group, QOverload<int>::of(&QButtonGroup::buttonClicked), [=](int id) {
+      emit buttonClicked(id);
+    });
+
+    QObject::connect(this, &ToggleControl::toggleFlipped, this, &FrogPilotButtonControl::refresh);
+  }
+
+  virtual void refresh() {
+    bool state = params.getBool(key);
+    if (state != toggle.on) {
+      toggle.togglePosition();
+    }
+
+    for (QAbstractButton *button : button_group->buttons()) {
+      button->setEnabled(state);
+    }
+  }
+
+  void clearCheckedButtons() {
+    button_group->setExclusive(false);
+    for (QAbstractButton *button : button_group->buttons()) {
+      button->setChecked(false);
+    }
+    button_group->setExclusive(true);
+  }
+
+  void setCheckedButton(int id) {
+    if (QAbstractButton *button = button_group->button(id)) {
+      button->setChecked(true);
+    }
+  }
+
+  void setVisibleButton(int id, bool visible) {
+    if (QAbstractButton *button = button_group->button(id)) {
+      button->setVisible(visible);
+    }
+  }
+
+  void showEvent(QShowEvent *event) override {
+    refresh();
+  }
+
+signals:
+  void buttonClicked(int id);
+
+protected:
+  std::string key;
+
+  Params params;
+
+  QButtonGroup *button_group;
+};
+
 class FrogPilotButtonsControl : public AbstractControl {
   Q_OBJECT
 public:
@@ -167,70 +241,35 @@ private:
   QButtonGroup *button_group;
 };
 
-class FrogPilotButtonToggleControl : public ParamControl {
+class FrogPilotButtonToggleControl : public FrogPilotButtonControl {
   Q_OBJECT
 public:
   FrogPilotButtonToggleControl(const QString &param, const QString &title, const QString &desc, const QString &icon,
                                const std::vector<QString> &button_params, const std::vector<QString> &button_texts,
-                               bool exclusive = false, int minimum_button_width = 225) : ParamControl(param, title, desc, icon), button_params(button_params) {
-    key = param.toStdString();
+                               bool exclusive = false, int minimum_button_width = 225)
+    : FrogPilotButtonControl(param, title, desc, icon, button_texts, exclusive, minimum_button_width), button_params(button_params) {
 
-    button_group = new QButtonGroup(this);
-    button_group->setExclusive(exclusive);
     for (int i = 0; i < button_texts.size(); i++) {
-      QPushButton *button = new QPushButton(button_texts[i], this);
-      button->setCheckable(true);
-      button->setChecked(params.getBool(button_params[i].toStdString()));
-      button->setStyleSheet(buttonStyle);
-      button->setMinimumWidth(minimum_button_width);
-      hlayout->addWidget(button);
-      button_group->addButton(button, i);
+      button_group->buttons()[i]->setChecked(params.getBool(button_params[i].toStdString()));
     }
-
-    hlayout->addWidget(&toggle);
 
     QObject::connect(button_group, QOverload<int>::of(&QButtonGroup::buttonClicked), [=](int id) {
       params.putBool(button_params[id].toStdString(), button_group->button(id)->isChecked());
       emit buttonClicked(id);
     });
-
-    QObject::connect(this, &ToggleControl::toggleFlipped, this, &FrogPilotButtonToggleControl::refresh);
   }
 
-  void refresh() {
-    bool state = params.getBool(key);
-    if (state != toggle.on) {
-      toggle.togglePosition();
-    }
+  void refresh() override {
+    FrogPilotButtonControl::refresh();
 
     for (int i = 0; i < button_group->buttons().size(); i++) {
       QAbstractButton *button = button_group->button(i);
       button->setChecked(params.getBool(button_params[i].toStdString()));
-      button->setEnabled(state);
     }
   }
-
-  void setVisibleButton(int id, bool visible) {
-    if (QAbstractButton *button = button_group->button(id)) {
-      button->setVisible(visible);
-    }
-  }
-
-  void showEvent(QShowEvent *event) override {
-    refresh();
-  }
-
-signals:
-  void buttonClicked(int id);
 
 private:
-  std::string key;
-
   std::vector<QString> button_params;
-
-  Params params;
-
-  QButtonGroup *button_group;
 };
 
 class FrogPilotManageControl : public ParamControl {

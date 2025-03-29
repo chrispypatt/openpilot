@@ -14,14 +14,12 @@ env:
   UPDATE_FILE: .github/update_date
 
 jobs:
-  update-branch:
+  check_update:
     runs-on: ubuntu-latest
+    outputs:
+      update_due: ${{ steps.check_update.outputs.update_due }}
+      scheduled_date: ${{ steps.check_update.outputs.scheduled_date }}
     steps:
-      - name: Configure Git Identity
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
       - name: Checkout ${{ env.BRANCH_STAGING }}
         uses: actions/checkout@v3
         with:
@@ -51,8 +49,23 @@ jobs:
           echo "update_due=true" >> "$GITHUB_OUTPUT"
           echo "scheduled_date=$SCHEDULED_DATE" >> "$GITHUB_OUTPUT"
 
+  update_branch:
+    needs: check_update
+    if: needs.check_update.outputs.update_due == "true"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Checkout ${{ env.BRANCH_STAGING }}
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ env.BRANCH_STAGING }}
+
       - name: Update README Date and Remove (${{ env.UPDATE_FILE }})
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           DAY=$(TZ="${{ env.TZ }}" date +'%d' | sed 's/^0//')
           case "$DAY" in
@@ -73,7 +86,6 @@ jobs:
           git commit -m "Updated README date to ${NEW_DATE}"
 
       - name: Squash Commits
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           COMMIT_MSG=$(git log -1 --pretty=%B HEAD~1)
 
@@ -82,20 +94,17 @@ jobs:
           git commit -m "$COMMIT_MSG"
 
       - name: Rewrite Commit Dates to Noon ${{ env.TZ }}
-        if: steps.check_update.outputs.update_due == "true"
         run: |
-          COMMIT_DATETIME="${{ steps.check_update.outputs.scheduled_date }} 12:00"
+          COMMIT_DATETIME="${{ needs.check_update.outputs.scheduled_date }} 12:00"
           COMMIT_PHX=$(TZ="${{ env.TZ }}" date -d "$COMMIT_DATETIME" +"%Y-%m-%dT%H:%M:%S %z")
 
           git filter-branch --env-filter "export GIT_AUTHOR_DATE='$COMMIT_PHX'; export GIT_COMMITTER_DATE='$COMMIT_PHX'" "${{ env.BRANCH_STAGING }}"
 
       - name: Fetch ${{ env.BRANCH_PREVIOUS }} and ${{ env.BRANCH_FROGPILOT }}
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           git fetch origin ${{ env.BRANCH_PREVIOUS }} ${{ env.BRANCH_FROGPILOT }}
 
       - name: Wait Until Noon ${{ env.TZ }} Before Continuing
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           NOW=$(TZ="${{ env.TZ }}" date +%s)
           TARGET=$(TZ="${{ env.TZ }}" date -d "12:00" +%s)
@@ -109,19 +118,16 @@ jobs:
           fi
 
       - name: Push ${{ env.BRANCH_STAGING }}
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           git push origin "${{ env.BRANCH_STAGING }}" --force
 
       - name: Reset ${{ env.BRANCH_PREVIOUS }} to Match ${{ env.BRANCH_FROGPILOT }}
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           git switch "${{ env.BRANCH_PREVIOUS }}"
           git reset --hard "origin/${{ env.BRANCH_FROGPILOT }}"
           git push origin "${{ env.BRANCH_PREVIOUS }}" --force
 
       - name: Reset ${{ env.BRANCH_FROGPILOT }} to Match ${{ env.BRANCH_STAGING }}
-        if: steps.check_update.outputs.update_due == "true"
         run: |
           git switch "${{ env.BRANCH_FROGPILOT }}"
           git reset --hard "origin/${{ env.BRANCH_STAGING }}"

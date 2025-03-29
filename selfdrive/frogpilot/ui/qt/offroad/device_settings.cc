@@ -1,6 +1,10 @@
+#include "selfdrive/frogpilot/screenrecorder/screenrecorder.h"
 #include "selfdrive/frogpilot/ui/qt/offroad/device_settings.h"
 
 FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : FrogPilotListWidget(parent), parent(parent) {
+  ScreenRecorder *screenRecorder = new ScreenRecorder(this);
+  screenRecorder->setVisible(false);
+
   QStackedLayout *deviceLayout = new QStackedLayout();
   addItem(deviceLayout);
 
@@ -69,6 +73,28 @@ FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : Fr
         brightnessLabels[i] = i == 0 ? tr("Screen Off") : i == 101 ? tr("Auto") : QString::number(i) + "%";
       }
       deviceToggle = new FrogPilotParamValueControl(param, title, desc, icon, minBrightness, 101, QString(), brightnessLabels, 1, true);
+    } else if (param == "ScreenRecorder") {
+      std::vector<QString> recorderButtonNames{tr("Start Recording"), tr("Stop Recording")};
+      FrogPilotButtonControl *recorderToggle = new FrogPilotButtonControl(param, title, desc, icon, recorderButtonNames);
+      QObject::connect(recorderToggle, &FrogPilotButtonControl::buttonClicked, [recorderToggle, screenRecorder](int id) {
+        if (id == 0) {
+          recorderToggle->setCheckedButton(1);
+
+          recorderToggle->setVisibleButton(0, false);
+          recorderToggle->setVisibleButton(1, true);
+
+          screenRecorder->startRecording();
+        } else {
+          recorderToggle->clearCheckedButtons();
+
+          recorderToggle->setVisibleButton(0, true);
+          recorderToggle->setVisibleButton(1, false);
+
+          screenRecorder->stopRecording();
+        }
+      });
+      recorderToggle->setVisibleButton(1, false);
+      deviceToggle = recorderToggle;
     } else if (param == "ScreenTimeout" || param == "ScreenTimeoutOnroad") {
       deviceToggle = new FrogPilotParamValueControl(param, title, desc, icon, 5, 60, tr(" seconds"));
 

@@ -20,6 +20,8 @@ def calculate_speed_limit(cp_cam):
     return speed_limit_value * CV.KPH_TO_MS
   elif speed_limit_unit == 2:
     return speed_limit_value * CV.MPH_TO_MS
+  else:
+    return 0
 
 
 class CarState(CarStateBase):
