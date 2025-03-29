@@ -167,7 +167,6 @@ jobs:
           rm -f poetry.lock
           rm -f pyproject.toml
           rm -f teleoprtc
-          rm -f tinygrad
           rm -f Dockerfile.openpilot
           rm -f Dockerfile.openpilot_base
           rm -f Jenkinsfile
@@ -225,7 +224,7 @@ jobs:
           find third_party/ -name '*x86*' -exec rm -rf {} +
           find third_party/ -name '*Darwin*' -exec rm -rf {} +
 
-          find tools/ -mindepth 1 -maxdepth 1 ! \( -name '__init__.py' -o -name 'bodyteleop' -o -name 'lib' \) -exec rm -rf {} +
+          find tools/ -mindepth 1 -maxdepth 1 ! \( -name '__init__.py' -o -name 'bodyteleop' -o -name 'lib' -o -name 'scripts' \) -exec rm -rf {} +
 
           find . -name 'SConstruct' -delete
           find . -name 'SConscript' -delete

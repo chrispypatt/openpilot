@@ -771,6 +771,14 @@
         <source>Enable a button in the onroad UI to record the screen.</source>
         <translation type="gpt-4o-generated">Yolda UI'de ekran kaydetme düğmesini etkinleştir.</translation>
     </message>
+    <message>
+        <source>Start Recording</source>
+        <translation type="gpt-4o-generated">Kaydı Başlat</translation>
+    </message>
+    <message>
+        <source>Stop Recording</source>
+        <translation type="gpt-4o-generated">Kaydı Durdur</translation>
+    </message>
 </context>
 <context>
     <name>FrogPilotLateralPanel</name>
@@ -4285,6 +4293,10 @@ Bu işlem bir dakikaya kadar sürebilir.</translation>
     <message>
         <source>Are you sure? This is 100% unrecoverable and if you reinstall FrogPilot you'll lose all your previous settings!</source>
         <translation type="gpt-4o-generated">Emin misiniz? Bu işlem %100 geri alınamaz ve FrogPilot'ı yeniden yüklerseniz tüm önceki ayarlarınızı kaybedeceksiniz!</translation>
+    </message>
+    <message>
+        <source>This branch must be downloaded before switching. Would you like to download it now?</source>
+        <translation type="gpt-4o-generated">Bu dalı değiştirmeden önce indirmeniz gerekiyor. Şimdi indirmek ister misiniz?</translation>
     </message>
 </context>
 <context>

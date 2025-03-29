@@ -771,6 +771,14 @@
         <source> seconds</source>
         <translation type="gpt-4o-generated">segundos</translation>
     </message>
+    <message>
+        <source>Start Recording</source>
+        <translation type="gpt-4o-generated">Iniciar grabación</translation>
+    </message>
+    <message>
+        <source>Stop Recording</source>
+        <translation type="gpt-4o-generated">Detener grabación</translation>
+    </message>
 </context>
 <context>
     <name>FrogPilotLateralPanel</name>
@@ -4289,6 +4297,10 @@ Esto puede tardar hasta un minuto.</translation>
     <message>
         <source>View the error log for openpilot crashes.</source>
         <translation type="gpt-4o-generated">Ver el registro de errores para los fallos de openpilot.</translation>
+    </message>
+    <message>
+        <source>This branch must be downloaded before switching. Would you like to download it now?</source>
+        <translation type="gpt-4o-generated">Esta rama debe descargarse antes de cambiar. ¿Te gustaría descargarla ahora?</translation>
     </message>
 </context>
 <context>

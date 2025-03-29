@@ -771,6 +771,14 @@
         <source>Enable a button in the onroad UI to record the screen.</source>
         <translation type="gpt-4o-generated">オンロードUIで画面を録画するボタンを有効にする。</translation>
     </message>
+    <message>
+        <source>Start Recording</source>
+        <translation type="gpt-4o-generated">録画を開始</translation>
+    </message>
+    <message>
+        <source>Stop Recording</source>
+        <translation type="gpt-4o-generated">録画を停止</translation>
+    </message>
 </context>
 <context>
     <name>FrogPilotLateralPanel</name>
@@ -4285,6 +4293,10 @@ This may take up to a minute.</source>
     <message>
         <source>Are you sure? This is 100% unrecoverable and if you reinstall FrogPilot you'll lose all your previous settings!</source>
         <translation type="gpt-4o-generated">本当に実行しますか？これは完全に元に戻せない処理です。FrogPilotを再インストールすると、以前の設定がすべて失われます！</translation>
+    </message>
+    <message>
+        <source>This branch must be downloaded before switching. Would you like to download it now?</source>
+        <translation type="gpt-4o-generated">このブランチは切り替える前にダウンロードする必要があります。今すぐダウンロードしますか？</translation>
     </message>
 </context>
 <context>

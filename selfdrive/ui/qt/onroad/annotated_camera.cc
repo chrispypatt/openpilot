@@ -320,7 +320,7 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
 
   if (speedLimitSources && (has_eu_speed_limit || has_us_speed_limit)) {
     std::function<void(QRect&, const QPixmap&, const QString&, double)> drawSource = [&](QRect &rect, const QPixmap &icon, QString title, double speedLimitValue) {
-      if (speedLimitSource == title.toStdString() && speedLimitValue != 0) {
+      if (speedLimitSource == title.toStdString() && !slcOverridden && speedLimitValue != 0) {
         p.setPen(QPen(redColor(), 10));
         p.setBrush(redColor(166));
         p.setFont(InterFont(35, QFont::Bold));
@@ -491,8 +491,13 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
       float lin_grad_point = (height() - scene.track_vertices[track_idx].y()) / height();
 
       if ((acceleration_abs < 0.25 || !scene.acceleration_path) && scene.rainbow_path) {
-        float alpha = util::map_val(lin_grad_point, 0.0f, 1.0f, 0.5f, 0.8f);
-        float path_hue = fmodf((lin_grad_point * 360.0f) + (v_ego / UI_FREQ) + (scene.started_timer * UI_FREQ), 360.0f);
+        static float hue_offset = 0.0;
+        if (v_ego > 0) {
+          hue_offset += powf(v_ego, 0.25f) / sqrtf(145.0f / MS_TO_KPH);
+        }
+
+        float alpha = util::map_val(lin_grad_point, 0.0f, 1.0f, 0.5f, 0.1f);
+        float path_hue = fmodf((lin_grad_point * 360.0f) + hue_offset, 360.0f);
 
         bg.setColorAt(lin_grad_point, QColor::fromHslF(path_hue / 360.0f, 1.0f, 0.5f, alpha));
         bg.setSpread(QGradient::RepeatSpread);

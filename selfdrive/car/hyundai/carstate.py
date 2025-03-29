@@ -16,6 +16,31 @@ CLUSTER_SAMPLE_RATE = 20  # frames
 STANDSTILL_THRESHOLD = 12 * 0.03125 * CV.KPH_TO_MS
 
 
+# Traffic signals for Speed Limit Controller - Credit goes to Multikyd!
+@staticmethod
+def calculate_speed_limit(CP, cp, cp_cam):
+  if CP.carFingerprint in CANFD_CAR:
+    if CP.flags & HyundaiFlags.CANFD_HDA2:
+      speed_limit_bus = cp
+    else:
+      speed_limit_bus = cp_cam
+
+    speed_limit = speed_limit_bus.vl["CLUSTER_SPEED_LIMIT"]["SPEED_LIMIT_1"]
+  else:
+    if CP.flags & HyundaiFlags.LKAS12:
+      speed_limit = cp_cam.vl["LKAS12"]["CF_Lkas_TsrSpeed_Display_Clu"]
+    else:
+      speed_limit = 0
+
+    if speed_limit in (0, 255) and CP.flags & HyundaiFlags.NAV_MSG:
+      speed_limit = cp.vl["Navi_HU"]["SpeedLim_Nav_Clu"]
+
+  if speed_limit not in (0, 255):
+    return speed_limit
+  else:
+    return 0
+
+
 class CarState(CarStateBase):
   def __init__(self, CP):
     super().__init__(CP)
@@ -57,22 +82,6 @@ class CarState(CarStateBase):
 
     self.active_mode = 0
     self.drive_mode_prev = 0
-
-  # Traffic signals for Speed Limit Controller - Credit goes to Multikyd!
-  def calculate_speed_limit(self, cp, cp_cam):
-    if self.CP.carFingerprint in CANFD_CAR:
-      if self.CP.flags & HyundaiFlags.CANFD_HDA2:
-        speed_limit_bus = cp
-      else:
-        speed_limit_bus = cp_cam
-      return speed_limit_bus.vl["CLUSTER_SPEED_LIMIT"]["SPEED_LIMIT_1"]
-    else:
-      speed_limit_cam = cp_cam.vl["LKAS12"]["CF_Lkas_TsrSpeed_Display_Clu"] if self.CP.flags & HyundaiFlags.LKAS12 else 0
-      speed_limit_nav = cp.vl["Navi_HU"]["SpeedLim_Nav_Clu"] if self.CP.flags & HyundaiFlags.NAV_MSG else 0
-
-      if speed_limit_cam not in (0, 255):
-        return speed_limit_cam
-      return speed_limit_nav
 
   def update(self, cp, cp_cam, frogpilot_toggles):
     if self.CP.carFingerprint in CANFD_CAR:
@@ -195,7 +204,7 @@ class CarState(CarStateBase):
     fp_ret.brakeLights = bool(cp.vl["TCS13"]["BrakeLight"])
 
     if self.CP.flags & HyundaiFlags.LKAS12 or self.CP.flags & HyundaiFlags.NAV_MSG:
-      fp_ret.dashboardSpeedLimit = self.calculate_speed_limit(cp, cp_cam) * speed_conv
+      fp_ret.dashboardSpeedLimit = calculate_speed_limit(self.CP, cp, cp_cam) * speed_conv
 
     self.prev_distance_button = self.distance_button
     self.distance_button = self.cruise_buttons[-1] == Buttons.GAP_DIST
@@ -295,7 +304,7 @@ class CarState(CarStateBase):
     fp_ret.brakeLights = bool(cp.vl["TCS"]["DriverBraking"])
 
     if self.CP.flags & HyundaiFlags.NAV_MSG:
-      fp_ret.dashboardSpeedLimit = self.calculate_speed_limit(cp, cp_cam) * speed_factor
+      fp_ret.dashboardSpeedLimit = calculate_speed_limit(self.CP, cp, cp_cam) * speed_factor
 
     self.prev_distance_button = self.distance_button
     self.distance_button = self.cruise_buttons[-1] == Buttons.GAP_DIST

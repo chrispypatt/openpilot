@@ -375,7 +375,7 @@ class FrogPilotVariables:
     self.frogpilot_toggles.frogs_go_moo = Path("/persist/frogsgomoo.py").is_file()
     self.frogpilot_toggles.block_user = self.development_branch and not self.frogpilot_toggles.frogs_go_moo
 
-    self.not_vetted = self.testing_branch and Path("/data/openpilot/not_vetted").is_file()
+    self.not_vetted = Path("/data/openpilot/not_vetted").is_file()
 
     for k, v, _ in frogpilot_default_params:
       params_default.put(k, v)
