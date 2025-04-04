@@ -51,7 +51,7 @@ jobs:
 
   update_branch:
     needs: check_update
-    if: needs.check_update.outputs.update_due == "true"
+    if: ${{ needs.check_update.outputs.update_due == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Configure Git Identity
