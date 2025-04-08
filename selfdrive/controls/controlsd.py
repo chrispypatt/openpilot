@@ -6,7 +6,6 @@ import threading
 from typing import SupportsFloat
 
 import cereal.messaging as messaging
-import openpilot.system.sentry as sentry
 
 from cereal import car, custom, log
 from msgq.visionipc import VisionIpcClient, VisionStreamType
@@ -191,7 +190,6 @@ class Controls:
     self.always_on_lateral_active_previously = False
     self.decel_pressed = False
     self.onroad_distance_pressed = False
-    self.memory_log_sent = False
 
     self.planner_curves = self.frogpilot_toggles.planner_curvature_model
     self.radarless_model = self.frogpilot_toggles.radarless_model
@@ -253,12 +251,8 @@ class Controls:
     if self.sm['deviceState'].freeSpacePercent < 7 and not SIMULATION:
       # under 7% of space free no enable allowed
       self.events.add(EventName.outOfSpace)
-    if self.sm['deviceState'].memoryUsagePercent > (75 if self.frogpilot_toggles.frogs_go_moo else 90) and not SIMULATION:
+    if self.sm['deviceState'].memoryUsagePercent > 90 and not SIMULATION:
       self.events.add(EventName.lowMemory)
-      if not self.memory_log_sent:
-        sentry.capture_memory_log()
-
-        self.memory_log_sent = True
 
     # TODO: enable this once loggerd CPU usage is more reasonable
     #cpus = list(self.sm['deviceState'].cpuUsagePercent)

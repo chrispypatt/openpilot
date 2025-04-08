@@ -72,12 +72,10 @@ def backup_directory(backup, destination, success_message, fail_message, minimum
 def cleanup_backups(directory, limit, compressed=False):
   directory.mkdir(parents=True, exist_ok=True)
 
-  backups = sorted(directory.glob("*_auto*"), key=lambda x: x.stat().st_mtime, reverse=True)
-  for backup in backups[:]:
-    if "_in_progress" in backup.name:
-      delete_file(backup)
-      backups.remove(backup)
+  for in_progress in directory.glob("*_in_progress*"):
+    delete_file(in_progress)
 
+  backups = sorted(directory.glob("*_auto*"), key=lambda x: x.stat().st_mtime, reverse=True)
   for oldest_backup in backups[limit:]:
     delete_file(oldest_backup)
 

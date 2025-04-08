@@ -1064,7 +1064,7 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
 
   EventName.laneChangeBlockedLoud: {
     ET.WARNING: Alert(
-      "Car detected in blindspot",
+      "Car Detected in Blindspot",
       "",
       AlertStatus.userPrompt, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.warningSoft, .1),

@@ -223,8 +223,9 @@ class CarState(CarStateBase):
 
     fp_ret.dashboardSpeedLimit = calculate_speed_limit(cp_cam, frogpilot_toggles)
 
-    fp_ret.ecoGear = cp.vl["GEAR_PACKET"]['ECON_ON'] == 1
-    fp_ret.sportGear = cp.vl["GEAR_PACKET"]['SPORT_ON_2' if self.CP.flags & ToyotaFlags.NO_DSU else 'SPORT_ON'] == 1
+    if not self.CP.flags & ToyotaFlags.SECOC.value:
+      fp_ret.ecoGear = cp.vl["GEAR_PACKET"]["ECON_ON"] == 1
+      fp_ret.sportGear = cp.vl["GEAR_PACKET"]["SPORT_ON_2" if self.CP.flags & ToyotaFlags.NO_DSU else "SPORT_ON"] == 1
 
     self.lkas_previously_enabled = self.lkas_enabled
     if self.CP.carFingerprint != CAR.TOYOTA_PRIUS_V:

@@ -167,6 +167,8 @@ def manager_thread() -> None:
       params.clear_all(ParamKeyType.CLEAR_ON_ONROAD_TRANSITION)
 
       # FrogPilot variables
+      frogpilot_toggles = get_frogpilot_toggles()
+
       classic_model = frogpilot_toggles.classic_model
       tinygrad_model = frogpilot_toggles.tinygrad_model
 

@@ -87,6 +87,7 @@ class CarController(CarControllerBase):
     self.secoc_lka_message_counter = 0
     self.secoc_lta_message_counter = 0
     self.secoc_prev_reset_counter = 0
+    self.secoc_key: bytes = b"00" * 16
 
     # FrogPilot variables
     self.stock_max_accel = self.params.ACCEL_MAX
