@@ -61,7 +61,7 @@ FrogPilotMapsPanel::FrogPilotMapsPanel(FrogPilotSettingsWindow *parent) : FrogPi
   });
   settingsList->addItem(removeMapsButton);
 
-  resetMapdBtn = new ButtonControl(tr("Reset The Map Downloader"), tr("RESET"),
+  resetMapdBtn = new ButtonControl(tr("Reset Map Downloader"), tr("RESET"),
                                    tr("Reset the map downloader. Use if you're running into issues with downloading maps."));
   QObject::connect(resetMapdBtn, &ButtonControl::clicked, [this, parent]() {
     if (ConfirmationDialog::confirm(tr("Are you sure you want to reset the map downloader? This will force a reboot once completed."), tr("Reset"), this)) {
@@ -157,6 +157,8 @@ void FrogPilotMapsPanel::showEvent(QShowEvent *event) {
     resetMapdBtn->setVisible(false);
 
     updateDownloadLabels(osmDownloadProgress);
+  } else {
+    downloadMapsButton->setEnabled(!cancellingDownload && hasMapsSelected && uiState()->scene.online);
   }
 }
 

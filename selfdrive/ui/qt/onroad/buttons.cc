@@ -49,7 +49,7 @@ void ExperimentalButton::changeMode() {
   bool can_change = hasLongitudinalControl(cp) && params.getBool("ExperimentalModeConfirmed");
   if (can_change) {
     if (conditional_experimental) {
-      int override_value = (conditional_status >= 1 && conditional_status <= 6) ? 0 : conditional_status >= 7 ? 5 : 6;
+      int override_value = (conditional_status == 1 || conditional_status == 2) ? 0 : experimental_mode ? 1 : 2;
       params_memory.putInt("CEStatus", override_value);
     } else {
       params.putBool("ExperimentalMode", !experimental_mode);
@@ -59,7 +59,7 @@ void ExperimentalButton::changeMode() {
 
 void ExperimentalButton::updateState(const UIState &s) {
   const auto cs = (*s.sm)["controlsState"].getControlsState();
-  bool eng = cs.getEngageable() || cs.getEnabled() || always_on_lateral_active;
+  bool eng = cs.getEngageable() || cs.getEnabled() || always_on_lateral_enabled;
   if ((cs.getExperimentalMode() != experimental_mode) || (eng != engageable)) {
     engageable = eng;
     experimental_mode = cs.getExperimentalMode();
@@ -69,7 +69,7 @@ void ExperimentalButton::updateState(const UIState &s) {
   // FrogPilot variables
   const UIScene &scene = s.scene;
 
-  always_on_lateral_active = scene.always_on_lateral_active;
+  always_on_lateral_enabled = scene.always_on_lateral_enabled;
   big_map = scene.big_map;
   conditional_experimental = scene.conditional_experimental;
   conditional_status = scene.conditional_status;
@@ -95,7 +95,7 @@ void ExperimentalButton::updateState(const UIState &s) {
 void ExperimentalButton::updateBackgroundColor() {
   static const QMap<QString, QColor> status_color_map {
     {"default", QColor(0, 0, 0, 166)},
-    {"always_on_lateral_active", bg_colors[STATUS_ALWAYS_ON_LATERAL_ACTIVE]},
+    {"always_on_lateral_enabled", bg_colors[STATUS_ALWAYS_ON_LATERAL_ENABLED]},
     {"conditional_overridden", bg_colors[STATUS_CONDITIONAL_OVERRIDDEN]},
     {"experimental_mode_active", bg_colors[STATUS_EXPERIMENTAL_MODE_ACTIVE]},
     {"navigation_active", bg_colors[STATUS_NAVIGATION_ACTIVE]},
@@ -107,8 +107,8 @@ void ExperimentalButton::updateBackgroundColor() {
     return;
   }
 
-  if (always_on_lateral_active) {
-    background_color = status_color_map["always_on_lateral_active"];
+  if (always_on_lateral_enabled) {
+    background_color = status_color_map["always_on_lateral_enabled"];
   } else if (conditional_status == 1 || conditional_status == 3 || conditional_status == 5) {
     background_color = status_color_map["conditional_overridden"];
   } else if (experimental_mode) {

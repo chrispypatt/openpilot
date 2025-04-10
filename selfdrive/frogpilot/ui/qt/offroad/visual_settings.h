@@ -14,12 +14,12 @@ signals:
   void openParentToggle();
   void openSubParentToggle();
 
-private:
-  void hideSubToggles();
-  void hideToggles();
+protected:
   void showEvent(QShowEvent *event) override;
-  void showToggles(const std::set<QString> &keys);
+
+private:
   void updateMetric(bool metric, bool bootRun);
+  void updateToggles();
 
   bool developerUIOpen;
   bool hasAutoTune;
@@ -40,8 +40,11 @@ private:
   std::set<QString> modelUIKeys = {"DynamicPathWidth", "LaneLinesWidth", "PathEdgeWidth", "PathWidth", "RoadEdgesWidth", "UnlimitedLength"};
   std::set<QString> navigationUIKeys = {"BigMap", "MapStyle", "RoadNameUI", "ShowSpeedLimits", "UseVienna"};
 
+  std::set<QString> parentKeys;
+
   FrogPilotButtonToggleControl *borderMetricsBtn;
   FrogPilotButtonToggleControl *lateralMetricsBtn;
+  FrogPilotButtonToggleControl *longitudinalMetricsBtn;
 
   FrogPilotSettingsWindow *parent;
 
