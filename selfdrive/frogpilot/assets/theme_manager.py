@@ -185,6 +185,7 @@ class ThemeManager:
       "easter_week": easter.easter(year),
       "may_the_fourth": date(year, 5, 4),
       "cinco_de_mayo": date(year, 5, 5),
+      "stitch_day": date(year, 6, 26),
       "fourth_of_july": date(year, 7, 4),
       "halloween_week": date(year, 10, 31),
       "thanksgiving_week": self.calculate_thanksgiving(year),
@@ -199,7 +200,7 @@ class ThemeManager:
 
     self.theme_assets["holiday_theme"] = "stock"
 
-  def update_active_theme(self, time_validated, frogpilot_toggles, boot_run=False):
+  def update_active_theme(self, time_validated, frogpilot_toggles, boot_run=False, randomize_theme=False):
     if time_validated and frogpilot_toggles.holiday_themes:
       self.update_holiday()
     else:
@@ -214,7 +215,7 @@ class ThemeManager:
         "turn_signal_pack": ("signals", self.theme_assets.get("holiday_theme")),
         "wheel_image": ("wheel_image", self.theme_assets.get("holiday_theme"))
       }
-    elif boot_run and frogpilot_toggles.random_themes:
+    elif (boot_run or randomize_theme) and frogpilot_toggles.random_themes:
       selected_theme = randomize_theme_asset()
       selected_wheel = randomize_wheel_image(selected_theme)
 

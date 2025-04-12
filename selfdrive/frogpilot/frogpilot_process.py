@@ -125,6 +125,9 @@ def frogpilot_thread():
       if frogpilot_toggles.lock_doors_timer:
         run_thread_with_lock("lock_doors", lock_doors, (frogpilot_toggles.lock_doors_timer, sm))
 
+      if frogpilot_toggles.random_themes:
+        theme_updated = theme_manager.update_active_theme(time_validated, frogpilot_toggles, randomize_theme=True)
+
       run_thread_with_lock("restart_processes", restart_processes, (sm,))
 
     elif started and not started_previously:

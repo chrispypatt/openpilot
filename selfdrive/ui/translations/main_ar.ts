@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">يتطلب تأكيد قبل تطبيق حدود السرعة الجديدة. للقبول، استخدم الودجت الوميضي على شاشة القيادة أو اضغط على زر &lt;b&gt;زيادة السرعة&lt;/b&gt;. للرفض، اضغط على زر &lt;b&gt;تقليل السرعة&lt;/b&gt; أو ببساطة تجاهل الإشعار لمدة 30 ثانية.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">فرض عداد السرعة ميل/ساعة</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">فرض قراءات حد السرعة على لوحة القيادة لتكون بالميل في الساعة.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">تم تطبيق تعويض السرعة المستهدفة على الحدود المنشورة بين 120 و140 كم/ساعة.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">فرض قراءة السرعة بوحدة ميل/ساعة من لوحة القيادة</translation>
     </message>
 </context>
 <context>

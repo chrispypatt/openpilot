@@ -11,7 +11,7 @@ from pathlib import Path
 
 from openpilot.selfdrive.frogpilot.assets.download_functions import GITLAB_URL, download_file, get_repository_url, handle_error, handle_request_error, verify_download
 from openpilot.selfdrive.frogpilot.frogpilot_utilities import delete_file
-from openpilot.selfdrive.frogpilot.frogpilot_variables import DEFAULT_CLASSIC_MODEL, DEFAULT_MODEL, DEFAULT_TINYGRAD_MODEL, MODELS_PATH, params, params_memory
+from openpilot.selfdrive.frogpilot.frogpilot_variables import DEFAULT_CLASSIC_MODEL, DEFAULT_MODEL, DEFAULT_TINYGRAD_MODEL, MODELS_PATH, params, params_default, params_memory
 
 VERSION = "v13"
 
@@ -149,6 +149,9 @@ class ModelManager:
     for tmp_file in MODELS_PATH.glob("tmp*"):
       if tmp_file.is_file():
         delete_file(tmp_file)
+
+    if params.get("Model", encoding="utf-8") not in self.available_models:
+      params.put("Model", params_default.get("Model", encoding="utf-8"))
 
     automatically_download_models = not boot_run and params.get_bool("AutomaticallyDownloadModels")
     if not automatically_download_models:

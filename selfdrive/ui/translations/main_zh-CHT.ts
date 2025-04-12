@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">需要確認才能應用新的速度限制。要接受，請使用駕駛螢幕上的閃爍小部件或按下 &lt;b&gt;巡航增加&lt;/b&gt; 按鈕。要拒絕，請按下 &lt;b&gt;巡航減少&lt;/b&gt; 按鈕或直接忽略提示30秒。</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">強制儀錶板英里每小時</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">強制儀表板速度限制讀數以英里每小時顯示。</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">目標速度偏移適用於限速120至140公里/小時之間。</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">從儀表板強制顯示 MPH 讀數</translation>
     </message>
 </context>
 <context>

@@ -112,7 +112,7 @@ class FrogPilotCard:
     elif not self.prev_distance_button:
       self.gap_counter = 0
 
-    if not frogpilotCarState.distancePressed and self.gap_counter < self.long_press_threshold:
+    if not frogpilotCarState.distancePressed and 1 < self.gap_counter < self.long_press_threshold:
       self.update_distance_button(sm)
     elif self.gap_counter == self.long_press_threshold:
       self.update_distance_button_long(sm)

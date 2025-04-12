@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">新しい速度制限を適用する前に確認が必要です。承認するには、運転画面の点滅するウィジェットを使用するか、&lt;b&gt;クルーズ増速&lt;/b&gt;ボタンを押してください。拒否するには、&lt;b&gt;クルーズ減速&lt;/b&gt;ボタンを押すか、30秒間プロンプトを無視してください。</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">ダッシュボードを強制的にMPHにする</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">ダッシュボードの速度制限表示を mph に強制する。</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">投稿された制限速度が120 km/hから140 km/hの間の場合、目標速度オフセットが適用されます。</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">ダッシュボードからMPH読み取りを強制する</translation>
     </message>
 </context>
 <context>

@@ -351,7 +351,7 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
       p.drawText(textRect, Qt::AlignVCenter | Qt::AlignLeft, fullText);
     };
 
-    QRect dashboardRect(sign_rect.x() - sign_margin, sign_rect.y() + sign_rect.height() + 45, 500, 60);
+    QRect dashboardRect(sign_rect.x() - sign_margin, sign_rect.y() + sign_rect.height() + 30, 500, 60);
     QRect mapDataRect(dashboardRect.x(), dashboardRect.y() + dashboardRect.height() + 15, 500, 60);
     QRect navigationRect(mapDataRect.x(), mapDataRect.y() + mapDataRect.height() + 15, 500, 60);
     QRect upcomingLimitRect(navigationRect.x(), navigationRect.y() + navigationRect.height() + 15, 500, 60);
@@ -654,6 +654,9 @@ void AnnotatedCameraWidget::drawDriverState(QPainter &painter, const UIState *s)
 
   // base icon
   int offset = UI_BORDER_SIZE + btn_size / 2;
+  if (roadNameUI) {
+    offset += 30;
+  }
   int x = rightHandDM ? width() - offset : offset;
   if (rightHandDM && map_settings_btn->isEnabled() && !hideMapIcon) {
     x -= 250;
@@ -1076,6 +1079,7 @@ void AnnotatedCameraWidget::updateFrogPilotVariables(int alert_height, const UIS
   radarTracks = scene.radar_tracks;
 
   roadNameUI = scene.road_name_ui;
+  distance_btn->road_name_ui = roadNameUI;
 
   bool enableScreenRecorder = scene.screen_recorder && !mapOpen;
   screenRecorder->setVisible(enableScreenRecorder);
@@ -1120,7 +1124,7 @@ void AnnotatedCameraWidget::updateFrogPilotVariables(int alert_height, const UIS
 }
 
 void AnnotatedCameraWidget::paintFrogPilotWidgets(QPainter &painter) {
-  if (cemStatus && !mapOpen && !hideBottomIcons) {
+  if (cemStatus && !hideBottomIcons) {
     drawCEMStatus(painter);
   } else {
     cemIconPosition.setX(0);
@@ -1161,8 +1165,9 @@ void AnnotatedCameraWidget::drawCEMStatus(QPainter &p) {
     return;
   }
 
-  cemIconPosition.rx() = dmIconPosition.x() + (rightHandDM ? -img_size : img_size);
+  cemIconPosition.rx() = dmIconPosition.x();
   cemIconPosition.ry() = dmIconPosition.y() - img_size / 2;
+  cemIconPosition.rx() += (rightHandDM ? -img_size : img_size) / (mapOpen ? 1.25 : 1);
 
   QRect cemWidget(cemIconPosition.x(), cemIconPosition.y(), img_size, img_size);
 
@@ -1213,9 +1218,10 @@ void AnnotatedCameraWidget::drawLateralPaused(QPainter &p) {
   if (cemIconPosition != QPoint(0, 0)) {
     lateralIconPosition = cemIconPosition;
   } else {
-    lateralIconPosition = dmIconPosition;
+    lateralIconPosition.rx() = dmIconPosition.x();
+    lateralIconPosition.ry() = dmIconPosition.y() - img_size / 2;
   }
-  lateralIconPosition.rx() += (rightHandDM ? -img_size : img_size) * 1.5;
+  lateralIconPosition.rx() += ((rightHandDM ? -img_size : img_size) * 1.5) / (mapOpen ? 1.25 : 1);
 
   QRect lateralWidget(lateralIconPosition.x(), lateralIconPosition.y(), img_size, img_size);
 
@@ -1244,9 +1250,10 @@ void AnnotatedCameraWidget::drawLongitudinalPaused(QPainter &p) {
   } else if (cemIconPosition != QPoint(0, 0)) {
     longitudinalIconPosition = cemIconPosition;
   } else {
-    longitudinalIconPosition = dmIconPosition;
+    longitudinalIconPosition.rx() = dmIconPosition.x();
+    longitudinalIconPosition.ry() = dmIconPosition.y() - img_size / 2;
   }
-  longitudinalIconPosition.rx() += (rightHandDM ? -img_size : img_size) * 1.5;
+  longitudinalIconPosition.rx() += ((rightHandDM ? -img_size : img_size) * 1.5) / (mapOpen ? 1.25 : 1);
 
   QRect longitudinalWidget(longitudinalIconPosition.x(), longitudinalIconPosition.y(), img_size, img_size);
 
@@ -1354,7 +1361,7 @@ void AnnotatedCameraWidget::drawRoadName(QPainter &p) {
 
   p.save();
 
-  QRect roadNameRect((width() - textWidth * 1.25) / 2, rect().bottom() - 55 + 1, textWidth * 1.25, 50);
+  QRect roadNameRect((width() - (textWidth + 100)) / 2, rect().bottom() - 55 + 1, textWidth + 100, 50);
 
   p.setBrush(blackColor(166));
   p.setOpacity(1.0);

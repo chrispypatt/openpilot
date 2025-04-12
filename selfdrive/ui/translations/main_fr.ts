@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">Exiger une confirmation avant d'appliquer de nouvelles limitations de vitesse. Pour accepter, utilisez le widget clignotant sur l'écran de conduite ou appuyez sur le bouton &lt;b&gt;Augmenter la vitesse de croisière&lt;/b&gt;. Pour refuser, appuyez sur le bouton &lt;b&gt;Diminuer la vitesse de croisière&lt;/b&gt; ou ignorez simplement la demande pendant 30 secondes.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">Forcer le tableau de bord en MPH</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">Forcer les relevés de limitation de vitesse du tableau de bord à être en mph.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">Décalage de vitesse cible appliqué pour les limites affichées entre 120 et 140 km/h.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">Forcer les lectures MPH depuis le tableau de bord</translation>
     </message>
 </context>
 <context>

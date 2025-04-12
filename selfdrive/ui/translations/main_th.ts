@@ -1695,10 +1695,6 @@
         <translation type="gpt-4o-generated">ต้องการการยืนยันก่อนที่จะใช้ข้อจำกัดความเร็วใหม่ ในการยอมรับ ให้ใช้วิดเจ็ตที่กะพริบบนหน้าจอการขับขี่หรือกดปุ่ม &lt;b&gt;Cruise Increase&lt;/b&gt; เพื่อปฏิเสธ ให้กดปุ่ม &lt;b&gt;Cruise Decrease&lt;/b&gt; หรือเพียงแค่ละเลยการเตือนเป็นเวลา 30 วินาที</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">บังคับหน้าปัดความเร็วเป็น MPH</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">บังคับการแสดงผลความเร็วบนแผงหน้าปัดให้เป็นไมล์ต่อชั่วโมง</translation>
     </message>
@@ -1897,6 +1893,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">ใช้การชดเชยความเร็วเป้าหมายสำหรับขีดจำกัดที่โพสต์ระหว่าง 120 และ 140 กม./ชม.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">บังคับอ่านค่า MPH จากแผงหน้าปัด</translation>
     </message>
 </context>
 <context>

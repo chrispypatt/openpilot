@@ -158,7 +158,7 @@ def restart_processes(sm):
   wait_for_no_driver(sm)
 
   if not any(ps.ignitionLine or ps.ignitionCan for ps in sm["pandaStates"] if ps.pandaType != log.PandaState.PandaType.unknown):
-    for name in ["mapd", "pandad", "ui"]:
+    for name in ["mapd", "ui"]:
       managed_processes[name].stop(block=False)
 
 def run_cmd(cmd, success_message, fail_message, report=True):

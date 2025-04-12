@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">Yeni hız sınırlarını uygulamadan önce onay gerektir. Kabul etmek için sürüş ekranındaki yanıp sönen widget'ı kullan veya &lt;b&gt;Seyir Artır&lt;/b&gt; düğmesine bas. Reddetmek için &lt;b&gt;Seyir Azalt&lt;/b&gt; düğmesine bas veya 30 saniye boyunca istemi görmezden gel.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">Gösterge Paneli MPH'yi Zorla</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">Gösterge paneli hız sınırı okumalarını mph olarak zorla.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">120 ile 140 km/sa arasındaki ilan edilen hız sınırları için hedef hız ötelemesi uygulandı.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">Gösterge Tablosundan MPH Okumalarını Zorla</translation>
     </message>
 </context>
 <context>

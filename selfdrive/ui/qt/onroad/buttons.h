@@ -87,6 +87,8 @@ public:
   void updateIcon();
   void updateState(const UIScene &scene);
 
+  bool road_name_ui;
+
 private:
   void paintEvent(QPaintEvent *event) override;
 

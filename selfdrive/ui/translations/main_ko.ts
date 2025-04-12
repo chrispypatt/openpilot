@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">새 속도 제한을 적용하기 전에 확인이 필요합니다. 수락하려면 주행 화면의 깜박이는 위젯을 사용하거나 &lt;b&gt;크루즈 증가&lt;/b&gt; 버튼을 누르세요. 거부하려면 &lt;b&gt;크루즈 감소&lt;/b&gt; 버튼을 누르거나 30초 동안 프롬프트를 무시하세요.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">대시보드 강제 MPH</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">계기판 속도 제한 읽기를 mph로 강제 설정합니다.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">120km/h에서 140km/h 사이의 게시된 제한 속도에 대해 목표 속도 오프셋이 적용됩니다.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">계기판에서 MPH 읽기 강제 적용</translation>
     </message>
 </context>
 <context>

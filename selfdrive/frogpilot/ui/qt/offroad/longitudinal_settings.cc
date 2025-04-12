@@ -131,7 +131,7 @@ FrogPilotLongitudinalPanel::FrogPilotLongitudinalPanel(FrogPilotSettingsWindow *
     {"SLCOverride", tr("Override Speed"), tr("The speed openpilot uses after manually exceeding the posted speed limit.<br><br><b>- Set With Gas Pedal</b>: Uses the speed obtained while pressing the gas<br><b>- Max Set Speed</b>: Uses the cruise control set speed<br><br>Overrides clear upon disengagement."), ""},
     {"SLCQOL", tr("Quality of Life"), tr("Miscellaneous features to improve the <b>Speed Limit Controller</b> experience."), ""},
     {"SLCConfirmation", tr("Confirm New Speed Limits"), tr("Require confirmation before applying new speed limits. To accept, use the flashing widget on the driving screen or press the <b>Cruise Increase</b> button. To deny, press the <b>Cruise Decrease</b> button or simply ignore the prompt for 30 seconds."), ""},
-    {"ForceMPHDashboard", tr("Force Dashboard MPH"), tr("Force dashboard speed limit readings to be in mph."), ""},
+    {"ForceMPHDashboard", tr("Force MPH Readings from Dashboard"), tr("Force dashboard speed limit readings to be in mph."), ""},
     {"SLCLookaheadHigher", tr("Higher Limit Lookahead Time"), tr("How far ahead openpilot anticipates upcoming higher speed limits from the downloaded map data."), ""},
     {"SLCLookaheadLower", tr("Lower Limit Lookahead Time"), tr("How far ahead openpilot anticipates upcoming lower speed limits from the downloaded map data."), ""},
     {"SetSpeedLimit", tr("Match Speed Limit on Engage"), tr("Automatically set cruise control speed to match the current speed limit when first enabling openpilot."), ""},

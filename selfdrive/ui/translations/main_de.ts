@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">Bestätigung erforderlich, bevor neue Geschwindigkeitsbegrenzungen übernommen werden. Um zu akzeptieren, verwenden Sie das blinkende Widget auf dem Fahrbildschirm oder drücken Sie die Taste &lt;b&gt;Geschwindigkeit erhöhen&lt;/b&gt;. Um abzulehnen, drücken Sie die Taste &lt;b&gt;Geschwindigkeit verringern&lt;/b&gt; oder ignorieren Sie die Aufforderung einfach für 30 Sekunden.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">Dashboard MPH erzwingen</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">Erzwingen Sie, dass die Geschwindigkeitsbegrenzungen auf dem Armaturenbrett in mph angezeigt werden.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">Zielgeschwindigkeitsversatz für ausgeschilderte Geschwindigkeitsbegrenzungen zwischen 120 und 140 km/h angewendet.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">Erzwinge MPH-Anzeigen vom Armaturenbrett</translation>
     </message>
 </context>
 <context>

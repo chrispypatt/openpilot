@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">Requerir confirmación antes de aplicar nuevos límites de velocidad. Para aceptar, utiliza el widget intermitente en la pantalla de conducción o presiona el botón &lt;b&gt;Incrementar Crucero&lt;/b&gt;. Para rechazar, presiona el botón &lt;b&gt;Disminuir Crucero&lt;/b&gt; o simplemente ignora el aviso durante 30 segundos.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">Forzar el tablero a MPH</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">Forzar las lecturas de límite de velocidad del tablero a estar en mph.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">Compensación de velocidad objetivo aplicada para límites publicados entre 120 y 140 km/h.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">Forzar lecturas de MPH desde el tablero</translation>
     </message>
 </context>
 <context>

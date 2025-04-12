@@ -102,7 +102,7 @@ jobs:
         run: python selfdrive/ui/update_translations.py --vanish
 
       - name: Translate Missing or Outdated Translations
-        run: python selfdrive/ui/translations/auto_translate.py --all-files ${INPUT_VET:+--vet-translations}
+        run: python selfdrive/ui/translations/auto_translate.py --all-files $([[ "${{ github.event.inputs.vet_existing_translations }}" == "true" ]] && echo "--vet-translations")
 
       - name: Commit and Push Translation Updates
         run: |
@@ -236,17 +236,10 @@ jobs:
             touch not_vetted
           fi
 
-      - name: Retrieve update_date from FrogPilot-Staging
+      - name: Add the update_date file
+        if: github.event.inputs.publish_staging == 'true'
         run: |
-          if [ "${{ github.event.inputs.publish_staging }}" = "true" ]; then
-            git fetch origin FrogPilot-Staging
-
-            if git ls-tree --name-only origin/FrogPilot-Staging .github/update_date | grep -q ".github/update_date"; then
-              git show origin/FrogPilot-Staging:.github/update_date > .github/update_date
-            else
-              echo "No .github/update_date found in FrogPilot-Staging branch."
-            fi
-          fi
+          curl -fLsS https://raw.githubusercontent.com/FrogAi/FrogPilot/FrogPilot-Staging/.github/update_date -o .github/update_date || echo "No update_date found, skipping."
 
       - name: Commit Build
         run: |

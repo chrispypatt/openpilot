@@ -1690,10 +1690,6 @@
         <translation type="gpt-4o-generated">Exigir confirmação antes de aplicar novos limites de velocidade. Para aceitar, use o widget piscante na tela de condução ou pressione o botão &lt;b&gt;Aumentar Cruzeiro&lt;/b&gt;. Para negar, pressione o botão &lt;b&gt;Diminuir Cruzeiro&lt;/b&gt; ou simplesmente ignore o aviso por 30 segundos.</translation>
     </message>
     <message>
-        <source>Force Dashboard MPH</source>
-        <translation type="gpt-4o-generated">Forçar Velocímetro MPH</translation>
-    </message>
-    <message>
         <source>Force dashboard speed limit readings to be in mph.</source>
         <translation type="gpt-4o-generated">Forçar leituras de limite de velocidade no painel para serem em mph.</translation>
     </message>
@@ -1892,6 +1888,10 @@
     <message>
         <source>Target speed offset applied for posted limits between 120 and 140 km/h.</source>
         <translation type="gpt-4o-generated">Desvio de velocidade alvo aplicado para limites postados entre 120 e 140 km/h.</translation>
+    </message>
+    <message>
+        <source>Force MPH Readings from Dashboard</source>
+        <translation type="gpt-4o-generated">Forçar Leitura de MPH no Painel</translation>
     </message>
 </context>
 <context>
