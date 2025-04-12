@@ -52,7 +52,7 @@ FrogPilotUtilitiesPanel::FrogPilotUtilitiesPanel(FrogPilotSettingsWindow *parent
   forceStartedBtn->setCheckedButton(2);
   addItem(forceStartedBtn);
 
-  ButtonControl *reportIssueBtn = new ButtonControl(tr("Report a Bug or an Issue"), tr("REPORT"), tr("Let <b>FrogsGoMoo</b> know about an issue you're facing."));
+  ButtonControl *reportIssueBtn = new ButtonControl(tr("Report a Bug or an Issue"), tr("REPORT"), tr("Let FrogsGoMoo know about an issue you're facing!"));
   QObject::connect(reportIssueBtn, &ButtonControl::clicked, [this]() {
     QStringList report_messages = {
       tr("I saw an alert that said <b>openpilot crashed</b>"),
@@ -84,9 +84,9 @@ FrogPilotUtilitiesPanel::FrogPilotUtilitiesPanel(FrogPilotSettingsWindow *parent
   });
   addItem(reportIssueBtn);
 
-  ButtonControl *resetTogglesBtn = new ButtonControl(tr("Reset Toggles to Default"), tr("RESET"), tr("Reset your toggles back to their default setting."));
+  ButtonControl *resetTogglesBtn = new ButtonControl(tr("Reset Toggles to Default"), tr("RESET"), tr("Reset all toggles to their default values."));
   QObject::connect(resetTogglesBtn, &ButtonControl::clicked, [this, parent, resetTogglesBtn]() {
-    if (ConfirmationDialog::confirm(tr("Are you sure you want to reset all of your toggles to their default setting?"), tr("Reset"), this)) {
+    if (ConfirmationDialog::confirm(tr("Are you sure you want to reset all toggles to their default values?"), tr("Reset"), this)) {
       std::thread([this, parent, resetTogglesBtn]() mutable {
         parent->keepScreenOn = true;
 

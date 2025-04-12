@@ -10,7 +10,6 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
 
   visualsLayout->addWidget(visualsPanel);
 
-  FrogPilotListWidget *accessibilityList = new FrogPilotListWidget(this);
   FrogPilotListWidget *advancedCustomList = new FrogPilotListWidget(this);
   FrogPilotListWidget *customUIList = new FrogPilotListWidget(this);
   FrogPilotListWidget *developerMetricList = new FrogPilotListWidget(this);
@@ -18,8 +17,8 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
   FrogPilotListWidget *developerWidgetList = new FrogPilotListWidget(this);
   FrogPilotListWidget *modelUIList = new FrogPilotListWidget(this);
   FrogPilotListWidget *navigationUIList = new FrogPilotListWidget(this);
+  FrogPilotListWidget *qualityOfLifeList = new FrogPilotListWidget(this);
 
-  ScrollView *accessibilityPanel = new ScrollView(accessibilityList, this);
   ScrollView *advancedCustomPanel = new ScrollView(advancedCustomList, this);
   ScrollView *customUIPanel = new ScrollView(customUIList, this);
   ScrollView *developerMetricPanel = new ScrollView(developerMetricList, this);
@@ -27,8 +26,8 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
   ScrollView *developerWidgetPanel = new ScrollView(developerWidgetList, this);
   ScrollView *modelUIPanel = new ScrollView(modelUIList, this);
   ScrollView *navigationUIPanel = new ScrollView(navigationUIList, this);
+  ScrollView *qualityOfLifePanel = new ScrollView(qualityOfLifeList, this);
 
-  visualsLayout->addWidget(accessibilityPanel);
   visualsLayout->addWidget(advancedCustomPanel);
   visualsLayout->addWidget(customUIPanel);
   visualsLayout->addWidget(developerMetricPanel);
@@ -36,6 +35,7 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
   visualsLayout->addWidget(developerWidgetPanel);
   visualsLayout->addWidget(modelUIPanel);
   visualsLayout->addWidget(navigationUIPanel);
+  visualsLayout->addWidget(qualityOfLifePanel);
 
   const std::vector<std::tuple<QString, QString, QString, QString>> visualToggles {
     {"AdvancedCustomUI", tr("Advanced UI Controls"), tr("Advanced settings for fine-tuning openpilot's driving screen."), "../frogpilot/assets/toggle_icons/icon_advanced_device.png"},
@@ -66,6 +66,7 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
     {"AdjacentPath", tr("Adjacent Lanes"), tr("Driving paths for the left and right adjacent lanes."), ""},
     {"BlindSpotPath", tr("Blind Spot Path"), tr("Display a red driving path for detected vehicles in the corresponding lane's blind spot."), ""},
     {"Compass", tr("Compass"), tr("A compass to show the current driving direction."), ""},
+    {"OnroadDistanceButton", tr("Driving Personality Button"), tr("Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of <b>Experimental Mode</b>, or 2.5 seconds for <b>Traffic Mode</b>."), ""},
     {"PedalsOnUI", tr("Gas / Brake Pedal Indicators"), tr("Pedals to indicate when either of the pedals are currently being used.<br><br><b>Dynamic</b>: The pedals change in opacity in accordance to how much openpilot is accelerating or decelerating<br><b>Static</b>: The pedals are displayed with full opacity when active, and dimmed when not in use"), ""},
     {"RotatingWheel", tr("Rotating Steering Wheel"), tr("Rotate the steering wheel alongside the vehicle's physical steering wheel."), ""},
 
@@ -86,7 +87,6 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
 
     {"QOLVisuals", tr("Quality of Life"), tr("Visual features to improve your overall openpilot experience."), "../frogpilot/assets/toggle_icons/quality_of_life.png"},
     {"CameraView", tr("Camera View"), tr("The active camera view display. This is purely a visual change and doesn't impact how openpilot drives!"), ""},
-    {"OnroadDistanceButton", tr("Control Driving Personality via the Driving Screen"), tr("Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of <b>Experimental Mode</b>, or 2.5 seconds for <b>Traffic Mode</b>."), ""},
     {"DriverCamera", tr("Show Driver Camera When In Reverse"), tr("Display the driver camera feed when the vehicle is in reverse."), ""},
     {"StandbyMode", tr("Standby Mode"), tr("Turn the screen off when driving and automatically wake it up if engagement state changes or important alerts occur."), ""},
     {"StoppedTimer", tr("Stopped Timer"), tr("Replace the current speed with a timer when stopped to indicate how long the vehicle has been stopped for."), ""}
@@ -253,8 +253,8 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
 
     } else if (param == "QOLVisuals") {
       FrogPilotManageControl *qolToggle = new FrogPilotManageControl(param, title, desc, icon);
-      QObject::connect(qolToggle, &FrogPilotManageControl::manageButtonClicked, [visualsLayout, accessibilityPanel]() {
-        visualsLayout->setCurrentWidget(accessibilityPanel);
+      QObject::connect(qolToggle, &FrogPilotManageControl::manageButtonClicked, [visualsLayout, qualityOfLifePanel]() {
+        visualsLayout->setCurrentWidget(qualityOfLifePanel);
       });
       visualToggle = qolToggle;
     } else if (param == "CameraView") {
@@ -268,9 +268,7 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
 
     toggles[param] = visualToggle;
 
-    if (accessibilityKeys.find(param) != accessibilityKeys.end()) {
-      accessibilityList->addItem(visualToggle);
-    } else if (advancedCustomOnroadUIKeys.find(param) != advancedCustomOnroadUIKeys.end()) {
+    if (advancedCustomOnroadUIKeys.find(param) != advancedCustomOnroadUIKeys.end()) {
       advancedCustomList->addItem(visualToggle);
     } else if (customOnroadUIKeys.find(param) != customOnroadUIKeys.end()) {
       customUIList->addItem(visualToggle);
@@ -284,6 +282,8 @@ FrogPilotVisualsPanel::FrogPilotVisualsPanel(FrogPilotSettingsWindow *parent) : 
       modelUIList->addItem(visualToggle);
     } else if (navigationUIKeys.find(param) != navigationUIKeys.end()) {
       navigationUIList->addItem(visualToggle);
+    } else if (qualityOfLifeKeys.find(param) != qualityOfLifeKeys.end()) {
+      qualityOfLifeList->addItem(visualToggle);
     } else {
       visualsList->addItem(visualToggle);
 
@@ -440,9 +440,7 @@ void FrogPilotVisualsPanel::updateToggles() {
     toggle->setVisible(setVisible);
 
     if (setVisible) {
-      if (accessibilityKeys.find(key) != accessibilityKeys.end()) {
-        toggles["QOLVisuals"]->setVisible(true);
-      } else if (advancedCustomOnroadUIKeys.find(key) != advancedCustomOnroadUIKeys.end()) {
+      if (advancedCustomOnroadUIKeys.find(key) != advancedCustomOnroadUIKeys.end()) {
         toggles["AdvancedCustomUI"]->setVisible(true);
       } else if (customOnroadUIKeys.find(key) != customOnroadUIKeys.end()) {
         toggles["CustomUI"]->setVisible(true);
@@ -456,6 +454,8 @@ void FrogPilotVisualsPanel::updateToggles() {
         toggles["ModelUI"]->setVisible(true);
       } else if (navigationUIKeys.find(key) != navigationUIKeys.end()) {
         toggles["NavigationUI"]->setVisible(true);
+      } else if (qualityOfLifeKeys.find(key) != qualityOfLifeKeys.end()) {
+        toggles["QOLVisuals"]->setVisible(true);
       }
     }
   }

@@ -488,7 +488,7 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
       // Flip so 0 is bottom of frame
       float lin_grad_point = (height() - scene.track_vertices[track_idx].y()) / height();
 
-      if ((fabs(acceleration[i]) < 0.25 || !scene.acceleration_path) && scene.rainbow_path) {
+      if ((fabs(acceleration[i]) < 0.5 || !scene.acceleration_path) && scene.rainbow_path) {
         static float hue_offset = 0.0;
         if (v_ego > 0) {
           hue_offset += powf(v_ego, 0.5f) / sqrtf(145.0f / MS_TO_KPH);
@@ -499,9 +499,9 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
 
         bg.setColorAt(lin_grad_point, QColor::fromHslF(path_hue / 360.0f, 1.0f, 0.5f, alpha));
         bg.setSpread(QGradient::RepeatSpread);
-      } else if (fabs(acceleration[i]) < 0.25 && !useStockColors) {
+      } else if (fabs(acceleration[i]) < 0.5 && !useStockColors) {
         QColor color = scene.path_color;
-        color.setAlphaF(util::map_val(lin_grad_point, 0.0f, 1.0f, 0.5f, 0.1f));
+        color.setAlphaF(util::map_val(lin_grad_point, 0.0f, 1.0f, 1.0f, 0.1f));
         bg.setColorAt(lin_grad_point, color);
       } else {
         // speed up: 120, slow down: 0
@@ -522,7 +522,7 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
   } else if (!useStockColors) {
     QColor color = scene.path_color;
     bg.setColorAt(0.0f, color);
-    color.setAlphaF(0.5f);
+    color.setAlphaF(1.0f);
     bg.setColorAt(0.5f, color);
     color.setAlphaF(0.1f);
     bg.setColorAt(1.0f, color);
@@ -610,18 +610,18 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s, f
   // Paint path edges
   QLinearGradient pe(0, height(), 0, 0);
 
-  std::function<void(QLinearGradient&, const QColor&)> setPathEdgeColors = [&](QLinearGradient &gradient, const QColor &baseColor) {
+  std::function<void(QLinearGradient&, const QColor&)> setPathEdgeColors = [&](QLinearGradient &gradient, QColor baseColor) {
+    baseColor.setAlphaF(1.0f);
     gradient.setColorAt(0.0f, baseColor);
-    QColor color = baseColor;
-    color.setAlphaF(0.5f);
-    gradient.setColorAt(0.5f, color);
-    color.setAlphaF(0.1f);
-    gradient.setColorAt(1.0f, color);
+    baseColor.setAlphaF(0.5f);
+    gradient.setColorAt(0.5f, baseColor);
+    baseColor.setAlphaF(0.1f);
+    gradient.setColorAt(1.0f, baseColor);
   };
 
   if (scene.always_on_lateral_enabled) {
     setPathEdgeColors(pe, bg_colors[STATUS_ALWAYS_ON_LATERAL_ENABLED]);
-  } else if (conditionalStatus == 1 || conditionalStatus == 3 || conditionalStatus == 5) {
+  } else if (conditionalStatus == 1) {
     setPathEdgeColors(pe, bg_colors[STATUS_CONDITIONAL_OVERRIDDEN]);
   } else if (experimentalMode) {
     setPathEdgeColors(pe, bg_colors[STATUS_EXPERIMENTAL_MODE_ACTIVE]);

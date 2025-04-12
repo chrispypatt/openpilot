@@ -17,12 +17,12 @@ FrogPilotModelPanel::FrogPilotModelPanel(FrogPilotSettingsWindow *parent) : Frog
   modelLayout->addWidget(modelLabelsPanel);
 
   const std::vector<std::tuple<QString, QString, QString, QString>> modelToggles {
-    {"AutomaticallyDownloadModels", tr("Automatically Download New Models"), tr("Automatically downloads new driving models as they become available."), ""},
-    {"DeleteModel", tr("Delete Driving Models"), tr("Delete selected driving models from the device."), ""},
-    {"DownloadModel", tr("Download Driving Models"), tr("Download additional driving models to the device."), ""},
-    {"ModelRandomizer", tr("Model Randomizer"), tr("A random driving model is chosen each drive and prompts for feedback after the drive to find the model that best suits your needs."), ""},
-    {"ManageBlacklistedModels", tr("Manage Model Blacklist"), tr("View or edit models excluded from selection with the <b>Model Randomizer</b>."), ""},
-    {"ManageScores", tr("Manage Model Ratings"), tr("Clear or view all saved ratings for driving models."), ""},
+    {"AutomaticallyDownloadModels", tr("Automatically Download New Models"), tr("Automatically download new driving models as they become available."), ""},
+    {"DeleteModel", tr("Delete Driving Models"), tr("Delete driving models from the device."), ""},
+    {"DownloadModel", tr("Download Driving Models"), tr("Download driving models to the device."), ""},
+    {"ModelRandomizer", tr("Model Randomizer"), tr("Driving models are chosen at random each drive and feedback prompts are used to find the model that best suits your needs."), ""},
+    {"ManageBlacklistedModels", tr("Manage Model Blacklist"), tr("Add or remove models from the <b>Model Randomizer</b>'s blacklist list."), ""},
+    {"ManageScores", tr("Manage Model Ratings"), tr("Reset or view the saved ratings for the driving models."), ""},
     {"SelectModel", tr("Select Driving Model"), tr("Select the active driving model."), ""}
   };
 

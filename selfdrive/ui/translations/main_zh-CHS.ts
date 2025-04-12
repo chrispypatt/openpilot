@@ -716,10 +716,6 @@
         <translation type="gpt-4o-generated">电池关机阈值</translation>
     </message>
     <message>
-        <source>How long the device stays on after you go offroad.</source>
-        <translation type="gpt-4o-generated">设备在您驶离道路后保持开启的时间长度。</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
         <translation type="gpt-4o-generated">警告：这将阻止记录您的驾驶数据，所有数据将无法获取！</translation>
     </message>
@@ -748,10 +744,6 @@
         <translation type="gpt-4o-generated">控制设备行为的设置。</translation>
     </message>
     <message>
-        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold, preventing excessive drain and protecting the battery.</source>
-        <translation type="gpt-4o-generated">当车辆电池电压达到设定阈值时，自动关闭设备，防止过度放电并保护电池。</translation>
-    </message>
-    <message>
         <source>Disable Data Logging</source>
         <translation type="gpt-4o-generated">禁用数据记录</translation>
     </message>
@@ -760,20 +752,12 @@
         <translation type="gpt-4o-generated">禁用数据上传</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt;, which may impact debugging and support!</source>
-        <translation type="gpt-4o-generated">警告：这将阻止您的行程出现在&lt;b&gt;comma connect&lt;/b&gt;上，可能会影响调试和支持！</translation>
-    </message>
-    <message>
         <source>Prevent the device from sending any data to &lt;b&gt;comma&lt;/b&gt;'s servers.</source>
         <translation type="gpt-4o-generated">防止设备向&lt;b&gt;comma&lt;/b&gt;的服务器发送任何数据。</translation>
     </message>
     <message>
         <source>WARNING: This can damage your device by exceeding safe temperature limits!</source>
         <translation type="gpt-4o-generated">警告：这可能会通过超过安全温度限制而损坏您的设备！</translation>
-    </message>
-    <message>
-        <source>Allow the device to run hotter than &lt;b&gt;comma&lt;/b&gt;'s recommended limit.</source>
-        <translation type="gpt-4o-generated">允许设备运行温度超过&lt;b&gt;comma&lt;/b&gt;的推荐限制。</translation>
     </message>
     <message>
         <source>Settings that control screen behavior.</source>
@@ -798,6 +782,22 @@
     <message>
         <source>How long it takes for the screen to turn off while driving.</source>
         <translation type="gpt-4o-generated">在驾驶过程中，屏幕关闭所需的时间。</translation>
+    </message>
+    <message>
+        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold preventing excessive battery drain to protect the battery.</source>
+        <translation type="gpt-4o-generated">当车辆电池电压达到设定阈值时，自动关闭设备，以防止过度电池消耗，保护电池。</translation>
+    </message>
+    <message>
+        <source>How long the device stays on for after you go offroad.</source>
+        <translation type="gpt-4o-generated">设备在您离开道路后保持开启的时间长度。</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt; which may impact debugging and support!</source>
+        <translation type="gpt-4o-generated">警告：这将阻止您的行程出现在&lt;b&gt;comma connect&lt;/b&gt;上，可能会影响调试和支持！</translation>
+    </message>
+    <message>
+        <source>Allow the device to run hotter than comma recommended limit.</source>
+        <translation type="gpt-4o-generated">允许设备运行温度高于推荐限制。</translation>
     </message>
 </context>
 <context>
@@ -901,14 +901,6 @@
     <message>
         <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
         <translation type="gpt-4o-generated">用于微调openpilot横向控制的高级设置。</translation>
-    </message>
-    <message>
-        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">强制启用Comma的自动横向调校功能，以支持不受支持的车辆。</translation>
-    </message>
-    <message>
-        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
-        <translation type="gpt-4o-generated">强制禁用支持车辆的Comma自动横向调节。</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
@@ -1057,6 +1049,14 @@
     <message>
         <source> meter</source>
         <translation type="gpt-4o-generated">米</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">强制启用 comma 的自动横向调节。</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">强制禁用 comma 的自动横向调校。</translation>
     </message>
 </context>
 <context>
@@ -2004,40 +2004,16 @@
         <translation type="gpt-4o-generated">自动下载新模型</translation>
     </message>
     <message>
-        <source>Automatically downloads new driving models as they become available.</source>
-        <translation type="gpt-4o-generated">自动下载新的驾驶模型，一旦它们可用。</translation>
-    </message>
-    <message>
         <source>Delete Driving Models</source>
         <translation type="gpt-4o-generated">删除驾驶模型</translation>
-    </message>
-    <message>
-        <source>Delete selected driving models from the device.</source>
-        <translation type="gpt-4o-generated">从设备中删除所选的驾驶模型。</translation>
     </message>
     <message>
         <source>Download Driving Models</source>
         <translation type="gpt-4o-generated">下载驾驶模型</translation>
     </message>
     <message>
-        <source>Download additional driving models to the device.</source>
-        <translation type="gpt-4o-generated">将额外的驾驶模型下载到设备。</translation>
-    </message>
-    <message>
-        <source>A random driving model is chosen each drive and prompts for feedback after the drive to find the model that best suits your needs.</source>
-        <translation type="gpt-4o-generated">每次驾驶都会随机选择一个驾驶模型，并在驾驶结束后提示反馈，以找到最适合您需求的模型。</translation>
-    </message>
-    <message>
-        <source>View or edit models excluded from selection with the &lt;b&gt;Model Randomizer&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">使用&lt;b&gt;模型随机化器&lt;/b&gt;查看或编辑从选择中排除的模型。</translation>
-    </message>
-    <message>
         <source>Manage Model Ratings</source>
         <translation type="gpt-4o-generated">管理模型评分</translation>
-    </message>
-    <message>
-        <source>Clear or view all saved ratings for driving models.</source>
-        <translation type="gpt-4o-generated">清除或查看所有保存的驾驶模型评分。</translation>
     </message>
     <message>
         <source>Select Driving Model</source>
@@ -2066,6 +2042,30 @@
     <message>
         <source>The "Model Randomizer" only works with downloaded models. Do you want to download all the driving models?</source>
         <translation type="gpt-4o-generated">“模型随机器”仅适用于已下载的模型。您要下载所有驾驶模型吗？</translation>
+    </message>
+    <message>
+        <source>Automatically download new driving models as they become available.</source>
+        <translation type="gpt-4o-generated">自动下载新的驾驶模型。</translation>
+    </message>
+    <message>
+        <source>Delete driving models from the device.</source>
+        <translation type="gpt-4o-generated">从设备中删除驾驶模型。</translation>
+    </message>
+    <message>
+        <source>Download driving models to the device.</source>
+        <translation type="gpt-4o-generated">下载驾驶模型到设备。</translation>
+    </message>
+    <message>
+        <source>Driving models are chosen at random each drive and feedback prompts are used to find the model that best suits your needs.</source>
+        <translation type="gpt-4o-generated">每次驾驶时驾驶模型会被随机选择，并使用反馈提示来寻找最适合您需求的模型。</translation>
+    </message>
+    <message>
+        <source>Add or remove models from the &lt;b&gt;Model Randomizer&lt;/b&gt;'s blacklist list.</source>
+        <translation type="gpt-4o-generated">从&lt;b&gt;模型随机器&lt;/b&gt;的黑名单中添加或移除模型。</translation>
+    </message>
+    <message>
+        <source>Reset or view the saved ratings for the driving models.</source>
+        <translation type="gpt-4o-generated">重置或查看驾驶模型的保存评分。</translation>
     </message>
 </context>
 <context>
@@ -2280,10 +2280,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">调整警报音量，例如：&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF 扭矩控制器已加载&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot 已启用&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below &lt;i&gt;X&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">调整警报音量，例如：&lt;br&gt;&lt;br&gt;&lt;b&gt;盲点检测到车辆&lt;/b&gt;&lt;br&gt;&lt;b&gt;转向不可用低于&lt;i&gt;X&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;速度过低&lt;/b&gt;&lt;br&gt;&lt;b&gt;接管控制，转向超出限制&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Pay Attention, Driver Distracted&lt;/b&gt;&lt;br&gt;&lt;b&gt;Touch Steering Wheel, Driver Unresponsive&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">调整警报的音量，例如：&lt;br&gt;&lt;br&gt;&lt;b&gt;注意，司机注意力不集中&lt;/b&gt;&lt;br&gt;&lt;b&gt;触摸方向盘，司机无反应&lt;/b&gt;</translation>
     </message>
@@ -2308,18 +2304,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">FrogPilot为openpilot中的各种事件提供警报。</translation>
     </message>
     <message>
-        <source>The infamous &lt;b&gt;Goat Scream&lt;/b&gt; that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">臭名昭著的&lt;b&gt;山羊尖叫声&lt;/b&gt;，给全球的FrogPilot用户带来了欢乐和愤怒！</translation>
-    </message>
-    <message>
-        <source>An alert for when the traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">一个用于提醒红灯变绿的警报。</translation>
-    </message>
-    <message>
-        <source>An alert for when the lead vehicle begins to move.</source>
-        <translation type="gpt-4o-generated">当前车开始移动时的提醒。</translation>
-    </message>
-    <message>
         <source>Loud "Car Detected in Blindspot" Alert</source>
         <translation type="gpt-4o-generated">响亮的“盲点检测到车辆”警报</translation>
     </message>
@@ -2328,12 +2312,28 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">在尝试变更车道时检测到盲区内有车辆时发出更响的警报。</translation>
     </message>
     <message>
-        <source>Speed Limit Change Alert</source>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below "X"&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">调整警报音量，例如：&lt;br&gt;&lt;br&gt;&lt;b&gt;汽车在盲区检测到&lt;/b&gt;&lt;br&gt;&lt;b&gt;方向盘不可用，低于“X”&lt;/b&gt;&lt;br&gt;&lt;b&gt;速度过低&lt;/b&gt;&lt;br&gt;&lt;b&gt;请接管，转向超过转向限制&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>The infamous "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">臭名昭著的“山羊尖叫”，给全世界的FrogPilot用户带来了欢乐和愤怒！</translation>
+    </message>
+    <message>
+        <source>Get an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">当红灯变绿时收到提醒。</translation>
+    </message>
+    <message>
+        <source>Get an alert when the lead vehicle begins to depart from a standstill.</source>
+        <translation type="gpt-4o-generated">当前车从静止状态开始移动时收到警报。</translation>
+    </message>
+    <message>
+        <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">限速变更提醒</translation>
     </message>
     <message>
-        <source>An alert for when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">当限速变化时的提醒。</translation>
+        <source>Get an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">当限速发生变化时收到提醒。</translation>
     </message>
 </context>
 <context>
@@ -2706,10 +2706,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">刷新Panda的固件。如果您遇到Panda的问题，请使用此选项。</translation>
     </message>
     <message>
-        <source>Let &lt;b&gt;FrogsGoMoo&lt;/b&gt; know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">让&lt;b&gt;FrogsGoMoo&lt;/b&gt;知道您遇到的问题。</translation>
-    </message>
-    <message>
         <source>I saw an alert that said &lt;b&gt;openpilot crashed&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">我看到一个警报说&lt;b&gt;openpilot崩溃&lt;/b&gt;</translation>
     </message>
@@ -2734,12 +2730,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">其他内容</translation>
     </message>
     <message>
-        <source>Reset your toggles back to their default setting.</source>
-        <translation type="gpt-4o-generated">将切换按钮重置为默认设置。</translation>
+        <source>Let FrogsGoMoo know about an issue you're facing!</source>
+        <translation type="gpt-4o-generated">让 FrogsGoMoo 知道您遇到的问题！</translation>
     </message>
     <message>
-        <source>Are you sure you want to reset all of your toggles to their default setting?</source>
-        <translation type="gpt-4o-generated">您确定要将所有切换项重置为默认设置吗？</translation>
+        <source>Reset all toggles to their default values.</source>
+        <translation type="gpt-4o-generated">将所有切换项重置为默认值。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset all toggles to their default values?</source>
+        <translation type="gpt-4o-generated">您确定要将所有切换按钮重置为默认值吗？</translation>
     </message>
 </context>
 <context>
@@ -3416,10 +3416,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">活动摄像头视图显示。这只是一个视觉变化，不会影响 openpilot 的驾驶方式！</translation>
     </message>
     <message>
-        <source>Control Driving Personality via the Driving Screen</source>
-        <translation type="gpt-4o-generated">通过驾驶屏幕控制驾驶个性</translation>
-    </message>
-    <message>
         <source>Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of &lt;b&gt;Experimental Mode&lt;/b&gt;, or 2.5 seconds for &lt;b&gt;Traffic Mode&lt;/b&gt;.</source>
         <translation type="gpt-4o-generated">在屏幕上显示当前驾驶个性。点击切换个性，或长按0.5秒以更改&lt;b&gt;实验模式&lt;/b&gt;的当前状态，长按2.5秒以更改&lt;b&gt;交通模式&lt;/b&gt;。</translation>
     </message>
@@ -3462,6 +3458,10 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <message>
         <source>The thickness of the road edges on the driving screen.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default matches half of the &lt;b&gt;MUTCD&lt;/b&gt; lane line width standard of 10 centimeters.</source>
         <translation type="gpt-4o-generated">驾驶屏幕上道路边缘的厚度。&lt;br&gt;&lt;br&gt;&lt;b&gt;默认值符合&lt;b&gt;MUTCD&lt;/b&gt;车道线宽度标准的一半，即10厘米。</translation>
+    </message>
+    <message>
+        <source>Driving Personality Button</source>
+        <translation type="gpt-4o-generated">驾驶风格按钮</translation>
     </message>
 </context>
 <context>
@@ -3930,24 +3930,24 @@ This may take up to a minute.</source>
         <translation type="gpt-4o-generated">青蛙驾驶员</translation>
     </message>
     <message>
-        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">欢迎使用FrogPilot！由于您是FrogPilot的新用户，已应用“最小化”切换预设，但您可以随时通过“调节等级”按钮进行更改！</translation>
+        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">欢迎使用FrogPilot！由于您是FrogPilot的新用户，系统已为您应用“Minimal”切换预设，但您可以随时通过“调节等级”按钮进行更改！</translation>
     </message>
     <message>
-        <source>Since you're fairly new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">由于您对FrogPilot比较新，因此已应用“最小”切换预设，但您可以随时通过“调整级别”按钮进行更改！</translation>
+        <source>Since you're fairly new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">由于您对FrogPilot还比较陌生，已应用“最小”切换预设，但您可以随时通过“调校级别”按钮进行更改！</translation>
     </message>
     <message>
-        <source>Since you're experienced with openpilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">由于您对openpilot很熟悉，已应用“标准”切换预设，但您可以随时通过“调校级别”按钮进行更改！</translation>
+        <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">由于您对openpilot很有经验，“标准”切换预设已被应用，但您可以随时通过“调节等级”按钮更改此设置！</translation>
     </message>
     <message>
-        <source>Since you're experienced with FrogPilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">由于您对FrogPilot经验丰富，已应用“标准”切换预设，但您可以随时通过“调节级别”按钮更改此设置！</translation>
+        <source>Since you're experienced with FrogPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">由于您对FrogPilot很熟悉，已应用“标准”切换预设，但您可以随时通过“调节级别”按钮进行更改！</translation>
     </message>
     <message>
-        <source>Since you're very experienced with FrogPilot, the 'Advanced' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">由于您对FrogPilot非常熟悉，已应用“高级”切换预设，但您可以随时通过“调节级别”按钮更改此设置！</translation>
+        <source>Since you're very experienced with FrogPilot, the "Advanced" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">由于您对FrogPilot非常熟悉，已应用“高级”切换预设，但您可以随时通过“调优级别”按钮进行更改！</translation>
     </message>
 </context>
 <context>

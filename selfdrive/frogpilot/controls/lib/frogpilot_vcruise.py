@@ -28,6 +28,7 @@ class FrogPilotVCruise:
     self.override_force_stop_timer = 0
     self.slc_offset = 0
     self.slc_target = 0
+    self.speed_limit_timer = 0
 
   def update(self, carState, controlsState, frogpilotCarState, frogpilotNavigation, gps_position, v_cruise, v_ego, frogpilot_toggles):
     force_stop = self.frogpilot_planner.cem.stop_light_detected and controlsState.enabled and frogpilot_toggles.force_stops
@@ -55,12 +56,16 @@ class FrogPilotVCruise:
 
     # Mike's extended lead linear braking
     if self.frogpilot_planner.lead_one.vLead < v_ego > CRUISING_SPEED and controlsState.enabled and self.frogpilot_planner.tracking_lead and frogpilot_toggles.human_following:
-      if not self.frogpilot_planner.frogpilot_following.following_lead:
+      self.linear_braking_active |= self.frogpilot_planner.v_cruise - v_ego < 1
+
+      if not self.frogpilot_planner.frogpilot_following.following_lead and self.linear_braking_active:
         decel_rate = (v_ego - self.frogpilot_planner.lead_one.vLead - COMFORT_BRAKE) / self.frogpilot_planner.lead_one.dRel
         self.braking_target = v_ego - (decel_rate * DT_MDL)
       else:
         self.braking_target = v_cruise
     else:
+      self.linear_braking_active = False
+
       self.braking_target = v_cruise
 
     # Pfeiferj's Map Turn Speed Controller

@@ -36,18 +36,18 @@ FrogPilotSoundsPanel::FrogPilotSoundsPanel(FrogPilotSettingsWindow *parent) : Fr
     {"AlertVolumeControl", tr("Alert Volume Control"), tr("Adjust the volume for each alert in openpilot."), "../frogpilot/assets/toggle_icons/icon_mute.png"},
     {"DisengageVolume", tr("Disengage Volume"), tr("Adjust the volume for alerts like:<br><br><b>Adaptive Cruise Disabled</b><br><b>Brake Pedal Pressed</b><br><b>Parking Brake Engaged</b><br><b>Speed too Low</b>"), ""},
     {"EngageVolume", tr("Engage Volume"), tr("Adjust the volume for alerts like:<br><br><b>NNFF Torque Controller loaded</b><br><b>openpilot engaged</b>"), ""},
-    {"PromptVolume", tr("Prompt Volume"), tr("Adjust the volume for alerts like:<br><br><b>Car Detected in Blindspot</b><br><b>Steer Unavailable Below <i>X</i></b><br><b>Speed too Low</b><br><b>Take Control, Turn Exceeds Steering Limit</b>"), ""},
+    {"PromptVolume", tr("Prompt Volume"), tr("Adjust the volume for alerts like:<br><br><b>Car Detected in Blindspot</b><br><b>Steer Unavailable Below \"X\"</b><br><b>Speed too Low</b><br><b>Take Control, Turn Exceeds Steering Limit</b>"), ""},
     {"PromptDistractedVolume", tr("Prompt Distracted Volume"), tr("Adjust the volume for alerts like:<br><br><b>Pay Attention, Driver Distracted</b><br><b>Touch Steering Wheel, Driver Unresponsive</b>"), ""},
     {"RefuseVolume", tr("Refuse Volume"), tr("Adjust the volume for alerts like:<br><br><b>openpilot Unavailable</b>"), ""},
     {"WarningSoftVolume", tr("Warning Soft Volume"), tr("Adjust the volume for alerts like:<br><br><b>BRAKE!, Risk of Collision</b><br><b>TAKE CONTROL IMMEDIATELY</b>"), ""},
     {"WarningImmediateVolume", tr("Warning Immediate Volume"), tr("Adjust the volume for alerts like:<br><br><b>DISENGAGE IMMEDIATELY, Driver Distracted</b><br><b>DISENGAGE IMMEDIATELY, Driver Unresponsive</b>"), ""},
 
     {"CustomAlerts", tr("FrogPilot Alerts"), tr("FrogPilot alerts for various events in openpilot."), "../frogpilot/assets/toggle_icons/icon_green_light.png"},
-    {"GoatScream", tr("Goat Scream Steering Saturated Alert"), tr("The infamous <b>Goat Scream</b> that has brought both joy and anger to FrogPilot users all around the world!"), ""},
-    {"GreenLightAlert", tr("Green Light Alert"), tr("An alert for when the traffic light changes from red to green."), ""},
-    {"LeadDepartingAlert", tr("Lead Departing Alert"), tr("An alert for when the lead vehicle begins to move."), ""},
+    {"GoatScream", tr("Goat Scream Steering Saturated Alert"), tr("The infamous \"Goat Scream\" that has brought both joy and anger to FrogPilot users all around the world!"), ""},
+    {"GreenLightAlert", tr("Green Light Alert"), tr("Get an alert when the traffic light changes from red to green."), ""},
+    {"LeadDepartingAlert", tr("Lead Departing Alert"), tr("Get an alert when the lead vehicle begins to depart from a standstill."), ""},
     {"LoudBlindspotAlert", tr("Loud \"Car Detected in Blindspot\" Alert"), tr("A louder alert for when a vehicle is detected in the blindspot when attempting to change lanes."), ""},
-    {"SpeedLimitChangedAlert", tr("Speed Limit Change Alert"), tr("An alert for when the speed limit changes."), ""}
+    {"SpeedLimitChangedAlert", tr("Speed Limit Changed Alert"), tr("Get an alert when the speed limit changes."), ""}
   };
 
   for (const auto &[param, title, desc, icon] : soundsToggles) {

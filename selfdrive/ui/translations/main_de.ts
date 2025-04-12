@@ -716,10 +716,6 @@
         <translation type="gpt-4o-generated">Batterie-Abschaltschwelle</translation>
     </message>
     <message>
-        <source>How long the device stays on after you go offroad.</source>
-        <translation type="gpt-4o-generated">Wie lange das Gerät eingeschaltet bleibt, nachdem Sie offroad gegangen sind.</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
         <translation type="gpt-4o-generated">WARNUNG: Dadurch werden Ihre Fahrten nicht aufgezeichnet und alle Daten werden unzugänglich!</translation>
     </message>
@@ -748,10 +744,6 @@
         <translation type="gpt-4o-generated">Einstellungen, die das Geräteverhalten steuern.</translation>
     </message>
     <message>
-        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold, preventing excessive drain and protecting the battery.</source>
-        <translation type="gpt-4o-generated">Das Gerät automatisch ausschalten, wenn die Batteriespannung des Fahrzeugs den festgelegten Schwellenwert erreicht, um übermäßige Entladung zu verhindern und die Batterie zu schützen.</translation>
-    </message>
-    <message>
         <source>Disable Data Logging</source>
         <translation type="gpt-4o-generated">Datenprotokollierung deaktivieren</translation>
     </message>
@@ -760,20 +752,12 @@
         <translation type="gpt-4o-generated">Datenuploads deaktivieren</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt;, which may impact debugging and support!</source>
-        <translation type="gpt-4o-generated">WARNUNG: Dies wird verhindern, dass Ihre Fahrten auf &lt;b&gt;comma connect&lt;/b&gt; erscheinen, was sich auf das Debugging und den Support auswirken kann!</translation>
-    </message>
-    <message>
         <source>Prevent the device from sending any data to &lt;b&gt;comma&lt;/b&gt;'s servers.</source>
         <translation type="gpt-4o-generated">Verhindern Sie, dass das Gerät Daten an die Server von &lt;b&gt;comma&lt;/b&gt; sendet.</translation>
     </message>
     <message>
         <source>WARNING: This can damage your device by exceeding safe temperature limits!</source>
         <translation type="gpt-4o-generated">WARNUNG: Dies kann Ihr Gerät beschädigen, indem es sichere Temperaturgrenzen überschreitet!</translation>
-    </message>
-    <message>
-        <source>Allow the device to run hotter than &lt;b&gt;comma&lt;/b&gt;'s recommended limit.</source>
-        <translation type="gpt-4o-generated">Erlauben Sie dem Gerät, heißer zu laufen als das empfohlene Limit von &lt;b&gt;comma&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Settings that control screen behavior.</source>
@@ -798,6 +782,22 @@
     <message>
         <source>How long it takes for the screen to turn off while driving.</source>
         <translation type="gpt-4o-generated">Wie lange es dauert, bis der Bildschirm während der Fahrt ausgeschaltet wird.</translation>
+    </message>
+    <message>
+        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold preventing excessive battery drain to protect the battery.</source>
+        <translation type="gpt-4o-generated">Gerät automatisch ausschalten, wenn die Batteriespannung des Fahrzeugs den eingestellten Schwellenwert erreicht, um übermäßige Batterieentladung zu verhindern und die Batterie zu schützen.</translation>
+    </message>
+    <message>
+        <source>How long the device stays on for after you go offroad.</source>
+        <translation type="gpt-4o-generated">Wie lange das Gerät eingeschaltet bleibt, nachdem Sie auf „Offroad“ gewechselt haben.</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt; which may impact debugging and support!</source>
+        <translation type="gpt-4o-generated">WARNUNG: Dadurch werden Ihre Fahrten nicht auf &lt;b&gt;comma connect&lt;/b&gt; angezeigt, was die Fehlersuche und den Support beeinträchtigen kann!</translation>
+    </message>
+    <message>
+        <source>Allow the device to run hotter than comma recommended limit.</source>
+        <translation type="gpt-4o-generated">Erlauben Sie dem Gerät, heißer als das von comma empfohlene Limit zu laufen.</translation>
     </message>
 </context>
 <context>
@@ -901,14 +901,6 @@
     <message>
         <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
         <translation type="gpt-4o-generated">Erweiterte Einstellungen zur Feinabstimmung der seitlichen Steuerung von openpilot.</translation>
-    </message>
-    <message>
-        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">Erzwinge die Aktivierung von Commas automatischer seitlicher Abstimmung für nicht unterstützte Fahrzeuge.</translation>
-    </message>
-    <message>
-        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
-        <translation type="gpt-4o-generated">Erzwinge das Deaktivieren von Commas automatischer seitlicher Abstimmung für unterstützte Fahrzeuge.</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
@@ -1057,6 +1049,14 @@
     <message>
         <source> meter</source>
         <translation type="gpt-4o-generated">Meter</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">Automatische seitliche Abstimmung von comma erzwingen.</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">Automatische seitliche Abstimmung von comma erzwingen deaktivieren.</translation>
     </message>
 </context>
 <context>
@@ -2004,40 +2004,16 @@
         <translation type="gpt-4o-generated">Neue Modelle automatisch herunterladen</translation>
     </message>
     <message>
-        <source>Automatically downloads new driving models as they become available.</source>
-        <translation type="gpt-4o-generated">Lädt neue Fahrmodelle automatisch herunter, sobald sie verfügbar sind.</translation>
-    </message>
-    <message>
         <source>Delete Driving Models</source>
         <translation type="gpt-4o-generated">Fahrmodelle löschen</translation>
-    </message>
-    <message>
-        <source>Delete selected driving models from the device.</source>
-        <translation type="gpt-4o-generated">Ausgewählte Fahrmodelle vom Gerät löschen.</translation>
     </message>
     <message>
         <source>Download Driving Models</source>
         <translation type="gpt-4o-generated">Fahrmodelle herunterladen</translation>
     </message>
     <message>
-        <source>Download additional driving models to the device.</source>
-        <translation type="gpt-4o-generated">Laden Sie zusätzliche Fahrmodelle auf das Gerät herunter.</translation>
-    </message>
-    <message>
-        <source>A random driving model is chosen each drive and prompts for feedback after the drive to find the model that best suits your needs.</source>
-        <translation type="gpt-4o-generated">Ein zufälliges Fahrmodell wird bei jeder Fahrt ausgewählt und fordert nach der Fahrt Feedback an, um das Modell zu finden, das am besten zu Ihren Bedürfnissen passt.</translation>
-    </message>
-    <message>
-        <source>View or edit models excluded from selection with the &lt;b&gt;Model Randomizer&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">Modelle anzeigen oder bearbeiten, die mit dem &lt;b&gt;Modell-Randomizer&lt;/b&gt; von der Auswahl ausgeschlossen sind.</translation>
-    </message>
-    <message>
         <source>Manage Model Ratings</source>
         <translation type="gpt-4o-generated">Modellbewertungen verwalten</translation>
-    </message>
-    <message>
-        <source>Clear or view all saved ratings for driving models.</source>
-        <translation type="gpt-4o-generated">Alle gespeicherten Bewertungen für Fahrmodelle löschen oder anzeigen.</translation>
     </message>
     <message>
         <source>Select Driving Model</source>
@@ -2066,6 +2042,30 @@
     <message>
         <source>The "Model Randomizer" only works with downloaded models. Do you want to download all the driving models?</source>
         <translation type="gpt-4o-generated">Der "Model Randomizer" funktioniert nur mit heruntergeladenen Modellen. Möchten Sie alle Fahrmodelle herunterladen?</translation>
+    </message>
+    <message>
+        <source>Automatically download new driving models as they become available.</source>
+        <translation type="gpt-4o-generated">Neue Fahrmodelle automatisch herunterladen, sobald sie verfügbar sind.</translation>
+    </message>
+    <message>
+        <source>Delete driving models from the device.</source>
+        <translation type="gpt-4o-generated">Fahrmodelle vom Gerät löschen.</translation>
+    </message>
+    <message>
+        <source>Download driving models to the device.</source>
+        <translation type="gpt-4o-generated">Lade Fahrmodelle auf das Gerät herunter.</translation>
+    </message>
+    <message>
+        <source>Driving models are chosen at random each drive and feedback prompts are used to find the model that best suits your needs.</source>
+        <translation type="gpt-4o-generated">Fahrmodelle werden bei jeder Fahrt zufällig ausgewählt und Rückmeldungsaufforderungen werden verwendet, um das Modell zu finden, das am besten zu Ihren Bedürfnissen passt.</translation>
+    </message>
+    <message>
+        <source>Add or remove models from the &lt;b&gt;Model Randomizer&lt;/b&gt;'s blacklist list.</source>
+        <translation type="gpt-4o-generated">Modelle zur Blacklist-Liste des &lt;b&gt;Model Randomizer&lt;/b&gt; hinzufügen oder daraus entfernen.</translation>
+    </message>
+    <message>
+        <source>Reset or view the saved ratings for the driving models.</source>
+        <translation type="gpt-4o-generated">Zurücksetzen oder Anzeigen der gespeicherten Bewertungen für die Fahrmodelle.</translation>
     </message>
 </context>
 <context>
@@ -2280,10 +2280,6 @@ Entwickler - Schaltet hochgradig anpassbare Einstellungen für erfahrene Enthusi
         <translation type="gpt-4o-generated">Passen Sie die Lautstärke für Warnungen an, wie:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Torque Controller geladen&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot aktiviert&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below &lt;i&gt;X&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">Passen Sie die Lautstärke für Warnungen an, wie:&lt;br&gt;&lt;br&gt;&lt;b&gt;Fahrzeug im toten Winkel erkannt&lt;/b&gt;&lt;br&gt;&lt;b&gt;Lenken unter &lt;i&gt;X&lt;/i&gt; nicht verfügbar&lt;/b&gt;&lt;br&gt;&lt;b&gt;Geschwindigkeit zu niedrig&lt;/b&gt;&lt;br&gt;&lt;b&gt;Übernehmen Sie die Kontrolle, Kurve überschreitet Lenklimit&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Pay Attention, Driver Distracted&lt;/b&gt;&lt;br&gt;&lt;b&gt;Touch Steering Wheel, Driver Unresponsive&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">Passen Sie die Lautstärke für Warnungen an, wie:&lt;br&gt;&lt;br&gt;&lt;b&gt;Achtung, Fahrer abgelenkt&lt;/b&gt;&lt;br&gt;&lt;b&gt;Lenkrad berühren, Fahrer reagiert nicht&lt;/b&gt;.</translation>
     </message>
@@ -2308,18 +2304,6 @@ Entwickler - Schaltet hochgradig anpassbare Einstellungen für erfahrene Enthusi
         <translation type="gpt-4o-generated">FrogPilot warnt bei verschiedenen Ereignissen in openpilot.</translation>
     </message>
     <message>
-        <source>The infamous &lt;b&gt;Goat Scream&lt;/b&gt; that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">Der berüchtigte &lt;b&gt;Ziegenschrei&lt;/b&gt;, der FrogPilot-Nutzern auf der ganzen Welt sowohl Freude als auch Ärger gebracht hat!</translation>
-    </message>
-    <message>
-        <source>An alert for when the traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">Ein Alarm, wenn die Ampel von Rot auf Grün wechselt.</translation>
-    </message>
-    <message>
-        <source>An alert for when the lead vehicle begins to move.</source>
-        <translation type="gpt-4o-generated">Eine Warnung, wenn das vorausfahrende Fahrzeug sich zu bewegen beginnt.</translation>
-    </message>
-    <message>
         <source>Loud "Car Detected in Blindspot" Alert</source>
         <translation type="gpt-4o-generated">Lauter Alarm "Fahrzeug im toten Winkel erkannt"</translation>
     </message>
@@ -2328,12 +2312,28 @@ Entwickler - Schaltet hochgradig anpassbare Einstellungen für erfahrene Enthusi
         <translation type="gpt-4o-generated">Ein lauteres Warnsignal, wenn beim Spurwechsel ein Fahrzeug im toten Winkel erkannt wird.</translation>
     </message>
     <message>
-        <source>Speed Limit Change Alert</source>
-        <translation type="gpt-4o-generated">Geschwindigkeitsbegrenzungsänderungswarnung</translation>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below "X"&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">Passen Sie die Lautstärke für Warnungen an, wie zum Beispiel:&lt;br&gt;&lt;br&gt;&lt;b&gt;Fahrzeug im toten Winkel erkannt&lt;/b&gt;&lt;br&gt;&lt;b&gt;Lenken nicht verfügbar unter "X"&lt;/b&gt;&lt;br&gt;&lt;b&gt;Geschwindigkeit zu niedrig&lt;/b&gt;&lt;br&gt;&lt;b&gt;Übernehmen Sie die Kontrolle, Kurve überschreitet Lenkbegrenzung&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>An alert for when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">Eine Warnung, wenn sich das Tempolimit ändert.</translation>
+        <source>The infamous "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">Der berüchtigte "Ziegenschrei", der FrogPilot-Nutzern auf der ganzen Welt sowohl Freude als auch Ärger bereitet hat!</translation>
+    </message>
+    <message>
+        <source>Get an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">Erhalten Sie eine Benachrichtigung, wenn die Ampel von Rot auf Grün wechselt.</translation>
+    </message>
+    <message>
+        <source>Get an alert when the lead vehicle begins to depart from a standstill.</source>
+        <translation type="gpt-4o-generated">Erhalten Sie eine Benachrichtigung, wenn das vorausfahrende Fahrzeug aus dem Stillstand losfährt.</translation>
+    </message>
+    <message>
+        <source>Speed Limit Changed Alert</source>
+        <translation type="gpt-4o-generated">Geschwindigkeitsbegrenzung geändert Benachrichtigung</translation>
+    </message>
+    <message>
+        <source>Get an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">Erhalten Sie eine Benachrichtigung, wenn sich die Geschwindigkeitsbegrenzung ändert.</translation>
     </message>
 </context>
 <context>
@@ -2706,10 +2706,6 @@ Möchten Sie Ihre eigenen Animationen einreichen? Teilen Sie sie im "custom-them
         <translation type="gpt-4o-generated">Aktualisiere die Firmware des Pandas. Verwenden Sie dies, wenn Sie Probleme mit dem Panda haben.</translation>
     </message>
     <message>
-        <source>Let &lt;b&gt;FrogsGoMoo&lt;/b&gt; know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">Lassen Sie &lt;b&gt;FrogsGoMoo&lt;/b&gt; über ein Problem, das Sie haben, wissen.</translation>
-    </message>
-    <message>
         <source>I saw an alert that said &lt;b&gt;openpilot crashed&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">Ich sah eine Warnung, die besagte &lt;b&gt;openpilot ist abgestürzt&lt;/b&gt;.</translation>
     </message>
@@ -2734,12 +2730,16 @@ Möchten Sie Ihre eigenen Animationen einreichen? Teilen Sie sie im "custom-them
         <translation type="gpt-4o-generated">Etwas anderes</translation>
     </message>
     <message>
-        <source>Reset your toggles back to their default setting.</source>
-        <translation type="gpt-4o-generated">Setzen Sie Ihre Schalter auf die Standardeinstellungen zurück.</translation>
+        <source>Let FrogsGoMoo know about an issue you're facing!</source>
+        <translation type="gpt-4o-generated">Lass FrogsGoMoo wissen, welches Problem du hast!</translation>
     </message>
     <message>
-        <source>Are you sure you want to reset all of your toggles to their default setting?</source>
-        <translation type="gpt-4o-generated">Möchten Sie wirklich alle Ihre Schalter auf ihre Standardeinstellungen zurücksetzen?</translation>
+        <source>Reset all toggles to their default values.</source>
+        <translation type="gpt-4o-generated">Alle Schalter auf ihre Standardwerte zurücksetzen.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset all toggles to their default values?</source>
+        <translation type="gpt-4o-generated">Möchten Sie wirklich alle Umschalter auf ihre Standardwerte zurücksetzen?</translation>
     </message>
 </context>
 <context>
@@ -3416,10 +3416,6 @@ Möchten Sie Ihre eigenen Animationen einreichen? Teilen Sie sie im "custom-them
         <translation type="gpt-4o-generated">Die Anzeige der aktiven Kamerasicht. Dies ist lediglich eine visuelle Änderung und hat keinen Einfluss darauf, wie openpilot fährt!</translation>
     </message>
     <message>
-        <source>Control Driving Personality via the Driving Screen</source>
-        <translation type="gpt-4o-generated">Fahrverhalten über den Fahrbildschirm steuern</translation>
-    </message>
-    <message>
         <source>Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of &lt;b&gt;Experimental Mode&lt;/b&gt;, or 2.5 seconds for &lt;b&gt;Traffic Mode&lt;/b&gt;.</source>
         <translation type="gpt-4o-generated">Zeige die aktuelle Fahrpersönlichkeit auf dem Bildschirm an. Tippen, um die Persönlichkeiten zu wechseln, oder lang gedrückt halten für 0,5 Sekunden, um den aktuellen Zustand des &lt;b&gt;Experimentellen Modus&lt;/b&gt; zu ändern, oder 2,5 Sekunden für den &lt;b&gt;Verkehrsmodus&lt;/b&gt;.</translation>
     </message>
@@ -3462,6 +3458,10 @@ Möchten Sie Ihre eigenen Animationen einreichen? Teilen Sie sie im "custom-them
     <message>
         <source>The thickness of the road edges on the driving screen.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default matches half of the &lt;b&gt;MUTCD&lt;/b&gt; lane line width standard of 10 centimeters.</source>
         <translation type="gpt-4o-generated">Die Dicke der Straßenränder auf dem Fahrbildschirm.&lt;br&gt;&lt;br&gt;&lt;b&gt;Standard entspricht der Hälfte der &lt;b&gt;MUTCD&lt;/b&gt;-Fahrbahnlinienbreiten-Norm von 10 Zentimetern.</translation>
+    </message>
+    <message>
+        <source>Driving Personality Button</source>
+        <translation type="gpt-4o-generated">Fahrpersönlichkeitsschalter</translation>
     </message>
 </context>
 <context>
@@ -3934,24 +3934,24 @@ Dies kann bis zu einer Minute dauern.</translation>
         <translation type="gpt-4o-generated">FrogPilot</translation>
     </message>
     <message>
-        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">Willkommen bei FrogPilot! Da Sie neu bei FrogPilot sind, wurde die 'Minimal'-Voreinstellung angewendet, aber Sie können dies jederzeit über die Schaltfläche 'Tuning Level' ändern!</translation>
+        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">Willkommen bei FrogPilot! Da Sie neu bei FrogPilot sind, wurde die Voreinstellung "Minimal" angewendet, aber Sie können dies jederzeit über die Schaltfläche 'Tuning Level' ändern!</translation>
     </message>
     <message>
-        <source>Since you're fairly new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">Da Sie noch relativ neu bei FrogPilot sind, wurde die Voreinstellung 'Minimal' aktiviert, aber Sie können dies jederzeit über die Schaltfläche 'Tuning Level' ändern!</translation>
+        <source>Since you're fairly new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">Da Sie noch relativ neu bei FrogPilot sind, wurde das "Minimal"-Voreinstellung verwendet, aber Sie können dies jederzeit über die Schaltfläche "Tuning Level" ändern!</translation>
     </message>
     <message>
-        <source>Since you're experienced with openpilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">Da Sie mit openpilot vertraut sind, wurde die Einstellung 'Standard' aktiviert, aber Sie können dies jederzeit über die Schaltfläche 'Tuning Level' ändern!</translation>
+        <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">Da Sie mit openpilot vertraut sind, wurde die Voreinstellung "Standard" aktiviert, aber Sie können dies jederzeit über die Schaltfläche 'Tuning Level' ändern!</translation>
     </message>
     <message>
-        <source>Since you're experienced with FrogPilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">Da Sie mit FrogPilot vertraut sind, wurde die Voreinstellung "Standard" aktiviert, aber Sie können diese jederzeit über die Schaltfläche "Tuning Level" ändern!</translation>
+        <source>Since you're experienced with FrogPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">Da Sie mit FrogPilot erfahren sind, wurde das "Standard" Umschaltprofil angewendet, aber Sie können dies jederzeit über die Schaltfläche 'Tuning Level' ändern!</translation>
     </message>
     <message>
-        <source>Since you're very experienced with FrogPilot, the 'Advanced' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">Da Sie sehr erfahren mit FrogPilot sind, wurde die Voreinstellung 'Erweitert' angewendet, aber Sie können dies jederzeit über den 'Tuning Level'-Button ändern!</translation>
+        <source>Since you're very experienced with FrogPilot, the "Advanced" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">Da Sie sehr erfahren mit FrogPilot sind, wurde die Voreinstellung „Erweitert“ aktiviert, aber Sie können dies jederzeit über die Schaltfläche „Tuning Level“ ändern!</translation>
     </message>
 </context>
 <context>

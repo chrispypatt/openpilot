@@ -716,10 +716,6 @@
         <translation type="gpt-4o-generated">バッテリーシャットダウン閾値</translation>
     </message>
     <message>
-        <source>How long the device stays on after you go offroad.</source>
-        <translation type="gpt-4o-generated">車両をオフロードにした後、デバイスがオンのままでいる時間。</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
         <translation type="gpt-4o-generated">警告: これにより、運転の記録がされなくなり、すべてのデータが取得不能になります！</translation>
     </message>
@@ -748,10 +744,6 @@
         <translation type="gpt-4o-generated">デバイスの動作を制御する設定。</translation>
     </message>
     <message>
-        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold, preventing excessive drain and protecting the battery.</source>
-        <translation type="gpt-4o-generated">車両のバッテリー電圧が設定されたしきい値に達したときにデバイスを自動的にシャットダウンし、過度の消耗を防ぎ、バッテリーを保護します。</translation>
-    </message>
-    <message>
         <source>Disable Data Logging</source>
         <translation type="gpt-4o-generated">データ記録を無効にする</translation>
     </message>
@@ -760,20 +752,12 @@
         <translation type="gpt-4o-generated">データアップロードを無効にする</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt;, which may impact debugging and support!</source>
-        <translation type="gpt-4o-generated">警告: これにより、&lt;b&gt;comma connect&lt;/b&gt; にドライブが表示されなくなり、デバッグやサポートに影響を与える可能性があります!</translation>
-    </message>
-    <message>
         <source>Prevent the device from sending any data to &lt;b&gt;comma&lt;/b&gt;'s servers.</source>
         <translation type="gpt-4o-generated">デバイスが &lt;b&gt;comma&lt;/b&gt; のサーバーにデータを送信するのを防ぎます。</translation>
     </message>
     <message>
         <source>WARNING: This can damage your device by exceeding safe temperature limits!</source>
         <translation type="gpt-4o-generated">警告: これにより、安全な温度限界を超えてデバイスが損傷する可能性があります！</translation>
-    </message>
-    <message>
-        <source>Allow the device to run hotter than &lt;b&gt;comma&lt;/b&gt;'s recommended limit.</source>
-        <translation type="gpt-4o-generated">デバイスを&lt;b&gt;comma&lt;/b&gt;の推奨制限よりも高温で動作させることを許可します。</translation>
     </message>
     <message>
         <source>Settings that control screen behavior.</source>
@@ -798,6 +782,22 @@
     <message>
         <source>How long it takes for the screen to turn off while driving.</source>
         <translation type="gpt-4o-generated">運転中に画面がオフになるまでの時間。</translation>
+    </message>
+    <message>
+        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold preventing excessive battery drain to protect the battery.</source>
+        <translation type="gpt-4o-generated">車両のバッテリー電圧が設定したしきい値に達したときに、自動的にデバイスをシャットダウンして過度なバッテリー消耗を防ぎ、バッテリーを保護します。</translation>
+    </message>
+    <message>
+        <source>How long the device stays on for after you go offroad.</source>
+        <translation type="gpt-4o-generated">オフロード後にデバイスがオンのままになる時間。</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt; which may impact debugging and support!</source>
+        <translation type="gpt-4o-generated">警告: これにより、ドライブが&lt;b&gt;comma connect&lt;/b&gt;に表示されなくなり、デバッグやサポートに影響を与える可能性があります！</translation>
+    </message>
+    <message>
+        <source>Allow the device to run hotter than comma recommended limit.</source>
+        <translation type="gpt-4o-generated">デバイスを推奨限界より高温で動作させることを許可します。</translation>
     </message>
 </context>
 <context>
@@ -901,14 +901,6 @@
     <message>
         <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
         <translation type="gpt-4o-generated">openpilotの横制御を微調整するための高度な設定。</translation>
-    </message>
-    <message>
-        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">サポートされていない車両に対してcommaの自動横方向調整を強制的に有効化します。</translation>
-    </message>
-    <message>
-        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
-        <translation type="gpt-4o-generated">サポートされている車両に対して、commaの自動横方向チューニングを強制的に無効化します。</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
@@ -1057,6 +1049,14 @@
     <message>
         <source> meter</source>
         <translation type="gpt-4o-generated">メートル</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">コンマの自動横調整を強制的に有効にする。</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">コンマの自動横調整を強制的に無効にする。</translation>
     </message>
 </context>
 <context>
@@ -2004,40 +2004,16 @@
         <translation type="gpt-4o-generated">新しいモデルを自動的にダウンロード</translation>
     </message>
     <message>
-        <source>Automatically downloads new driving models as they become available.</source>
-        <translation type="gpt-4o-generated">新しいドライビングモデルが利用可能になると、自動的にダウンロードします。</translation>
-    </message>
-    <message>
         <source>Delete Driving Models</source>
         <translation type="gpt-4o-generated">運転モデルを削除</translation>
-    </message>
-    <message>
-        <source>Delete selected driving models from the device.</source>
-        <translation type="gpt-4o-generated">デバイスから選択した運転モデルを削除します。</translation>
     </message>
     <message>
         <source>Download Driving Models</source>
         <translation type="gpt-4o-generated">運転モデルをダウンロード</translation>
     </message>
     <message>
-        <source>Download additional driving models to the device.</source>
-        <translation type="gpt-4o-generated">デバイスに追加の運転モデルをダウンロードしてください。</translation>
-    </message>
-    <message>
-        <source>A random driving model is chosen each drive and prompts for feedback after the drive to find the model that best suits your needs.</source>
-        <translation type="gpt-4o-generated">各ドライブでランダムに運転モデルが選択され、ドライブ後にフィードバックが求められ、あなたのニーズに最も適したモデルを見つけます。</translation>
-    </message>
-    <message>
-        <source>View or edit models excluded from selection with the &lt;b&gt;Model Randomizer&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">&lt;b&gt;モデルランダマイザー&lt;/b&gt;を使用して、選択から除外されたモデルを表示または編集します。</translation>
-    </message>
-    <message>
         <source>Manage Model Ratings</source>
         <translation type="gpt-4o-generated">モデル評価を管理する</translation>
-    </message>
-    <message>
-        <source>Clear or view all saved ratings for driving models.</source>
-        <translation type="gpt-4o-generated">運転モデルの保存された評価をすべてクリアまたは表示する。</translation>
     </message>
     <message>
         <source>Select Driving Model</source>
@@ -2066,6 +2042,30 @@
     <message>
         <source>The "Model Randomizer" only works with downloaded models. Do you want to download all the driving models?</source>
         <translation type="gpt-4o-generated">「モデルランダマイザー」はダウンロードされたモデルでのみ動作します。すべての運転モデルをダウンロードしますか？</translation>
+    </message>
+    <message>
+        <source>Automatically download new driving models as they become available.</source>
+        <translation type="gpt-4o-generated">新しい運転モデルが利用可能になったら自動的にダウンロードします。</translation>
+    </message>
+    <message>
+        <source>Delete driving models from the device.</source>
+        <translation type="gpt-4o-generated">デバイスから運転モデルを削除します。</translation>
+    </message>
+    <message>
+        <source>Download driving models to the device.</source>
+        <translation type="gpt-4o-generated">運転モデルをデバイスにダウンロードします。</translation>
+    </message>
+    <message>
+        <source>Driving models are chosen at random each drive and feedback prompts are used to find the model that best suits your needs.</source>
+        <translation type="gpt-4o-generated">運転モデルは各ドライブでランダムに選ばれ、フィードバックプロンプトを使用してあなたのニーズに最も適したモデルを見つけます。</translation>
+    </message>
+    <message>
+        <source>Add or remove models from the &lt;b&gt;Model Randomizer&lt;/b&gt;'s blacklist list.</source>
+        <translation type="gpt-4o-generated">&lt;b&gt;モデルランダマイザー&lt;/b&gt;のブラックリストからモデルを追加または削除します。</translation>
+    </message>
+    <message>
+        <source>Reset or view the saved ratings for the driving models.</source>
+        <translation type="gpt-4o-generated">運転モデルの保存された評価をリセットまたは表示します。</translation>
     </message>
 </context>
 <context>
@@ -2280,10 +2280,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">アラートの音量を調整します。例:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFFトルクコントローラーがロードされました&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilotが作動しました&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below &lt;i&gt;X&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">警告音量を調整します:&lt;br&gt;&lt;br&gt;&lt;b&gt;ブラインドスポットに車を検知&lt;/b&gt;&lt;br&gt;&lt;b&gt;ステアリング不可 &lt;i&gt;X&lt;/i&gt;以下&lt;/b&gt;&lt;br&gt;&lt;b&gt;速度が低すぎます&lt;/b&gt;&lt;br&gt;&lt;b&gt;コントロールを取ってください、ターンがステアリングの限界を超えています&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Pay Attention, Driver Distracted&lt;/b&gt;&lt;br&gt;&lt;b&gt;Touch Steering Wheel, Driver Unresponsive&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">アラートの音量を調整します:&lt;br&gt;&lt;br&gt;&lt;b&gt;注意してください、運転手が気を散らしています&lt;/b&gt;&lt;br&gt;&lt;b&gt;ハンドルに触れてください、運転手が反応していません&lt;/b&gt;</translation>
     </message>
@@ -2308,18 +2304,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">FrogPilotは、openpilot内のさまざまなイベントについてアラートを発します。</translation>
     </message>
     <message>
-        <source>The infamous &lt;b&gt;Goat Scream&lt;/b&gt; that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">世界中のFrogPilotユーザーに喜びと怒りをもたらした悪名高い&lt;b&gt;ヤギの叫び&lt;/b&gt;！</translation>
-    </message>
-    <message>
-        <source>An alert for when the traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">信号が赤から緑に変わるときのアラート。</translation>
-    </message>
-    <message>
-        <source>An alert for when the lead vehicle begins to move.</source>
-        <translation type="gpt-4o-generated">先行車両が動き出したときのアラート。</translation>
-    </message>
-    <message>
         <source>Loud "Car Detected in Blindspot" Alert</source>
         <translation type="gpt-4o-generated">大きな「死角に車両検出」アラート</translation>
     </message>
@@ -2328,12 +2312,28 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">レーン変更を試みる際に、ブラインドスポットに車両が検出された場合の警告音をより大きくします。</translation>
     </message>
     <message>
-        <source>Speed Limit Change Alert</source>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below "X"&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">次のアラートの音量を調整します：&lt;br&gt;&lt;br&gt;&lt;b&gt;ブラインドスポットで車を検出&lt;/b&gt;&lt;br&gt;&lt;b&gt;"X"以下ではステアリング不可&lt;/b&gt;&lt;br&gt;&lt;b&gt;速度が低すぎます&lt;/b&gt;&lt;br&gt;&lt;b&gt;制御を取ってください、ターンがステアリング制限を超えています&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>The infamous "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">世界中のFrogPilotユーザーに喜びと怒りをもたらした悪名高い「ヤギの叫び」！</translation>
+    </message>
+    <message>
+        <source>Get an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">信号が赤から緑に変わるときにアラートを受け取る。</translation>
+    </message>
+    <message>
+        <source>Get an alert when the lead vehicle begins to depart from a standstill.</source>
+        <translation type="gpt-4o-generated">先行車が停止状態から発進を開始したときにアラートを受け取ります。</translation>
+    </message>
+    <message>
+        <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">速度制限変更アラート</translation>
     </message>
     <message>
-        <source>An alert for when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">速度制限が変更されたときのアラート。</translation>
+        <source>Get an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">制限速度が変更されたときにアラートを受け取る。</translation>
     </message>
 </context>
 <context>
@@ -2706,10 +2706,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">Pandaのファームウェアをフラッシュします。Pandaに問題がある場合に使用してください。</translation>
     </message>
     <message>
-        <source>Let &lt;b&gt;FrogsGoMoo&lt;/b&gt; know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">&lt;b&gt;FrogsGoMoo&lt;/b&gt;にあなたが直面している問題を知らせてください。</translation>
-    </message>
-    <message>
         <source>I saw an alert that said &lt;b&gt;openpilot crashed&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">&lt;b&gt;openpilot がクラッシュしました&lt;/b&gt; という警告を見ました</translation>
     </message>
@@ -2734,12 +2730,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">その他</translation>
     </message>
     <message>
-        <source>Reset your toggles back to their default setting.</source>
-        <translation type="gpt-4o-generated">トグルをデフォルト設定にリセットしてください。</translation>
+        <source>Let FrogsGoMoo know about an issue you're facing!</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo に問題をお知らせください！</translation>
     </message>
     <message>
-        <source>Are you sure you want to reset all of your toggles to their default setting?</source>
-        <translation type="gpt-4o-generated">すべてのトグルをデフォルト設定にリセットしてもよろしいですか？</translation>
+        <source>Reset all toggles to their default values.</source>
+        <translation type="gpt-4o-generated">すべてのトグルをデフォルト値にリセットします。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset all toggles to their default values?</source>
+        <translation type="gpt-4o-generated">すべてのトグルをデフォルト値にリセットしてもよろしいですか?</translation>
     </message>
 </context>
 <context>
@@ -3416,10 +3416,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">アクティブカメラビュー表示。これは純粋に視覚的な変更であり、openpilotの運転には影響しません！</translation>
     </message>
     <message>
-        <source>Control Driving Personality via the Driving Screen</source>
-        <translation type="gpt-4o-generated">ドライビングスクリーンで運転特性を制御</translation>
-    </message>
-    <message>
         <source>Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of &lt;b&gt;Experimental Mode&lt;/b&gt;, or 2.5 seconds for &lt;b&gt;Traffic Mode&lt;/b&gt;.</source>
         <translation type="gpt-4o-generated">現在の運転スタイルを画面に表示します。タップしてスタイルを切り替えるか、0.5秒間長押しして&lt;b&gt;実験モード&lt;/b&gt;の現在の状態を変更するか、2.5秒間長押しして&lt;b&gt;トラフィックモード&lt;/b&gt;を変更します。</translation>
     </message>
@@ -3462,6 +3458,10 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <message>
         <source>The thickness of the road edges on the driving screen.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default matches half of the &lt;b&gt;MUTCD&lt;/b&gt; lane line width standard of 10 centimeters.</source>
         <translation type="gpt-4o-generated">運転画面上の道路端の太さ。&lt;br&gt;&lt;br&gt;&lt;b&gt;デフォルトは、&lt;b&gt;MUTCD&lt;/b&gt;の車線線幅基準である10センチメートルの半分に一致します。</translation>
+    </message>
+    <message>
+        <source>Driving Personality Button</source>
+        <translation type="gpt-4o-generated">運転性格ボタン</translation>
     </message>
 </context>
 <context>
@@ -3930,24 +3930,24 @@ This may take up to a minute.</source>
         <translation type="gpt-4o-generated">FrogPilot</translation>
     </message>
     <message>
-        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilotへようこそ！FrogPilotを初めてご利用の場合、「最小限」トグルプリセットが適用されていますが、「チューニングレベル」ボタンからいつでも変更できます！</translation>
+        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilotへようこそ！FrogPilotを初めてご利用いただくため、「Minimal」トグルプリセットが適用されていますが、「Tuning Level」ボタンからいつでも変更できます！</translation>
     </message>
     <message>
-        <source>Since you're fairly new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilotを初めて使用するため、「Minimal」トグルプリセットが適用されましたが、「Tuning Level」ボタンからいつでも変更できます！</translation>
+        <source>Since you're fairly new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilotを使い始めたばかりのため、「最小」トグルプリセットが適用されていますが、いつでも「調整レベル」ボタンで変更できます！</translation>
     </message>
     <message>
-        <source>Since you're experienced with openpilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">openpilot に詳しいので、「標準」トグルプリセットが適用されていますが、「調整レベル」ボタンでいつでも変更できます！</translation>
+        <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">オープンパイロットに詳しいため、「標準」トグルプリセットが適用されていますが、「チューニングレベル」ボタンでいつでも変更できます！</translation>
     </message>
     <message>
-        <source>Since you're experienced with FrogPilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilotに精通しているため、「Standard」トグルプリセットが適用されていますが、「Tuning Level」ボタンからいつでも変更できます！</translation>
+        <source>Since you're experienced with FrogPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilotに慣れているため、「標準」トグルプリセットが適用されていますが、「チューニングレベル」ボタンを使用していつでも変更できます！</translation>
     </message>
     <message>
-        <source>Since you're very experienced with FrogPilot, the 'Advanced' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilotに非常に詳しいため、「上級」トグルプリセットが適用されていますが、「チューニングレベル」ボタンからいつでも変更できます！</translation>
+        <source>Since you're very experienced with FrogPilot, the "Advanced" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilotに非常に詳しいため、「高度な」トグルプリセットが適用されていますが、「チューニングレベル」ボタンでいつでもこれを変更できます。</translation>
     </message>
 </context>
 <context>

@@ -31,14 +31,14 @@ private:
 
   std::map<QString, AbstractControl*> toggles;
 
-  std::set<QString> accessibilityKeys = {"CameraView", "DriverCamera", "OnroadDistanceButton", "StandbyMode", "StoppedTimer"};
   std::set<QString> advancedCustomOnroadUIKeys = {"HideAlerts", "HideLeadMarker", "HideMapIcon", "HideMaxSpeed", "HideSpeed", "HideSpeedLimit", "WheelSpeed"};
-  std::set<QString> customOnroadUIKeys = {"AccelerationPath", "AdjacentPath", "BlindSpotPath", "Compass", "PedalsOnUI", "RotatingWheel"};
+  std::set<QString> customOnroadUIKeys = {"AccelerationPath", "AdjacentPath", "BlindSpotPath", "Compass", "OnroadDistanceButton", "PedalsOnUI", "RotatingWheel"};
   std::set<QString> developerMetricKeys = {"BorderMetrics", "FPSCounter", "LateralMetrics", "LongitudinalMetrics", "NumericalTemp", "SidebarMetrics", "UseSI"};
   std::set<QString> developerUIKeys = {"DeveloperMetrics", "DeveloperWidgets"};
   std::set<QString> developerWidgetKeys = {"AdjacentLeadsUI", "RadarTracksUI", "ShowStoppingPoint"};
   std::set<QString> modelUIKeys = {"DynamicPathWidth", "LaneLinesWidth", "PathEdgeWidth", "PathWidth", "RoadEdgesWidth", "UnlimitedLength"};
   std::set<QString> navigationUIKeys = {"BigMap", "MapStyle", "RoadNameUI", "ShowSpeedLimits", "UseVienna"};
+  std::set<QString> qualityOfLifeKeys = {"CameraView", "DriverCamera", "StandbyMode", "StoppedTimer"};
 
   std::set<QString> parentKeys;
 

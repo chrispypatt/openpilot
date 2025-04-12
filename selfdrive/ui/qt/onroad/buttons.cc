@@ -109,7 +109,7 @@ void ExperimentalButton::updateBackgroundColor() {
 
   if (always_on_lateral_enabled) {
     background_color = status_color_map["always_on_lateral_enabled"];
-  } else if (conditional_status == 1 || conditional_status == 3 || conditional_status == 5) {
+  } else if (conditional_status == 1) {
     background_color = status_color_map["conditional_overridden"];
   } else if (experimental_mode) {
     background_color = status_color_map["experimental_mode_active"];

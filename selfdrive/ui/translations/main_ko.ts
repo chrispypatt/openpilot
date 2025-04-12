@@ -716,10 +716,6 @@
         <translation type="gpt-4o-generated">배터리 셧다운 임계값</translation>
     </message>
     <message>
-        <source>How long the device stays on after you go offroad.</source>
-        <translation type="gpt-4o-generated">오프로드 후 디바이스가 켜진 상태를 유지하는 시간.</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
         <translation type="gpt-4o-generated">경고: 이 설정은 주행 기록을 방지하며 모든 데이터가 검색 불가능하게 됩니다!</translation>
     </message>
@@ -748,10 +744,6 @@
         <translation type="gpt-4o-generated">장치 동작을 제어하는 설정.</translation>
     </message>
     <message>
-        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold, preventing excessive drain and protecting the battery.</source>
-        <translation type="gpt-4o-generated">차량의 배터리 전압이 설정된 임계값에 도달하면 자동으로 장치를 종료하여 과도한 배터리 소모를 방지하고 배터리를 보호합니다.</translation>
-    </message>
-    <message>
         <source>Disable Data Logging</source>
         <translation type="gpt-4o-generated">데이터 로깅 비활성화</translation>
     </message>
@@ -760,20 +752,12 @@
         <translation type="gpt-4o-generated">데이터 업로드 비활성화</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt;, which may impact debugging and support!</source>
-        <translation type="gpt-4o-generated">경고: 이렇게 하면 운전 기록이 &lt;b&gt;comma connect&lt;/b&gt;에 나타나지 않으므로 디버깅 및 지원에 영향을 미칠 수 있습니다!</translation>
-    </message>
-    <message>
         <source>Prevent the device from sending any data to &lt;b&gt;comma&lt;/b&gt;'s servers.</source>
         <translation type="gpt-4o-generated">기기가 &lt;b&gt;comma&lt;/b&gt; 서버로 데이터를 전송하지 않도록 방지합니다.</translation>
     </message>
     <message>
         <source>WARNING: This can damage your device by exceeding safe temperature limits!</source>
         <translation type="gpt-4o-generated">경고: 안전한 온도 한계를 초과하여 기기에 손상을 줄 수 있습니다!</translation>
-    </message>
-    <message>
-        <source>Allow the device to run hotter than &lt;b&gt;comma&lt;/b&gt;'s recommended limit.</source>
-        <translation type="gpt-4o-generated">기기가 &lt;b&gt;comma&lt;/b&gt;의 권장 한계 이상으로 뜨거워지도록 허용합니다.</translation>
     </message>
     <message>
         <source>Settings that control screen behavior.</source>
@@ -798,6 +782,22 @@
     <message>
         <source>How long it takes for the screen to turn off while driving.</source>
         <translation type="gpt-4o-generated">주행 중 화면이 꺼지기까지 걸리는 시간.</translation>
+    </message>
+    <message>
+        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold preventing excessive battery drain to protect the battery.</source>
+        <translation type="gpt-4o-generated">차량 배터리 전압이 설정된 임계값에 도달하면 장치를 자동으로 종료하여 과도한 배터리 소모를 방지하고 배터리를 보호합니다.</translation>
+    </message>
+    <message>
+        <source>How long the device stays on for after you go offroad.</source>
+        <translation type="gpt-4o-generated">장치가 오프로드 후 켜진 상태로 유지되는 시간.</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt; which may impact debugging and support!</source>
+        <translation type="gpt-4o-generated">경고: 이렇게 하면 &lt;b&gt;comma connect&lt;/b&gt;에 주행 기록이 나타나지 않으며, 디버깅 및 지원에 영향을 줄 수 있습니다!</translation>
+    </message>
+    <message>
+        <source>Allow the device to run hotter than comma recommended limit.</source>
+        <translation type="gpt-4o-generated">장치가 권장 제한보다 더 뜨겁게 작동하도록 허용합니다.</translation>
     </message>
 </context>
 <context>
@@ -901,14 +901,6 @@
     <message>
         <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
         <translation type="gpt-4o-generated">openpilot의 횡방향 제어를 세밀하게 조정하기 위한 고급 설정.</translation>
-    </message>
-    <message>
-        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">지원되지 않는 차량에 대해 comma의 자동 횡방향 튜닝을 강제 활성화합니다.</translation>
-    </message>
-    <message>
-        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
-        <translation type="gpt-4o-generated">지원되는 차량에 대해 comma의 자동 횡방향 조정을 강제로 비활성화합니다.</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
@@ -1057,6 +1049,14 @@
     <message>
         <source> meter</source>
         <translation type="gpt-4o-generated">미터</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">comma의 자동 측면 튜닝 강제 활성화.</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">콤마의 자동 측면 조정을 강제로 비활성화.</translation>
     </message>
 </context>
 <context>
@@ -2004,40 +2004,16 @@
         <translation type="gpt-4o-generated">새 모델 자동 다운로드</translation>
     </message>
     <message>
-        <source>Automatically downloads new driving models as they become available.</source>
-        <translation type="gpt-4o-generated">새로운 운전 모델이 사용 가능해지면 자동으로 다운로드합니다.</translation>
-    </message>
-    <message>
         <source>Delete Driving Models</source>
         <translation type="gpt-4o-generated">주행 모델 삭제</translation>
-    </message>
-    <message>
-        <source>Delete selected driving models from the device.</source>
-        <translation type="gpt-4o-generated">장치에서 선택한 주행 모델 삭제.</translation>
     </message>
     <message>
         <source>Download Driving Models</source>
         <translation type="gpt-4o-generated">운전 모델 다운로드</translation>
     </message>
     <message>
-        <source>Download additional driving models to the device.</source>
-        <translation type="gpt-4o-generated">추가 운전 모델을 기기에 다운로드하세요.</translation>
-    </message>
-    <message>
-        <source>A random driving model is chosen each drive and prompts for feedback after the drive to find the model that best suits your needs.</source>
-        <translation type="gpt-4o-generated">매번 운전 시 무작위 운전 모델이 선택되며, 귀하의 필요에 가장 잘 맞는 모델을 찾기 위해 운전 후 피드백을 요청합니다.</translation>
-    </message>
-    <message>
-        <source>View or edit models excluded from selection with the &lt;b&gt;Model Randomizer&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">&lt;b&gt;모델 랜덤 선택기&lt;/b&gt;를 사용하여 선택에서 제외된 모델을 보거나 편집하십시오.</translation>
-    </message>
-    <message>
         <source>Manage Model Ratings</source>
         <translation type="gpt-4o-generated">모델 등급 관리</translation>
-    </message>
-    <message>
-        <source>Clear or view all saved ratings for driving models.</source>
-        <translation type="gpt-4o-generated">운전 모델에 대한 모든 저장된 평가를 지우거나 보기.</translation>
     </message>
     <message>
         <source>Select Driving Model</source>
@@ -2066,6 +2042,30 @@
     <message>
         <source>The "Model Randomizer" only works with downloaded models. Do you want to download all the driving models?</source>
         <translation type="gpt-4o-generated">"모델 랜덤화"는 다운로드된 모델에서만 작동합니다. 모든 주행 모델을 다운로드하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Automatically download new driving models as they become available.</source>
+        <translation type="gpt-4o-generated">새로운 주행 모델이 사용 가능해지면 자동으로 다운로드합니다.</translation>
+    </message>
+    <message>
+        <source>Delete driving models from the device.</source>
+        <translation type="gpt-4o-generated">기기에서 주행 모델 삭제.</translation>
+    </message>
+    <message>
+        <source>Download driving models to the device.</source>
+        <translation type="gpt-4o-generated">운전 모델을 장치에 다운로드하십시오.</translation>
+    </message>
+    <message>
+        <source>Driving models are chosen at random each drive and feedback prompts are used to find the model that best suits your needs.</source>
+        <translation type="gpt-4o-generated">주행 모델은 각 주행 시 무작위로 선택되며, 피드백 프롬프트를 사용하여 귀하의 필요에 가장 적합한 모델을 찾습니다.</translation>
+    </message>
+    <message>
+        <source>Add or remove models from the &lt;b&gt;Model Randomizer&lt;/b&gt;'s blacklist list.</source>
+        <translation type="gpt-4o-generated">&lt;b&gt;모델 랜덤라이저&lt;/b&gt;의 블랙리스트에서 모델을 추가하거나 제거합니다.</translation>
+    </message>
+    <message>
+        <source>Reset or view the saved ratings for the driving models.</source>
+        <translation type="gpt-4o-generated">운전 모델에 대한 저장된 평가를 초기화하거나 확인하십시오.</translation>
     </message>
 </context>
 <context>
@@ -2280,10 +2280,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">경고의 볼륨을 다음과 같이 조정합니다:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF 토크 컨트롤러 로드됨&lt;/b&gt;&lt;br&gt;&lt;b&gt;오픈파일럿 작동 중&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below &lt;i&gt;X&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">경고 볼륨 조정:&lt;br&gt;&lt;br&gt;&lt;b&gt;사각지대에 차량 감지됨&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;X&lt;/i&gt; 이하에서는 조향 불가&lt;/b&gt;&lt;br&gt;&lt;b&gt;속도가 너무 낮음&lt;/b&gt;&lt;br&gt;&lt;b&gt;조향 한계를 초과하였습니다, 차량을 제어하십시오&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Pay Attention, Driver Distracted&lt;/b&gt;&lt;br&gt;&lt;b&gt;Touch Steering Wheel, Driver Unresponsive&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">다음과 같은 경고의 볼륨을 조절합니다:&lt;br&gt;&lt;br&gt;&lt;b&gt;주의 집중, 운전자 주의 산만&lt;/b&gt;&lt;br&gt;&lt;b&gt;운전대 터치, 운전자 반응 없음&lt;/b&gt;</translation>
     </message>
@@ -2308,18 +2304,6 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">FrogPilot은 openpilot의 다양한 이벤트에 대한 경고를 제공합니다.</translation>
     </message>
     <message>
-        <source>The infamous &lt;b&gt;Goat Scream&lt;/b&gt; that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">전 세계 FrogPilot 사용자들에게 기쁨과 분노를 동시에 안겨준 악명 높은 &lt;b&gt;염소 비명&lt;/b&gt;!</translation>
-    </message>
-    <message>
-        <source>An alert for when the traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">교통 신호등이 빨간색에서 초록색으로 바뀔 때의 알림.</translation>
-    </message>
-    <message>
-        <source>An alert for when the lead vehicle begins to move.</source>
-        <translation type="gpt-4o-generated">앞차가 움직이기 시작할 때의 알림.</translation>
-    </message>
-    <message>
         <source>Loud "Car Detected in Blindspot" Alert</source>
         <translation type="gpt-4o-generated">큰 "사각지대에 차량 감지됨" 경고</translation>
     </message>
@@ -2328,12 +2312,28 @@ Developer - Unlocks highly customizable settings for seasoned enthusiasts</sourc
         <translation type="gpt-4o-generated">차선을 변경하려고 할 때 사각지대에 차량이 감지되면 더 큰 경고음이 울립니다.</translation>
     </message>
     <message>
-        <source>Speed Limit Change Alert</source>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below "X"&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">다음과 같은 경고의 볼륨을 조정합니다:&lt;br&gt;&lt;br&gt;&lt;b&gt;사각지대에 차량 감지&lt;/b&gt;&lt;br&gt;&lt;b&gt;"X" 이하에서는 조향 불가&lt;/b&gt;&lt;br&gt;&lt;b&gt;속도가 너무 낮음&lt;/b&gt;&lt;br&gt;&lt;b&gt;제어를 잡으세요, 회전이 조향 한계를 초과했습니다&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>The infamous "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">전 세계 FrogPilot 사용자들에게 기쁨과 분노를 가져다 준 악명 높은 "염소의 비명"!</translation>
+    </message>
+    <message>
+        <source>Get an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">교통 신호등이 빨간색에서 녹색으로 변경될 때 경고를 받습니다.</translation>
+    </message>
+    <message>
+        <source>Get an alert when the lead vehicle begins to depart from a standstill.</source>
+        <translation type="gpt-4o-generated">선행 차량이 정지 상태에서 출발할 때 알림을 받습니다.</translation>
+    </message>
+    <message>
+        <source>Speed Limit Changed Alert</source>
         <translation type="gpt-4o-generated">속도 제한 변경 알림</translation>
     </message>
     <message>
-        <source>An alert for when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">속도 제한이 변경될 때의 경고.</translation>
+        <source>Get an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">속도 제한이 변경될 때 알림 받기.</translation>
     </message>
 </context>
 <context>
@@ -2706,10 +2706,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">판다의 펌웨어를 플래시하세요. 판다에 문제가 있는 경우 사용하세요.</translation>
     </message>
     <message>
-        <source>Let &lt;b&gt;FrogsGoMoo&lt;/b&gt; know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">&lt;FrogsGoMoo&gt;에게 귀하가 겪고 있는 문제를 알려주세요.</translation>
-    </message>
-    <message>
         <source>I saw an alert that said &lt;b&gt;openpilot crashed&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">&lt;b&gt;openpilot가 충돌했습니다&lt;/b&gt;라는 경고를 보았습니다.</translation>
     </message>
@@ -2734,12 +2730,16 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">다른 것</translation>
     </message>
     <message>
-        <source>Reset your toggles back to their default setting.</source>
-        <translation type="gpt-4o-generated">토글을 기본 설정으로 재설정하세요.</translation>
+        <source>Let FrogsGoMoo know about an issue you're facing!</source>
+        <translation type="gpt-4o-generated">FrogsGoMoo에게 직면한 문제를 알려주세요!</translation>
     </message>
     <message>
-        <source>Are you sure you want to reset all of your toggles to their default setting?</source>
-        <translation type="gpt-4o-generated">모든 토글을 기본 설정으로 재설정하시겠습니까?</translation>
+        <source>Reset all toggles to their default values.</source>
+        <translation type="gpt-4o-generated">모든 토글을 기본값으로 재설정합니다.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset all toggles to their default values?</source>
+        <translation type="gpt-4o-generated">모든 토글을 기본값으로 재설정하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -3416,10 +3416,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">활성 카메라 뷰 디스플레이. 이는 순전히 시각적인 변화이며 openpilot의 주행 방식에는 영향을 미치지 않습니다!</translation>
     </message>
     <message>
-        <source>Control Driving Personality via the Driving Screen</source>
-        <translation type="gpt-4o-generated">운전 화면을 통해 운전 성향 제어</translation>
-    </message>
-    <message>
         <source>Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of &lt;b&gt;Experimental Mode&lt;/b&gt;, or 2.5 seconds for &lt;b&gt;Traffic Mode&lt;/b&gt;.</source>
         <translation type="gpt-4o-generated">현재 주행 성격을 화면에 표시합니다. 탭하여 성격을 전환하거나, &lt;b&gt;실험 모드&lt;/b&gt;의 현재 상태를 변경하려면 0.5초 동안 길게 누르고, &lt;b&gt;교통 모드&lt;/b&gt;를 변경하려면 2.5초 동안 길게 누르세요.</translation>
     </message>
@@ -3462,6 +3458,10 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <message>
         <source>The thickness of the road edges on the driving screen.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default matches half of the &lt;b&gt;MUTCD&lt;/b&gt; lane line width standard of 10 centimeters.</source>
         <translation type="gpt-4o-generated">운전 화면에서 도로 가장자리의 두께입니다.&lt;br&gt;&lt;br&gt;&lt;b&gt;기본값은 &lt;b&gt;MUTCD&lt;/b&gt; 차선 너비 표준인 10센티미터의 절반과 일치합니다.</translation>
+    </message>
+    <message>
+        <source>Driving Personality Button</source>
+        <translation type="gpt-4o-generated">운전 성향 버튼</translation>
     </message>
 </context>
 <context>
@@ -3930,24 +3930,24 @@ This may take up to a minute.</source>
         <translation type="gpt-4o-generated">FrogPilot</translation>
     </message>
     <message>
-        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilot에 오신 것을 환영합니다! FrogPilot을 처음 사용하신다면 '최소' 토글 기본 설정이 적용되었습니다. 언제든지 '조정 수준' 버튼을 통해 이를 변경할 수 있습니다!</translation>
+        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot에 오신 것을 환영합니다! FrogPilot에 처음 오셨기 때문에 "최소" 토글 프리셋이 적용되었습니다. 그러나 언제든지 '튜닝 레벨' 버튼을 통해 이를 변경할 수 있습니다!</translation>
     </message>
     <message>
-        <source>Since you're fairly new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilot를 처음 사용하시는 것 같아 '최소' 토글 프리셋이 적용되었습니다. 하지만 '조정 레벨' 버튼을 통해 언제든지 변경할 수 있습니다!</translation>
+        <source>Since you're fairly new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot에 익숙하지 않으시기 때문에 "Minimal" 토글 프리셋이 적용되었습니다. 하지만 언제든지 '튜닝 레벨' 버튼을 통해 이를 변경할 수 있습니다!</translation>
     </message>
     <message>
-        <source>Since you're experienced with openpilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">openpilot에 익숙하시기 때문에 '표준' 토글 프리셋이 적용되었지만, 언제든지 '튜닝 레벨' 버튼을 통해 이를 변경할 수 있습니다!</translation>
+        <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">openpilot 사용에 익숙하신 만큼, "표준" 토글 프리셋이 적용되었습니다. 그러나 '튜닝 레벨' 버튼을 통해 언제든지 변경할 수 있습니다!</translation>
     </message>
     <message>
-        <source>Since you're experienced with FrogPilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilot에 익숙하시므로 '표준' 토글 사전 설정이 적용되었지만, 언제든지 '조정 수준' 버튼을 통해 변경할 수 있습니다!</translation>
+        <source>Since you're experienced with FrogPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot을 경험한 적이 있으므로 "표준" 토글 프리셋이 적용되었지만, '조정 수준' 버튼을 통해 언제든지 변경할 수 있습니다!</translation>
     </message>
     <message>
-        <source>Since you're very experienced with FrogPilot, the 'Advanced' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilot에 매우 익숙하시기 때문에 '고급' 토글 프리셋이 적용되었습니다. 하지만 언제든지 '튜닝 레벨' 버튼을 통해 이를 변경할 수 있습니다!</translation>
+        <source>Since you're very experienced with FrogPilot, the "Advanced" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot에 익숙하시므로 "고급" 토글 사전 설정이 적용되었습니다. 언제든지 '조정 수준' 버튼을 통해 이를 변경할 수 있습니다!</translation>
     </message>
 </context>
 <context>

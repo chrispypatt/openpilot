@@ -187,6 +187,8 @@ def finalize_update(params, frogpilot_toggles) -> None:
   while params.get_bool("IsOnroad") and not params_memory.get_bool("ManualUpdateInitiated") and not frogpilot_toggles.frogs_go_moo:
     time.sleep(60)
 
+  params.put("UpdaterState", "finalizing update...")
+
   # Remove the update ready flag and any old updates
   cloudlog.info("creating finalized version of the overlay")
   set_consistent_flag(False)
@@ -409,7 +411,8 @@ class Updater:
       handle_agnos_update()
 
     # Create the finalized, ready-to-swap update
-    self.params.put("UpdaterState", "finalizing update...")
+    if self.params.get_bool("IsOnroad") and not params_memory.get_bool("ManualUpdateInitiated") and not frogpilot_toggles.frogs_go_moo:
+      self.params.put("UpdaterState", "waiting for vehicle to go offroad...")
     finalize_update(self.params, frogpilot_toggles)
     cloudlog.info("finalize success!")
 

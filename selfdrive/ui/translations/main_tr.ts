@@ -716,10 +716,6 @@
         <translation type="gpt-4o-generated">Batarya Kapatma Eşiği</translation>
     </message>
     <message>
-        <source>How long the device stays on after you go offroad.</source>
-        <translation type="gpt-4o-generated">Cihazın yoldan çıktıktan sonra ne kadar süre açık kalacağını belirtir.</translation>
-    </message>
-    <message>
         <source>WARNING: This will prevent your drives from being recorded and all data will be unobtainable!</source>
         <translation type="gpt-4o-generated">UYARI: Bu, sürüşlerinizin kaydedilmesini engelleyecek ve tüm verilere ulaşılamaz hale getirecektir!</translation>
     </message>
@@ -748,10 +744,6 @@
         <translation type="gpt-4o-generated">Cihaz davranışını kontrol eden ayarlar.</translation>
     </message>
     <message>
-        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold, preventing excessive drain and protecting the battery.</source>
-        <translation type="gpt-4o-generated">Araç akü voltajı belirlenen eşiğe ulaştığında cihazı otomatik olarak kapat, aşırı deşarjı önle ve aküyü koru.</translation>
-    </message>
-    <message>
         <source>Disable Data Logging</source>
         <translation type="gpt-4o-generated">Veri Kaydını Devre Dışı Bırak</translation>
     </message>
@@ -760,20 +752,12 @@
         <translation type="gpt-4o-generated">Veri Yüklemelerini Devre Dışı Bırak</translation>
     </message>
     <message>
-        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt;, which may impact debugging and support!</source>
-        <translation type="gpt-4o-generated">UYARI: Bu, sürüşlerinizin &lt;b&gt;comma connect&lt;/b&gt; üzerinde görünmesini engelleyecek ve bu durum hata ayıklama ve destek üzerinde etkili olabilir!</translation>
-    </message>
-    <message>
         <source>Prevent the device from sending any data to &lt;b&gt;comma&lt;/b&gt;'s servers.</source>
         <translation type="gpt-4o-generated">Cihazın herhangi bir veriyi &lt;b&gt;comma&lt;/b&gt;'nın sunucularına göndermesini engelle.</translation>
     </message>
     <message>
         <source>WARNING: This can damage your device by exceeding safe temperature limits!</source>
         <translation type="gpt-4o-generated">UYARI: Bu, güvenli sıcaklık sınırlarını aşarak cihazınıza zarar verebilir!</translation>
-    </message>
-    <message>
-        <source>Allow the device to run hotter than &lt;b&gt;comma&lt;/b&gt;'s recommended limit.</source>
-        <translation type="gpt-4o-generated">Cihazın &lt;b&gt;comma&lt;/b&gt;'nın önerilen sınırından daha sıcak çalışmasına izin ver.</translation>
     </message>
     <message>
         <source>Settings that control screen behavior.</source>
@@ -798,6 +782,22 @@
     <message>
         <source>How long it takes for the screen to turn off while driving.</source>
         <translation type="gpt-4o-generated">Ekranın sürüş sırasında kapanması için geçen süre.</translation>
+    </message>
+    <message>
+        <source>Automatically shut down the device when the vehicle's battery voltage reaches the set threshold preventing excessive battery drain to protect the battery.</source>
+        <translation type="gpt-4o-generated">Aracın akü voltajı belirlenen eşiğe ulaştığında cihazı otomatik olarak kapatarak aşırı akü boşalmasını önleyip aküyü koruyun.</translation>
+    </message>
+    <message>
+        <source>How long the device stays on for after you go offroad.</source>
+        <translation type="gpt-4o-generated">Cihazın offroad modundan çıktıktan sonra ne kadar süre açık kalacağını ayarlayın.</translation>
+    </message>
+    <message>
+        <source>WARNING: This will prevent your drives from appearing on &lt;b&gt;comma connect&lt;/b&gt; which may impact debugging and support!</source>
+        <translation type="gpt-4o-generated">UYARI: Bu, sürüşlerinizin &lt;b&gt;comma connect&lt;/b&gt; üzerinde görünmesini engeller ve bu, hata ayıklama ve destek üzerinde etkili olabilir!</translation>
+    </message>
+    <message>
+        <source>Allow the device to run hotter than comma recommended limit.</source>
+        <translation type="gpt-4o-generated">Cihazın virgül önerilen sınırın üzerinde daha sıcak çalışmasına izin ver.</translation>
     </message>
 </context>
 <context>
@@ -901,14 +901,6 @@
     <message>
         <source>Advanced settings for fine-tuning openpilot's lateral controls.</source>
         <translation type="gpt-4o-generated">openpilot'ın yanal kontrol ayarlarını ince ayar yapmak için gelişmiş ayarlar.</translation>
-    </message>
-    <message>
-        <source>Force-enable comma’s auto lateral tuning for unsupported vehicles.</source>
-        <translation type="gpt-4o-generated">Desteklenmeyen araçlar için comma'nın otomatik yanal ayarını zorla etkinleştir.</translation>
-    </message>
-    <message>
-        <source>Force-disable comma’s auto lateral tuning for supported vehicles.</source>
-        <translation type="gpt-4o-generated">Desteklenen araçlar için comma'nın otomatik yanal ayarını zorla devre dışı bırak.</translation>
     </message>
     <message>
         <source>Enable With Cruise Control</source>
@@ -1057,6 +1049,14 @@
     <message>
         <source> meter</source>
         <translation type="gpt-4o-generated">metre</translation>
+    </message>
+    <message>
+        <source>Force-enable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">Virgül'ün otomatik yan ayarını zorla etkinleştir.</translation>
+    </message>
+    <message>
+        <source>Force-disable comma’s auto lateral tuning.</source>
+        <translation type="gpt-4o-generated">Comma'nın otomatik yanal ayarını zorla devre dışı bırak.</translation>
     </message>
 </context>
 <context>
@@ -2004,40 +2004,16 @@
         <translation type="gpt-4o-generated">Yeni Modelleri Otomatik İndir</translation>
     </message>
     <message>
-        <source>Automatically downloads new driving models as they become available.</source>
-        <translation type="gpt-4o-generated">Yeni sürüş modelleri kullanıma sunulduğunda otomatik olarak indirir.</translation>
-    </message>
-    <message>
         <source>Delete Driving Models</source>
         <translation type="gpt-4o-generated">Sürüş Modellerini Sil</translation>
-    </message>
-    <message>
-        <source>Delete selected driving models from the device.</source>
-        <translation type="gpt-4o-generated">Cihazdan seçili sürüş modellerini sil.</translation>
     </message>
     <message>
         <source>Download Driving Models</source>
         <translation type="gpt-4o-generated">Sürüş Modellerini İndir</translation>
     </message>
     <message>
-        <source>Download additional driving models to the device.</source>
-        <translation type="gpt-4o-generated">Cihaza ek sürüş modelleri indir.</translation>
-    </message>
-    <message>
-        <source>A random driving model is chosen each drive and prompts for feedback after the drive to find the model that best suits your needs.</source>
-        <translation type="gpt-4o-generated">Her sürüşte rastgele bir sürüş modeli seçilir ve ihtiyaçlarınıza en uygun modeli bulmak için sürüş sonrasında geri bildirim istenir.</translation>
-    </message>
-    <message>
-        <source>View or edit models excluded from selection with the &lt;b&gt;Model Randomizer&lt;/b&gt;.</source>
-        <translation type="gpt-4o-generated">Model Rastgele Seçici ile seçimden hariç tutulan modelleri görüntüleyin veya düzenleyin.</translation>
-    </message>
-    <message>
         <source>Manage Model Ratings</source>
         <translation type="gpt-4o-generated">Model Derecelendirmelerini Yönet</translation>
-    </message>
-    <message>
-        <source>Clear or view all saved ratings for driving models.</source>
-        <translation type="gpt-4o-generated">Sürüş modelleri için kaydedilen tüm derecelendirmeleri temizle veya görüntüle.</translation>
     </message>
     <message>
         <source>Select Driving Model</source>
@@ -2066,6 +2042,30 @@
     <message>
         <source>The "Model Randomizer" only works with downloaded models. Do you want to download all the driving models?</source>
         <translation type="gpt-4o-generated">"Model Randomizer" yalnızca indirilen modellerle çalışır. Tüm sürüş modellerini indirmek ister misiniz?</translation>
+    </message>
+    <message>
+        <source>Automatically download new driving models as they become available.</source>
+        <translation type="gpt-4o-generated">Yeni sürüş modelleri kullanılabilir hale geldiğinde otomatik olarak indir.</translation>
+    </message>
+    <message>
+        <source>Delete driving models from the device.</source>
+        <translation type="gpt-4o-generated">Cihazdan sürüş modellerini sil.</translation>
+    </message>
+    <message>
+        <source>Download driving models to the device.</source>
+        <translation type="gpt-4o-generated">Sürüş modellerini cihaza indir.</translation>
+    </message>
+    <message>
+        <source>Driving models are chosen at random each drive and feedback prompts are used to find the model that best suits your needs.</source>
+        <translation type="gpt-4o-generated">Sürüş modelleri her sürüşte rastgele seçilir ve geri bildirim istemleri, ihtiyaçlarınıza en uygun modeli bulmak için kullanılır.</translation>
+    </message>
+    <message>
+        <source>Add or remove models from the &lt;b&gt;Model Randomizer&lt;/b&gt;'s blacklist list.</source>
+        <translation type="gpt-4o-generated">Model Karıştırıcı'nın kara listesinden modeller ekleyin veya kaldırın.</translation>
+    </message>
+    <message>
+        <source>Reset or view the saved ratings for the driving models.</source>
+        <translation type="gpt-4o-generated">Sürücü modelleri için kaydedilmiş derecelendirmeleri sıfırla veya görüntüle.</translation>
     </message>
 </context>
 <context>
@@ -2280,10 +2280,6 @@ Geliştirici - Deneyimli meraklılar için son derece özelleştirilebilir ayarl
         <translation type="gpt-4o-generated">Uyarılar için ses düzeyini ayarlayın, örneğin:&lt;br&gt;&lt;br&gt;&lt;b&gt;NNFF Tork Kontrolcüsü yüklendi&lt;/b&gt;&lt;br&gt;&lt;b&gt;openpilot devrede&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below &lt;i&gt;X&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
-        <translation type="gpt-4o-generated">Aşağıdaki uyarılar için sesi ayarla:&lt;br&gt;&lt;br&gt;&lt;b&gt;Kör Noktada Araç Tespit Edildi&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;X&lt;/i&gt; Altında Direksiyon Kullanılamaz&lt;/b&gt;&lt;br&gt;&lt;b&gt;Hız Çok Düşük&lt;/b&gt;&lt;br&gt;&lt;b&gt;Kontrolü Ele Al, Dönüş Direksiyon Limitini Aşıyor&lt;/b&gt;.</translation>
-    </message>
-    <message>
         <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Pay Attention, Driver Distracted&lt;/b&gt;&lt;br&gt;&lt;b&gt;Touch Steering Wheel, Driver Unresponsive&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">Aşağıdaki uyarılar için ses seviyesini ayarlayın:&lt;br&gt;&lt;br&gt;&lt;b&gt;Dikkat Et, Sürücü Dikkati Dağıldı&lt;/b&gt;&lt;br&gt;&lt;b&gt;Direksiyon Simidine Dokun, Sürücü Tepkisiz&lt;/b&gt;</translation>
     </message>
@@ -2308,18 +2304,6 @@ Geliştirici - Deneyimli meraklılar için son derece özelleştirilebilir ayarl
         <translation type="gpt-4o-generated">openpilot'ta çeşitli olaylar için FrogPilot uyarıları.</translation>
     </message>
     <message>
-        <source>The infamous &lt;b&gt;Goat Scream&lt;/b&gt; that has brought both joy and anger to FrogPilot users all around the world!</source>
-        <translation type="gpt-4o-generated">Dünya çapında FrogPilot kullanıcılarına hem neşe hem de öfke getiren kötü şöhretli &lt;b&gt;Keçi Çığlığı&lt;/b&gt;!</translation>
-    </message>
-    <message>
-        <source>An alert for when the traffic light changes from red to green.</source>
-        <translation type="gpt-4o-generated">Trafik ışığı kırmızıdan yeşile döndüğünde bir uyarı.</translation>
-    </message>
-    <message>
-        <source>An alert for when the lead vehicle begins to move.</source>
-        <translation type="gpt-4o-generated">Öndeki araç hareket etmeye başladığında bir uyarı.</translation>
-    </message>
-    <message>
         <source>Loud "Car Detected in Blindspot" Alert</source>
         <translation type="gpt-4o-generated">Yüksek Sesli "Kör Noktada Araç Tespit Edildi" Uyarısı.</translation>
     </message>
@@ -2328,12 +2312,28 @@ Geliştirici - Deneyimli meraklılar için son derece özelleştirilebilir ayarl
         <translation type="gpt-4o-generated">Şerit değiştirirken kör noktanızda bir araç tespit edildiğinde daha yüksek sesli bir uyarı.</translation>
     </message>
     <message>
-        <source>Speed Limit Change Alert</source>
-        <translation type="gpt-4o-generated">Hız Sınırı Değişikliği Uyarısı</translation>
+        <source>Adjust the volume for alerts like:&lt;br&gt;&lt;br&gt;&lt;b&gt;Car Detected in Blindspot&lt;/b&gt;&lt;br&gt;&lt;b&gt;Steer Unavailable Below "X"&lt;/b&gt;&lt;br&gt;&lt;b&gt;Speed too Low&lt;/b&gt;&lt;br&gt;&lt;b&gt;Take Control, Turn Exceeds Steering Limit&lt;/b&gt;</source>
+        <translation type="gpt-4o-generated">Uyarıların ses seviyesini ayarlayın, örneğin:&lt;br&gt;&lt;br&gt;&lt;b&gt;Kör Noktada Araç Algılandı&lt;/b&gt;&lt;br&gt;&lt;b&gt;"X" Altında Direksiyon Kullanılamaz&lt;/b&gt;&lt;br&gt;&lt;b&gt;Hız Çok Düşük&lt;/b&gt;&lt;br&gt;&lt;b&gt;Kontrolü Alın, Dönüş Direksiyon Limitini Aşıyor&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>An alert for when the speed limit changes.</source>
-        <translation type="gpt-4o-generated">Hız sınırı değiştiğinde bir uyarı.</translation>
+        <source>The infamous "Goat Scream" that has brought both joy and anger to FrogPilot users all around the world!</source>
+        <translation type="gpt-4o-generated">Dünya çapındaki FrogPilot kullanıcılarına hem sevinç hem de öfke getiren kötü şöhretli "Keçi Çığlığı"!</translation>
+    </message>
+    <message>
+        <source>Get an alert when the traffic light changes from red to green.</source>
+        <translation type="gpt-4o-generated">Trafik ışığı kırmızıdan yeşile döndüğünde bir uyarı alın.</translation>
+    </message>
+    <message>
+        <source>Get an alert when the lead vehicle begins to depart from a standstill.</source>
+        <translation type="gpt-4o-generated">Öndeki araç hareketsiz durumdan ayrılmaya başladığında uyarı al.</translation>
+    </message>
+    <message>
+        <source>Speed Limit Changed Alert</source>
+        <translation type="gpt-4o-generated">Hız Limiti Değişti Uyarısı</translation>
+    </message>
+    <message>
+        <source>Get an alert when the speed limit changes.</source>
+        <translation type="gpt-4o-generated">Hız sınırı değiştiğinde bir uyarı alın.</translation>
     </message>
 </context>
 <context>
@@ -2706,10 +2706,6 @@ Kendi animasyonlarınızı göndermek ister misiniz? FrogPilot Discord'daki "cus
         <translation type="gpt-4o-generated">Panda'nın bellenimini yükleyin. Panda ile ilgili sorunlarla karşılaşıyorsanız kullanın.</translation>
     </message>
     <message>
-        <source>Let &lt;b&gt;FrogsGoMoo&lt;/b&gt; know about an issue you're facing.</source>
-        <translation type="gpt-4o-generated">Karşılaştığınız bir sorunu &lt;b&gt;FrogsGoMoo&lt;/b&gt;'ya bildirin.</translation>
-    </message>
-    <message>
         <source>I saw an alert that said &lt;b&gt;openpilot crashed&lt;/b&gt;</source>
         <translation type="gpt-4o-generated">"&lt;b&gt;openpilot çöktü&lt;/b&gt; diye bir uyarı gördüm"</translation>
     </message>
@@ -2734,12 +2730,16 @@ Kendi animasyonlarınızı göndermek ister misiniz? FrogPilot Discord'daki "cus
         <translation type="gpt-4o-generated">Başka bir şey</translation>
     </message>
     <message>
-        <source>Reset your toggles back to their default setting.</source>
-        <translation type="gpt-4o-generated">Geçişlerinizi varsayılan ayarlarına sıfırlayın.</translation>
+        <source>Let FrogsGoMoo know about an issue you're facing!</source>
+        <translation type="gpt-4o-generated">Karşılaştığınız bir sorunu FrogsGoMoo'ya bildirin!</translation>
     </message>
     <message>
-        <source>Are you sure you want to reset all of your toggles to their default setting?</source>
-        <translation type="gpt-4o-generated">Tüm anahtarlarınızı varsayılan ayarlarına sıfırlamak istediğinizden emin misiniz?</translation>
+        <source>Reset all toggles to their default values.</source>
+        <translation type="gpt-4o-generated">Tüm anahtarları varsayılan değerlerine sıfırla.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset all toggles to their default values?</source>
+        <translation type="gpt-4o-generated">Tüm ayarları varsayılan değerlerine sıfırlamak istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
@@ -3416,10 +3416,6 @@ Kendi animasyonlarınızı göndermek ister misiniz? FrogPilot Discord'daki "cus
         <translation type="gpt-4o-generated">Aktif kamera görünümü ekranı. Bu yalnızca görsel bir değişikliktir ve openpilot'ın sürüşünü etkilemez!</translation>
     </message>
     <message>
-        <source>Control Driving Personality via the Driving Screen</source>
-        <translation type="gpt-4o-generated">Sürüş Ekranı aracılığıyla Sürüş Kişiliğini Kontrol Et.</translation>
-    </message>
-    <message>
         <source>Display the current driving personality on the screen. Tap to switch personalities, or long press for 0.5 seconds to change the current state of &lt;b&gt;Experimental Mode&lt;/b&gt;, or 2.5 seconds for &lt;b&gt;Traffic Mode&lt;/b&gt;.</source>
         <translation type="gpt-4o-generated">Mevcut sürüş kişiliğini ekranda göster. Kişilikleri değiştirmek için dokunun veya &lt;b&gt;Deneysel Mod&lt;/b&gt;'un mevcut durumunu değiştirmek için 0.5 saniye basılı tutun ya da &lt;b&gt;Trafik Modu&lt;/b&gt; için 2.5 saniye basılı tutun.</translation>
     </message>
@@ -3462,6 +3458,10 @@ Kendi animasyonlarınızı göndermek ister misiniz? FrogPilot Discord'daki "cus
     <message>
         <source>The thickness of the road edges on the driving screen.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default matches half of the &lt;b&gt;MUTCD&lt;/b&gt; lane line width standard of 10 centimeters.</source>
         <translation type="gpt-4o-generated">Sürüş ekranındaki yol kenarlarının kalınlığı.&lt;br&gt;&lt;br&gt;&lt;b&gt;Varsayılan değer, &lt;b&gt;MUTCD&lt;/b&gt; şerit çizgi genişlik standardının yarısı olan 10 santimetreye eşittir.</translation>
+    </message>
+    <message>
+        <source>Driving Personality Button</source>
+        <translation type="gpt-4o-generated">Sürüş Kişiliği Düğmesi</translation>
     </message>
 </context>
 <context>
@@ -3930,24 +3930,24 @@ Bu işlem bir dakikaya kadar sürebilir.</translation>
         <translation type="gpt-4o-generated">FrogPilot</translation>
     </message>
     <message>
-        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">'FrogPilot'a hoş geldiniz! FrogPilot'a yeni olduğunuz için 'Minimal' geçiş ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayar Düzeyi' düğmesi ile değiştirebilirsiniz!'</translation>
+        <source>Welcome to FrogPilot! Since you're new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot'a hoş geldiniz! FrogPilot'a yeni olduğunuz için "Minimal" anahtarlama ayarı uygulanmıştır, ancak bunu istediğiniz zaman 'Ayarlama Seviyesi' düğmesi ile değiştirebilirsiniz!</translation>
     </message>
     <message>
-        <source>Since you're fairly new to FrogPilot, the 'Minimal' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">'FrogPilot'a oldukça yeni olduğunuzdan, 'Minimal' geçiş ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayar Seviyesi' düğmesi ile değiştirebilirsiniz!'</translation>
+        <source>Since you're fairly new to FrogPilot, the "Minimal" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot'e henüz yeni olduğunuz için "Minimal" geçiş ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayarlama Seviyesi' düğmesiyle değiştirebilirsiniz!</translation>
     </message>
     <message>
-        <source>Since you're experienced with openpilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">openpilot konusunda deneyimli olduğunuz için 'Standart' geçiş ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayarlama Seviyesi' düğmesi ile değiştirebilirsiniz!</translation>
+        <source>Since you're experienced with openpilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">openpilot konusunda deneyimli olduğunuza göre, "Standart" anahtar ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayarlama Seviyesi' düğmesi ile değiştirebilirsiniz!</translation>
     </message>
     <message>
-        <source>Since you're experienced with FrogPilot, the 'Standard' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilot konusunda deneyimli olduğunuz için 'Standart' geçiş ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayar Seviyesi' düğmesiyle değiştirebilirsiniz!</translation>
+        <source>Since you're experienced with FrogPilot, the "Standard" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot deneyiminiz olduğu için "Standart" geçiş ön ayarı uygulandı, ancak bunu istediğiniz zaman 'Ayarlama Seviyesi' düğmesi ile değiştirebilirsiniz!</translation>
     </message>
     <message>
-        <source>Since you're very experienced with FrogPilot, the 'Advanced' toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
-        <translation type="gpt-4o-generated">FrogPilot konusunda çok deneyimli olduğunuz için 'Gelişmiş' geçiş ön ayarı uygulanmıştır, ancak bunu istediğiniz zaman 'Ayar Düzeyi' düğmesi aracılığıyla değiştirebilirsiniz!</translation>
+        <source>Since you're very experienced with FrogPilot, the "Advanced" toggle preset has been applied, but you can change this at any time via the 'Tuning Level' button!</source>
+        <translation type="gpt-4o-generated">FrogPilot'ta çok deneyimli olduğunuz için "Gelişmiş" geçiş ön ayarı uygulanmıştır, ancak bunu istediğiniz zaman 'Ayar Düzeyi' düğmesi aracılığıyla değiştirebilirsiniz!</translation>
     </message>
 </context>
 <context>

@@ -25,12 +25,12 @@ FrogPilotDevicePanel::FrogPilotDevicePanel(FrogPilotSettingsWindow *parent) : Fr
 
   const std::vector<std::tuple<QString, QString, QString, QString>> deviceToggles {
     {"DeviceManagement", tr("Device Settings"), tr("Settings that control device behavior."), "../frogpilot/assets/toggle_icons/icon_device.png"},
-    {"LowVoltageShutdown", tr("Battery Shutdown Threshold"), tr("Automatically shut down the device when the vehicle's battery voltage reaches the set threshold, preventing excessive drain and protecting the battery."), ""},
-    {"DeviceShutdown", tr("Device Shutdown Timer"), tr("How long the device stays on after you go offroad."), ""},
+    {"LowVoltageShutdown", tr("Battery Shutdown Threshold"), tr("Automatically shut down the device when the vehicle's battery voltage reaches the set threshold preventing excessive battery drain to protect the battery."), ""},
+    {"DeviceShutdown", tr("Device Shutdown Timer"), tr("How long the device stays on for after you go offroad."), ""},
     {"NoLogging", tr("Disable Data Logging"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from being recorded and all data will be unobtainable!")).arg(tr("Disable all data logging to improve privacy.")), ""},
-    {"NoUploads", tr("Disable Data Uploads"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from appearing on <b>comma connect</b>, which may impact debugging and support!")).arg(tr("Prevent the device from sending any data to <b>comma</b>'s servers.")), ""},
+    {"NoUploads", tr("Disable Data Uploads"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This will prevent your drives from appearing on <b>comma connect</b> which may impact debugging and support!")).arg(tr("Prevent the device from sending any data to <b>comma</b>'s servers.")), ""},
     {"OfflineMode", tr("Disable Internet Requirement"), tr("Allow the device to work indefinitely without an internet connection."), ""},
-    {"IncreaseThermalLimits", tr("Increase Thermal Safety Limit"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This can damage your device by exceeding safe temperature limits!")).arg(tr("Allow the device to run hotter than <b>comma</b>'s recommended limit.")), ""},
+    {"IncreaseThermalLimits", tr("Increase Thermal Safety Limit"), QString("<b>%1</b><br><br>%2").arg(tr("WARNING: This can damage your device by exceeding safe temperature limits!")).arg(tr("Allow the device to run hotter than comma recommended limit.")), ""},
 
     {"ScreenManagement", tr("Screen Settings"), tr("Settings that control screen behavior."), "../frogpilot/assets/toggle_icons/icon_light.png"},
     {"ScreenBrightness", tr("Screen Brightness (Offroad)"), tr("The screen brightness when not driving."), ""},

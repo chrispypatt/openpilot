@@ -34,8 +34,8 @@ FrogPilotLateralPanel::FrogPilotLateralPanel(FrogPilotSettingsWindow *parent) : 
     {"SteerKP", kpStock != 0 ? QString(tr("Kp Factor (Default: %1)")).arg(QString::number(kpStock, 'f', 2)) : tr("Kp Factor"), tr("How aggressively openpilot corrects steering. Higher values respond faster but may feel jerky; lower values are smoother but slower."), ""},
     {"SteerLatAccel", latAccelStock != 0 ? QString(tr("Lateral Accel (Default: %1)")).arg(QString::number(latAccelStock, 'f', 2)) : tr("Lateral Accel"), tr("How quickly openpilot makes lateral adjustments. Higher values allow sharper turns; lower values provide smoother steering."), ""},
     {"SteerRatio", steerRatioStock != 0 ? QString(tr("Steer Ratio (Default: %1)")).arg(QString::number(steerRatioStock, 'f', 2)) : tr("Steer Ratio"), tr("How much the steering wheel turns in response to commands. Higher values feel more stable; lower values feel quicker."), ""},
-    {"ForceAutoTune", tr("Force Auto Tune On"), tr("Force-enable comma’s auto lateral tuning for unsupported vehicles."), ""},
-    {"ForceAutoTuneOff", tr("Force Auto Tune Off"), tr("Force-disable comma’s auto lateral tuning for supported vehicles."), ""},
+    {"ForceAutoTune", tr("Force Auto Tune On"), tr("Force-enable comma’s auto lateral tuning."), ""},
+    {"ForceAutoTuneOff", tr("Force Auto Tune Off"), tr("Force-disable comma’s auto lateral tuning."), ""},
 
     {"AlwaysOnLateral", tr("Always on Lateral"), tr("openpilot's steering control stays active even when the brake or gas pedals are pressed.<br><br>Deactivation only occurs with the <b>Cruise Control</b> button."), "../frogpilot/assets/toggle_icons/icon_always_on_lateral.png"},
     {"AlwaysOnLateralMain", tr("Enable With Cruise Control"), tr("Allow <b>Always on Lateral</b> to be active whenever <b>Cruise Control</b> is active, bypassing the need to enable openpilot first."), ""},
