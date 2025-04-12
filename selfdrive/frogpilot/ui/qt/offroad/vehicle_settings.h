@@ -13,12 +13,25 @@ public:
 signals:
   void openParentToggle();
 
-private:
+protected:
   void showEvent(QShowEvent *event) override;
+
+private:
   void updateState(const UIState &s);
   void updateToggles();
 
+  bool hasExperimentalOpenpilotLongitudinal;
+  bool hasOpenpilotLongitudinal;
+  bool hasSNG;
+  bool isC3;
+  bool isGM;
+  bool isHKG;
+  bool isHKGCanFd;
+  bool isToyota;
+  bool isVolt;
   bool started;
+
+  int tuningLevel;
 
   std::map<QString, AbstractControl*> toggles;
 
@@ -27,7 +40,11 @@ private:
   std::set<QString> longitudinalKeys = {"ExperimentalGMTune", "FrogsGoMoosTweak", "LongPitch", "NewLongAPI", "SNGHack", "VoltSNG"};
   std::set<QString> toyotaKeys = {"ClusterOffset", "FrogsGoMoosTweak", "LockDoorsTimer", "SNGHack", "ToyotaDoors"};
 
+  std::set<QString> parentKeys;
+
   FrogPilotSettingsWindow *parent;
+
+  QJsonObject frogpilotToggleLevels;
 
   QMap<QString, QString> carModels;
 

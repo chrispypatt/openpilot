@@ -212,8 +212,7 @@ class LongitudinalPlanner:
       accel_coast = ACCEL_MAX
 
     v_ego = sm['carState'].vEgo
-    v_cruise_kph = min(sm['controlsState'].vCruise, V_CRUISE_MAX)
-    v_cruise = v_cruise_kph * CV.KPH_TO_MS
+    v_cruise = sm['frogpilotPlan'].vCruise
     v_cruise_initialized = sm['controlsState'].vCruise != V_CRUISE_UNSET
 
     long_control_off = sm['controlsState'].longControlState == LongCtrlState.off
@@ -265,7 +264,7 @@ class LongitudinalPlanner:
       lead_states = [self.lead_one, self.lead_two]
       for index in range(len(lead_states)):
         if len(model_leads) > index:
-          distance_offset = max(frogpilot_toggles.increased_stopped_distance + min(10 - v_ego, 0), 0) if not sm['frogpilotCarState'].trafficModeActive else 0
+          distance_offset = max(frogpilot_toggles.increased_stopped_distance + min(10 - v_ego, 0), 0) if not sm['frogpilotCarState'].trafficMode else 0
           model_lead = model_leads[index]
           lead_states[index].update(model_lead.x[0] - distance_offset, model_lead.y[0], model_lead.v[0], model_lead.a[0], model_lead.prob)
         else:
@@ -277,8 +276,8 @@ class LongitudinalPlanner:
     self.mpc.set_weights(sm['frogpilotPlan'].accelerationJerk, sm['frogpilotPlan'].dangerJerk, sm['frogpilotPlan'].speedJerk, prev_accel_constraint, personality=sm['controlsState'].personality)
     self.mpc.set_accel_limits(accel_limits_turns[0], accel_limits_turns[1])
     self.mpc.set_cur_state(self.v_desired_filter.x, self.a_desired)
-    self.mpc.update(self.lead_one, self.lead_two, sm['frogpilotPlan'].vCruise, x, v, a, j, radarless_model, sm['frogpilotPlan'].tFollow,
-                    sm['frogpilotCarState'].trafficModeActive, personality=sm['controlsState'].personality)
+    self.mpc.update(self.lead_one, self.lead_two, v_cruise, x, v, a, j, radarless_model, sm['frogpilotPlan'].tFollow,
+                    sm['frogpilotCarState'].trafficMode, personality=sm['controlsState'].personality)
 
     self.a_desired_trajectory_full = np.interp(CONTROL_N_T_IDX, T_IDXS_MPC, self.mpc.a_solution)
     self.v_desired_trajectory = np.interp(CONTROL_N_T_IDX, T_IDXS_MPC, self.mpc.v_solution)

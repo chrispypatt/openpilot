@@ -61,7 +61,7 @@ PRESERVE_COUNT = 5
 # path to openpilot screen recordings and error logs
 if PC:
   SCREENRECORD_PATH = os.path.join(str(Path.home()), ".comma", "media", "screen_recordings", "")
-  ERROR_LOGS_PATH = os.path.join(str(Path.home()), ".comma", "community", "crashes", "")
+  ERROR_LOGS_PATH = os.path.join(str(Path.home()), ".comma", "error_logs", "")
   TMUX_LOGS_PATH = os.path.join(str(Path.home()), ".comma", "tmux_logs")
 else:
   SCREENRECORD_PATH = "/data/media/screen_recordings/"
