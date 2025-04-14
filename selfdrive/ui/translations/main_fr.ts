@@ -3495,10 +3495,6 @@ Vous souhaitez soumettre vos propres animations ? Partagez-les dans le canal "cu
         <translation type="gpt-4o-generated">Bouton LKAS</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">L'action ahe pour appuyer sur le bouton &lt;b&gt;LKAS&lt;/b&gt;.</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">Rien</translation>
     </message>
@@ -3533,6 +3529,10 @@ Vous souhaitez soumettre vos propres animations ? Partagez-les dans le canal "cu
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">Sélectionnez une fonction à attribuer à ce bouton</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">L'action pour appuyer sur le bouton &lt;b&gt;LKAS&lt;/b&gt;.</translation>
     </message>
 </context>
 <context>

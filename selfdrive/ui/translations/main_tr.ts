@@ -3495,10 +3495,6 @@ Kendi animasyonlarınızı göndermek ister misiniz? FrogPilot Discord'daki "cus
         <translation type="gpt-4o-generated">LKAS Düğmesi</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">&lt;b&gt;LKAS&lt;/b&gt; düğmesine basma eylemi.</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">Hiçbir şey</translation>
     </message>
@@ -3533,6 +3529,10 @@ Kendi animasyonlarınızı göndermek ister misiniz? FrogPilot Discord'daki "cus
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">Bu düğmeye atanacak bir işlev seçin.</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">&lt;b&gt;LKAS&lt;/b&gt; düğmesine basma eylemi.</translation>
     </message>
 </context>
 <context>

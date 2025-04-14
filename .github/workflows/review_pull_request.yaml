@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Exit If PR Opened by FrogAi
-        if: ${{ github.actor == "FrogAi" }}
+        if: ${{ github.actor == 'FrogAi' }}
         run: |
           echo "PR opened or reopened by FrogAi. No action needed."
           exit 0

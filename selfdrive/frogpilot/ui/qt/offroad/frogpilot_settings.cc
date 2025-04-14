@@ -13,7 +13,7 @@
 #include "selfdrive/frogpilot/ui/qt/offroad/visual_settings.h"
 #include "selfdrive/frogpilot/ui/qt/offroad/wheel_settings.h"
 
-bool checkNNFFLogFileExists(const QString &carFingerprint) {
+bool nnffLogFileExists(const QString &carFingerprint) {
   static QStringList files;
   if (files.isEmpty()) {
     QFileInfoList fileInfoList = QDir(QStringLiteral("../car/torque_data/lat_models")).entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
@@ -217,7 +217,7 @@ void FrogPilotSettingsWindow::updateVariables() {
     hasBSM = CP.getEnableBsm();
     hasDashSpeedLimits = carMake == "hyundai" || carMake == "toyota";
     hasExperimentalOpenpilotLongitudinal = CP.getExperimentalLongitudinalAvailable();
-    hasNNFFLog = checkNNFFLogFileExists(QString::fromStdString(carFingerprint));
+    hasNNFFLog = nnffLogFileExists(QString::fromStdString(carFingerprint));
     hasOpenpilotLongitudinal = hasLongitudinalControl(CP);
     hasPCMCruise = CP.getPcmCruise();
     hasRadar = !CP.getRadarUnavailable();

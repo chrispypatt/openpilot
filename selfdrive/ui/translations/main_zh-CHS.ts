@@ -3495,10 +3495,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">LKAS按钮</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">按下&lt;b&gt;LKAS&lt;/b&gt;按钮的操作。</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">无</translation>
     </message>
@@ -3533,6 +3529,10 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">选择一个功能分配给此按钮</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">按下&lt;b&gt;LKAS&lt;/b&gt;按钮的操作。</translation>
     </message>
 </context>
 <context>

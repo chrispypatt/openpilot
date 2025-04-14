@@ -3495,10 +3495,6 @@ Möchten Sie Ihre eigenen Animationen einreichen? Teilen Sie sie im "custom-them
         <translation type="gpt-4o-generated">LKAS-Taste</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">Die Aktion für das Drücken der &lt;b&gt;LKAS&lt;/b&gt;-Taste.</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">Nichts</translation>
     </message>
@@ -3533,6 +3529,10 @@ Möchten Sie Ihre eigenen Animationen einreichen? Teilen Sie sie im "custom-them
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">Wählen Sie eine Funktion, die dieser Schaltfläche zugewiesen werden soll.</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">Die Aktion beim Drücken der &lt;b&gt;LKAS&lt;/b&gt;-Taste.</translation>
     </message>
 </context>
 <context>

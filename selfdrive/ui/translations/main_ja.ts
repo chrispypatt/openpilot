@@ -3495,10 +3495,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">LKASボタン</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">&lt;b&gt;LKAS&lt;/b&gt;ボタンを押した時のアクション。</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">なし</translation>
     </message>
@@ -3533,6 +3529,10 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">このボタンに割り当てる機能を選択してください</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">&lt;b&gt;LKAS&lt;/b&gt;ボタンを押したときの動作。</translation>
     </message>
 </context>
 <context>

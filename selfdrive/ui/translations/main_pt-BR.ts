@@ -3495,10 +3495,6 @@ Quer enviar suas próprias animações? Compartilhe-as no canal "custom-themes" 
         <translation type="gpt-4o-generated">Botão LKAS</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">A ação para pressionar o botão &lt;b&gt;LKAS&lt;/b&gt;.</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">Nada</translation>
     </message>
@@ -3533,6 +3529,10 @@ Quer enviar suas próprias animações? Compartilhe-as no canal "custom-themes" 
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">Selecione uma função para atribuir a este botão</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">A ação ao pressionar o botão &lt;b&gt;LKAS&lt;/b&gt;.</translation>
     </message>
 </context>
 <context>

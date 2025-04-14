@@ -187,7 +187,7 @@ class FrogPilotEvents:
 
           self.random_event_playing = True
 
-      if not self.vCruise69_played and 70 > v_cruise * (CV.MS_TO_KPH if frogpilot_toggles.is_metric else CV.MS_TO_MPH) >= 69:
+      if not self.vCruise69_played and 70 > max(controlsState.vCruise, controlsState.vCruiseCluster) * (1 if frogpilot_toggles.is_metric else CV.KPH_TO_MPH) >= 69:
         self.events.add(EventName.vCruise69)
 
         self.vCruise69_played = True

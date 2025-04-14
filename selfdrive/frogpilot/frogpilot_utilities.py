@@ -159,7 +159,7 @@ def restart_processes(sm):
 
   if not any(ps.ignitionLine or ps.ignitionCan for ps in sm["pandaStates"] if ps.pandaType != log.PandaState.PandaType.unknown):
     for name in ["mapd", "ui"]:
-      managed_processes[name].stop(block=False)
+      managed_processes[name].stop(block=False, retry=False)
 
 def run_cmd(cmd, success_message, fail_message, report=True):
   try:
@@ -233,7 +233,7 @@ def update_openpilot():
   while not params.get_bool("UpdateAvailable"):
     time.sleep(DT_HW)
 
-  while running_threads.get("lock_doors", threading.Thread()).is_alive() or params.get_bool("IsOnroad"):
+  while running_threads.get("lock_doors", threading.Thread()).is_alive() or params_memory.get_bool("IsOnroad"):
     time.sleep(60)
 
   HARDWARE.reboot()

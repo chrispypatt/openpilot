@@ -184,8 +184,8 @@ def finalize_update(params, frogpilot_toggles) -> None:
   """Take the current OverlayFS merged view and finalize a copy outside of
   OverlayFS, ready to be swapped-in at BASEDIR. Copy using shutil.copytree"""
 
-  while params.get_bool("IsOnroad") and not params_memory.get_bool("ManualUpdateInitiated") and not frogpilot_toggles.frogs_go_moo:
-    time.sleep(60)
+  while params_memory.get_bool("IsOnroad") and not params_memory.get_bool("ManualUpdateInitiated") and not frogpilot_toggles.frogs_go_moo:
+    time.sleep(5)
 
   params.put("UpdaterState", "finalizing update...")
 
@@ -411,7 +411,7 @@ class Updater:
       handle_agnos_update()
 
     # Create the finalized, ready-to-swap update
-    if self.params.get_bool("IsOnroad") and not params_memory.get_bool("ManualUpdateInitiated") and not frogpilot_toggles.frogs_go_moo:
+    if params_memory.get_bool("IsOnroad") and not params_memory.get_bool("ManualUpdateInitiated") and not frogpilot_toggles.frogs_go_moo:
       self.params.put("UpdaterState", "waiting for vehicle to go offroad...")
     finalize_update(self.params, frogpilot_toggles)
     cloudlog.info("finalize success!")

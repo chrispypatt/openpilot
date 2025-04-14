@@ -5,7 +5,7 @@ FrogPilotWheelPanel::FrogPilotWheelPanel(FrogPilotSettingsWindow *parent) : Frog
     {"DistanceButtonControl", tr("Distance Button"), tr("The action for a short press of the <b>Distance</b> button."), "../frogpilot/assets/toggle_icons/icon_mute.png"},
     {"LongDistanceButtonControl", tr("Distance Button (Long Press)"), tr("The action for a 0.5+ second press of the <b>Distance</b> button."), "../frogpilot/assets/toggle_icons/icon_mute.png"},
     {"VeryLongDistanceButtonControl", tr("Distance Button (Very Long Press)"), tr("The action for a 2.5+ second press of the <b>Distance</b> button."), "../frogpilot/assets/toggle_icons/icon_mute.png"},
-    {"LKASButtonControl", tr("LKAS Button"), tr("The ahe action for pressing the <b>LKAS</b> button."), "../frogpilot/assets/toggle_icons/icon_mute.png"}
+    {"LKASButtonControl", tr("LKAS Button"), tr("The action for pressing the <b>LKAS</b> button."), "../frogpilot/assets/toggle_icons/icon_mute.png"}
   };
 
   for (const auto &[param, title, desc, icon] : wheelToggles) {

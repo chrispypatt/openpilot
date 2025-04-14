@@ -130,11 +130,15 @@ def frogpilot_thread():
 
       run_thread_with_lock("restart_processes", restart_processes, (sm,))
 
+      params_memory.put_bool("IsOnroad", False)
+
     elif started and not started_previously:
       radarless_model = frogpilot_toggles.radarless_model
 
       if error_log.is_file():
         error_log.unlink()
+
+      params_memory.put_bool("IsOnroad", True)
 
     if started and sm.updated["modelV2"]:
       frogpilot_planner.update(sm["carState"], sm["controlsState"], sm["frogpilotCarState"], sm["frogpilotNavigation"],

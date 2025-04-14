@@ -3495,10 +3495,6 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
         <translation type="gpt-4o-generated">زر نظام المساعدة في الحفاظ على المسار</translation>
     </message>
     <message>
-        <source>The ahe action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
-        <translation type="gpt-4o-generated">الإجراء المتخذ عند الضغط على زر &lt;b&gt;LKAS&lt;/b&gt;.</translation>
-    </message>
-    <message>
         <source>Nothing</source>
         <translation type="gpt-4o-generated">لا شيء</translation>
     </message>
@@ -3533,6 +3529,10 @@ Want to submit your own animations? Share them in the "custom-themes" channel on
     <message>
         <source>Select a function to assign to this button</source>
         <translation type="gpt-4o-generated">اختر وظيفة لتعيينها لهذا الزر</translation>
+    </message>
+    <message>
+        <source>The action for pressing the &lt;b&gt;LKAS&lt;/b&gt; button.</source>
+        <translation type="gpt-4o-generated">الإجراء عند الضغط على زر &lt;b&gt;LKAS&lt;/b&gt;.</translation>
     </message>
 </context>
 <context>
