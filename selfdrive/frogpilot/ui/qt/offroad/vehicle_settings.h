@@ -40,6 +40,8 @@ private:
   std::set<QString> longitudinalKeys = {"ExperimentalGMTune", "FrogsGoMoosTweak", "LongPitch", "NewLongAPI", "SNGHack", "VoltSNG"};
   std::set<QString> toyotaKeys = {"ClusterOffset", "FrogsGoMoosTweak", "LockDoorsTimer", "SNGHack", "ToyotaDoors"};
 
+  std::set<QString> parentKeys;
+
   FrogPilotSettingsWindow *parent;
 
   QJsonObject frogpilotToggleLevels;

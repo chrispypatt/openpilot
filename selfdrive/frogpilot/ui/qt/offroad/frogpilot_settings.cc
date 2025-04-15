@@ -162,7 +162,7 @@ FrogPilotSettingsWindow::FrogPilotSettingsWindow(SettingsWindow *parent) : QFram
     }
   });
   togglePreset->setCheckedButton(params.getInt("TuningLevel"));
-  list->addItem(togglePreset);
+  list->addItem(togglePreset, true);
 
   createPanelButtons(list);
 
@@ -215,7 +215,7 @@ void FrogPilotSettingsWindow::updateVariables() {
 
     hasAutoTune = (carMake == "hyundai" || carMake == "toyota") && CP.getLateralTuning().which() == cereal::CarParams::LateralTuning::TORQUE;
     hasBSM = CP.getEnableBsm();
-    hasDashSpeedLimits = carMake == "hyundai" || carMake == "toyota";
+    hasDashSpeedLimits = carMake == "ford" || carMake == "hyundai" || carMake == "toyota";
     hasExperimentalOpenpilotLongitudinal = CP.getExperimentalLongitudinalAvailable();
     hasNNFFLog = nnffLogFileExists(QString::fromStdString(carFingerprint));
     hasOpenpilotLongitudinal = hasLongitudinalControl(CP);

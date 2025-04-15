@@ -55,7 +55,10 @@ FrogPilotLateralPanel::FrogPilotLateralPanel(FrogPilotSettingsWindow *parent) : 
     {"NNFFLite", tr("Smooth Curve Handling"), tr("Use <b>Twilsonco’s</b> torque-based adjustments to smooth out steering during curves."), ""},
 
     {"QOLLateral", tr("Quality of Life"), tr("Miscellaneous features to improve the steering experience."), "../frogpilot/assets/toggle_icons/quality_of_life.png"},
-    {"PauseLateralSpeed", tr("Pause Steering Below"), tr("Temporarily pause steering control below the set speed."), ""}
+    {"PauseLateralSpeed", tr("Pause Steering Below"), tr("Temporarily pause steering control below the set speed."), ""},
+
+    {"IgnoreMe", "Ignore Me", "This is simply used to fix the layout when the user opens the descriptions and the menu gets wonky. No idea why it happens, but I can't be asked to properly fix it so whatever. Sue me.", ""},
+    {"IgnoreMe2", "Ignore Me", "This is simply used to fix the layout when the user opens the descriptions and the menu gets wonky. No idea why it happens, but I can't be asked to properly fix it so whatever. Sue me.", ""}
   };
 
   for (const auto &[param, title, desc, icon] : lateralToggles) {

@@ -54,14 +54,11 @@ class FrogPilotListWidget : public QWidget {
     inner_layout.setSpacing(25); // default spacing is 25
     outer_layout.addStretch();
   }
-  inline void addItem(QWidget *w) {
+  inline void addItem(QWidget *w, bool expanding = false) {
+    w->setSizePolicy(QSizePolicy::Preferred, expanding ? QSizePolicy::Expanding : QSizePolicy::Fixed);
     inner_layout.addWidget(w);
-    updateSizePolicies();
   }
-  inline void addItem(QLayout *layout) {
-    inner_layout.addLayout(layout);
-    updateSizePolicies();
-  }
+  inline void addItem(QLayout *layout) { inner_layout.addLayout(layout); }
   inline void setSpacing(int spacing) { inner_layout.setSpacing(spacing); }
 
   void clear() {
@@ -72,32 +69,24 @@ class FrogPilotListWidget : public QWidget {
       delete child;
     }
     outer_layout.addStretch();
-    updateSizePolicies();
   }
 
 private:
-  void updateSizePolicies() {
-    int count = 0;
-    for (int i = 0; i < inner_layout.count(); ++i) {
-      if (inner_layout.itemAt(i)->widget()) {
-        count++;
-      }
-    }
-
-    QSizePolicy::Policy policy = (count <= 3) ? QSizePolicy::Fixed : QSizePolicy::Expanding;
-    for (int i = 0; i < inner_layout.count(); ++i) {
-      if (QWidget *w = inner_layout.itemAt(i)->widget()) {
-        w->setSizePolicy(QSizePolicy::Preferred, policy);
-      }
-    }
-  }
-
   void paintEvent(QPaintEvent *) override {
     QPainter p(this);
     p.setPen(Qt::gray);
     for (int i = 0; i < inner_layout.count() - 1; ++i) {
       QWidget *widget = inner_layout.itemAt(i)->widget();
-      if (widget == nullptr || widget->isVisible()) {
+
+      QWidget *nextWidget = nullptr;
+      for (int j = i + 1; j < inner_layout.count(); ++j) {
+        nextWidget = inner_layout.itemAt(j)->widget();
+        if (nextWidget != nullptr && nextWidget->isVisible()) {
+          break;
+        }
+      }
+
+      if (widget == nullptr || (widget->isVisible() && nextWidget->isVisible())) {
         QRect r = inner_layout.itemAt(i)->geometry();
         int bottom = r.bottom() + inner_layout.spacing() / 2;
         p.drawLine(r.left() + 40, bottom, r.right() - 40, bottom);

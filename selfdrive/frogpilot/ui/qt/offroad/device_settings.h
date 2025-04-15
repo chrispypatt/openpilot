@@ -29,6 +29,8 @@ private:
   std::set<QString> deviceManagementKeys = {"DeviceShutdown", "IncreaseThermalLimits", "LowVoltageShutdown", "NoLogging", "NoUploads", "OfflineMode"};
   std::set<QString> screenKeys = {"ScreenBrightness", "ScreenBrightnessOnroad", "ScreenRecorder", "ScreenTimeout", "ScreenTimeoutOnroad"};
 
+  std::set<QString> parentKeys;
+
   FrogPilotSettingsWindow *parent;
 
   QJsonObject frogpilotToggleLevels;

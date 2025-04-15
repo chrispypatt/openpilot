@@ -300,7 +300,7 @@ static void update_state(UIState *s) {
     scene.always_on_lateral_enabled = !scene.enabled && frogpilotCarState.getAlwaysOnLateralEnabled();
     scene.brake_lights_on = frogpilotCarState.getBrakeLights();
     scene.dashboard_speed_limit = frogpilotCarState.getDashboardSpeedLimit();
-    scene.lateral_paused = frogpilotCarState.getPauseLateral();
+    scene.lateral_paused = frogpilotCarState.getForceCoast() || frogpilotCarState.getPauseLateral();
     scene.longitudinal_paused = frogpilotCarState.getPauseLongitudinal();
     scene.traffic_mode_active = frogpilotCarState.getTrafficMode();
   }

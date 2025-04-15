@@ -226,6 +226,8 @@ FrogPilotVehiclesPanel::FrogPilotVehiclesPanel(FrogPilotSettingsWindow *parent) 
       toyotaList->addItem(vehicleToggle);
     } else {
       settingsList->addItem(vehicleToggle);
+
+      parentKeys.insert(param);
     }
 
     if (ButtonControl *buttonControl = qobject_cast<ButtonControl*>(vehicleToggle)) {
@@ -286,12 +288,6 @@ void FrogPilotVehiclesPanel::updateState(const UIState &s) {
 }
 
 void FrogPilotVehiclesPanel::updateToggles() {
-  std::set<QString> parentKeys = {
-    "GMToggles",
-    "HKGToggles",
-    "ToyotaToggles"
-  };
-
   for (auto &[key, toggle] : toggles) {
     if (parentKeys.find(key) != parentKeys.end()) {
       toggle->setVisible(false);
