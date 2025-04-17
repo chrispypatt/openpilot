@@ -30,7 +30,7 @@ OnroadAlerts::Alert OnroadAlerts::getAlert(const SubMaster &sm, uint64_t started
 
   Alert a = {};
 
-  const QString crash_log_path = "/data/crashes/error.txt";
+  const QString crash_log_path = "/data/error_logs/error.txt";
   if (QFile::exists(crash_log_path) && (cs.getAlertText2() != "Please post the 'Error Log' in the FrogPilot Discord!")) {
     if (random_events) {
       a = {tr("openpilot crashed 💩"),
