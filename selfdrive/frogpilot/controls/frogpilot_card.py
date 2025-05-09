@@ -107,6 +107,8 @@ class FrogPilotCard:
     if sm.updated["frogpilotPlan"] or any(be.type == ButtonType.decelCruise for be in carState.buttonEvents):
       self.decel_pressed = any(be.type == ButtonType.decelCruise for be in carState.buttonEvents)
 
+    self.force_coast &= not (carState.brakePressed or carState.gasPressed)
+
     if frogpilotCarState.distancePressed:
       self.gap_counter += 1
     elif not self.prev_distance_button:

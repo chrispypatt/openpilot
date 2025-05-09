@@ -71,7 +71,7 @@ class Car:
       safety_config.safetyModel = car.CarParams.SafetyModel.noOutput
       self.CP.safetyConfigs = [safety_config]
 
-    if self.CP.secOcRequired and not self.params.get_bool("IsReleaseBranch"):
+    if self.CP.secOcRequired:
       # Copy user key if available
       try:
         with open("/cache/params/SecOCKey") as f:

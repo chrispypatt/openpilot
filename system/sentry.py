@@ -7,7 +7,6 @@ from pathlib import Path
 from sentry_sdk.integrations.threading import ThreadingIntegration
 
 from openpilot.common.params import Params, ParamKeyType
-from openpilot.system.athena.registration import is_registered_device
 from openpilot.system.hardware import HARDWARE, PC
 from openpilot.common.swaglog import cloudlog
 from openpilot.system.version import get_build_metadata, get_version
@@ -94,7 +93,9 @@ def init(project: SentryProject) -> bool:
 
   short_branch = build_metadata.channel
 
-  if short_branch == "FrogPilot-Development":
+  if short_branch == "COMMA":
+    return
+  elif short_branch == "FrogPilot-Development":
     env = "Development"
   elif build_metadata.release_channel:
     env = "Release"
