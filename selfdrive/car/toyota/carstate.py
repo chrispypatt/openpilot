@@ -274,13 +274,14 @@ class CarState(CarStateBase):
       ("STEER_TORQUE_SENSOR", 50),
     ]
 
-    if CP.flags & ToyotaFlags.SECOC.value:
+    if CP.carFingerprint in SECOC_CAR:
       messages += [
         ("GEAR_PACKET_HYBRID", 60),
         ("SECOC_SYNCHRONIZATION", 10),
         ("GAS_PEDAL", 42),
-        ("PCM_CRUISE_4", 1),
       ]
+      if CP.carFingerprint not in RADAR_ACC_CAR:
+        messages.append(("PCM_CRUISE_4", 1))
     else:
       messages.append(("VSC1S07", 20))
       if CP.carFingerprint not in [CAR.TOYOTA_MIRAI]:
