@@ -292,7 +292,7 @@ class CAR(Platforms):
   )
   TOYOTA_WILDLANDER_PHEV = ToyotaSecOCPlatformConfig(
     [ToyotaCarDocs("Toyota Wildlander PHEV 2021", min_enable_speed=MIN_ACC_SPEED)],
-    CarSpecs(mass=4372. * CV.LB_TO_KG, wheelbase=2.68, steerRatio=16.88, tireStiffnessFactor=0.5533),
+    CarSpecs(mass=4155. * CV.LB_TO_KG, wheelbase=2.69, steerRatio=16.88, tireStiffnessFactor=0.5533),
   )
 
   # Lexus
