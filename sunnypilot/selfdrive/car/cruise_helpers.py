@@ -5,12 +5,14 @@ This file is part of sunnypilot and is licensed under the MIT License.
 See the LICENSE.md file in the root directory for more details.
 """
 
-from cereal import car, custom
+from cereal import car, custom, log
 from opendbc.car import structs
 from openpilot.common.params import Params
+from opendbc.car.toyota.values import SECOC_CAR
 
 ButtonType = car.CarState.ButtonEvent.Type
 EventNameSP = custom.OnroadEventSP.EventName
+EventName = log.OnroadEvent.EventName
 
 DISTANCE_LONG_PRESS = 50
 
@@ -23,6 +25,7 @@ class CruiseHelper:
     self.button_frame_counts = {ButtonType.gapAdjustCruise: 0}
     self._experimental_mode = False
     self.experimental_mode_switched = False
+    self.previous_follow_distance = None
 
   def update(self, CS, events, experimental_mode) -> None:
     if self.CP.openpilotLongitudinalControl:
@@ -31,6 +34,11 @@ class CruiseHelper:
 
         # toggle experimental mode once on distance button hold
         self.update_experimental_mode(events, experimental_mode)
+
+      if self.CP.carFingerprint in SECOC_CAR and CS.pcm_follow_distance != self.previous_follow_distance:
+        self.previous_follow_distance = CS.pcm_follow_distance
+        self.params.put_nonblocking('LongitudinalPersonality', str(4 - CS.pcm_follow_distance))
+        events.add(EventName.personalityChanged)
 
   def update_button_frame_counts(self, CS) -> None:
     for button in self.button_frame_counts:
