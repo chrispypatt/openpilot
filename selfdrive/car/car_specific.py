@@ -79,7 +79,7 @@ class CarSpecificEvents:
 
     elif self.CP.brand == 'toyota':
       # TODO: when we check for unexpected disengagement, check gear not S1, S2, S3
-      events = self.create_common_events(CS, CS_prev, extra_gears=[GearShifter.sport])
+      events = self.create_common_events(CS, CS_prev, extra_gears=[GearShifter.sport, GearShifter.brake])
 
       if self.CP.openpilotLongitudinalControl:
         if CS.cruiseState.standstill and not CS.brakePressed:
